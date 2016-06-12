@@ -1,0 +1,87 @@
+关于ShellExecute函数的中文说明
+
+ShellExecute 函数打开或打印一个指定的文件。文件可以是可执行文件也可以是一个文档。请查看关于ShellExecuteEx的帮助。 
+HINSTANCE ShellExecute( 
+    HWND hwnd,              // 主窗口句柄 
+    LPCTSTR lpOperation,    // 字符串指针，指定要执行的操作 
+    LPCTSTR lpFile,         // 字符串指针，指定文件名或目录名 
+    LPCTSTR lpParameters,   // 字符串指针，指定传给可执行文件的参数 　  
+    LPCTSTR lpDirectory,    // 字符串指针，指定缺省目录 
+    INT nShowCmd            // 文件显示模式 
+);     
+参数 
+hwnd 
+指定一个主窗体。
+
+lpOperation 
+一个非空的字符串指针，指定操作方式。有以下操作方式可用 
+"open"     
+该函数打开由lpFile指定的文件，文件可以是一个可执行文件，也可以是文档文件，也可以是一个要打开的目录。 
+"print"     
+该函数打印由lpFile指定的文件。文件应该是一个文档文件。如果是一个可执行文件则运行这个文件就象指定用"opne"操作方式一样。 
+"explore" 
+函数打开浏览由lpFile指定的目录窗口。 
+如果该参数为NULL，则相当于使用"open"操作方式。 
+
+lpFile 
+一个非空字符串指定要打开或打印的文件，或者是要打开浏览的目录名。该函数可以打开一个可执行文件或一个文档文件，也可以打印一个文件。 
+
+lpParameters 
+如果lpFile指定一个可执行文件，则lpParameters 是一个指向非空字符串的指针，代表要传给这个应用程序的参数。 
+如果lpFile指定一个文档文件，则其应该为空。 
+
+lpDirectory 
+非空字符串指定缺省目录 
+
+nShowCmd 
+如果lpFile指定一个可执行文件，nShowCmd指定应用程序运行时如何显示。可以是下列的值： 
+
+值    　　　意义 
+SW_HIDE    隐藏窗体，激活另一个窗口。 
+SW_MAXIMIZE    最大化显示 
+SW_MINIMIZE    最小化显示 
+SW_RESTORE    正常状态显示 
+SW_SHOW    激活并以其当前位置尺寸显示 
+SW_SHOWDEFAULT    以线程创建时传进的参数进行显示 
+SW_SHOWMAXIMIZED　激活并最大化显示 
+SW_SHOWMINIMIZED　激活但以最小化方式显示 
+SW_SHOWMINNOACTIVE    最小化显示，原来焦点窗体不变active. 
+SW_SHOWNA    以其当前状态显示 
+SW_SHOWNOACTIVATE     
+SW_SHOWNORMAL    以正常方式显示。 
+如果lpFile指定的是文档文件，则nShowCmd应该为0。 
+
+返回值 
+如果成功，返回当前运行应用程序句柄或DDE服务器句柄 
+如果失败，返回值小于等32，代表下面的意义。 
+ 
+值　　　意义 
+0    操作系统内存或资源不够 
+ERROR_FILE_NOT_FOUND    文件没找到 
+ERROR_PATH_NOT_FOUND    指定路径不对 
+ERROR_BAD_FORMAT    不是合法的应用程序 
+SE_ERR_ACCESSDENIED    操作系统拒绝访问此文件 
+SE_ERR_ASSOCINCOMPLETE    文件名关联不完整或非法 
+SE_ERR_DDEBUSY    不能完成DDE事务，因为正在处理其它DDE事务　　
+SE_ERR_DDEFAIL    DDE事务失败 
+SE_ERR_DDETIMEOUT    请示超时 
+SE_ERR_DLLNOTFOUND    没找到指定的动态链接库 
+SE_ERR_FNF    指定文件没找到。 
+SE_ERR_NOASSOC    没有与当前文件类型关联的应用程序 
+SE_ERR_OOM    内存不足 
+SE_ERR_PNF    路径没找到 
+SE_ERR_SHARE    共享错误 
+
+备注 
+由参数lpFile指定的文件可以是文档文件或是可执行文件。如果是文档文件则可以打开或打印文件，由lpOperation参数指定。如果是可执行文件则只能打开，即使lpOperation指定为"print". 
+You can use ShellExecute to open or explore a shell folder. To open a folder, use either of the following calls: 
+可以使用该函数打开或浏览一个文件夹： 
+ShellExecute(handle, NULL, path_to_folder, NULL, NULL, SW_SHOWNORMAL); 
+或 
+ShellExecute(handle, "open", path_to_folder, NULL, NULL, SW_SHOWNORMAL); 
+
+浏览文件夹: 
+ShellExecute(handle, "explore", path_to_folder, NULL, NULL, SW_SHOWNORMAL); 
+如果 lpOperation 为 NULL,函数打开这个文件如果为"open" 或 "explore",则函数会打开一个窗口
+打开一个网叶：
+ShellExecute(NULL,"open","http://www.sina.com.cn",NULL,NULL,SW_SHOW); 

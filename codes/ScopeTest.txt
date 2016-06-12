@@ -1,0 +1,140 @@
+ret = PROCESS data
+PRODUCE col1, col2, col3
+USING MyProcessor
+public class MyProcessor : Processor
+{
+    public override Schema Produces(string[] columns, string[] args, Schema input)
+    {
+        return input.Clone();
+    }
+    public override IEnumerable<Row> Process(RowSet input, Row output, string[] args)
+    {
+        foreach(Row row in input.Rows)
+        {
+            for (int i = 0; i < row.Count; i++)
+            {
+                char[] arr = row[i].String.ToCharArray();
+                Array.Reverse(arr);
+
+                string ret = new string(arr);
+                output[i].UnsafeSet(ret);
+            }
+
+            yield return output;
+        }
+    }
+}
+
+OUTPUT masterIDs TO @"E:\workSpace\ScopeTest\masterId_late_SubmittedDate.txt"
+USING StrXmlOutputter;
+public class StrXmlOutputter : Outputter
+{
+    public override void Output(RowSet input, StreamWriter writer, string[] args)
+    {
+        foreach (Row row in input.Rows)
+        {
+            writer.WriteLine("<string length=\"" + row[0].String.Length + "\">" + row[0].String + "</string>");
+
+            writer.Flush();
+        }
+    }
+}
+
+EXTRACT masterId:string, lastSubmittedDate:string, rawLine:string
+FROM @dataFile
+USING MyExtractor;
+public class MyExtractor : Extractor
+{
+    public override Schema Produces(string[] requestedColumns, string[] args)
+    {
+        return new Schema(requestedColumns);
+    }
+    public override IEnumerable<Row> Extract(StreamReader reader, Row outputRow, string[] args)
+    {
+        string line;
+        while ((line = reader.ReadLine()) != null)
+        {
+            string[] tokens = line.Split('\t');
+            if (tokens[0].StartsWith("www"))
+            {
+                for (int i = 0; i < tokens.Length; ++i)
+                {
+                    outputRow[i].UnsafeSet(tokens[i]);
+                }
+                yield return outputRow;
+            }
+        }
+    }
+}
+
+REDUCE AllRows
+ON masterId
+PRODUCE masterId, lastSubmittedDate
+USING LateReducer
+PRESORT lastSubmittedDate ASC;
+public class LateReducer : Reducer
+{
+    public override Schema Produces(string[] columns, string[] args, Schema input)
+    {
+        //return input.Clone();
+        return new Schema("masterId, lastSubmittedDate");
+    }
+    public override IEnumerable<Row> Reduce(RowSet input, Row output, string[] args)
+    {
+        Row last = null;
+        foreach (Row row in input.Rows)
+        {
+            last = row;
+        }
+
+        output[0].UnsafeSet(last[0].String);
+        output[1].UnsafeSet(last[1].String);
+        yield return output;
+    }
+}
+
+SELECT
+masterIDs.masterId, masterId_part1, masterId_part2, lastSubmittedDate
+FROM masterIDs INNER JOIN masterSplit
+ON masterIDs.masterId == masterSplit.masterId;
+////////////////////////////////////////////////////
+REFERENCE "/shares/searchDM/distrib/released/FrontEndUtil/FrontEndUtil.dll"; 
+RESOURCE "/shares/searchDM/distrib/released/FrontEndUtil/autopilot-trick.ini"; 
+RESOURCE "/shares/searchDM/distrib/released/FrontEndUtil/btclaD386.dll"; 
+RESOURCE "/shares/searchDM/distrib/released/FrontEndUtil/btjlaD386.dll"; 
+RESOURCE "/shares/searchDM/distrib/released/FrontEndUtil/btklaD433.dll"; 
+RESOURCE "/shares/searchDM/distrib/released/FrontEndUtil/btutilsD230.dll"; 
+RESOURCE "/shares/searchDM/distrib/released/FrontEndUtil/btutilsD430.dll"; 
+RESOURCE "/shares/searchDM/distrib/released/FrontEndUtil/FrontEndUtil.pdb"; 
+RESOURCE "/shares/searchDM/distrib/released/FrontEndUtil/GetHashUtil.dll"; 
+RESOURCE "/shares/searchDM/distrib/released/FrontEndUtil/GetHashUtil.pdb"; 
+RESOURCE "/shares/searchDM/distrib/released/FrontEndUtil/ParseQueryUtil.dll"; 
+RESOURCE "/shares/searchDM/distrib/released/FrontEndUtil/ParseQueryUtil.pdb"; 
+RESOURCE "/shares/searchDM/distrib/released/FrontEndUtil/unzip.exe"; 
+RESOURCE "/shares/searchDM/distrib/released/FrontEndUtil/wbDefaultConfig.ini"; 
+RESOURCE "/shares/searchDM/distrib/released/FrontEndUtil/WordBreaker.zip";
+
+USING FrontEndUtil;
+
+urls = 
+    EXTRACT url:string
+    FROM @"/my/Test/10url.txt"
+    USING DefaultTextExtractor; 
+
+domains = 
+    SELECT CURLUtilities.GetDomainNameFromUrl(url) AS domain, 
+           CURLUtilities.GetHostNameFromUrl(url) AS host
+    FROM urls;
+/////////////////////////////////////////////////////////
+REFERENCE "/users/tlwu/tools/WordBreaker/WordBreaker.dll";
+RESOURCE "/users/tlwu/tools/WordBreaker/unzip.exe";
+RESOURCE "/users/tlwu/tools/WordBreaker/wordbreak.zip";
+
+
+titles = 
+    EXTRACT line:string
+    FROM @"/my/Test/news.txt"
+    USING DefaultTextExtractor; 
+
+SELECT WordBreaker.BreakWords(line, "zh-cn") AS titleBreak;
+

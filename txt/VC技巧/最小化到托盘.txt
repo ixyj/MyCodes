@@ -1,0 +1,75 @@
+在vc中如何在点击对话框最小话按纽后，对话框加如系统右下角的任务栏中。就好比点中qq的最小化窗口所实现的功能一样，在vc中有没有这样的函数或其他类似的工具！谢谢~~~~~~~~  
+---------------------------------------------------------------  
+ 
+1。首先你需要在WM_SYSCOMMAND消息中截获SC_MINIMIZE标记  
+ 
+void  CMainFrame::OnSysCommand(UINT  nID,  LPARAM  lParam)  
+{  
+               if  ((nID  &  0xfff0)  ==  SC_MINIMIZE)  
+               {  
+                 触发你的Shell程序  
+                 }      
+                 CFrameWnd::OnSysCommand(nID,lParam);  
+}  
+
+实现托盘图标的代码：  
+ 
+///===================托盘图标======================================  
+#define    WM_TRAY  WM_USER+100    自定义信息，所以还要定义函数  
+ 
+LRESULT  CFDlg::WindowProc(UINT  message,  WPARAM  wParam,  LPARAM  lParam)    
+{  
+           //  TODO:  Add  your  specialized  code  here  and/or  call  the  base  class  
+           if(message==WM_TRAY)  
+                       return  OnTray(wParam,lParam);                          
+           return  CTabDialog::WindowProc(message,  wParam,  lParam);  
+}  
+
+LRESULT  CFDlg::OnTray(WPARAM  wParam,LPARAM  lParam)  
+{  
+           if(wParam!=IDR_MAINFRAME)  
+                       return  0L;  
+           CMenu  menu,*pSubMenu;  
+           CWnd  *pTarget=AfxGetMainWnd();  
+           if(LOWORD(lParam)==WM_RBUTTONUP)  
+           {  
+           if(!menu.LoadMenu(IDR_SYSTEMMENU))    return  0;  
+           if(!(pSubMenu=menu.GetSubMenu(0)))  return  0;  
+           ::SetMenuDefaultItem(pSubMenu->m_hMenu,IDR_SYSTEMMENU,0);  
+           CPoint  pos;  
+           GetCursorPos(&pos);  
+           ::TrackPopupMenu(pSubMenu->m_hMenu,0,pos.x,pos.y,0,pTarget->GetSafeHwnd(),NULL);  
+           pTarget->PostMessage(WM_NULL,0,0);  
+           menu.DestroyMenu();  
+           }else  if(LOWORD(lParam)==WM_LBUTTONDBLCLK)  
+                                     this->ShowWindow(SW_SHOW);  
+return  0;  
+}  
+ 
+//----------------隐藏图标-----------------------  
+ 
+void  CFDlg::OnHide()                    
+{  
+           NOTIFYICONDATA  tnd;  
+           tnd.cbSize=sizeof(NOTIFYICONDATA);  
+           tnd.hWnd=this->m_hWnd;  
+           tnd.uID=IDR_MAINFRAME;  
+           tnd.uFlags=NIF_MESSAGE  |NIF_ICON  |NIF_TIP;  
+           tnd.uCallbackMessage=WM_TRAY;  
+           tnd.hIcon=LoadIcon(AfxGetInstanceHandle(),MAKEINTRESOURCE(IDR_MAINFRAME));  
+           strcpy(tnd.szTip,"你的标题");  
+           ::Shell_NotifyIcon(NIM_ADD,&tnd);  
+           this->ShowWindow(SW_HIDE);  
+}  
+ 
+//--------------------删除托盘图标---------------  
+int  CFDlg::DeleteIcon()  
+{  
+           BOOL  res;  
+           NOTIFYICONDATA  tnd;  
+           tnd.cbSize=sizeof(NOTIFYICONDATA);  
+           tnd.hWnd=this->m_hWnd;  
+           tnd.uID=IDR_MAINFRAME;  
+           res=Shell_NotifyIcon(NIM_DELETE,&tnd);  
+           return  res;  
+}  

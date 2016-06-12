@@ -1,0 +1,13 @@
+typedef struct _SYSTEMTIME
+{
+   WORD   wYear;
+   WORD   wMonth;
+   WORD   wDayOfWeek;//星期由0开始递增（星期天是0）
+   WORD   wDay;
+   WORD   wHour;
+   WORD   wMinute;
+   WORD   wSecond;
+   WORD   wMilliseconds;
+}SYSTEMTIME, * PSYSTEMTIME;
+SYSTEMTIME主要用于GetLocalTime和GetSystemTime函数。GetSystemTime函数传回目前的世界时间（Coordinated Universal Time，UTC），大概与英国格林威治时间相同。GetLocalTime函数传回当地时间，依据计算机所在的时区。这些值的精确度完全决定于使用者所调整的时间精确度以及是否指定了正确的时区。可以双击工作列的时间显示来检查计算机上的时区设定。
+

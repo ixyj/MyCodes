@@ -1,0 +1,16 @@
+如何控制视的宽和高的最小值？！在哪儿可以设置的？
+
+在其父窗口（MDI子框架或SDI的框架），响应GETMINMAXINFO消息。
+
+如：
+void CMainFrame::OnGetMinMaxInfo(MINMAXINFO FAR* lpMMI) 
+{
+    // TODO: Add your message handler code here and/or call default
+    
+    lpMMI->ptMaxTrackSize.x = 600;
+    lpMMI->ptMaxTrackSize.y = 400;
+    lpMMI->ptMinTrackSize.x = 600;
+    lpMMI->ptMinTrackSize.y = 400;
+
+//    CFrameWnd::OnGetMinMaxInfo(lpMMI);
+}

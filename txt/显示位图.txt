@@ -1,0 +1,13 @@
+以下方法可以显示位图(bmp格式)：
+		CDC *pDC= GetDC();
+
+		CBitmap bitmap;
+		bitmap.LoadBitmap位图ID	//加载位图
+
+		CDC dcCompatible;		//创建兼容DC
+		dcCompatible.CreateCompatibleDC(pDC);
+
+		dcCompatible.SelectObject(&bitmap);	//将位图选到兼容DC中
+
+		CRect rect(10, 10,400, 300);
+		pDC->BitBlt(rect.left, rect.top, rect.Width(), rect.Height(), &dcCompatible, 0, 0, SRCCOPY);		//将兼容DC中的位图贴到当前DC中

@@ -1,0 +1,7 @@
+中文输入法下有些功能键会隐藏（隐藏为VK_PROCESSKEY），可以还原：
+#include <Imm.h>
+
+
+UINT nVirtKey = (UINT)pMsg->wParam;//获取功能键
+if (nVirtKey == VK_PROCESSKEY)
+nVirtKey = ::ImmGetVirtualKey(m_hWnd);//m_hWnd为接受中文输入的窗口句柄

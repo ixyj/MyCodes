@@ -1,0 +1,2 @@
+为什么有RichEdit控件的对话框无法显示
+如果在对话框上放一个RichEdit控件，往往发现对话框却无法正常显示，这是因为应用程序还没有为RichEdit控件的编辑功能做好准备，解决办法就是在应用程序的InitInstance()函数调用AfxInitRichEdit()函数初始化RichEdit控件

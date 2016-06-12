@@ -1,0 +1,10 @@
+CPen pen,*pPen;
+pPen=pDC->GetCurrentPen();
+pen.CreatePen(PS_NULL,0,RGB(255,255,255));
+pDC->SelectObject(&pen);
+pDC->SelectObject(pPen);//»Ö¸´»­±Ê
+
+
+CBrush brush, *pBrush;
+brush.CreateSolidBrush(RGB(10,221,22));
+pBrush = pDC->SelectObject(&brush);

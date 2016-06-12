@@ -1,0 +1,12 @@
+strCString="2003-10-27 6:24:37"; //CString--->COleDateTime
+COleVariant vtime(strCString);
+vtime.ChangeType(VT_DATE);
+COleDateTime time4=vtime;
+
+COleDateTime time1(1977,4,16,2,2,2); //COleDataTime--->CTime
+SYSTEMTIME systime;
+VariantTimeToSystemTime(time1, &systime);
+CTime tm(systime);
+
+time_t time2=tm.GetTime(); //CTime--->time_t
+COleDateTime time3(time2); //time_t--->COleDateTime 

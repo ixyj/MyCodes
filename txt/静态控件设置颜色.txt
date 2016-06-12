@@ -1,0 +1,35 @@
+HBRUSH CLinePropertyDlg::OnCtlColor(CDC* pDC, CWnd* pWnd, UINT nCtlColor)
+{
+	HBRUSH hbr = CDialog::OnCtlColor(pDC, pWnd, nCtlColor);
+
+	// TODO:  在此更改 DC 的任何属性
+
+	HBRUSH hbrBk; 
+	int idc = pWnd->GetDlgCtrlID(); 
+
+	if(nCtlColor == CTLCOLOR_STATIC) 
+	{ 
+		 if(idc == IDC_LINE_COLOR) 
+		{ 
+			hbrBk = ::CreateSolidBrush(color); 
+			pDC->SetBkMode(TRANSPARENT); 
+			pDC->SetBkColor(color); 
+			return hbrBk; 
+		} 
+	} 
+
+	// TODO:  如果默认的不是所需画笔，则返回另一个画笔
+	return hbr;
+}
+
+注：
+CTLCOLOR_BTN 按钮控件
+CTLCOLOR_DLG 对话框
+CTLCOLOR_EDIT 编辑框
+CTLCOLOR_LISTBOX 列表框
+CTLCOLOR_MSGBOX 消息框
+CTLCOLOR_SCROLLBAR 滚动条
+CTLCOLOR_STATIC 静态文本
+
+
+改变颜色只要Cdlg.Invalidate();即可！

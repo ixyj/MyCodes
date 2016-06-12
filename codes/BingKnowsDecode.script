@@ -1,0 +1,280 @@
+﻿//Script GUID:3cfdf7ab-5fff-450e-bed0-d0f9d91fffac
+//Used for tracking history
+
+REFERENCE "System.Web.dll";
+REFERENCE "System.Xml.dll";
+REFERENCE "System.Xml.Linq.dll";
+
+
+REFERENCE @"/local/BingKnows/Prod/Resources/Libs/Kif/Microsoft.Bond.dll";
+REFERENCE @"/local/BingKnows/Prod/Resources/Libs/Kif/Microsoft.Bond.Interfaces.dll";
+REFERENCE @"/local/BingKnows/Prod/Resources/Libs/WrapStar/Microsoft.Cci.dll";
+REFERENCE @"/local/BingKnows/Prod/SourceData/BaiduBaike/Raw/2013/08/DLL/Microsoft.Live.Json.dll";
+REFERENCE @"/local/BingKnows/Prod/Resources/Libs/Kif/microsoft.search.autopilot.dll";
+REFERENCE @"/local/BingKnows/Prod/Resources/Libs/Kif/Microsoft.Search.Kif.dll";
+
+RESOURCE @"/local/BingKnows/Prod/Resources/Libs/Kif/KifSchemas.zip";
+RESOURCE @"/users/tlwu/tools/WordBreaker/unzip.exe";
+
+RawQuery =
+    EXTRACT query,
+            score
+    FROM @"/my/BingKnows/BingKnowsTopDown.txt"
+    USING DefaultTextExtractor;
+
+RawQuery =
+    SELECT query.ToLower() AS query
+    FROM RawQuery;
+
+Alias =
+    EXTRACT alias,
+            masterId
+    FROM @"/local/BingKnows/Prod/Index/Publish/Final_BingKnowsAlias.txt"
+    USING DefaultTextExtractor;
+
+Alias =
+    SELECT alias.ToLower() AS alias,
+           DescriptionReducer.GetMasterId(masterId) AS id
+    FROM Alias;
+
+RawAlias =
+    SELECT Alias.*
+    FROM Alias INNER JOIN RawQuery
+         ON query == alias;
+
+OUTPUT
+TO @"/my/BingKnows/Debug/JoinRawAlias.txt";
+
+Pages =
+    SELECT id,
+           DescriptionReducer.GetKifFromIndex(data) AS kif,
+           1 AS score
+    FROM
+    (
+        EXTRACT id,
+                data
+        FROM @"/local/BingKnows/Prototype/Index/BingKnowsIndex.txt"
+        //FROM @"C:\Users\yajxu\Desktop\test\index.txt"
+        USING DefaultTextExtractor
+    )
+    HAVING NOT string.IsNullOrEmpty(kif)
+    UNION
+    SELECT id,
+           DescriptionReducer.GetKifFromWhitelist(data) AS kif,
+           0 AS score
+    FROM
+    (
+        EXTRACT id,
+                data
+        FROM @"/local/BingKnows/Prod/Index/Publish/Final_BingKnowsWhiteList.txt"
+        //FROM @"C:\Users\yajxu\Desktop\test\whitelist.txt"
+        USING DefaultTextExtractor
+    )
+    HAVING NOT string.IsNullOrEmpty(kif);
+
+RawPage =
+    SELECT alias AS query,
+           kif,
+           score
+    FROM RawAlias INNER JOIN Pages
+         ON RawAlias.id == Pages.id;
+
+AnsData =
+    REDUCE RawPage
+    PRODUCE *
+    ON query
+    PRESORT score ASC
+    USING DescriptionReducer;
+
+OUTPUT TO @"/my/BingKnows/Debug/queryDescription.txt";
+
+#CS
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Security.Cryptography;
+using System.Text;
+using System.Text.RegularExpressions;
+using ScopeRuntime;
+
+using System.Linq;
+using System.Xml;
+using System.Xml.Linq;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Security.Cryptography;
+using System.Text;
+using System.Text.RegularExpressions;
+using ScopeRuntime;
+
+using System.Linq;
+using System.Xml.Linq;
+using Microsoft.Search.Kif;
+using System.Web;
+
+public class NavProcessor : Processor
+{
+    public override Schema Produces(string[] columns, string[] args, Schema input)
+    {
+        return new Schema("query,url,title,confidence:double");
+    }
+
+    public override IEnumerable<Row> Process(RowSet input, Row output, string[] args)
+    {
+        var valid = false;
+        foreach (Row row in input.Rows)
+        {
+            string title = null, url = null;
+            int deeplinks = 0;
+            double conf = 0;
+            valid = false;
+
+            try
+            {
+                var xmlDoc = new XmlDocument();
+                xmlDoc.LoadXml(row["PartnerData"].String);
+                title = xmlDoc.SelectSingleNode("NavIntent/NavigationalInfo/Title").InnerText;
+                url = xmlDoc.SelectSingleNode("NavIntent/NavigationalInfo/NavUrl").InnerText;
+                conf = double.Parse(xmlDoc.SelectSingleNode("NavIntent/NavigationalInfo/Confidence").InnerText);
+                deeplinks = xmlDoc.SelectNodes("NavIntent/NavigationalInfo/Deeplinks/Deeplink").Cast<XmlNode>().Count();
+
+                valid = (!string.IsNullOrWhiteSpace(title) && !string.IsNullOrWhiteSpace(url) && conf > 0.85 &&
+                         deeplinks > 0);
+            }
+            catch
+            {
+                valid = false;
+            }
+
+            if (valid)
+            {
+                output["query"].UnsafeSet(row["Query"].String);
+                output["url"].UnsafeSet(url);
+                output["title"].UnsafeSet(title);
+                output["confidence"].UnsafeSet(conf);
+
+                yield return output;
+            }
+        }
+    }
+}
+
+public class DescriptionReducer : Reducer
+{
+    public override Schema Produces(string[] columns, string[] args, Schema input)
+    {
+        return new Schema("alias, description");
+    }
+    public override IEnumerable<Row> Reduce(RowSet input, Row output, string[] args)
+    {
+        string desc = null;
+        foreach (Row row in input.Rows)
+        {
+            desc = null;
+            var page = Decode(row["kif"].String);
+            try
+            {
+                var xmlDoc = new XmlDocument();
+                xmlDoc.LoadXml(page);
+                var node = "root/QnAList/BingKnows.QnA/AnswerList/BingKnows.Answer/Text";
+                desc = xmlDoc.SelectSingleNode(node).InnerText;
+            }
+            catch
+            {
+            }
+
+            if (!string.IsNullOrEmpty(row["query"].String) && !string.IsNullOrEmpty(desc))
+            {
+                output["alias"].UnsafeSet(row["query"].String);
+                output["description"].UnsafeSet(desc);
+                yield return output;
+            }
+
+            break;
+        }
+    }
+
+    public static string RemoveDollar(string idName)
+    {
+        if (string.IsNullOrEmpty(idName))
+        {
+            return string.Empty;
+        }
+
+        return Regex.Replace(idName, @"^\$\$\$\d+\$\$\$", string.Empty);
+    }
+
+    public static string GetMasterId(string idName)
+    {
+        idName = RemoveDollar(idName);
+        var index = idName.IndexOf("###", StringComparison.Ordinal);
+        return index == -1 ? idName : idName.Substring(0, index);
+    }
+
+    public static string GetKifFromIndex(string xml)
+    {
+        try
+        {
+            var xmlDoc = new XmlDocument();
+            xmlDoc.LoadXml(xml);
+            return xmlDoc.SelectSingleNode("EntryIndex/Content/BingKnowsContent/BingKnowsEntryKif").InnerText;
+        }
+        catch
+        {
+            return string.Empty;
+        }
+    }
+
+    public static string GetKifFromWhitelist(string xml)
+    {
+        try
+        {
+            var xmlDoc = new XmlDocument();
+            xmlDoc.LoadXml(xml);
+            return xmlDoc.SelectSingleNode("BingKnowsContent/BingKnowsEntryKif").InnerText;
+        }
+        catch
+        {
+            return string.Empty;
+        }
+    }
+
+    private static IKifRepository KifRepository = null; 
+    public static string Decode(string base64)
+    {
+        try
+        {
+            if (KifRepository == null)
+            {
+                using (System.Diagnostics.Process unzipProc = new System.Diagnostics.Process())
+                {
+                    unzipProc.StartInfo.FileName = "unzip.exe";
+                    unzipProc.StartInfo.Arguments = "-oq KifSchemas.zip";
+                    unzipProc.Start();
+                    unzipProc.WaitForExit();
+                }
+
+                if (!Directory.Exists("KifSchemas"))
+                {
+                    throw new ArgumentException("Kif Schema Repository Path doesn't exist");
+                }
+
+                KifConfigSingleton.SetConfig(new ConstKifConfig(APKifConfig.DefaultProtocol, "KifSchemas"));
+                KifRepository = new FileKifRepository();      
+            }
+
+            var buffer = Convert.FromBase64String(base64);
+            var reader = KifBinaryReader.Create(buffer);
+            var doc = KifToXmlConverter.Write(KifRepository, reader, true, false);
+
+            return doc.ToString();
+        }
+        catch
+        {
+            return string.Empty;
+        }
+    }
+}
+
+#ENDCS

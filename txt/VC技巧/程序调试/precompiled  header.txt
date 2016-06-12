@@ -1,0 +1,4 @@
+1：fatal  error  C1010:  unexpected  end  of  file  while  looking  for  precompiled  header  directive该如何解决  
+       如果发生错误的文件是由其他的C代码文件添加进入当前工程而引起的，则Alt+F7进入当前工程的Settings，选择C/C++选项卡，从Category组合框中选中Precompiled  Headers，选择Not  Using  Precompiled  headers。确定  
+       如果发生错误的文件原本是该工程中的，则检查该文件头部有没有#include  "stdafx.h"语句，没有的话添加。  
+       如果还不行，也有可能是定义的类或结构体等最后忘了加分号，注意一下。

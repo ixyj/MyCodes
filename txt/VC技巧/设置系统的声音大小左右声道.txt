@@ -1,0 +1,322 @@
+请问大家要怎样才能设置系统的声音大小，左右声道呢？  
+ 
+是使用MCI中的函数嘛？  
+--------------------------------------------------------------  
+控制大小：  
+BOOL  CVolumeDlg::amdInitialize()  
+{  
+           //  get  the  number  of  mixer  devices  present  in  the  system  
+           m_nNumMixers  =  ::mixerGetNumDevs();  
+ 
+           m_hMixer  =  NULL;  
+           ::ZeroMemory(&m_mxcaps,  sizeof(MIXERCAPS));  
+ 
+           //  open  the  first  mixer  
+           //  A  "mapper"  for  audio  mixer  devices  does  not  currently  exist.  
+           if  (m_nNumMixers  !=  0)  
+           {  
+                       if  (::mixerOpen(&m_hMixer,  
+                                                                       0,  
+                                                                       (DWORD)this->GetSafeHwnd(),  
+                                                                       NULL,  
+                                                                       MIXER_OBJECTF_MIXER    |  CALLBACK_WINDOW)  
+                                   !=  MMSYSERR_NOERROR)  
+                                   return  FALSE;  
+ 
+                       if  (::mixerGetDevCaps((UINT)m_hMixer,  &m_mxcaps,  sizeof(MIXERCAPS))  
+                                   !=  MMSYSERR_NOERROR)  
+                                   return  FALSE;  
+           }  
+ 
+           return  TRUE;  
+}  
+ 
+BOOL  CVolumeDlg::amdUninitialize()  
+{  
+           BOOL  bSucc  =  TRUE;  
+ 
+           if  (m_hMixer  !=  NULL)  
+           {  
+                       bSucc  =  ::mixerClose(m_hMixer)  ==  MMSYSERR_NOERROR;  
+                       m_hMixer  =  NULL;  
+           }  
+ 
+           return  bSucc;  
+}  
+ 
+BOOL  CVolumeDlg::amdGetMasterVolumeControl()  
+{  
+           m_strDstLineName.Empty();  
+           m_strVolumeControlName.Empty();  
+ 
+           if  (m_hMixer  ==  NULL)  
+                       return  FALSE;  
+ 
+           //  get  dwLineID  
+           MIXERLINE  mxl;  
+           mxl.cbStruct  =  sizeof(MIXERLINE);  
+           mxl.dwComponentType  =  MIXERLINE_COMPONENTTYPE_DST_SPEAKERS;  
+           if  (::mixerGetLineInfo((HMIXEROBJ)m_hMixer,  
+                                                                             &mxl,  
+                                                                             MIXER_OBJECTF_HMIXER    |  
+                                                                             MIXER_GETLINEINFOF_COMPONENTTYPE)  
+                       !=  MMSYSERR_NOERROR)  
+                       return  FALSE;  
+ 
+           //  get  dwControlID  
+           MIXERCONTROL  mxc;  
+           MIXERLINECONTROLS  mxlc;  
+           mxlc.cbStruct  =  sizeof(MIXERLINECONTROLS);  
+           mxlc.dwLineID  =  mxl.dwLineID;  
+           mxlc.dwControlType  =  MIXERCONTROL_CONTROLTYPE_VOLUME;  
+           mxlc.cControls  =  1;  
+           mxlc.cbmxctrl  =  sizeof(MIXERCONTROL);  
+           mxlc.pamxctrl  =  &mxc;  
+           if  (::mixerGetLineControls((HMIXEROBJ)m_hMixer,  
+                                                                                         &mxlc,  
+                                                                                         MIXER_OBJECTF_HMIXER    |  
+                                                                                         MIXER_GETLINECONTROLSF_ONEBYTYPE)  
+                       !=  MMSYSERR_NOERROR)  
+                       return  FALSE;  
+ 
+           //  record  dwControlID  
+           m_strDstLineName  =  mxl.szName;  
+           m_strVolumeControlName  =  mxc.szName;  
+           m_dwMinimum  =  mxc.Bounds.dwMinimum;  
+           m_dwMaximum  =  mxc.Bounds.dwMaximum;  
+           m_dwVolumeControlID  =  mxc.dwControlID;  
+ 
+           return  TRUE;  
+}  
+ 
+BOOL  CVolumeDlg::amdGetMasterVolumeValue(DWORD  &dwVal)  const  
+{  
+           if  (m_hMixer  ==  NULL    |  |  
+                       m_strDstLineName.IsEmpty()    |  |  m_strVolumeControlName.IsEmpty())  
+                       return  FALSE;  
+ 
+           MIXERCONTROLDETAILS_UNSIGNED  mxcdVolume;  
+           MIXERCONTROLDETAILS  mxcd;  
+           mxcd.cbStruct  =  sizeof(MIXERCONTROLDETAILS);  
+           mxcd.dwControlID  =  m_dwVolumeControlID;  
+           mxcd.cChannels  =  1;  
+           mxcd.cMultipleItems  =  0;  
+           mxcd.cbDetails  =  sizeof(MIXERCONTROLDETAILS_UNSIGNED);  
+           mxcd.paDetails  =  &mxcdVolume;  
+           if  (::mixerGetControlDetails((HMIXEROBJ)m_hMixer,  
+                                                                                                 &mxcd,  
+                                                                                                 MIXER_OBJECTF_HMIXER    |  
+                                                                                                 MIXER_GETCONTROLDETAILSF_VALUE)  
+                       !=  MMSYSERR_NOERROR)  
+                       return  FALSE;  
+             
+           dwVal  =  mxcdVolume.dwValue;  
+ 
+           return  TRUE;  
+}  
+ 
+BOOL  CVolumeDlg::amdSetMasterVolumeValue(DWORD  dwVal)  const  
+{  
+           if  (m_hMixer  ==  NULL    |  |  
+                       m_strDstLineName.IsEmpty()    |  |  m_strVolumeControlName.IsEmpty())  
+                       return  FALSE;  
+ 
+           MIXERCONTROLDETAILS_UNSIGNED  mxcdVolume  =  {  dwVal  };  
+           MIXERCONTROLDETAILS  mxcd;  
+           mxcd.cbStruct  =  sizeof(MIXERCONTROLDETAILS);  
+           mxcd.dwControlID  =  m_dwVolumeControlID;  
+           mxcd.cChannels  =  1;  
+           mxcd.cMultipleItems  =  0;  
+           mxcd.cbDetails  =  sizeof(MIXERCONTROLDETAILS_UNSIGNED);  
+           mxcd.paDetails  =  &mxcdVolume;  
+           if  (::mixerSetControlDetails((HMIXEROBJ)m_hMixer,  
+                                                                                                 &mxcd,  
+                                                                                                 MIXER_OBJECTF_HMIXER    |  
+                                                                                                 MIXER_SETCONTROLDETAILSF_VALUE)  
+                       !=  MMSYSERR_NOERROR)  
+                       return  FALSE;  
+             
+           return  TRUE;  
+}  
+ 
+调节平衡:  
+int  CMixerFader::Init(  DWORD  DstType,  DWORD  SrcType,  DWORD  ControlType,  int  subType  )  
+{              
+           if  (  m_hWnd  ==  NULL  )  
+           {  
+                       PrintMessage(  "CMixerFader::Init",  "No  Window  attached.  Did  you  create  or  subclass  one?"  );  
+                       return  0;  
+           }  
+ 
+           EnableWindow(  FALSE  );  
+ 
+           if(  subType  ==  BALANCE  )  
+           {  
+                       int  min,  max;  
+                       GetRange(  min,  max  );  
+                       SetSliderPos(  (  max  -  min  )/2  );  
+           }  
+ 
+           //  start  by  checking  the  type  and  subtypes    
+ 
+           if(  (  ControlType  &  MIXERCONTROL_CT_CLASS_MASK  )  !=  MIXERCONTROL_CT_CLASS_FADER  )  
+           {  
+                       PrintMessage(  "CMixerFader::Init",    
+                                                   "Wrong  control  type  for  a  fader  control:  %s",    
+                                                   GetControlTypeString(  ControlType  )  );  
+                       return  0;  
+           }  
+           if(  subType  <  LEFT    |  |  subType  >  BALANCE  )  
+           {  
+                       PrintMessage(  "CMixerFader::Init",  "Wrong  sub-type  for  a  fader  control:  %d",  subType  );  
+                       return  0;  
+           }  
+ 
+           m_subType  =  subType;  
+ 
+           if(  CMixerBase::Init(  DstType,  SrcType,  ControlType,  m_hWnd  )  ==  0  )  
+                       return  0;  
+ 
+           //  set  the  slider  range  and  number  of  steps  from  the  information  obtained  
+           //  on  the  mixer  control  
+           m_FaderSpan    =  m_Control.Bounds.dwMaximum  -  m_Control.Bounds.dwMinimum;  
+           m_FaderStep    =  m_FaderSpan/m_Control.Metrics.cSteps;  
+           m_SliderSpan  =  m_Control.Metrics.cSteps;  
+             
+           SetRange(  0,  m_SliderSpan  );  
+ 
+           if(  m_nChannels  <  2  )  
+           {  
+                       //  a  balance,  left,  or  right  control  on  a  single  channel  line  doesn't  make  sense  
+                       //  abort  and  set  the  balance  slider  to  mid-course  
+                       if(  m_subType  ==  LEFT    |  |  m_subType  ==  RIGHT    |  |  m_subType  ==  BALANCE  )  
+                       {  
+                                   PrintMessage(  "CMixerFader::Init",    
+                                                               "Only  one  channel  available  on  this  line.  Use  Fader  type  MAIN  only.\n"  
+                                                               "Windows  control  will  be  disabled.\n"  
+                                                                           "\nItem:  %s.\n"  
+                                                                       "\n(  Line:  %s  )",    
+                                                                           GetControlName(),  
+                                                                       GetLineName()  );  
+ 
+                                   if(  subType  ==  BALANCE  )  
+                                               SetSliderPos(  m_SliderSpan/2  );  
+                                   CloseMixer();  
+                                   return  0;  
+                       }  
+           }  
+ 
+           m_Value  =  (MIXERCONTROLDETAILS_UNSIGNED  *)GetValuePtr();  
+           if(  m_Value  ==  NULL  )  
+           {  
+                       PrintMessage(  "CMixerFader::Init",  "m_Value  NULL."  );  
+                       CloseMixer();  
+                       return  0;  
+           }  
+ 
+           if(  GetMixerControlValue()  )  
+           {  
+                       EnableWindow(  TRUE  );  
+                       SetHVSliderPos();  
+           }  
+ 
+           return  1;  
+}  
+void  CMixerFader::SetHVSliderPos()  
+{  
+           float  MaxVal;  
+ 
+           if(  m_nChannels  >  1  )  
+           {  
+                       MaxVal  =  (  float  )max(  m_Value[RIGHT].dwValue,  m_Value[LEFT].dwValue  );  
+                       if(  MaxVal  >  0  )  
+                       {  
+                                   m_DeltaOverMax  =  (  (  float  )m_Value[RIGHT].dwValue  -  (  float  )m_Value[LEFT].dwValue  )/MaxVal;  
+                       }  
+           }  
+           else  
+           {  
+                       MaxVal  =  (  float  )m_Value[0].dwValue;  
+           }  
+                         
+           switch  (  m_subType  )  
+           {  
+                       case  MAIN:  //  set  the  main  fader  to  the  maximum  value  
+                                   SetSliderPos(  int(  MaxVal/m_FaderStep  )  );  
+                                   break;  
+ 
+                       case  BALANCE:  //  pos  =  m_SliderSpan/2  *  (  delta/  max  +  1  )  
+                                   if(  MaxVal  >  0  )  
+                                   {  
+                                               SetSliderPos(  int(  m_SliderSpan*(  m_DeltaOverMax  +  1.0  )/2.0  )  );  
+                                   }  
+                                   break;  
+ 
+                       case  LEFT:  //  only  set  the  left  channel  slider  
+                                   SetSliderPos(  int(  (  float  )m_Value[LEFT].dwValue/m_FaderStep  )  );  
+                                   break;  
+ 
+                       case  RIGHT:  //  only  set  the  right  channel  slider  
+                                   SetSliderPos(  int(  (  float  )m_Value[RIGHT].dwValue/m_FaderStep  )  );  
+                                   break;  
+ 
+                       default:  
+                                   PrintMessage(  "CMixerFader::SetHVSliderPos",  "Wrong  sub-type  for  a  fader  control."  );  
+           }  
+}  
+void  CMixerFader::SetFaderValue()  
+{  
+           DWORD  newVal  =  GetSliderValue();  
+             
+           float  MaxVal;  
+ 
+           if(  m_nChannels  >  1  )  
+           {  
+                       MaxVal  =  (  float  )max(  m_Value[RIGHT].dwValue,  m_Value[LEFT].dwValue  );  
+           }  
+           else  
+           {  
+                       MaxVal  =  (  float  )m_Value[0].dwValue;  
+           }  
+ 
+           switch  (  m_subType  )  
+           {  
+                       case  MAIN:  
+                                   if(  m_nChannels  >  1  )  
+                                   {  
+                                               if(  m_DeltaOverMax  >  0  )  
+                                               {  
+                                                           m_Value[RIGHT].dwValue  =  newVal;  
+                                                           m_Value[LEFT].dwValue  =  DWORD(  newVal*(  1.0f  -  m_DeltaOverMax  )  );  
+                                               }  
+                                               else  
+                                               {  
+                                                           m_Value[LEFT].dwValue  =  newVal;  
+                                                           m_Value[RIGHT].dwValue  =  DWORD(  newVal*(  1.0f  +  m_DeltaOverMax  )  );  
+                                               }  
+                                   }  
+                                   else  
+                                   {  
+                                               m_Value[0].dwValue  =  newVal;  
+                                   }  
+                                   break;  
+ 
+                       case  BALANCE:  
+                                   if(  (  int  )newVal  >  m_FaderSpan/2  )  
+                                   {  
+                                               m_Value[RIGHT].dwValue  =  DWORD(  MaxVal  );  
+                                               m_Value[LEFT].dwValue  =  DWORD(  2*MaxVal*(  1.0  -  (  float  )newVal/m_FaderSpan  )  );  
+                                   }  
+                                   else  
+                                   {  
+                                               m_Value[RIGHT].dwValue  =  DWORD(  2*MaxVal*(  float  )newVal/m_FaderSpan  );  
+                                               m_Value[LEFT].dwValue  =  DWORD(  MaxVal  );  
+                                   }  
+                                   break;  
+ 
+                       case  LEFT:  
+                                   m_Value[LEFT].dwValue  =  newVal;  
+                                   break;  
+ 
+                       case  RIGHT:  
+                                   m_Value[RIGHT].dwV

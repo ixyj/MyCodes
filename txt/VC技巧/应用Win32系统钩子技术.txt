@@ -1,0 +1,146 @@
+作者：九流
+email: molimin@163.net
+日期：8/2/2001 12:33:52 PM
+引言 
+钩子的本质是一段用以处理系统消息的程序，通过系统调用，把它挂入系统。钩子的种类很多，每种钩子可以截获并处理相应的消息，每当特定的消息发出，在到达目的窗口之前，钩子程序先行截获该消息、得到对此消息的控制权。此时钩子函数可以对截获的消息进行加工处理，甚至可以强制结束消息的传递。这有点类似与MFC中的PreTranslateMessage函数，所不同的是该函数只能用于拦截本进程中的消息，而对系统消息则无能为力。 
+二、Win32系统钩子的实现 
+每种类型的钩子均由系统来维护一个钩子链，最近安装的钩子位于链的开始，拥有最高的优先级，而最先安装的钩子则处在链的末尾。要实现Win32的系统钩子，首先要调用SDK中的API函数SetWindowsHookEx来安装这个钩子函数，其原型是： 
+HHOOK SetWindowsHookEx(int idHook, 
+HOOKPROC lpfn, 
+HINSTANCE hMod, 
+DWORD dwThreadId); 
+其中，第一个参数是钩子的类型，常用的有WH_MOUSE、WH_KEYBOARD、WH_GETMESSAGE等；第二个参数是钩子函数的地址，当钩子钩到任何消息后便调用这个函数；第三个参数是钩子函数所在模块的句柄；第四个参数是钩子相关函数的ID用以指定想让钩子去钩哪个线程，为0时则拦截整个系统的消息此时为全局钩子。如果指定确定的线程，即为线程专用钩子。 
+全局钩子函数必须包含在DLL（动态链接库）中，而线程专用钩子则可包含在可执行文件中。得到控制权的钩子函数在处理完消息后，可以调用另外一个SDK中的API函数CallNextHookEx来继续传递该消息。也可以通过直接返回TRUE来丢弃该消息，阻止该消息的传递。 
+使用全局钩子函数时需要以DLL为载体，VC6中有三种形式的MFC DLL可供选择，即Regular statically linked to MFC DLL（标准静态链接MFC DLL）、Regular using the shared MFC DLL（标准动态链接MFC DLL）以及Extension MFC DLL（扩展MFC DLL）。第一种DLL在编译时把使用的MFC代码链接到DLL中，执行程序时不需要其他MFC动态链接类库的支持，但体积较大；第二种DLL在运行时动态链接到MFC类库，因而体积较小，但却依赖于MFC动态链接类库的支持；这两种DLL均可被MFC程序和Win32程序使用。第三种DLL的也是动态连接，但做为MFC类库的扩展，只能被MFC程序使用。  
+三、Win32 DLL 
+Win32 DLL的入口和出口函数都是DLLMain这同Win16 DLL是有区别的。只要有进程或线程载入和卸载DLL时，都会调用该函数，其原型是： 
+BOOL WINAPI DllMain(HINSTANCE hinstDLL,DWORD fdwReason, LPVOID lpvReserved);其中，第一个参数表示DLL的实例句柄；第三个参数系统保留；第二个参数指明了当前调用该动态连接库的状态，它有四个可能的值：DLL_PROCESS_ATTACH（进程载入）、DLL_THREAD_ATTACH（线程载入）、DLL_THREAD_DETACH（线程卸载）、DLL_PROCESS_DETACH（进程卸载）。在DLLMain函数中可以通过对传递进来的这个参数的值进行判别，根据不同的参数值对DLL进行必要的初始化或清理工作。由于在Win32环境下，所有进程的空间都是相互独立的，这减少了应用程序间的相互影响，但大大增加了编程的难度。当进程在动态加载DLL时，系统自动把DLL地址映射到该进程的私有空间，而且也复制该DLL的全局数据的一份拷贝到该进程空间，每个进程所拥有的相同的DLL的全局数据其值却并不一定是相同的。当DLL内存被映射到进程空间中，每个进程都有自己的全局内存拷贝，加载DLL的每一个新的进程都重新初始化这一内存区域，也就是说进程不能再共享DLL。因此，在Win32环境下要想在多个进程中共享数据，就必须进行必要的设置。一种方法便是把这些需要共享的数据单独分离出来，放置在一个独立的数据段里，并把该段的属性设置为共享，建立一个内存共享的DLL。 
+ 
+四、全局共享数据的实现 
+可以用#pragma data_seg建立一个新的数据段并定义共享数据，其具体格式为： 
+#pragma data_seg （"shareddata")  
+HWND sharedwnd=NULL;//共享数据  
+#pragma data_seg()  
+所有在data_seg pragmas语句之间声明的变量都将在shareddata段中。仅定义一个数据段还不能达到共享数据的目的，还要告诉编译器该段的属性，有两种方法可以实现该目的（其效果是相同的），一种方法是在.DEF文件中加入如下语句：  
+SETCTIONS  
+shareddata READ WRITE SHARED  
+另一种方法是在项目设置链接选项中加入如下语句：  
+/SECTION:shareddata,rws  
+五、鼠标钩子程序示例 
+本示例程序用到全局钩子函数，程序分两部分：可执行程序MouseDemo和动态连接库MouseHook。首先编制MFC扩展动态连接库MouseHook.dll: 
+（一）选择MFC AppWizard(DLL)创建项目Mousehook； 
+（二）选择MFC Extension DLL（MFC扩展DLL）类型； 
+（三）通过Project菜单的AddToProject子菜单的"New…"添加头文件MouseHook.h。 
+（四）在头文件中建立钩子类：  
+　　class AFX_EXT_CLASS CMouseHook:public CObject  
+　　{  
+　　public:  
+　　CMouseHook();　　//钩子类的构造函数  
+　　~CMouseHook(); 　//钩子类的析构函数  
+　　BOOL StartHook(HWND hWnd); 　　//安装钩子函数  
+　　BOOL StopHook(); 　 　//卸载钩子函数  
+};  
+（五）在MouseHook.cpp文件中加入#include"MouseHook.h"语句； 
+（六）加入全局共享数据变量：  
+　　#pragma data_seg("mydata")  
+　　HWND glhPrevTarWnd=NULL; 　//上次鼠标所指的窗口句柄  
+　　HWND glhDisplayWnd=NULL; 　//显示目标窗口标题编辑框的句柄  
+　　HHOOK glhHook=NULL; 　　//安装的鼠标勾子句柄  
+　　HINSTANCE glhInstance=NULL; //DLL实例句柄  
+#pragma data_seg()  
+（七）在DEF文件中定义段属性：  
+　　SECTIONS  
+　　mydata READ WRITE SHARED  
+（八）在主文件MouseHook.cpp的DllMain函数中加入保存DLL实例句柄的语句：  
+extern "C" int APIENTRY  
+DllMain(HINSTANCE hInstance, DWORD dwReason, LPVOID lpReserved) 
+{ 
+UNREFERENCED_PARAMETER(lpReserved); 
+if (dwReason == DLL_PROCESS_ATTACH) 
+{ 
+if (!AfxInitExtensionModule(MouseHookDLL, hInstance)) 
+return 0; 
+new CDynLinkLibrary(MouseHookDLL); 
+glhInstance=hInstance; 　　 //插入保存DLL实例句柄 
+} 
+else if (dwReason == DLL_PROCESS_DETACH) 
+{ 
+AfxTermExtensionModule(MouseHookDLL); 
+} 
+return 1; // ok 
+} 
+这个函数最重要的部分是调用AfxInitExtensionModule()，它初始化DLL使它在MFC框架中正确的工作。它需要传递给DllMain()的DLL实例句柄和AFX_EXTENSION_MODULE结构，结构中存在着对MFC有用的信息。 
+(九) 类CMouseHook的成员函数的具体实现： 
+Cmousehook::Cmousehook() //类构造函数  
+{  
+}  
+Cmousehook::~Cmousehook() //类析构函数  
+{  
+　　stophook();  
+}  
+BOOL Cmousehook::starthook(HWND hWnd) 　//安装钩子并设定接收显示窗口句柄  
+{  
+BOOL bResult=FALSE;  
+glhHook=SetWindowsHookEx(WH_MOUSE,MouseProc,glhInstance,0);  
+if(glhHook!=NULL)  
+bResult=TRUE;  
+glhDisplayWnd=hWnd; 　//设置显示目标窗口标题编辑框的句柄  
+return bResult;  
+}  
+BOOL Cmousehook::stophook() 　//卸载钩子  
+{  
+BOOL bResult=FALSE;  
+if(glhHook)  
+{  
+bResult= UnhookWindowsHookEx(glhHook);  
+if(bResult)  
+{  
+glhPrevTarWnd=NULL;  
+glhDisplayWnd=NULL;//清变量  
+glhHook=NULL;  
+}  
+}  
+return bResult;  
+}  
+(十) 钩子函数的实现 
+LRESULT WINAPI MouseProc(int nCode,WPARAM wparam,LPARAM lparam)  
+{  
+LPMOUSEHOOKSTRUCT pMouseHook=(MOUSEHOOKSTRUCT FAR *) lparam;  
+if (nCode>=0)  
+{  
+HWND glhTargetWnd=pMouseHook->hwnd; 　//取目标窗口句柄  
+HWND ParentWnd=glhTargetWnd;  
+while (ParentWnd !=NULL)  
+{  
+glhTargetWnd=ParentWnd;  
+ParentWnd=GetParent(glhTargetWnd); //取应用程序主窗口句柄  
+}  
+if(glhTargetWnd!=glhPrevTarWnd)  
+{  
+char szCaption[100];  
+GetWindowText(glhTargetWnd,szCaption,100); //取目标窗口标题  
+if(IsWindow(glhDisplayWnd))  
+SendMessage(glhDisplayWnd,WM_SETTEXT,0,(LPARAM)(LPCTSTR)szCaption);  
+glhPrevTarWnd=glhTargetWnd; 　 //保存目标窗口  
+}  
+}  
+return CallNextHookEx(glhHook,nCode,wparam,lparam); //继续传递消息  
+}  
+编译完成便可得到运行时所需的鼠标钩子的动态连接库MouseHook.dll和链接时用到的MouseHook.lib。 
+六、集成 
+下面新建一调用鼠标钩子动态连接库的钩子可执行程序： 
+（一） 用MFC的AppWizard(EXE)创建项目MouseDemo； 
+（二） 选择"基于对话应用"，其余几步均为确省； 
+（三） 在对话框上加入一个编辑框IDC_EDIT1； 
+（四） 在MouseDemo.h中加入对Mousehook.h的包含语句：#Include"Mousehook.h"； 
+（五） 在CMouseDemoDlg.h的CMouseDemoDlg类定义中添加私有数据成员：CMouseHook m_hook;  
+（六） 在OnInitDialog函数的"TODO注释"后添加： 
+CWnd * pwnd=GetDlgItem(IDC_EDIT1); 　//取得编辑框的类指针  
+m_hook.StartHook(pwnd->GetSafeHwnd()); //取得编辑框的窗口句柄并安装钩子  
+（七）链接DLL库，即把Mousehook.lib加入到项目设置链接标签中；  
+（八）把MouseHook.h和MouseHook.lib复制到MouseDemo工程目录中，MouseHook.dll复制到Debug目录下。编译执行程序即可。当鼠标滑过窗口时便会在编辑框中将此窗口的标题显示出来。 
+结论： 
+系统钩子具有相当强大的功能，通过这种技术可以对几乎所有的Windows 
+系统消息进行拦截、监视、处理。这种技术可以广泛应用于各种软件，尤其是需要 
+有监控、自动记录等对系统进行监测功能的软件。本程序只对鼠标消息进行拦截， 
+相应的也可以在Win32环境下对键盘、端口等应用此技术完成特定的功能。 

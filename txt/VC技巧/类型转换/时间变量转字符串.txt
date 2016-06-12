@@ -1,0 +1,7 @@
+CString str;
+CTime t = CTime::GetCurrentTime();
+str.Format("%d-%d-%d",t.GetYear(),t.GetMonth(),t.GetDay());
+
+CString strTime;
+CTime tTime = CTime::GetCurrentTime();
+strTime = tTime.Format("%Y-%m-%d %H:%M:%S");

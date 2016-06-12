@@ -1,0 +1,5 @@
+CEdit怎么增量写入字符？
+
+int nLength = m_edit.SendMessage(WM_GETTEXTLENGTH);
+m_edit.SetSel(nLength, nLength);
+m_edit.ReplaceSel("abc");

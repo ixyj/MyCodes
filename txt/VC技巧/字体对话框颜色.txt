@@ -1,0 +1,5 @@
+
+CFontDialog弹出时颜色为黑色，如何改变呢？
+CFontDialog dlg;
+    dlg.m_cf.rgbColors=RGB(0,0,255);
+    dlg.DoModal(); 

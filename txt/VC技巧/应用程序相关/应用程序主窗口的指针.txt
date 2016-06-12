@@ -1,0 +1,5 @@
+如何通过代码获得应用程序主窗口的指针?
+
+
+主窗口的 指针保存在CWinThread::m_pMainWnd中,调用 AfxGetMainWnd实现。
+AfxGetMainWnd() ->ShowWindow(SW_SHOWMAXMIZED); //使程序最大化.

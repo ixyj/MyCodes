@@ -1,0 +1,25 @@
+import java.awt.Point;
+import java.util.ArrayList;
+import java.util.Iterator;
+
+
+public class ttry
+{
+	public static void main(String[] args)
+	{
+		ArrayList<Point> al = new ArrayList<Point>();
+		al.add(new Point(1,2));
+		al.add(new Point(2,3));
+		
+		for(Point pt : al)
+		{
+			System.out.println("Point:"+pt.x+"\t"+pt.y);
+		}
+		
+		for(Iterator<Point> it = al.iterator(); it.hasNext();)
+		{
+			Point pt = (Point) it.next();
+			System.out.println("Point:"+pt.x+"\t"+pt.y);
+		}
+	}
+}

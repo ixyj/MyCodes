@@ -1,0 +1,24 @@
+【问题】DataGrid控件，只有两列？内容：怎样应用其他列？怎样修改列的标题？
+在InputDataDlg.h中，有一个成员变量m_nColumn表明列数，
+int m_nColumn;
+在InputDataDlg.cpp中
+//定义标题头
+TCHAR strTitle[6][10] = {_T("1"), _T("2"),_T("3"),_T("4"),_T("5"),_T("6")};
+//6代表列数，10代表标题头长度
+//在构造函数中：
+m_nColumn＝6;//初始化为6列
+BOOL CInputDataDlg::OnInitDialog() 
+{
+    CDialog::OnInitDialog();
+        // TODO: Add extra initialization here
+    m_DataGrid.SetCaption("upstream 到此一游");
+         //控件的标题也可以在控件的属性里直接修改
+    for(int i=2;i<m_nColumn;i++)//缺省是2列，既0,1列
+    {
+        m_DataGrid.GetColumns().Add(i).SetCaption(strTitle[i]);
+        //增加列和列的标题头
+    }
+  return TRUE;  // return TRUE unless you set the focus to a control
+                  // EXCEPTION: OCX Property Pages should return FALSE
+}
+column0,column1的标题可以在控件属性里直接添加。

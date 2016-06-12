@@ -1,0 +1,13 @@
+	CFileFind fileFind;	
+	vector<CString> vs;	//遍历结果
+	BOOL isfind = fileFind.FindFile(m_rootRoute+L"\\*.*");	//(m_rootRoute----指定目录
+	while (isfind)
+	{
+		isfind = fileFind.FindNextFile();
+		if (fileFind.IsDots())  //如果是目录
+		{
+			continue;
+		}
+		  
+		vs.push_back(fileFind.GetFilePath());
+	}

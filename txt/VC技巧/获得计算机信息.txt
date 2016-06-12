@@ -1,0 +1,299 @@
+我要获得计算机的主板的ID  ，网卡的ID，CUP的ID等应该怎样获得谢谢！  
+---------------------------------------------------------------  
+ 
+//  CHardwareID.cpp  :  Implementation  of  CHardwareID  
+#include  "stdafx.h"  
+#include  "HardwareID.h"  
+#include  "CHardwareID.h"  
+ 
+#include  <stdio.h>  
+#include  <Iphlpapi.h>  
+ 
+ 
+/////////////////////////////////////////////////////////////////////////////  
+//  CHardwareID  
+ 
+#ifdef  _UNICODE  
+#define  _tsprintf  wsprintf  
+#else  
+#define  _tsprintf  sprintf  
+#endif  
+ 
+#define  DFP_GET_VERSION  0x00074080    
+#define  DFP_SEND_DRIVE_COMMAND  0x0007c084    
+#define  DFP_RECEIVE_DRIVE_DATA  0x0007c088    
+ 
+typedef  struct  _GETVERSIONOUTPARAMS  
+{    
+           BYTE  bVersion;    //  Binary  driver  version.    
+           BYTE  bRevision;    //  Binary  driver  revision.    
+           BYTE  bReserved;    //  Not  used.    
+           BYTE  bIDEDeviceMap;  //  Bit  map  of  IDE  devices.    
+           DWORD  fCapabilities;  //  Bit  mask  of  driver  capabilities.    
+           DWORD  dwReserved[4];  //  For  future  use.    
+}  GETVERSIONOUTPARAMS,  *PGETVERSIONOUTPARAMS,  *LPGETVERSIONOUTPARAMS;  
+ 
+typedef  struct  _IDEREGS  
+{    
+           BYTE  bFeaturesReg;    //  Used  for  specifying  SMART  "commands".    
+           BYTE  bSectorCountReg;  //  IDE  sector  count  register    
+           BYTE  bSectorNumberReg;  //  IDE  sector  number  register    
+           BYTE  bCylLowReg;      //  IDE  low  order  cylinder  value    
+           BYTE  bCylHighReg;    //  IDE  high  order  cylinder  value    
+           BYTE  bDriveHeadReg;    //  IDE  drive/head  register    
+           BYTE  bCommandReg;    //  Actual  IDE  command.    
+           BYTE  bReserved;      //  reserved  for  future  use.    Must  be  zero.    
+}  IDEREGS,  *PIDEREGS,  *LPIDEREGS;    
+ 
+ 
+typedef  struct  _SENDCMDINPARAMS    
+{    
+           DWORD  cBufferSize;    //  Buffer  size  in  bytes    
+           IDEREGS  irDriveRegs;    //  Structure  with  drive  register  values.    
+           BYTE  bDriveNumber;    //  Physical  drive  number  to  send    
+                       //  command  to  (0,1,2,3).    
+           BYTE  bReserved[3];    //  Reserved  for  future  expansion.    
+           DWORD  dwReserved[4];    //  For  future  use.    
+ //BYTE    bBuffer[1];      //  Input  buffer.    
+}  SENDCMDINPARAMS,  *PSENDCMDINPARAMS,  *LPSENDCMDINPARAMS;    
+ 
+typedef  struct  _DRIVERSTATUS    
+{    
+           BYTE  bDriverError;    //  Error  code  from  driver,    
+                       //  or  0  if  no  error.    
+           BYTE  bIDEStatus;      //  Contents  of  IDE  Error  register.    
+                       //  Only  valid  when  bDriverError    
+                       //  is  SMART_IDE_ERROR.    
+           BYTE  bReserved[2];    //  Reserved  for  future  expansion.    
+           DWORD  dwReserved[2];    //  Reserved  for  future  expansion.    
+}  DRIVERSTATUS,  *PDRIVERSTATUS,  *LPDRIVERSTATUS;    
+ 
+typedef  struct  _SENDCMDOUTPARAMS    
+{    
+           DWORD        cBufferSize;    //  Size  of  bBuffer  in  bytes    
+           DRIVERSTATUS  DriverStatus;    //  Driver  status  structure.    
+           BYTE      bBuffer[512];      //  Buffer  of  arbitrary  length    
+                           //  in  which  to  store  the  data  read  from  the  drive.    
+}  SENDCMDOUTPARAMS,  *PSENDCMDOUTPARAMS,  *LPSENDCMDOUTPARAMS;    
+ 
+typedef  struct  _IDSECTOR    
+{    
+           USHORT  wGenConfig;    
+           USHORT  wNumCyls;    
+           USHORT  wReserved;    
+           USHORT  wNumHeads;    
+           USHORT  wBytesPerTrack;    
+           USHORT  wBytesPerSector;    
+           USHORT  wSectorsPerTrack;    
+           USHORT  wVendorUnique[3];    
+           CHAR  sSerialNumber[20];    
+           USHORT  wBufferType;    
+           USHORT  wBufferSize;    
+           USHORT  wECCSize;    
+           CHAR  sFirmwareRev[8];    
+           CHAR  sModelNumber[40];    
+           USHORT  wMoreVendorUnique;    
+           USHORT  wDoubleWordIO;    
+           USHORT  wCapabilities;    
+           USHORT  wReserved1;    
+           USHORT  wPIOTiming;    
+           USHORT  wDMATiming;    
+           USHORT  wBS;    
+           USHORT  wNumCurrentCyls;    
+           USHORT  wNumCurrentHeads;    
+           USHORT  wNumCurrentSectorsPerTrack;    
+           ULONG  ulCurrentSectorCapacity;    
+           USHORT  wMultSectorStuff;    
+           ULONG  ulTotalAddressableSectors;    
+           USHORT  wSingleWordDMA;    
+           USHORT  wMultiWordDMA;    
+           BYTE  bReserved[128];    
+}  IDSECTOR,  *PIDSECTOR;    
+ 
+VOID  ChangeByteOrder(PCHAR  szString,  USHORT  uscStrSize)    
+{    
+           USHORT  i;    
+           CHAR  temp;    
+ 
+           for  (i  =  0;  i  <  uscStrSize;  i+=2)    
+           {    
+                       temp  =  szString[i];    
+                       szString[i]  =  szString[i+1];    
+                       szString[i+1]  =  temp;    
+           }    
+}  
+ 
+void  StrToHex(char*  s,  CComBSTR&  bstr)  
+{  
+           int                        sLen  =  strlen(s);  
+           char            sTmp[3]  =  {NULL};  
+ 
+           for  (int  i  =  0;  i  <  sLen;  i  ++)  
+           {  
+                       sprintf(sTmp,  "%x",  s[i]);  
+                       bstr  +=  sTmp;  
+           }  
+}  
+ 
+char*  RTrim(char*  s)  
+{  
+           int  sLen  =  strlen(s);  
+           for  (int  i  =  0;  i  <  sLen;  i  ++)  
+           {  
+                       if  (isspace(s[sLen  -  i]))  
+                                   s[sLen  -  i]  =  NULL;  
+           }  
+ 
+           return  s;  
+}  
+ 
+STDMETHODIMP  CHardwareID::GetCPUID(BSTR  *bstrCPUID)  
+{  
+           CComBSTR                        bstr("");  
+           char                                    szCPUID[129]  =  {NULL};  
+           char                                    szTmp[33]  =  {NULL};  
+           unsigned  long            s1  =  0,  
+                                                           s2  =  0;  
+           _asm  
+           {  
+             mov  eax,01h  
+                       xor  edx,edx  
+                       cpuid  
+                       mov  s1,edx  
+                       mov  s2,eax  
+           }  
+           sprintf(szTmp,  "%08X%08X",  s1,  s2);  
+           strcpy(szCPUID,  szTmp);  
+           _asm  
+           {  
+             mov  eax,03h  
+                       xor  ecx,ecx  
+                       xor  edx,edx  
+                       cpuid  
+                       mov  s1,edx  
+                       mov  s2,ecx  
+           }  
+           sprintf(szTmp,  "%08X%08X",  s1,  s2);  
+           strcat(szCPUID,  szTmp);  
+           bstr  =  szCPUID;  
+ 
+           *bstrCPUID  =  bstr.Copy();  
+ 
+           return  S_OK;  
+}  
+ 
+STDMETHODIMP  CHardwareID::GetHardDiskID(BSTR  *bstrHardDiskID)  
+{  
+           GETVERSIONOUTPARAMS  vers;    
+           SENDCMDINPARAMS  in;    
+           SENDCMDOUTPARAMS  out;    
+           HANDLE  h;    
+           DWORD  i;    
+           BYTE  j;    
+ 
+           //char  hd[80];    
+           TCHAR  hd[80];    
+           PIDSECTOR  phdinfo;    
+           char  s[41];    
+           CComBSTR                        bstr("");  
+ 
+           ZeroMemory(&vers,sizeof(vers));    
+           for  (j=0;j<4;j++)  
+           {    
+                       //sprintf(hd,"\\\\.\\PhysicalDrive%d",j);    
+                       _tsprintf(hd,  TEXT("\\\\.\\PhysicalDrive%d"),j);  
+                       h=CreateFile(hd,GENERIC_READ  |GENERIC_WRITE,    
+                                             FILE_SHARE_READ  |FILE_SHARE_WRITE,0,OPEN_EXISTING,0,0);    
+                       if  (!h)  
+                       {    
+                                   continue;    
+                       }    
+                       if  (!DeviceIoControl(h,DFP_GET_VERSION,0,0,&vers,sizeof(vers),&i,0))  
+                       {    
+                                   CloseHandle(h);    
+                                   continue;    
+                       }    
+                       if  (!(vers.fCapabilities  &  1))  
+                       {    
+                                   CloseHandle(h);    
+                                   goto  ErrHandle;    
+                       }    
+                       ZeroMemory(&in,sizeof(in));    
+                       ZeroMemory(&out,sizeof(out));    
+                       if  (j  &  1)  
+                       {    
+                                   in.irDriveRegs.bDriveHeadReg=0xb0;    
+                       }  
+                       else  
+                       {    
+                                   in.irDriveRegs.bDriveHeadReg=0xa0;    
+                       }    
+                       if  (vers.fCapabilities  &  (16>>j))  
+                       {    
+                                   continue;    
+                       }  
+                       else  
+                       {    
+                                   in.irDriveRegs.bCommandReg=0xec;    
+                       }    
+                       in.bDriveNumber=j;    
+                       in.irDriveRegs.bSectorCountReg=1;    
+                       in.irDriveRegs.bSectorNumberReg=1;    
+                       in.cBufferSize=512;    
+                       if  (!DeviceIoControl(h,DFP_RECEIVE_DRIVE_DATA,&in,sizeof(in),&out,sizeof(out),&i,0))  
+                       {    
+                                   CloseHandle(h);    
+                                   goto  ErrHandle;    
+                       }    
+                       phdinfo=(PIDSECTOR)out.bBuffer;    
+                       memcpy(s,phdinfo->sModelNumber,40);    
+                       s[40]=0;    
+                       ChangeByteOrder(s,40);    
+                       memcpy(s,phdinfo->sFirmwareRev,8);    
+                       s[8]=0;    
+                       ChangeByteOrder(s,8);    
+                       memcpy(s,phdinfo->sSerialNumber,20);    
+                       s[20]=0;    
+                       ChangeByteOrder(RTrim(s),20);    
+                       //bstr  =  s;  
+                       StrToHex(s,  bstr);  
+                       CloseHandle(h);    
+ 
+                       break;  
+           }    
+ 
+ErrHandle:  
+           *bstrHardDiskID  =  bstr.Copy();  
+ 
+           return  S_OK;  
+}  
+ 
+STDMETHODIMP  CHardwareID::GetNetworkCardID(BSTR  *bstrNetworkCardID)  
+{  
+           HMODULE                                                hLib  =  LoadLibrary(TEXT("IPHLPAPI.DLL"));  
+           PIP_ADAPTER_INFO            piai  =  NULL;  
+           ULONG                                                ul  =  0;  
+           char                                                sTmp[4]  =  {NULL};  
+           CComBSTR                                    bstr("");  
+           typedef  DWORD  (WINAPI  *pgai)(PIP_ADAPTER_INFO,  PULONG);  
+ 
+           pgai  p  =  (pgai)GetProcAddress(hLib,  "GetAdaptersInfo");  
+           p(piai,  &ul);  
+           piai  =  (PIP_ADAPTER_INFO)new  BYTE[ul];  
+           p(piai,  &ul);  
+           for  (int  i  =  0;  i  <  (int)piai->AddressLength;  i  ++)  
+           {  
+                       if  (i  <  (int)piai->AddressLength  -  1)  
+                                   sprintf(sTmp,  "%02x-",  piai->Address[i]);  
+                       else  
+                                   sprintf(sTmp,  "%02x",  piai->Address[i]);  
+ 
+                       bstr  +=  sTmp;  
+           }  
+ 
+           FreeLibrary(hLib);  
+ 
+           *bstrNetworkCardID  =  bstr.Copy();  
+ 
+           return  S_OK;  
+} 

@@ -1,0 +1,122 @@
+void CmfcFontView::OnDraw(CDC* pDC/*pDC*/)
+{
+	CmfcFontDoc* pDoc = GetDocument();
+	ASSERT_VALID(pDoc);
+	if (!pDoc)
+		return;
+	// TODO: add draw code for native data here
+	CString str(_T("飞腾"));//定义要显示的字符串；
+	CRect rect;
+	GetClientRect(&rect);
+	pDC->SetBkMode(TRANSPARENT);//设置背景为透明效果；
+	pDC->SetTextColor(RGB(100,100,255));//设置显示的文本颜色；
+	CFont font;
+	LOGFONT stFont;//定义字体结构；
+	memset(&stFont,0,sizeof(stFont));//设置字体结构的属性；
+	stFont.lfHeight=30;
+	stFont.lfWeight=FW_NORMAL;
+	stFont.lfCharSet=GB2312_CHARSET;
+	stFont.lfClipPrecision=CLIP_LH_ANGLES;
+	wmemcpy(stFont.lfFaceName, L"Arial", 12);
+
+	for(double i=0;i<3600;i+=300)
+	{
+		stFont.lfEscapement=i;//设置字体的倾斜角度；
+		font.CreateFontIndirect(&stFont);//根据字体结构创建字体对象；
+		CFont *oldFont;
+		oldFont=pDC->SelectObject(&font);//将创建的字体选入设备上下文；
+			pDC->TextOut(rect.left+rect.Width() /2+100*cos(i/1800*3.14),rect.top+rect.Height() /2-100*sin(i/1800*3.14),str);
+	
+		pDC->SelectObject(oldFont);//恢复设备上下文的字体；
+		font.DeleteObject ();//删除创建的字体；
+	}
+	// TODO: 在此处为本机数据添加绘制代码
+}
+
+//other:
+BOOL CreateFont( 
+                 int nHeight,           //字体的高度
+                 int nWidth,            //字体的宽度
+                 int nEscapement,       //字体显示的角度
+                 int nOrientation,      //字体的角度
+                 int nWeight,           //字体的磅数
+                 BYTE bItalic,          //斜体字体
+                 BYTE bUnderline,       //带下划线的字体
+                 BYTE cStrikeOut,       //带删除线的字体
+                 BYTE nCharSet,         //所需的字符集
+                 BYTE nOutPrecision,    //输出的精度
+                 BYTE nClipPrecision,   //裁减的精度 
+                 BYTE nQuality,         //逻辑字体与输出设备的实际
+                                        //字体之间的精度
+                 BYTE nPitchAndFamily,  //字体间距和字体集
+                 LPCTSTR lpszFacename   //字体名称
+               );
+
+
+typedef struct tagLOGFONT { // lf 
+　　　　　　　　　　LONG lfHeight;         //字体的高度
+　　　　　　　　　　LONG lfWidth;          //字体的宽度
+　　　　　　　　　　LONG lfEscapement;     //字体显示的角度 
+　　　　　　　　　　LONG lfOrientation;    //字体的角度
+　　　　　　　　　　LONG lfWeight;         //字体的磅数
+　　　　　　　　　　BYTE lfItalic;         //斜体字体
+　　　　　　　　　　BYTE lfUnderline;      //带下划线的字体
+　　　　　　　　　　BYTE lfStrikeOut;      //带删除线的字体
+　　　　　　　　　　BYTE lfCharSet;        //所需的字符集
+　　　　　　　　　　BYTE lfOutPrecision;   //输出的精度
+　　　　　　　　　　BYTE lfClipPrecision;  //裁减的精度
+　　　　　　　　　　BYTE lfQuality;        //逻辑字体与输出设备的
+                                           //实际字体之间的精度
+　　　　　　　　　　BYTE lfPitchAndFamily; //字体间距和字体集
+　　　　　　　　　　TCHAR lfFaceName[LF_FACESIZE]; //字体名称
+} LOGFONT;
+
+////////////////////////////////////////////////////////////////
+	VERIFY(m_font.CreateFont(
+		0,                        // 字体高度  
+		0,                         // 字体宽度
+		0,                         // 文本行的倾斜度
+		0,                         // 字符基线的倾斜度
+		FW_NORMAL,                 // 字体的粗细
+		FALSE,                     // 字体是否为斜体
+		FALSE,                     // 字体是否带下划线
+		0,                         // 字体是否带删除线
+		GB2312_CHARSET,				   // 字体的字符集
+		OUT_DEFAULT_PRECIS,        // 字符的输出精度
+		CLIP_DEFAULT_PRECIS,       // 字符裁剪的精度
+		DEFAULT_QUALITY,		   // 字符的输出质量
+		DEFAULT_PITCH|FF_DONTCARE, // 字符间距和字体族(低位说明间距,高位说明字符族)
+		L"NEU-BZ"));		   //字体名称	
+
+
+///////////////////////////////////////////////////////////////
+LOGFONT lf;
+lf.lfHeight = 0;
+lf.lfWidth = 0;
+lf.lfEscapement = 0;
+lf.lfOrientation = 0;
+lf.lfWeight = FW_NORMAL;
+lf.lfItalic = FALSE;
+lf.lfUnderline = FALSE;
+lf.lfStrikeOut = FALSE;
+lf.lfCharSet = GB2312_CHARSET;
+lf.lfOutPrecision = OUT_DEFAULT_PRECIS;
+lf.lfClipPrecision = CLIP_DEFAULT_PRECIS;
+lf.lfQuality = DEFAULT_QUALITY;
+lf.lfPitchAndFamily = DEFAULT_PITCH | FF_DONTCARE;
+lstrcpy(lf.lfFaceName, L"NEU-BZ");
+
+	VERIFY(m_font.CreatePointFontIndirect(&lf));
+
+
+////////////////////////////////////////////////////////////////
+ASSERT(m_font.CreatePointFont(90,L"NEU-BZ"));
+
+///////////////////////////////////////////////////////////////////
+获取系统字体
+HGDIOBJ hFont = GetStockObject(DEFAULT_GUI_FONT); 
+CFont font; 
+font.Attach(hFont); 
+
+LOGFONT lf;
+font.GetLogFont(&lf);

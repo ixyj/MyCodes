@@ -1,0 +1,11 @@
+CStdioFile file;
+CString filename="C:\\NUM.dat";
+CString str;
+str.Format("%10.4f  %10.4f  %10.5f  %10.6f\n",n1,n2,n3,n4);
+if(!file.Open(filename,CFile::modeCreate|CFile::modeWrite))
+{
+    file.Close();
+    return;    
+}
+file.WriteString(str);
+file.Close();

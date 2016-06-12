@@ -1,0 +1,11 @@
+CFileFind fileFind;
+BOOL bFound = fileFind.FindFile(dir + L"/*.文件格式");	//
+while (bFound)	//如果找到,继续 
+{ 
+	bFound = fileFind.FindNextFile(); 
+	if (!fileFind.IsDirectory())	//是目录，比较fileFind.IsDots()
+	{
+		CString sFilePath = fileFind.GetFilePath();
+	}			
+}
+fileFind.Close();

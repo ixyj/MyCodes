@@ -1,0 +1,13 @@
+#define FILE_BUF_LEN 4096 //文件名缓冲区大小，取决于文件个数和文件名长度
+CFileDialog dlg(TRUE, NULL, NULL, DWORD dwFlags = OFN_HIDEREADONLY | OFN_ALLOWMULTISELECT);
+dlg.m_ofn.lpstrFile = new TCHAR[FILE_BUF_LEN];
+dlg.m_ofn.nMaxFile=FILE_BUF_LEN;
+if(dlg.DoModal()==IDOK)
+{
+   POSITION pos=dlg.GetStartPosition();
+   while(pos)
+   {
+      CString filename=dlg.GetNextPathName();
+      .......
+   }
+} 

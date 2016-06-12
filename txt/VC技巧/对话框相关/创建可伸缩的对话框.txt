@@ -1,0 +1,60 @@
+6. 如何创建可伸缩的对话框
+在进行对话框的设计时，有时候我们需要设计可伸缩的对话框，当用户按下某个按钮时弹出或隐藏对话框的下半部分。
+（1）、首先在对话框中建立一个图片控件把ID设为IDC_DIVIDER，Type设置为矩形，Color设置为黑色，并将其设定为一线状，拖放在适当的位置做为伸缩对话框的分割线，属性设为不可见。
+（2）、实现的原理：先获取对话框的尺寸大小，然后根据的位置来确定缩减后的对话框大小，其实对话框伸缩的变化就是的值，在缩减对话框后，我们要使不可见的部分控件被禁止，以禁止加速键和TAB键对其的操作，在扩展对话框后，原来被禁止的控件又要使能。
+先在对话框上的伸缩按钮添加单击消息处理函数：
+void C***Dlg::OnButtonExpand()
+{
+  static int bexpand = FALSE; //设初始时为已扩展的
+  ExpandDialog(IDC_DIVIDER,bexpand);//调用扩展或缩减处理函数
+  Bexpand = !bexpand;//状态取反，为下次的单击处理准备
+}
+//在对话框中添加一个成员函数ExpandDialog，用于扩展或缩减
+void C***Dlg::ExpandDialog(int nResourceID,BOOL bexpand)
+{
+//参数nResourceID表示分割线的ID
+//参数bexpand为TRUE时表示要扩展对话框，否则缩减对话框
+static Crect rcLarge;
+static Crect rcSmall;
+if(rcLarge.IsRectNULL())  //首次使用时记下对话框的最大、最小尺寸
+{
+   Crect rcLandmark;
+   CWnd *pwndLand = GetDlgItem(nResourceID);
+   ASSERT(pwndLand);
+   GetWindowRect(rcLarge);
+   pwndLand->GetWindowRect(rcLandmark);
+   rcSmall = rcLarge;
+   rcSmall.bottom = rcLandmark.bottom;
+}
+if(bexpand)
+{
+   SetWindowPos(NULL,0,0,rcLarge.Width(),rcLarge.Height(),
+SWP_NOMOVE|SWP_NOZORDER);
+EnableVisible();
+}
+else
+{
+   SetWindowPos(NULL,0,0,rcSmall.Width(),rcSmall.Height(),
+SWP_NOMOVE|SWP_NOZORDER);
+EnableVisible();
+}
+}
+
+//在对话框中添加一个成员函数EnableVisible，用于能用和禁止部分控件
+void C***Dlg:: EnableVisible()
+{
+  CWnd *pwnd = GetDlgItem(GW_CHILD);
+  Crect retest;
+  Crect rcControl;
+  Crect rcShow;
+  GetWindowRect(rcShow);
+  While(pwnd != NULL)
+  {
+pwnd->GetWindowRect(rcControl);
+if(rcTest.IntersectRect(rcShow,rcControl))
+   pwnd->EnableWindow(TRUE);
+else
+   pwnd->EnableWindow(FALSE);
+pwnd = pwnd->GetWindow(GW_HWNDNEXT);
+   }
+}

@@ -1,0 +1,16 @@
+Windows 向窗口发送一个WM_ERASEBKGND 消息通知该窗口擦除背景，可以使用ClassWizard 重载该消息的缺省处理程序来擦除背景（实际是画），并返回TRUE 以防止Windows擦除窗口。
+BOOL CSampleView : : OnEraseBkgnd (CDC* pDC)
+{
+    CBrush Brush (RGB (128 , 0 , 128) );  // Create a pruple brush.
+          // Select the brush into the device context .
+    CBrush* pOldBrush = pDC—>SelcetObject (&brush);
+    // Get the area that needs to be erased .
+    CRect reClip ;
+    pDC—>GetCilpBox (&rcClip);
+    //Paint the area.
+    pDC->PatBlt(rcClip.left,rcClip.top,rcClip.Width(),rcClip.Height(),PATCOPY);
+       //Unselect brush out of device context .
+    pDC—>SelectObject (pOldBrush );
+          // Return nonzero to half fruther processing .
+    return TRUE;
+}

@@ -1,0 +1,135 @@
+
+#include "atlstr.h"
+
+1)
+string   ==>   CString  
+string   s;  
+CString   cs(   s.c_str()   );  
+cs   =   s.c_str();  
+==other===
+cs.Format("%d,%f",&a,&b);等
+ 
+2)
+CString   ==>   wchar_t* 
+CString cs;
+wchar_t* ss= cs.GetBuffer(cs.GetLength());
+
+3)
+char*   ==>   CString
+char* ps=(L/_T)"hello,world!\n";  (_T在Unicode环境下相当于L,这将使得你的代码可以直接移植)
+CString cs=ps;
+CString cs(ps);
+cs.Format(_T("%s"),ps);
+cs.Format(L"%s",ps);
+   printf("%ls",cs);
+
+4)
+CString   ==>   char* 
+-------------VC++6.0--------
+CString cs="hello,world!\n";
+char  *s=(char*)(LPCTSTR)cs; 
+------------------------------
+-------------VS2005---------
+默认使用Unicode,不是VC6.0的ANSI,目前只好间接转化！
+------------------------------
+
+
+5)
+wchar_t*   ==>   char*
+wchar_t ws[]=L"hello,world!\n";
+char s[40]; 
+size_t len = wcstombs(NULL,   ws,   0);
+wcstombs(s,   ws,  len );  
+s[len]   =   '\0';  
+注：计算wchar_t*的长度，wcslen(ws)=13
+复制wchar_t*字符串 wcscpy
+-----wcstombs不安全，推荐-------------------------------------这两种方法遇到汉字等就挂掉了！
+CString str;
+char* tmpCh;
+size_t len = 0;		
+wcstombs_s(&len, NULL, len, str, _TRUNCATE);
+tmpCh = new char[len + 1];
+wcstombs_s(&len, tmpCh, len, str, _TRUNCATE);
+tmpCh[len] = '\0';
+delete tmpCh;
+
+
+6)
+char*     ==>     w_char
+char s[]="hello,world!\n";
+wchar_t  ws[40]; 
+mbstowcs(   ws,   s,   strlen(s)+1   );  
+
+
+7)
+CString     ==>      LPTSTR
+CString cs("hello,world!\n"); 
+ LPTSTR   lps   =(LPTSTR)(LPCTSTR)cs;    
+printf("%ls",cs);
+printf("%ls",lps);
+
+8)
+char*     ==>      数字
+通用：sscanf   实现字符串=>数字  //VC++6.0??
+其他：
+或atoi atof atol
+
+9)
+数字     ==>      char*
+通用：sprintf 实现数字=>字符串
+其他：
+函数原型:char *itoa(int value,char *string,int radix ); ltoa类似
+value是你想转化的数，radix 多少进制
+char s[10]; 
+int value=255; 
+itoa(value,s,16); //s=0XFF
+注：sprintf中	"%m.nf"格式，其中m 表示打印的宽度，n 表示小数点后的位数;
+"%m.ns"中，m 表示占用宽度（字符串长度不足时补空格，超出了则按照实际宽度打印），n 才表示从相应的字符串中最多取用的字符数。通常在打印字符串时m 没什么大用，还是点号后面的n 用的多.若不清楚占多少位,用*代替.如sprintf(s, "%*.*f", 10, 2, 3.1415926); //产生"           3.14" (共占10位，小数位2位)
+
+===============================================================
+附：WCHAR 是双字节类型，一般它用来存储那些双字节而不是单字节字符.较长的字节数可以支持在应用程序的国际发布版本里所使用的扩展字符集(如常用的Unicode字符集).
+---------------------------------------------------------------------------
+  WCHAR   wchTest01[256] = {0};
+  WCHAR   wchTest02[256] = {0};
+  size_t     nLen = 0;
+  //内存拷贝
+  nLen = wcslen( wchTest02 );
+  wmemcpy( wchTest01, wchTest02, nLen*2 );
+  //追加字符
+  nLen = wcslen( wchTest01);
+  wcscat_s( wchTest01, nLen*2, _T("123456") );
+---------------------------------------------------------------------------
+  ※ 注意，由于是双字节类型，所以sizeof()的返回值是原来的2倍，如果wmemcpy()
+  的参数传入sizeof(wchTest02),那么将会发生内存溢出，导致意外的错误。
+
+//Unicode下wstring(wchar_t*)和string(char*)互相转换
+wstring string2wstring(string str)   
+{   
+     wstring result;   
+    //获取缓冲区大小，并申请空间，缓冲区大小按字符计算  
+    intlen = MultiByteToWideChar(CP_ACP, 0, str.c_str(), str.size(), NULL, 0);   
+    TCHAR* buffer =newTCHAR[len + 1];   
+    //多字节编码转换成宽字节编码  
+     MultiByteToWideChar(CP_ACP, 0, str.c_str(), str.size(), buffer, len);   
+     buffer[len] ='\0';             //添加字符串结尾  
+    //删除缓冲区并返回值  
+     result.append(buffer);   
+    delete[] buffer;   
+    returnresult;   
+}   
+  
+//将wstring转换成string  
+string wstring2string(wstring wstr)   
+{   
+     string result;   
+    //获取缓冲区大小，并申请空间，缓冲区大小事按字节计算的  
+    int len = WideCharToMultiByte(CP_ACP, 0, wstr.c_str(), wstr.size(), NULL, 0, NULL, NULL);   
+    char* buffer =new char[len + 1];   
+    //宽字节编码转换成多字节编码  
+     WideCharToMultiByte(CP_ACP, 0, wstr.c_str(), wstr.size(), buffer, len, NULL, NULL);   
+     buffer[len] ='\0';   
+    //删除缓冲区并返回值  
+     result.append(buffer);   
+    delete[] buffer;   
+    return result;   
+}  

@@ -1,0 +1,29 @@
+如何讀入一個文字檔,然後依序將內容寫到一個陣列
+假如文字檔內容為
+10
+12
+14
+如何讀入陣列int array[3]
+使array[0]=10          array[1]=12         array[2]=14
+方法一：
+CStdioFile f("your file name");
+CString str;
+int i=0;
+while(f.ReadString(str))
+{
+    array[i] = atoi(str);
+    i++;
+} 
+方法二：
+#include "fstream.h"
+
+int i=0;
+
+fstream file;
+file.open("input.dat",ios::in);
+while(!file.eof())
+{
+   file>>array[i];
+   i++;
+}
+file.close();

@@ -1,0 +1,20 @@
+首先从CObject派生一子类：
+class CMyData :
+	public CObject
+{
+	DECLARE_SERIAL(CMyData)//必须有
+public:
+	CMyData();	//必须有默认构造函数
+	~CMyData(void);
+
+	virtual void Serialize(CArchive &ar); //重载，自己保存自己的数据
+public:
+	
+	……
+	……
+};
+
+实现文件中必须有
+IMPLEMENT_SERIAL(CMyData, CObject,1)
+
+最后在CMyDoc.cpp中Serialize(CArchive& ar)函数中序列化！

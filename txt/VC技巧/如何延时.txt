@@ -1,0 +1,15 @@
+如何在程序中延时
+方法一：
+  使用sleep函数，如延时2秒，用sleep(2000);
+方法二：
+  使用sleep函数的不利只处在于期间不能处理其他的消息，如果时间太长，就好象死机一样，利用ColeDateTime类和ColeDateTimeSpan类实现延时：
+ColeDateTime start_time = ColeDateTime::GetCurrentTime();
+ColeDateTimeSpan end_time = ColeDateTime::GetCurrentTime()-start_time;
+While(end_time.GetTotalSeconds() <= 2)
+{
+  MSG msg;
+  GetMessage(&msg,NULL,0,0);
+  PreTranslateMessage(&msg);
+  End_time = ColeDateTime::GetCurrentTime-start_time;
+}
+这样在延时的时候我们也能够处理其他的消息。

@@ -1,0 +1,488 @@
+不能够自动初始化 
+不能够接受TAB键 
+不能够通过属性设置自动换行 
+不能显示图片等其他OLE对象 
+不能够使用Ctrl+C来实现拷贝 
+不能够自动初始化
+
+当我第一次将Rich Edit控件放在资源窗体上的时候，发现程序根本就不能运行。后来才找到原因，原来Rich Edit 控件是Ole类型的控件。在加载Rich Edit 控件的时候，必须进行初始化。代码如下：
+BOOLCTestApp::InitInstance(){
+
+          .....
+          AfxInitRichEdit();
+
+}
+
+不能够接受TAB键
+
+将 RichEdit控件放到资源窗体上的时候，发现它的属性页中并没有设置接受TAB键的设置，导致当把焦点放到Rich Edit 控件上的时候，一按tab键，焦点就移动到下一个控件上面去了。
+具体解决方法就是重载Rich Edit控件的OnGetDlgCode：
+例子代码：
+.h文件：
+class CMyRichEdit : public CRichEditCtrl{
+
+          ........
+          afx_msg UINT OnGetDlgCode( );
+          ........
+
+}
+.cpp文件：
+BEGIN_MESSAGE_MAP(CMyRichEdit, CRichEditCtrl)
+          ON_WM_GETDLGCODE( )
+END_MESSAGE_MAP()
+
+
+UINT COleRichEditCtrl::OnGetDlgCode( ){
+
+          return DLGC_WANTTAB;
+
+
+}
+
+
+不能够通过属性设置自动换行
+
+当把Rich Edit控件放到资源窗体上的时候，发现在它的属性窗体中并没有设置Rich Edit控件自动换行的属性设置。要达到这一目的，例子代码如下：
+BOOL CTestDlg::InitDialog(){
+
+          .............
+          //m_RichEdit为窗体类的成员变量
+          this->m_RichEdit.SetTargetDevice(NULL,0);
+          ............
+
+}
+
+
+不能显示图片等其他OLE对象
+
+MFC提供的CRichEditCtrl没有提供直接显示图片等OLE对象的属性或方法设置，但是提供了一个接口SetOLECallback( IRichEditOleCallback* pCallback );
+要让CRichEditCtrl显示图片，就得在IRichEditOleCallback上下功夫。
+IRichEditOleCallback是windows中的接口，它的定义如下：
+ContextSensitiveHelp:
+    通过该方法通知应用程序它将以上下文关联方式调度帮助。
+DeleteObject:
+    通过该方法发出通知：一个对象即将从RichEdit控件中删除
+GetClipboardData:
+    通过该方法允许RichEdit的客户端（调用程序）提供自己的粘贴对象
+GetContextMenu:
+    通过该方法向应用程序提出通过鼠标右键事件来获取上下文菜单的请求
+GetDragDropEffect:
+    通过该方法允许RichEdit的客户端（调用程序）设置拖动操作的效果
+GetInPlaceContext:
+    通过该方法提供了应用程序级和文档级接口，以及必要的支持In-place激活的信息
+GetNewStrorage:
+    通过该方法存储从粘贴板或超文本流(RTF)中读取的新对象
+QueryAcceptData:
+    通过该方法决定在粘贴操作或拖放操作中引入的数据是否可以被接受。
+QueryInsertObject:
+    通过该方法向应用程序询问某个对象是否可以被插入
+ShowContainerUI:
+    通过该方法告知应用程序是否显示自己的操作界面
+
+大致了解了IRichEditOleCallback接口后，就应该清楚，要显示图片等ole对象，至少应该实现GetNewStorage方法，因为该方法是存储ole对象的接口方法。
+
+以下是接口声明的代码：
+interface IExRichEditOleCallback : IRichEditOleCallback
+{
+
+public:
+IExRichEditOleCallback();
+virtual ~IExRichEditOleCallback();
+int m_iNumStorages;
+IStorage* pStorage;
+DWORD m_dwRef;
+
+virtual HRESULT STDMETHODCALLTYPE GetNewStorage(LPSTORAGE* lplpstg);
+virtual HRESULT STDMETHODCALLTYPE QueryInterface(REFIID iid, void ** ppvObject);
+virtual ULONG STDMETHODCALLTYPE AddRef();
+virtual ULONG STDMETHODCALLTYPE Release();
+virtual HRESULT STDMETHODCALLTYPE GetInPlaceContext(LPOLEINPLACEFRAME FAR *lplpFrame,
+   LPOLEINPLACEUIWINDOW FAR *lplpDoc, LPOLEINPLACEFRAMEINFO lpFrameInfo);
+virtual HRESULT STDMETHODCALLTYPE ShowContainerUI(BOOL fShow);
+virtual HRESULT STDMETHODCALLTYPE QueryInsertObject(LPCLSID lpclsid, LPSTORAGE lpstg, LONG cp);
+virtual HRESULT STDMETHODCALLTYPE DeleteObject(LPOLEOBJECT lpoleobj);
+virtual HRESULT STDMETHODCALLTYPE QueryAcceptData(LPDATAOBJECT lpdataobj, CLIPFORMAT FAR *lpcfFormat,   DWORD reco, BOOL fReally, HGLOBAL hMetaPict);
+virtual HRESULT STDMETHODCALLTYPE ContextSensitiveHelp(BOOL fEnterMode);
+virtual HRESULT STDMETHODCALLTYPE GetClipboardData(CHARRANGE FAR *lpchrg, DWORD reco, LPDATAOBJECT FAR *lplpdataobj);
+   virtual HRESULT STDMETHODCALLTYPE GetDragDropEffect(BOOL fDrag, DWORD grfKeyState, LPDWORD pdwEffect);
+virtual HRESULT STDMETHODCALLTYPE GetContextMenu(WORD seltyp, LPOLEOBJECT lpoleobj, CHARRANGE FAR *lpchrg,   HMENU FAR *lphmenu);
+
+}
+关于接口的实现，将被附在最后的附录中。
+
+
+不能够使用Ctrl+C来实现拷贝
+
+实际上，CRichEditCtrl本身是支持Ctrl+C实现拷贝功能的，但是当我在CRichiEditCtrl的继承类中使用了IRichiEditCallback接口后，它就不在支持Ctrl+C实现拷贝功能了。我想问题就出在IRichEditCallback接口上。
+仔细看了一遍它的帮助文档，我发现问题就出在GetClipboardData上，我没有在它的实现方法中写代码，只是返回了S_OK，如果要处理Ctrl+C，就必须返回E_NOTIMPL。
+
+以上是我近几天的开发经历，与大家分享，还希望路过的高手多多指教。
+在以下关于RichEdit的代码例子中，我参考了Mike O'Neill 的代码，再次谢谢他的贡献。
+
+
+附录
+.h文件
+
+#if !defined(AFX_OLERICHEDITCTRL_H__3DFF15EE_7336_4297_9620_7F00B611DAA1__INCLUDED_)
+#define AFX_OLERICHEDITCTRL_H__3DFF15EE_7336_4297_9620_7F00B611DAA1__INCLUDED_
+
+#if _MSC_VER > 1000
+#pragma once
+#endif // _MSC_VER > 1000
+// OleRichEditCtrl.h : header file
+//
+
+
+#include <richole.h>
+
+
+/////////////////////////////////////////////////////////////////////////////
+// COleRichEditCtrl window
+
+class COleRichEditCtrl : public CRichEditCtrl
+{
+// Construction
+public:
+COleRichEditCtrl();
+virtual ~COleRichEditCtrl();
+
+long StreamInFromResource(int iRes, LPCTSTR sType);
+
+
+protected:
+
+static DWORD CALLBACK readFunction(DWORD dwCookie,
+   LPBYTE lpBuf,   // the buffer to fill
+   LONG nCount,   // number of bytes to read
+   LONG* nRead);   // number of bytes actually read
+
+interface IExRichEditOleCallback; // forward declaration (see below in this header file)
+
+IExRichEditOleCallback* m_pIRichEditOleCallback;
+BOOL m_bCallbackSet;
+
+
+interface IExRichEditOleCallback : public IRichEditOleCallback
+{
+public:
+IExRichEditOleCallback();
+virtual ~IExRichEditOleCallback();
+int m_iNumStorages;
+IStorage* pStorage;
+DWORD m_dwRef;
+
+virtual HRESULT STDMETHODCALLTYPE GetNewStorage(LPSTORAGE* lplpstg);
+virtual HRESULT STDMETHODCALLTYPE QueryInterface(REFIID iid, void ** ppvObject);
+virtual ULONG STDMETHODCALLTYPE AddRef();
+virtual ULONG STDMETHODCALLTYPE Release();
+virtual HRESULT STDMETHODCALLTYPE GetInPlaceContext(LPOLEINPLACEFRAME FAR *lplpFrame,
+   LPOLEINPLACEUIWINDOW FAR *lplpDoc, LPOLEINPLACEFRAMEINFO lpFrameInfo);
+   virtual HRESULT STDMETHODCALLTYPE ShowContainerUI(BOOL fShow);
+   virtual HRESULT STDMETHODCALLTYPE QueryInsertObject(LPCLSID lpclsid, LPSTORAGE lpstg, LONG cp);
+   virtual HRESULT STDMETHODCALLTYPE DeleteObject(LPOLEOBJECT lpoleobj);
+   virtual HRESULT STDMETHODCALLTYPE QueryAcceptData(LPDATAOBJECT lpdataobj, CLIPFORMAT FAR *lpcfFormat,
+   DWORD reco, BOOL fReally, HGLOBAL hMetaPict);
+   virtual HRESULT STDMETHODCALLTYPE ContextSensitiveHelp(BOOL fEnterMode);
+   virtual HRESULT STDMETHODCALLTYPE GetClipboardData(CHARRANGE FAR *lpchrg, DWORD reco, LPDATAOBJECT FAR *lplpdataobj);
+   virtual HRESULT STDMETHODCALLTYPE GetDragDropEffect(BOOL fDrag, DWORD grfKeyState, LPDWORD pdwEffect);
+   virtual HRESULT STDMETHODCALLTYPE GetContextMenu(WORD seltyp, LPOLEOBJECT lpoleobj, CHARRANGE FAR *lpchrg,
+   HMENU FAR *lphmenu);
+};
+
+
+public:
+
+// Overrides
+// ClassWizard generated virtual function overrides
+//{{AFX_VIRTUAL(COleRichEditCtrl)
+protected:
+virtual void PreSubclassWindow();
+//}}AFX_VIRTUAL
+
+// Implementation
+public:
+
+
+// Generated message map functions
+protected:
+//{{AFX_MSG(COleRichEditCtrl)
+afx_msg int OnCreate(LPCREATESTRUCT lpCreateStruct);
+
+//}}AFX_MSG
+afx_msg UINT OnGetDlgCode( );
+DECLARE_MESSAGE_MAP()
+};
+
+/////////////////////////////////////////////////////////////////////////////
+
+//{{AFX_INSERT_LOCATION}}
+// Microsoft Visual C++ will insert additional declarations immediately before the previous line.
+
+#endif // !defined(AFX_OLERICHEDITCTRL_H__3DFF15EE_7336_4297_9620_7F00B611DAA1__INCLUDED_)
+
+
+
+
+.cpp文件
+
+// OleRichEditCtrl.cpp : implementation file
+//
+
+#include "stdafx.h"
+#include "OleRichEditCtrl.h"
+
+#ifdef _DEBUG
+#define new DEBUG_NEW
+#undef THIS_FILE
+static char THIS_FILE[] = __FILE__;
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+// COleRichEditCtrl
+
+COleRichEditCtrl::COleRichEditCtrl()
+{
+m_bCallbackSet = FALSE;
+}
+
+COleRichEditCtrl::~COleRichEditCtrl()
+{
+// IExRichEditOleCallback class is a reference-counted class 
+// which deletes itself and for which delete should not be called
+
+// delete m_pIRichEditOleCallback;
+}
+
+
+BEGIN_MESSAGE_MAP(COleRichEditCtrl, CRichEditCtrl)
+//{{AFX_MSG_MAP(COleRichEditCtrl)
+ON_WM_CREATE()
+//}}AFX_MSG_MAP
+ON_WM_GETDLGCODE( )
+END_MESSAGE_MAP()
+//
+
+
+int COleRichEditCtrl::OnCreate(LPCREATESTRUCT lpCreateStruct) 
+{
+if (CRichEditCtrl::OnCreate(lpCreateStruct) == -1)
+   return -1;
+
+// m_pIRichEditOleCallback should have been created in PreSubclassWindow
+
+ASSERT( m_pIRichEditOleCallback != NULL );
+
+// set the IExRichEditOleCallback pointer if it wasn't set 
+// successfully in PreSubclassWindow
+
+if ( !m_bCallbackSet )
+{
+SetOLECallback( m_pIRichEditOleCallback );
+}
+
+return 0;
+}
+
+void COleRichEditCtrl::PreSubclassWindow() 
+{
+// base class first
+CRichEditCtrl::PreSubclassWindow();
+
+m_pIRichEditOleCallback = NULL;
+m_pIRichEditOleCallback = new IExRichEditOleCallback;
+ASSERT( m_pIRichEditOleCallback != NULL );
+
+m_bCallbackSet = SetOLECallback( m_pIRichEditOleCallback );
+}
+
+
+long COleRichEditCtrl::StreamInFromResource(int iRes, LPCTSTR sType)
+{
+HINSTANCE hInst = AfxGetInstanceHandle();
+HRSRC hRsrc = ::FindResource(hInst,
+MAKEINTRESOURCE(iRes), sType);
+
+DWORD len = SizeofResource(hInst, hRsrc); 
+BYTE* lpRsrc = (BYTE*)LoadResource(hInst, hRsrc); 
+ASSERT(lpRsrc); 
+
+CMemFile mfile;
+mfile.Attach(lpRsrc, len);
+
+EDITSTREAM es;
+es.pfnCallback = readFunction;
+es.dwError = 0;
+es.dwCookie = (DWORD) &mfile;
+
+return StreamIn( SF_RTF, es );
+}
+
+
+/* static */
+DWORD CALLBACK COleRichEditCtrl::readFunction(DWORD dwCookie,
+   LPBYTE lpBuf,   // the buffer to fill
+   LONG nCount,   // number of bytes to read
+   LONG* nRead)   // number of bytes actually read
+{
+CFile* fp = (CFile *)dwCookie;
+*nRead = fp->Read(lpBuf,nCount);
+return 0;
+}
+
+/////////////////////////////////////////////////////////////////////////////
+
+COleRichEditCtrl::IExRichEditOleCallback::IExRichEditOleCallback()
+{
+pStorage = NULL;
+m_iNumStorages = 0;
+m_dwRef = 0;
+
+// set up OLE storage
+
+HRESULT hResult = ::StgCreateDocfile(NULL,
+STGM_TRANSACTED | STGM_READWRITE | STGM_SHARE_EXCLUSIVE /*| STGM_DELETEONRELEASE */|STGM_CREATE ,
+0, &pStorage );
+
+if ( pStorage == NULL ||
+hResult != S_OK )
+{
+AfxThrowOleException( hResult );
+}
+}
+
+COleRichEditCtrl::IExRichEditOleCallback::~IExRichEditOleCallback()
+{
+}
+
+HRESULT STDMETHODCALLTYPE 
+COleRichEditCtrl::IExRichEditOleCallback::GetNewStorage(LPSTORAGE* lplpstg)
+{
+m_iNumStorages++;
+WCHAR tName[50];
+swprintf(tName, L"REOLEStorage%d", m_iNumStorages);
+
+HRESULT hResult = pStorage->CreateStorage(tName, 
+STGM_TRANSACTED | STGM_READWRITE | STGM_SHARE_EXCLUSIVE | STGM_CREATE ,
+0, 0, lplpstg );
+
+if (hResult != S_OK )
+{
+::AfxThrowOleException( hResult );
+}
+
+return hResult;
+}
+
+HRESULT STDMETHODCALLTYPE 
+COleRichEditCtrl::IExRichEditOleCallback::QueryInterface(REFIID iid, void ** ppvObject)
+{
+
+HRESULT hr = S_OK;
+*ppvObject = NULL;
+
+if ( iid == IID_IUnknown ||
+iid == IID_IRichEditOleCallback )
+{
+*ppvObject = this;
+AddRef();
+hr = NOERROR;
+}
+else
+{
+hr = E_NOINTERFACE;
+}
+
+return hr;
+}
+
+
+ULONG STDMETHODCALLTYPE 
+COleRichEditCtrl::IExRichEditOleCallback::AddRef()
+{
+return ++m_dwRef;
+}
+
+
+ULONG STDMETHODCALLTYPE 
+COleRichEditCtrl::IExRichEditOleCallback::Release()
+{
+if ( --m_dwRef == 0 )
+{
+delete this;
+return 0;
+}
+
+return m_dwRef;
+}
+
+
+HRESULT STDMETHODCALLTYPE 
+COleRichEditCtrl::IExRichEditOleCallback::GetInPlaceContext(LPOLEINPLACEFRAME FAR *lplpFrame,
+LPOLEINPLACEUIWINDOW FAR *lplpDoc, LPOLEINPLACEFRAMEINFO lpFrameInfo)
+{
+return S_OK;
+}
+
+
+HRESULT STDMETHODCALLTYPE 
+COleRichEditCtrl::IExRichEditOleCallback::ShowContainerUI(BOOL fShow)
+{
+return S_OK;
+}
+
+
+HRESULT STDMETHODCALLTYPE 
+COleRichEditCtrl::IExRichEditOleCallback::QueryInsertObject(LPCLSID lpclsid, LPSTORAGE lpstg, LONG cp)
+{
+return S_OK;
+}
+
+
+HRESULT STDMETHODCALLTYPE 
+COleRichEditCtrl::IExRichEditOleCallback::DeleteObject(LPOLEOBJECT lpoleobj)
+{
+return S_OK;
+}
+
+
+HRESULT STDMETHODCALLTYPE 
+COleRichEditCtrl::IExRichEditOleCallback::QueryAcceptData(LPDATAOBJECT lpdataobj, CLIPFORMAT FAR *lpcfFormat,
+DWORD reco, BOOL fReally, HGLOBAL hMetaPict)
+{
+return S_OK;
+}
+
+
+HRESULT STDMETHODCALLTYPE 
+COleRichEditCtrl::IExRichEditOleCallback::ContextSensitiveHelp(BOOL fEnterMode)
+{
+return S_OK;
+}
+
+
+HRESULT STDMETHODCALLTYPE 
+COleRichEditCtrl::IExRichEditOleCallback::GetClipboardData(CHARRANGE FAR *lpchrg, DWORD reco, LPDATAOBJECT FAR *lplpdataobj)
+{
+return E_NOTIMPL;
+}
+
+
+HRESULT STDMETHODCALLTYPE 
+COleRichEditCtrl::IExRichEditOleCallback::GetDragDropEffect(BOOL fDrag, DWORD grfKeyState, LPDWORD pdwEffect)
+{
+return S_OK;
+}
+
+HRESULT STDMETHODCALLTYPE 
+COleRichEditCtrl::IExRichEditOleCallback::GetContextMenu(WORD seltyp, LPOLEOBJECT lpoleobj, CHARRANGE FAR *lpchrg,
+HMENU FAR *lphmenu)
+{
+return S_OK;
+}
+
+// TabRichEditCtrl 消息处理程序
+UINT COleRichEditCtrl::OnGetDlgCode( ){
+
+return DLGC_WANTTAB;
+}
+ 

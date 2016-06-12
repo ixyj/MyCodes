@@ -1,0 +1,13 @@
+怎么在使文件保存对话框中的初始路径为上次保存路径？ 
+
+CString strFilter="结果文件(*.txt)|*.txt|所有文件(*.*)|*.*|";
+CFileDialog FileDlg(FALSE,0,0,OFN_HIDEREADONLY|OFN_FILEMUSTEXIST,
+                    (LPCTSTR)strFilter,this);
+FileDlg.m_ofn.lpstrInitialDir=m_strlpstrInitialDir;//定义成员变量,保存初始路径
+                                                   //构造函数里初始化为一个你
+                                                   //所需要的路径 
+if(IDOK==FileDlg.DoModal())
+    m_strlpstrInitialDir=FileDlg.GetPathName();    //记录上次保存的路径
+
+这样m_strlpstrInitialDir是包含文件名的,不过没有什么影响.
+也可以对他进行处理,把文件名去掉,只保留路经

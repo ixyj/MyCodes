@@ -1,0 +1,15 @@
+怎样加栽其他的应用程序?
+三个SDK函数 winexec, shellexecute,createprocess可以使用。
+WinExec 最简单，两个参数，前一个指定路径，后一个指定显示方式.后一个参数值得说
+一下，比如泥用 SW_SHOWMAXMIZED 方式去加栽一个无最大化按钮的 程序，呵呵就是
+Neterm,calc 等等，就不会出现正常的 窗体，但是已经被加到任务列表里了。
+ShellExecute较 WinExex灵活一点，可以指定工作目录,下面的 Example就是直接打开
+c:\temp\1.txt,而不用加栽与 txt 文件关联的应用程序,很多安装程序完成后都会打开
+一个窗口，来显示Readme or Faq,偶猜就是这么作的啦.
+ShellExecute(NULL,NULL,_T("1.txt"),NULL,_T("c:\\temp"),SW_SHOWMAXMIZED);
+CreateProcess最复杂，一共有十个参数，不过大部分都可以用NULL 代替，它可以指定
+进程的安全属性，继承信息，类的优先级等等.来看个很简单的 Example:
+STARTUPINFO stinfo; //启动窗口的信息
+PROCESSINFO procinfo; //进程的信息
+CreateProcess(NULL,_T("notepad.exe"),NULL,NULL.FALSE, NORMAL_PRIORITY_
+CLASS,NULL,NULL, &stinfo,&procinfo);

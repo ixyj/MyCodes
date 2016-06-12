@@ -1,0 +1,160 @@
+//给对话框加上位图
+//在头文件中定义(public)
+CDibApi	m_BackBmp;
+BOOL CDeviceQueryDlg::OnInitDialog() 
+{
+    m_BackBmp.OpenBmp(".\\位图.bmp");
+    m_BackBmp.InitDIBData();
+}
+void CDeviceQueryDlg::OnPaint() 
+{
+    m_BackBmp.DrawDIB(&dc, 0, 0);
+}
+-------------------------------------------
+ 如何创建和使用无模式对话框
+MFC 将模式和无模式对话封装在同一个类中，但是使用无模式对话需要几个对话需要几
+个额处的步骤。首先，使用资源编辑器建立对话资源并使用ClassWizard 创建一个
+CDialog的派生类。模式和无模式对话的中止是不一样的：
+模式对话通过调用CDialog : : EndDialog 来中止，无模式对话则是调用CWnd: :
+DestroyWindow 来中止的，函数CDialog : : OnOK 和CDialog : : OnCancel 调用
+EndDialog ,所以需要调用DestroyWindow并重置无模式对话的函数。
+void CSampleDialog : : OnOK ( )
+{
+// Retrieve and validate dialog data .
+if (! UpdateData (TRUE) )
+{
+// the UpdateData rountine will set focus to correct item
+TRACEO (" UpdateData failed during dialog termination .\n") ;
+return ;
+}
+//Call DestroyWindow instead of EndDialog .
+DestroyWindow ( ) ;
+}
+void CSampleDialog : : OnCancel ( )
+{
+//Call DestroyWindow instead of EndDialog .
+DestroyWindow ( ) ;
+}
+其次，需要正确删除表示对话的C++对象。对于模式对来说，这很容易，需要创建函数
+返回后即可删除C++对象；无模式对话不是同步的，创建函数调用后立即返回，因而用
+户不知道何时删除C++对象。撤销窗口时工作框调用CWnd : : PostNcDestroy，可以重
+置该函数并执行清除操作，诸如删除this指针。
+void CSampleDialog : : PostNcDestroy ( )
+{
+// Declete the C++ object that represents this dialog .
+delete this ;
+}
+最后，要创建无模式对话。可以调用CDialog : : DoModal 创建一个模式对放， 要创
+建一个无模式对话则要调用CDialog: : Create。下面的例子说明了应用程序是如何创
+建无模式对话的：
+void CMainFrame : : OnSampleDialog ( )
+{
+//Allocate a modeless dialog object .
+CSampleDilog * pDialog =new CSampleDialog ;
+ASSERT_VALID (pDialog) ;
+//Create the modeless dialog .
+BOOL bResult = pDialog —> Creste (IDD_IDALOG) ;
+ASSERT (bResult ) ;
+}
+--------------------------------------------------------
+31. 如何在对话框中显示一个位图
+这要归功于Win 32先进的静态控件和Microsoft 的资源编辑器， 在对话框中显示位图
+是很容易的， 只需将图形控件拖到对话中并选择适当属性即可，用户也可以显示图标、
+位图以及增强型元文件。
+----------------------------------------------------------
+如何让对话框应用程序在任务栏上不出现，并且不隐藏窗口。
+    把对话框的扩展属性修改成为WS_EX_TOOLWINDOW。
+    [程序实现]
+    把对话框的属性设置成为toolwindow，然后在需要的地方执行本代码。
+    DWORD Style = ::GetWindowLong(AfxGetMainWnd()->m_hWnd,GWL_EXSTYLE);
+    Style = WS_EX_TOOLWINDOW ;
+    AfxGetMainWnd()->ShowWindow(FALSE);
+    ::SetWindowLong(AfxGetMainWnd()->m_hWnd,GWL_EXSTYLE,Style); 
+    AfxGetMainWnd()->ShowWindow(TRUE); 
+------------------------------------------------------
+为基于MFC的对话框添加ToolTip的简单方法
+此方法适用于MFC派生类，在基于对话框的类中测试通过。具体步骤如下：
+1、选择“Project”菜单，然后“Set Active Project” 。
+2、选择“Project”菜单 -->“Add to Project” -->“Components and Controls” -->“VC++ Components” --> “ToolTip Support” 
+3、选择“Insert” 
+4、在对话框资源中加入一个按钮，ID为IDC_ToolTip
+5、在 CDialog::OnInitDialog() 中找到下面的注释行:
+   // TODO: Use one of the following forms to add controls:
+   // m_tooltip.AddTool(GetDlgItem(IDC_), );
+   // m_tooltip.AddTool(GetDlgItem(IDC_), "");
+然后在注释行后加入一行代码:
+   m_tooltip.AddTool(GetDlgItem(IDC_ToolTip), "显示 ToolTip");
+经过上面的步骤之后:
+头文件（*.h）中会自动加入下面的代码:
+   public:
+      virtual BOOL PreTranslateMessage(MSG* pMsg);
+实现文件（*.cpp）会加入方法实现:
+      PreTranslateMessage(MSG* pMsg);
+---------------------------------------------
+改背景色
+内容：改变对话框的背景色
+方法一：调用CWinApp类的成员函数SetDialogBkColor来实现。 
+---- 其中函数的第一个参数指定了背景颜色，第二个参数指定了文本颜色。下面的例子是将应用程序对话框设置为蓝色背景和红色文本，步骤如下： 
+---- ① 新建一个基于Dialog的MFC AppWizard应用程序ExampleDlg。 
+---- ② 在CExampleDlgApp ::InitInstance()中添加如下代码： 
+BOOL CExampleDlgApp: : InitInstance ( )
+{
+…    CExampleDlgDlg dlg;
+    m_pMainWnd = &dlg;
+//先于DoModal()调用，将对话框设置为蓝色背景、红色文本
+    SetDialogBkColor(RGB(0,0,255),RGB(255,0,0));
+    int nResponse = dlg.DoModal();
+…}
+---- 编译并运行，此时对话框的背景色和文本色已发生了改变。值得注意的是：在调用DoModal()之前必须先调用SetDialogBkColor，且此方法是将改变应用程序中所有的对话框颜色，并不能针对某一个指定的对话框。 
+---- 方法二：重载OnPaint()，即WM_PAINT消息。有关代码如下（以上例工程为准）： 
+void CExampleDlgDlg::OnPaint() 
+{
+    if (IsIconic())
+…   else
+   {
+        CRect rect;
+        CPaintDC dc(this);
+        GetClientRect(rect);
+        dc.FillSolidRect(rect,RGB(0,255,0));  //设置为绿色背景
+        CDialog::OnPaint();
+   }
+---- 方法三：重载OnCtlColor (CDC* pDC, CWnd* pWnd, UINT nCtlColor)，即WM_CTLCOLOR消息。具体步骤如下（以上例工程为准）： 
+---- ①在CExampleDlgDlg的头文件中，添加一CBrush的成员变量： 
+class CExampleDlgDlg : public CDialog
+{...
+protected:
+CBrush m_brush; 
+...
+};
+---- ②在OnInitDialog()函数中添加如下代码： 
+BOOL CExampleDlgDlg::OnInitDialog() 
+{
+...
+// TODO: Add extra initialization here
+m_brush.CreateSolidBrush(RGB(0, 255, 0)); // 生成一绿色刷子 
+...
+} 
+---- ③利用ClassWizard重载OnCtlColor(…)，即WM_CTLCOLOR消息： 
+HBRUSH CExampleDlgDlg::OnCtlColor
+(CDC* pDC, CWnd* pWnd, UINT nCtlColor) 
+{
+/*
+** 这里不必编写任何代码！
+**下行代码要注释掉
+** HBRUSH hbr = CDialog::OnCtlColor(pDC, pWnd, nCtlColor);
+*/
+return m_brush;   //返加绿色刷子
+}
+---- 方法四：还是重载OnCtlColor (CDC* pDC, CWnd* pWnd, UINT nCtlColor)，即WM_CTLCOLOR消息。具体步骤如下（以上例工程为准）： 
+---- 步骤①、②同上方法三中的步骤①、②。 
+---- 步骤③利用ClassWizard重载OnCtlColor(…)（即WM_CTLCOLOR消息）时则有些不同： 
+HBRUSH CExampleDlgDlg::OnCtlColor
+(CDC* pDC, CWnd* pWnd, UINT nCtlColor) 
+{
+HBRUSH hbr = CDialog::OnCtlColor(pDC, pWnd, nCtlColor);
+//在这加一条是否为对话框的判断语句
+if(nCtlColor ==CTLCOLOR_DLG)
+return m_brush;   //返加绿色刷子
+return hbr;
+}
+---- 编译并运行即可。 

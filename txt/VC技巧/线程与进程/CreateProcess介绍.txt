@@ -1,0 +1,64 @@
+创建进程的函数为CreateProcess，该函数比较复杂共有十个参数。 
+
+BOOL CreateProcess(
+  LPCTSTR lpApplicationName, // 执行程序文件名
+  LPTSTR lpCommandLine,  // 参数行
+  LPSECURITY_ATTRIBUTES lpProcessAttributes,  // 进程安全参数
+  LPSECURITY_ATTRIBUTES lpThreadAttributes,   // 线程安全参数
+  BOOL bInheritHandles,  // 继承标记
+  DWORD dwCreationFlags, // 创建标记
+  LPVOID lpEnvironment,  // 环境变量
+  LPCTSTR lpCurrentDirectory,   // 运行该子进程的初始目录
+  LPSTARTUPINFO lpStartupInfo,  // 创建该子进程的相关参数
+  LPPROCESS_INFORMATION lpProcessInformation  // 创建后用于被创建子进程的信息
+);
+lpApplicationName：为执行程序的文件名，如果在创建进程时要使用参数，则该参数可以为NULL。
+
+lpCommandLine：为参数行，如果无参数可以为NULL，在有参数传递给进程时如下设置：lpApplicationName=NULL；lpCommandLine=para，例如lpCommandLine="c:\\windows\\notepad.exe c:\\autoexec.bat"。 
+
+lpProcessAttributes，lpThreadAttributes：分别描述了创建的进程和线程安全属性，如果使用NULL表示使用默认的安全描述。
+
+bInheritHandles：表示当前进程中的打开的句柄是否能够被创建的子进程所继承。
+
+dwCreationFlags：表示创建标记，通过该标记可以设置进程的创建状态和优先级别。常用的有下面的标记：
+
+CREATE_NEW_CONSOLE：为子进程创建一个新的控制台。 
+CREATE_SUSPENDED：子进程在创建时为挂起状态。 
+HIGH_PRIORITY_CLASS/NORMAL_PRIORITY_CLASS：高/普通优先级别。 
+lpEnvironment：表示子进程所使用的环境变量，如果为NULL，则表示与当前进程使用相同的环境变量。
+
+lpCurrentDirectory：表示子进程运行的初始目录。
+
+lpStartupInfo：用于在创建子进程时设置各种属性。该结构定义如下：
+
+typedef struct _STARTUPINFO { // si 
+    DWORD   cb; //结构长度
+    LPTSTR  lpReserved; //保留
+    LPTSTR  lpDesktop; //保留
+    LPTSTR  lpTitle; //如果为控制台进程则为显示的标题
+    DWORD   dwX; //窗口位置
+    DWORD   dwY; //窗口位置
+    DWORD   dwXSize; //窗口大小
+    DWORD   dwYSize; //窗口大小
+    DWORD   dwXCountChars; //控制台窗口字符号宽度
+    DWORD   dwYCountChars; //控制台窗口字符号高度
+    DWORD   dwFillAttribute; //控制台窗口填充模式
+    DWORD   dwFlags; //创建标记
+    WORD    wShowWindow; //窗口显示标记如同ShowWindow中的标记
+    WORD    cbReserved2; //
+    LPBYTE  lpReserved2; //
+    HANDLE  hStdInput; //标准输入句柄
+    HANDLE  hStdOutput; //标准输出句柄
+    HANDLE  hStdError; //标准错误句柄
+} STARTUPINFO, *LPSTARTUPINFO; 
+
+如果要使结构中相关的分量起作用，必须正确的设置dwFlags。例如：dwFlags包含STARTF_USESIZE表示dwXSize和dwYSize有效，包含STARTF_USEPOSITION表示dwX和dwY有效。
+
+lpProcessInformation：用来在进程创建后接收相关信息，该结构由系统填写。
+
+typedef struct _PROCESS_INFORMATION { // pi 
+    HANDLE hProcess; //进程句柄
+    HANDLE hThread; //进程的主线程句柄
+    DWORD dwProcessId; //进程ID
+    DWORD dwThreadId; //进程的主线程ID
+} PROCESS_INFORMATION; 

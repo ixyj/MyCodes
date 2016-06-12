@@ -1,0 +1,14 @@
+如何向编辑控件中添加文本 
+ 
+由于没有CEdit:: AppendText函数，用户只好自己做此项工作。调用CEdit:: 
+SetSel移动到编辑控件末尾，然后调用CEdit:: ReplaceSel添加文本。下例是
+AppendText 的一种实现方法： 
+ 
+void CMyEdit:: AppendText (LPCSTR pText) 
+{ 
+     int nLen=GetWindowTextLength (); 
+     SetFocus (); 
+     SetSel (nLen, nLen); 
+ 
+     ReplaceSel (pText); 
+} 

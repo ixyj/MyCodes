@@ -1,0 +1,28 @@
+如何檫掉绘制的直线？  
+hdc  =  GetDC(glhTargetWnd);  
+SelectObject(hdc,  pen);  
+...  
+LineTo(hdc,  100,  100);  
+ 
+我想把这这条线擦下去，该怎么做  
+ 
+---------------------------------------------------------------  
+ 
+有异或方式再画一遍。  
+::SetROP2(hdc,R2_XORPEN);  
+SelectObject(hdc,pen);  
+...  
+LineTo(hdc,100,100);  
+---------------------------------------------------------------  
+ 
+           CDC*  pDC  =  GetDC();  
+           CPen  pen(PS_SOLID,4,RGB(128,0,0));  
+             
+           CPen*  pOldPen  =  pDC->SelectObject(&pen);  
+           pDC->SetROP2(R2_XORPEN);  
+           pDC->MoveTo(0,0);  
+           pDC->LineTo(100,  100);  
+           pDC->SelectObject(&pOldPen);  
+           ReleaseDC(pDC);  
+画线的时候也用上SetROP2(R2_XORPEN);  
+就是调用相同的代码执行擦除和重画动作就可以了

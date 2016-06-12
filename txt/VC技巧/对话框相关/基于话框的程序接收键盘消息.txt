@@ -1,0 +1,11 @@
+基于话框的MFC程序,在那里面的OnKeyDown()却不可以接收并处理键盘消息,烦各位高手指点为什么,及该如何办才好.
+
+在OnInitDialog()中加载快捷键，在对话框头文件中声明：
+HACCEL m_hAccel;
+m_hAccel = ::LoadAccelerators(AfxGetInstanceHandle(),MAKEINTRESOURCE(IDR_ACCELERATOR1));
+然后重载PreTranslateMessage函数，在
+PreTranslateMessage(MSG* pMsg)
+{
+    ::TranslateAccelerator(this->GetSafeHwnd(),m_hAccel,pMsg);
+    return CDialog::PreTranslateMessage(pMsg);
+}

@@ -1,0 +1,66 @@
+DWORD startTime, endTime;
+	
+startTime = ::GetTickCount(); // 计时开始
+
+//doing others
+
+endTime = ::GetTickCount(); //计时结束
+
+DWORD durTime = endTime - startTime;
+int hour = durTime / 3600000;  //小时
+int minute = (durTime - 3600000 * hour) / 60000;//分钟
+float msecond =(durTime - 3600000 * hour - 60000 * minute) / 1000.0f;//秒
+str.Format(L"%d:%d:%.3f", hour, minute, msecond); 
+
+
+MFC中还有一个非常精确的计时：
+/*
+在定时前应该先调用QueryPerformanceFrequency()函数获得机器内部计时器的时钟频率。接着在需要严格计时的事件发生前和发生之后分别调用QueryPerformanceCounter()，利用两次获得的计数之差和时钟频率，就可以计算出事件经历的精确时间。
+*/
+//调用QueryPerformanceFrequency函数取得高精度运行计数器的频率f。单位是每秒多少次（n/s），此数一般很大
+	LARGE_INTEGER litmp;
+	if (!QueryPerformanceFrequency(&litmp))   //取高精度运行计数器的频率，若硬件不支持则返回FALSE
+	{
+		MessageBox(L"硬件不支持高精度运行计数器!");
+		return;
+	}
+
+	LONGLONG fre = litmp.QuadPart;
+
+	QueryPerformanceCounter(&litmp);
+	LONGLONG start = litmp.QuadPart;
+
+	//do something
+
+	QueryPerformanceCounter(&litmp);
+	LONGLONG end = litmp.QuadPart;
+
+	double lastTime = static_cast<double>(end - start) / fre;//unit:seconds
+
+
+纯 C++中计时，可以精确到毫秒，使用如下：
+
+	clock_t start = 0, finish = 0;
+
+	start = clock();
+	…………
+	finish=clock();  
+
+	double elapsed_time = finish - start;	//elapsed_time为流逝时间，单位：毫秒
+
+
+
+Java里的计时：
+import java.util.Date;
+……
+Date date1 = new Date();
+//doing others
+Date date2 = new Date();
+long durTime = date2.getTime() - date1.getTime();
+			 
+int hour = (int) (durTime/3600000);
+int minute = (int)(durTime % 3600000)/60000;
+float second = (durTime % 60000f)/1000;
+			 
+System.out.printf("经历时间:%d:%d:%.3f",hour,minute,second);
+

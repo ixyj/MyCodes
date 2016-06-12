@@ -1,0 +1,52 @@
+#include <iostream>
+#include <cstdarg>
+using namespace std;
+
+void set(int num, ...); 
+void print(char* str, ...);
+
+int main(int argc, char** argv)
+{
+	
+	int a[] = {1, 2, 3, 4, 5};
+	
+	set(5, a, a+1, a+2, a+3, a+4);
+	
+	set(2, a, a+1);
+	
+	for (int i = 0; i < 5; i++)
+		cout << a[i] << ends;
+		
+		
+	print("agqe", "dgwe", "ewyw4", " rhyw");
+	print("agqe", " rhyw");
+	return 0;
+}
+
+void set(int num, ...)
+{
+	va_list p;
+	va_start(p, num);
+	
+	for (int i = 0; i < num; i++)
+	{
+		int* a = va_arg(p, int*);
+		++(*a);
+	}
+	
+	va_end(p);
+}
+
+void print(char* str, ...)
+{
+		va_list p;
+		va_start(p, str);
+		
+		while (str[0] != ' ')
+		{
+			cout << str << ends;
+			str = va_arg(p, char*);
+		}
+		
+		va_end(p);
+}

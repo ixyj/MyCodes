@@ -1,0 +1,24 @@
+如何固定分割视图的大小:
+
+//假设你有左右两个视图
+现在主框架中添加这个成员函数:
+void CMainFrame::FixViewSize()
+{
+	m_wndSplitter.SetColumnInfo(0, 200, 0);
+	m_wndSplitter.RecalcLayout();
+}
+
+在CLeftView中或者CRightView的OnSize()中添加:
+
+void CLeftView::OnSize(UINT nType, int cx, int cy) 
+{
+	CView::OnSize(nType, cx, cy);	
+	// TODO: Add your message handler code here
+	
+	CMainFrame *pMainFrame = (CMainFrame*)AfxGetApp()->m_pMainWnd;
+	if (!pMainFrame)
+	  return;
+	pMainFrame->FixViewSize();
+}
+
+这样分割条就不能再改变位置了

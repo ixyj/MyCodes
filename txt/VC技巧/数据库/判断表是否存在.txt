@@ -1,0 +1,47 @@
+如何判断一个access数据库中已经存在一个表table1?
+STDMETHODIMP CADOTier::get_IsExistTable(BSTR bsTable, long lType, VARIANT_BOOL *pVal)
+{
+    ADODB::_RecordsetPtr  pRstSchema  = NULL;
+    pRstSchema = m_connection->OpenSchema(ADODB::adSchemaTables);
+    _bstr_t bsTableName(bsTable);
+    _bstr_t table_name("");
+    _bstr_t table_type("");
+    char *pTemp1=NULL,*pTemp2=NULL;
+    pTemp1 = _com_util::ConvertBSTRToString(bsTableName);
+    pTemp1 = strlwr(pTemp1);
+    VARIANT_BOOL b=FALSE;
+    while(!(pRstSchema->adoEOF))
+    {
+        table_name = pRstSchema->Fields->
+            GetItem("TABLE_NAME")->Value;
+        pTemp2 = _com_util::ConvertBSTRToString(table_name);
+        pTemp2 = strlwr(pTemp2);
+        table_type = pRstSchema->Fields->
+            GetItem("TABLE_TYPE")->Value;
+        if (lType == 1) //view type
+        {
+            if (table_type == _bstr_t("VIEW"))
+            {
+                if (strcmp(pTemp1,pTemp2)==0)
+                    b = TRUE;
+            }
+        }
+        if (lType == 0) //table type
+        {
+            if (table_type == _bstr_t("TABLE"))
+            {
+                if (strcmp(pTemp1,pTemp2)==0)
+                    b = TRUE;
+            }
+        }
+        pRstSchema->MoveNext();
+    }
+    
+    // Clean up objects before exit.
+    if (pRstSchema)
+        if (pRstSchema->State == ADODB::adStateOpen)
+            pRstSchema->Close();
+        *pVal = b;
+        
+        return S_OK;
+} 

@@ -1,0 +1,104 @@
+1.  通过SQL语句来完成日期区间的查询
+str="select * from USER where LASTLOGIN>#2003-6-24#";  
+str="select * from USER where LASTLOGIN>#2003-6-25 19:46:44#";  
+--------------------------------------------------------
+2.  ADO操作数据库表，更新出现问题  
+在打开数据库前，添加如下语句试一下
+pRecordSet->CursorLocation = adUseClient;
+----------------------------------------------
+3.  ADO取纪录字段值方式之一  
+_variant_t  TheValue;  //VARIANT数据类型  
+TheValue  =  m_pRecordset->GetCollect("BIG_NAME");//得到字段BIG_NAME的值  
+if(TheValue.vt!=VT_NULL)  
+   m_List.AddString((char*)_bstr_t(TheValue));  
+   //将该值加入到列表控件中  
+         
+     //取纪录字段值方式之二  
+  _bstr_t  TheValue1=m_pRecordset->Fields->GetItem("BIG_NAME")->Value;  
+  CString  temp=TheValue1.copy();  
+  m_List.AddString(temp);  
+----------------------------------------------
+4.   odbc遍历求数据库中表名：  
+bool  CDBInfoDlg::ListTables(bool  bViews,  bool  bSystemTables)  
+{  
+           CDatabase database;  
+           CString type = "'TABLE'";  
+           int  ret= -1;  
+           HSTMT hStmt;  
+           UCHAR szName[256];  
+           SDWORD cbName;  
+           CString names;   
+           if(  bViews  )  
+               type  +=  ",  'VIEW'";//视图  
+           if(  bSystemTables  )  
+               type  +=  ",  'SYSTEM  TABLE'";//系统表   
+           try{  
+               if(  !database.Open(m_strDSN)  )  
+                   return  false;  
+           }  
+           catch(...)
+           {  
+               AfxMessageBox("Unable  To  Obtain  Table  Information");  
+               return  false;  
+           }  
+           SQLAllocStmt(database.m_hdbc,&hStmt);  
+           ret  =  SQLTables(hStmt, NULL,SQL_NTS,  
+                             NULL,SQL_NTS,  
+                             NULL,SQL_NTS,  
+                             (unsigned  char  *)type.GetBuffer(0),SQL_NTS);   
+           if(ret  ==  SQL_ERROR)
+           {  
+                SQLFreeStmt(hStmt,SQL_CLOSE);  
+                database.Close();  
+                if(ret == SQL_INVALID_HANDLE )
+                {  
+                     AfxMessageBox("Invalid  handle");  
+                     return  false;  
+                }  
+                AfxMessageBox("Database  Could  Not  be  Open");  
+                return  false;  
+           }            
+           m_cmbTables.ResetContent();          
+           while(1){                        
+               ret  =  SQLFetch(hStmt);  
+               if(ret  ==  SQL_NO_DATA_FOUND)  
+                     break;  
+               ret  =  SQLGetData(hStmt,3,SQL_C_CHAR,szName,TABLE_NAME_LENGTH,                             &cbName);  
+               names.Format("%s",szName);  
+               m_cmbTables.AddString(names);  
+           }  
+
+           m_cmbTables.SetCurSel(0);  
+             
+           SQLFreeStmt(hStmt,SQL_CLOSE);  
+           database.Close();  
+             
+                       ShowTable();  
+ 
+           return  true;  
+}  
+-----------------------------------
+如何访问用IP地址表示的数据库
+Provider = SQLOLEDB.1;Persist Security Info=False;User ID=sa;Initial Catalog = traffic;Data Source=10.119.56.18
+-----------------------------------------------
+如何使用ADO访问Oracle数据库存储过程? 
+http://www.xhstudio.net/show.asp?id=2185
+-------------------------------------------
+vc6支持access 2000
+AfxGetModuleState()->m_dwVersion = 0x0601;
+-----------------------------------------------
+[Oracle初始口令]
+internal/oracle
+sys/change_on_install
+system/manager
+scott/tiger
+
+在SQL SERVER中select top 10 * from tablename,在ORACLE中该怎么表示？
+SELECT * FROM A WHERE ROWNUM < 11 
+那查询第四行到第9行的数据呢？
+SELECT * FROM
+(
+SELECT * FROM A WHERE ROWNUM < 10
+MINUS
+SELECT * FROM A WHERE ROWNUM < 4
+) 

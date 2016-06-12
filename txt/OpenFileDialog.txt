@@ -1,0 +1,15 @@
+	CString szFileFilter(L"Text File(*.txt)|*.txt|文件类型(*.格式)|*.格式|All File(*.*)|*.*|");//文件类型过滤 
+	CString PathName(L"");
+	
+	CFileDialog dlg(true, NULL, NULL, OFN_HIDEREADONLY, szFileFilter);
+
+	if(dlg.DoModal()==IDOK)
+	{
+		PathName=dlg.GetPathName();
+	}
+	else
+	{
+		MessageBox(L"数据读取失败！");
+	}
+
+	MessageBox(PathName);

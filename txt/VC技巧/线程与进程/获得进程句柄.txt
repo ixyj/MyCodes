@@ -1,0 +1,7 @@
+用Process32First, Process32Next获得进程的ProcessId后，再调用OpenProcess
+即可获得改进程的句柄。
+HANDLE OpenProcess(
+  DWORD dwDesiredAccess,  // access flag
+  BOOL bInheritHandle,    // handle inheritance flag
+  DWORD dwProcessId       // process identifier
+);

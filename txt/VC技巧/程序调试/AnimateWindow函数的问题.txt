@@ -1,0 +1,8 @@
+使用AnimateWindow()函数的问题?
+
+Project->Setting->LINK中加入User32.lib库
+
+
+在stdafx.h文件里加入
+#define WINVER 0x0500
+但NT4.0下运行会出问题。

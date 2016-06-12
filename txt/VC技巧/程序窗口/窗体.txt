@@ -1,0 +1,272 @@
+CMyApp* lpApp=(CMyApp*)AfxGetApp();
+CMainFrame *lpMainWnd=(CMainFrame*)lpApp->m_pMainWnd;(主窗口得句柄)
+CChildFrame *pChild=(CChildFrame )lpMainFrm->GetActiveFrame();
+---------------------------
+禁止窗口最大化按钮
+在PreCreateWindow()涵数中去掉WS_MAXIMIZEBOX风格显示既可。
+BOOL CxxFrameWnd::PreCreateWindow(CREATESTRUCT& cs)
+{
+    cs.style &= ~WS_MAXIMIZEBOX;
+    return CFrameWnd::PreCreateWindow(cs);
+}
+-----------------------------------------
+//窗口最大化
+	m_pMainWnd->ShowWindow(SW_SHOWMAXIMIZED);
+	m_pMainWnd->UpdateWindow();
+---------------------------------------
+//得到屏幕的尺寸大小
+	HWND hWnd;
+	CRect Rect;
+	hWnd = ::GetDesktopWindow();
+	::GetClientRect(hWnd, &Rect);
+-------------------------------------------
+
+-------------------------------------------------------------------
+我在我的程序中是了CDWordArray。我向它添加了约10,000个整数，这使得它变得非常非常慢。 
+    CDWordArray是很好用的，只是因为你没有指定数组的最大尺寸。
+    因此，当你添加新元素时，该类会从堆中重新分配空间。不幸的是，该类会在每次插入新元素时都为数组重新分配空间。如果你向它添加了很多新元素，所有这些分配和复制数组的操作会就会使它变慢。
+    解决该问题的方法是，你可以使用SetSize 函数的第二个参数来改变这种重新分配的频率。例如，如果你把该参数设置为500 ，则每次数组空间超出时它才重新分配并添加500个新空间，而不是1个。这样一来 ，你就可以不用重新分配而添加了另外499个元素空间，这也会大大提高程序的运行速度。
+把该变量放到该应用程序类的头文件中的attribute处。然后，在程序的任何地方，你都可以用下面的方法来访问该变量： 
+    CMyApp *m_App = (CMyApp *)AfxGetApp(); 
+    m_App->MyGlobalVariable = ...;
+-----------------------------------------------
+
+如何在对话框中从磁盘读出一个bitmap文件画在上面？
+
+[问题解答]
+
+BOOL CAboutDlg::OnInitDialog() 
+{
+   CDialog::OnInitDialog();
+   HBITMAP m_hBmp = (HBITMAP)::LoadImage(0,
+      "D:\\\\bitmap.bmp",
+      IMAGE_BITMAP,
+      0,
+      0,
+      LR_LOADFROMFILE | LR_CREATEDIBSECTION | LR_DEFAULTSIZE);
+   _ASSERT(m_hBmp!=NULL);
+   m_pBmp = CBitmap::FromHandle(m_hBmp);
+   return TRUE;
+}
+
+void CAboutDlg::OnPaint() 
+{
+   CPaintDC dc(this);
+   BITMAP bm;
+   CDC dcMem;
+   VERIFY(m_pBmp->GetObject(sizeof(bm),(LPVOID)&bm));
+   dcMem.CreateCompatibleDC(&dc);
+   CBitmap *pOldBMP=(CBitmap *)dcMem.SelectObject(m_pBmp);
+   BitBlt(dc.m_hDC,0, 0, bm.bmWidth, bm.bmHeight, dcMem.m_hDC, 0, 0, SRCCOPY);
+   dcMem.SelectObject(pOldBMP);
+   // Do not call CDialog::OnPaint() for painting messages
+}
+[问题提出]
+  请问我在一个对话框中使用一个TIMER，需要怎么做?
+  [解决方法]
+  大致过程:先SetTimer,然后OnTimer.
+  [程序实现]
+  假设你有了名为My的对话框工程.添加两个按钮ID=IDC_BUTTON1和ID=IDC_BUTTON2.并建立它们的函数:CMyDlg::OnButton1();和CMyDlg::OnButton2()响应WM_TIMER消息(在ClassWizard中).
+  void CMyDlg::OnButton1() 
+  {
+      SetTimer(1,30,NULL);
+  }
+
+  void CMyDlg::OnButton2() 
+  {
+      KillTimer(1);  &nbsp;
+  }
+
+  void CMyDlg::OnTimer(UINT nIDEvent) 
+  {
+      // TODO: Add your message handler code here and/or call default
+      AfxMessageBox("计时开始");//这可以放你的函数体
+      CDialog::OnTimer(nIDEvent);
+  } 
+[问题提出]
+  当用户不知道你的按钮的具体功能时,工具条提示是一个不错的方法.
+  [解决方法]
+  提示功能是由MFC类库中的CToolTipCtrl来实现的.
+  [实现程序]
+  假设你有了名为My的对话框的工程.首先建立一个Button,方法:在ResourceView中双击Dialog,添加Button采用默认值:IDC_BUTTON1.实现PreTranslateMessage消息的相应函数.
+  class CMyDlg : public CDialog
+  {
+  public:
+  CToolTipCtrl m_ToolTips;
+  ...............
+  };
+
+  BOOL CMyDlg::OnInitDialog()
+  {
+  CDialog::OnInitDialog();
+
+  // TODO: Add extra initialization here
+
+  CButton *pButton;
+  pButton=(CButton *)GetDlgItem(IDC_BUTTON1);
+    m_ToolTips.Create(this);
+  m_ToolTips.AddTool(pButton,"This is a ToolTips text for this Button");
+  return TRUE;  // return TRUE  unless you set the focus to a control
+  }
+
+  BOOL CMyDlg::PreTranslateMessage(MSG* pMsg) 
+  {
+  // TODO: Add your specialized code here and/or call the base class
+  switch(pMsg->message)
+  {
+  case WM_LBUTTONDOWN:
+  case WM_LBUTTONUP:
+  case WM_MOUSEMOVE:
+      m_ToolTips.RelayEvent(pMsg);
+  }
+  return CDialog::PreTranslateMessage(pMsg);
+  }
+ 
+
+----------------------------------------
+
+-----------------------------------------------------------------
+//窗口枚举
+其原理是利用GetWindowLong(hWnd,GWL_STYLE)& WS_VISIBLE对打开的窗口进行查找，并将窗口的句柄存放在一个HWND的数组中，结合EnumWindows进行窗口的枚举，从而得到响应的窗口名称；
+二、主要函数介绍：
+   BOOL EnumWindows(
+  WNDENUMPROC lpEnumFunc,  // callback function
+  LPARAM lParam            // application-defined value
+);
+LONG GetWindowLong(
+  HWND hWnd,  // handle to window
+  int nIndex  // offset of value to retrieve
+);
+---------------------------------------------------
+26. 如何创建一个不规则形状的窗口
+可以使用新的SDK 函数SetWindowRgn。该函数将绘画和鼠标消息限定在窗口的一个指定
+的区域，实际上使窗口成为指定的不规则形状。
+使用AppWizard创建一个基于对的应用程序并使用资源编辑器从主对话资源中删
+除所在的缺省控件、标题以及边界。给对话类增加一个CRgn 数据成员，以后要使用该
+数据成员建立窗口区域。
+Class CRoundDlg : public CDialog
+{
+…
+private :
+Crgn m_rgn : // window region
+…
+} ;
+修改OnInitDialog函数建立一个椭圆区域并调用SetWindowRgn 将该区域分配给窗口：
+BOOL CRoundDlg : : OnInitDialog ( )
+{
+CDialog : : OnInitDialog ( ) ;
+//Get size of dialog .
+CRect rcDialog ;
+GetClientRect (rcDialog );
+// Create region and assign to window .
+m_rgn . CreateEllipticRgn (0 , 0 , rcDialog.Width ( ) , rcDialog .Height ( ) );
+SetWindowRgn (GetSafeHwnd ( ) , (HRGN) m_ rgn , TRUE );
+return TRUE ;
+}
+通过建立区域和调用SetWindowRgn，已经建立一个不规则形状的窗口，下面的例子程序
+是修改OnPaint函数使窗口形状看起来象一个球形体。
+voik CRoundDlg : : OnPaint ( )
+{
+CPaintDC de (this) ; // device context for painting .
+//draw ellipse with out any border
+dc. SelecStockObject (NULL_PEN);
+//get the RGB colour components of the sphere color
+COLORREF color= RGB( 0 , 0 , 255);
+BYTE byRed =GetRValue (color);
+BYTE byGreen = GetGValue (color);
+BYTE byBlue = GetBValue (color);
+// get the size of the view window
+Crect rect ;
+GetClientRect (rect);
+// get minimun number of units
+int nUnits =min (rect.right , rect.bottom );
+//calculate he horiaontal and vertical step size
+float fltStepHorz = (float) rect.right /nUnits ;
+float fltStepVert = (float) rect.bottom /nUnits ;
+int nEllipse = nUnits/3; // calculate how many to draw
+int nIndex ; // current ellipse that is being draw
+CBrush brush ; // bursh used for ellipse fill color
+CBrush *pBrushOld; // previous brush that was selected into dc
+//draw ellipse , gradually moving towards upper-right corner
+for (nIndex = 0 ; nIndes < + nEllipse ; nIndes ++)
+{
+//creat solid brush
+brush . CreatSolidBrush (RGB ( ( (nIndex *byRed ) /nEllipse ) ,
+( ( nIndex * byGreen ) /nEllipse ), ( (nIndex * byBlue) /nEllipse ) ) );
+//select brush into dc
+pBrushOld= dc .SelectObject (&brhsh);
+//draw ellipse
+dc .Ellipse ( (int) fltStepHorz * 2, (int) fltStepVert * nIndex ,
+rect. right -( (int) fltStepHorz * nIndex )+ 1,
+rect . bottom -( (int) fltStepVert * (nIndex *2) ) +1) ;
+//delete the brush
+brush.DelecteObject ( );
+}
+}
+最后，处理WM_NCHITTEST消息，使当击打窗口的任何位置时能移动窗口。
+UINT CRoundDlg : : OnNchitTest (Cpoint point )
+{
+//Let user move window by clickign anywhere on the window .
+UINT nHitTest = CDialog : : OnNcHitTest (point) ;
+rerurn (nHitTest = = HTCLIENT)? HTCAPTION: nHitTest ;
+}
+-------------------------------------
+9. 如何改变窗口的图标?
+向窗口发送 WM_SECTION消息。
+Example:
+HICON hIcon=AfxGetApp() ->LoadIcon(IDI_ICON);
+ASSERT(hIcon);
+AfxGetMainWnd() ->SendMessage(WM_SECTION,TRUE,(LPARAM) hIcon);
+------------------------------------------
+10. 如何改变窗口的缺省风格?
+重栽 CWnd:: PreCreateWindow 并修改CREATESTRUCT 结构来指定窗口风格和其他创建
+信息.
+Example: Delete "Max" Button and Set Original Window's Position and Size
+BOOL CMainFrame:: PreCreateWindow (CREATESTRUCT &cs)
+{
+cs.style &=~WS_MAXINIZEMOX;
+cs.x=cs.y=0;
+cs.cx=GetSystemMetrics(SM_CXSCREEN/2);
+cs.cy=GetSystemMetrics(SM_CYSCREEN/2);
+return CMDIFramewnd ::PreCreateWindow(cs);
+}
+-----------------------------------------
+11. 如何将窗口居中显示?
+Easy, Call Function CWnd:: Center Windows
+Example(1): Center Window( ); //Relative to it's parent
+// Relative to Screen
+Example(2): Center Window(CWnd:: GetDesktopWindow( ));
+//Relative to Application's MainWindow
+AfxGetMainWnd( ) -> Center Window( );
+---------------------------------------------------
+19. 移动窗口
+调用CWnd : : SetWindowPos 并指定SWP_NOSIZE 标志。目的位置与父窗口有关（顶层
+窗口与屏幕有关）。调用CWnd : : MoveWindow时必须要指定窗口的大小。
+//Move window to positoin 100 , 100 of its parent window .
+SetWindowPos (NULL, 100 , 100 , 0 , 0 , SWP_NOSIZE ｜SWP_NOAORDER);
+----------------------------------------------
+20. 重置窗口的大小
+调用CWnd: : SetWindowPos 并指定SWP_NOMOVE标志， 也可调用CWnd : : MoveWindow
+但必须指定窗口的位置。
+// Get the size of the window .
+Crect reWindow ;
+GetWindowRect (reWindow );
+//Make the window twice as wide and twice as tall .
+SetWindowPos (NULL , 0 , 0 , reWindow . Width ( ) *2,
+reWindow . Height () * 2, SWP_NOMOVE ｜SWP_NOZORDER );
+--------------------------------------------------------
+25. 如何获取有关窗口正在处理的当前消息的信息
+调用CWnd: : GetCurrentMessage 可以获取一个MSG指针。例如，可以使用ClassWizard
+将几个菜单项处理程序映射到一个函数中，然后调用GetCurrentMessage 来确定所选中
+的菜单项。
+viod CMainFrame : : OnCommmonMenuHandler ( )
+{
+//Display selected menu item in debug window .
+TRACE ("Menu item %u was selected . \n" ,
+GetCruuentMessage ( ) —> wParam );
+}
+---------------------
+如何将程序窗口保持在顶层？
+ModifyStyleEx(0,WS_EX_TOPMOST);
+---------------------------
+

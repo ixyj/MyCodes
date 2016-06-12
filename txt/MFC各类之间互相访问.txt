@@ -1,0 +1,108 @@
+框架、文档、视图类之间的调用关系
+
+1、主框架(CFrameWnd)中访问视图(CView)
+CView* GetActiveView() const;
+通常定义的视图为CView的派生类，在调用自定义视图对象的方法时
+应该这样写：((CMouseKeyView*)GetActiveView())->MyFunc();
+
+2、主框架(CFrameWnd)中访问文档(CDocument)
+GetActiveDocument，返回CDocument对象；
+
+3、在视图(CView)中访问文档(CDocument)
+inline CMouseKeyDoc* CMouseKeyView::GetDocument()
+    {return (CMouseKeyDoc*)m_pDocument;}
+
+4、在视图(CView)中访问框架(CFrameWnd)
+CFrameWnd* GetParentFrame() const;
+
+5、在文档(CDocument)中访问框架(CFrameWnd)
+CWnd* AfxGetMainWnd();
+CWnd* AfxGetApp()->m_pMainWnd;
+
+6、在文档(CDocument)中访问视图(CView)
+UpdateAllViews
+功能：通知所有的视图文档已被修改的信息
+原型：
+    void UpdateAllViews(
+      CView* pSender, // 要更新的视图指针，如果希望更新所有视图，将此参数设为NULL
+      LPARAM lHint=0L, // 包含更改消息的通知
+      CObject* pHint=NULL // 保管更改消息的对象
+    }
+
+7、在其他类中访问文档类(CDocument)
+CDocument* GetDocument()
+{
+    CFrameWnd* frm=(CFrameWnd*)::AfxGetMainWnd();
+    ASSERT(frm);
+    CDocument* pDoc=frm->GetActiveDocument();
+    ASSERT(pDoc);
+    ASSERT(pDoc->IsKindOf(RUNTIME_CLASS(CMouseKeyDoc)));
+    return (CMouseKeyDoc*)pDoc;
+}
+
+//////////////////////////////////////////////////
+CWinApp * AfxGetApp()是一个全局函数，在任何地方都可以获得C***App类对象的指针.
+
+1、//在C***App类中：
+获得CMainFrame类对象的指针： 
+CMainFrame* pMain=(CMainFrame*)CWinThread::m_pMainWnd;
+
+获得C***View类对象的指针：（假设只有一个视图，须通过CMainFrame）
+
+C***View *pView=(C***View *)((CMainFrame*)m_pMainWnd)->CFrameWnd::GetActiveView();
+
+获得C***Doc类对象的指针（须通过CMainFrame） 
+C***Doc *pDoc=(C***Doc *)((CMainFrame*)m_pMainWnd)->CFrameWnd::GetActiveDocument();
+
+2、 //在CMainFrame类中：
+
+获得CMainFrame类对象的指针： 
+CMainFrame* pMain=(CMainFrame*)CWnd::GetActiveWindow();
+
+ 获得C***View类对象的指针： 
+C***View *pView=(C***View *)CFrameWnd::GetActiveView(); 
+获得C***Doc类对象的指针 
+C***Doc *pDoc=(C***Doc *)CFrameWnd::GetActiveDocument();
+
+
+3、 //在C***Doc类中：
+
+获得CMainFrame类对象的指针：
+CMainFrame* pMain=(CMainFrame*)AfxGetMainWnd();
+CMainFrame* pMain=(CMainFrame*)AfxGetApp()->m_pMainWnd;
+
+获得C***View类对象的指针：
+（假设只有一个视图，须通过CMainFrame）
+C***View *pView=(C***View *)((CMainFrame*)AfxGetApp()->m_pMainWnd)->CFrameWnd::GetActiveView():
+
+（假设有两个以上视图，以找寻C***View为例）
+ POSITION pos=CDocument::GetFirstViewPosition();
+
+while(pos != NULL)
+
+{
+
+    CView *pView=CDocument::GetNextView(pos);
+
+    if(pView->GetRuntimeClass()==RUNTIME_CLASS(C**View))
+
+   { }
+
+}
+ 
+
+4、 //在C***View类中：
+
+ 获得CMainFrame类对象的指针:
+
+CMainFrame* pMain=(CMainFrame*)AfxGetMainWnd(); 
+CMainFrame* pMain=(CMainFrame*)CWnd::GetParentFrame();
+CMainFrame* pMain=(CMainFrame*)AfxGetApp()->m_pMainWnd;
+
+获得C***Doc类对象的指针
+C***Doc *pDoc= GetDocument();
+
+ 注意：
+1 在CFrameWnd::ActivateFrame函数之后可以取得CMainFrame *
+2 在CView::OnCreate函数执行完毕后，可以查找C***View *
+3 在CView::OnCreate函数执行完毕后，可以取得C***Doc *

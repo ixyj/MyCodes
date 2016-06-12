@@ -1,0 +1,28 @@
+如何单击除了窗口标题栏以外的区域使窗口移动
+当窗口需要确定鼠标位置时Windows 向窗口发送WM_NCHITTEST 信息，可以处理该信息
+使Windows 认为鼠标在窗口标题上。对于对话框和基于对话的应用程序，可以使用
+ClassWizard 处理该信息并调用基类函数， 如果函数返回HTCLIENT 则表明鼠标在客房
+区域，返回HTCAPTION表明鼠标在Windows的标题栏中。
+UINT CSampleDialog : : OnNcHitTest (Cpoint point )
+{
+UINT nHitTest =Cdialog: : OnNcHitTest (point );
+return (nHitTest = =HTCLIENT)? HTCAPTION : nHitTest ;
+}
+上述技术有两点不利之处， 其一是在窗口的客户区域双击时， 窗口将极大；其二， 它
+不适合包含几个视窗的主框窗口。还有一种方法，当用户按下鼠标左键使主框窗口认为
+鼠标在其窗口标题上，使用ClassWizard在视窗中处理WM_LBUTTODOWN 信息并向主框窗
+口发送一个WM_NCLBUTTONDOWN信息和一个单击测试HTCAPTION。
+void CSampleView : : OnLButtonDown (UINT nFlags , Cpoint point )
+{
+CView : : OnLButtonDow (nFlags , pont );
+//Fool frame window into thinking somene clicked on its caption bar .
+GetParentFrame ( ) —> PostMessage (
+WM_NCLBUTTONDOWN , HTCAPTION , MAKELPARAM (poitn .x , point .y) );
+}
+该技术也适用于对话框和基于对的应用程序，只是不必调用CWnd : : GetParentFrame 。
+void CSampleDialog : : OnLbuttonDown (UINT nFlags, Cpoint point )
+{
+Cdialog : : OnLButtonDow (nFlags, goint );
+//Fool dialog into thinking simeone clicked on its caption bar .
+PostMessage (WM_NCLBUTTONDOWN , HTCAPTION , MAKELPARM (point.x , point. y ) )
+}

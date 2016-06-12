@@ -1,0 +1,9 @@
+BOOL CcalcuterDlg::PreTranslateMessage(MSG* pMsg)
+{
+	// TODO: 在此添加专用代码和/或调用基类
+	if (pMsg->wParam == 13)
+	{
+		pMsg->wParam = 9;
+	}
+	return CDialog::PreTranslateMessage(pMsg);
+}

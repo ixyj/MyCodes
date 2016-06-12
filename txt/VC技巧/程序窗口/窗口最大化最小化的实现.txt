@@ -1,0 +1,24 @@
+窗口最大化最小化的实现
+当我们不想通过标题栏的最大化、最小化及恢复按钮时，需在其他的地方实现这些功能，可以在指定的消息处理函数里添加：
+WINDOWPLACEMENT wndpl;
+WINDOWPLACEMENT *pwndpl;
+pwndpl = &wndpl;
+GetWindowPlacement(pwndpl);
+pwndpl->showCmd = SW_SHOWMINMIZED; //实现窗口最小化
+SetWindowPlacement(pwndpl);
+其中GetWindowPlacement()函数获取当前窗口布局的结构WINDOWPLACEMENT的结构变量指针，结构GetWindowPlacement定义为：
+typedef struct tagWINDOWPLACEMENT{
+    UINT length;
+    UINT flags;
+    UINT showCmd;
+    POINT ptMinPosition;
+    POINT ptMaxPosition;
+    RECT rcNormalPosition;
+}WINDOWPLACEMENT;
+其中的成员变量showCmd确定当前窗口的状态，取值一般为：
+·SW_HIDE：隐藏窗口
+·SW_MINIMIZE：最小化指定的窗口
+·SW_RESTORE：恢复原来的大小
+·SW_SHOW：以原来的大小激活并显示
+·SW_SHOWMAXIMIZED：激活并最大化窗口
+SetWindowPlacement()函数就是按WINDOWPLACEMENT的设置来显示窗口

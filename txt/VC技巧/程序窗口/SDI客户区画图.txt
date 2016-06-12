@@ -1,0 +1,17 @@
+CXXView::OnDraw(CDC*pDC)
+{
+   CRect rect;
+   GetClientRect(&rect);
+   m_bitmap=new CBitmap();
+   BITMAP bitmap;
+   CDC *mdc=new CDC; // 定义内存DC指针
+    m_bitmap->m_hObject=(HBITMAP)::LoadImage(NULL,"test.bmp",
+                              IMAGE_BITMAP,0,0,LR_LOADFROMFILE);
+                     // 加载位图
+    mdc->CreateCompatibleDC(pDC); // 创建与pDC兼容的内存DC指针
+    mdc->SelectObject(m_bitmap); 
+    m_bitmap->GetObject(sizeof(BITMAP),&bitmap);
+    int cxSource=bitmap.bmWidth;
+    int cySource=bitmap.bmHeight;
+    pDC->StretchBlt(0,0,rect.Width(),rect.Height(),mdc,0,0,cxSource,cySource,SRCCOPY);
+} 

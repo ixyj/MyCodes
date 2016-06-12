@@ -1,0 +1,16 @@
+结束一个进程所使用的函数为：
+
+BOOL TerminateProcess(
+  HANDLE hProcess, // 进程句柄
+  UINT uExitCode   // 退出代码
+);
+
+退出代码可以在其他进程中通过调用GetExitCodeProcess获得。
+
+BOOL GetExitCodeProcess(
+  HANDLE hProcess,     // handle to the process
+  LPDWORD lpExitCode   // address to receive termination status
+);
+
+如果进程尚未退出，函数将会返回STILL_ACTIVE。
+

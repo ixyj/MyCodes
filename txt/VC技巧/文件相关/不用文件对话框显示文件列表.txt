@@ -1,0 +1,14 @@
+在不使用通用文件打开对话的情况下如何显示一个文件列表
+
+调用CWnd: : DlgDirList或者CWnd: : DlgDirListComboBox， Windows 将自动地向列
+表框或组合框填充可用的驱动器名或者指定目录中的文件，下例将Windows目录中的文
+件填充在组合框中：
+BOOL CSampleDig : : OnInitDialog ( )
+{
+CDialog : : OnInitDialog ( )
+TCHAR szPath [MAX_PATH] = {"c:\\windows"} ;
+int nReslt = DlgDirListComboBox (szPath , IDC_COMBO , IDC_CURIDIR,
+DDL_READWRITE ｜DDL_READONLY｜DDL_HIDDEN｜
+DDL_SYSTEM｜DDL_ARCHIVE ) ;
+return TRUE ;
+}

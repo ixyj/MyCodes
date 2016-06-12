@@ -1,0 +1,16 @@
+下载了一组xp风格的按钮 有这两个文件QiuXpButton.cpp  QiuXpButton.h，将他加入一个project后，并在原来的程序中包含必要的头文件，而且编译没错了，为什么用classWizard是，按钮的类型没有所期望的CQiuXpButton 呢？还是只有一个CButton  请教！
+
+打开“工程名.clw"文件
+
+会在开头附近看到类似的内容
+ClassCount=7
+Class1=CTestBMPApp
+Class2=CTestBMPDoc
+Class3=CTestBMPView
+Class4=CMainFrame
+
+修改ClassCount=N，N是工程中的类的个数
+添加ClassN=CQiuXpButton 
+保存。
+
+然后运行class wizard，会出现一个对话框，让你指定对应CQiuXpButton的。h和.cpp文件，添加完毕后，就大功告成！！！

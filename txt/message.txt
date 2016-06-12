@@ -1,0 +1,48 @@
+先定义消息ID
+static UINT my_msg=RegisterWindowMessage(L"User"); //由系统定义消息ID
+#define my_msg (WM_USER+100)
+
+发送消息
+===============================================
+CFrameWnd * pFrame =(CFrameWnd*)AfxGetApp()->m_pMainWnd;
+CView * pView = pFrame->GetActiveView();
+pView->SendMessage(my_msg,int_msg_kind,(LPARAM)data);//或PostMessage,LPARAM--指针
+//data 是传送的数据指针
+//typedef UINT_PTR            WPARAM;
+//typedef LONG_PTR            LPARAM;
+//typedef LONG_PTR            LRESULT;
+==============================================	
+CMDIFrameWnd *pFrame=(CMDIFrameWnd*)AfxGetApp()->m_pMainWnd;
+CMDIChildWnd *pChild=(CMDIChildWnd *) pFrame->GetActiveFrame();
+CView *pView=pChild->GetActiveView();
+pView->SendMessage(my_msg,int_msg_kind,(LPARAM)data);
+=============================================
+CMyCtrl* pCtrl = (CMyCtrl*)GetDlgItem(Ctrl_ID);
+pCtrl->SendMessage(my_msg,int_msg_kind,(LPARAM)data);
+
+接收消息
+头文件里添加声明：
+afx_msg LRESULT ReceiveMsg(WPARAM wParam, LPARAM lParam);
+DECLARE_MESSAGE_MAP() 
+实现文件添加定义：
+IMPLEMENT_DYNAMIC(CWnd, CBase)
+BEGIN_MESSAGE_MAP(CWnd, CBase)
+ON_MESSAGE(my_msg, ReceiveMsg)//#define my_msg (WM_USER+100)时
+ON_REGISTERED_MESSAGE(my_msg, ReceiveMsg)//my_msg=RegisterWindowMessage(L"User")时
+END_MESSAGE_MAP()
+
+LRESULT CWnd::ReceiveMsg(WPARAM wParam, LPARAM lParam)
+{
+	……
+	return 0;
+}
+
+
+对话框之间发送消息
+HWND hwnd = NULL;//全局变量
+然后
+hwnd = CReceiveDlg.GetSafeHwnd();
+
+发送消息时
+extern HWND hwnd;//全局
+::SendMessageW(hwnd,my_msg,int_msg_kind,(LPARAM)data);

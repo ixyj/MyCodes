@@ -1,0 +1,53 @@
+void CMyTryDlg::OnBnClickedButtoncopy()
+{
+	CString str(L"");//定义字符型变量用来保存用户输入的数据
+    
+      GetDlgItemText(IDC_RICHEDIT_one,str);
+      HGLOBAL hClip; //定义一个HGLOBAL句柄变量用来指向分配的内存块
+
+       if (OpenClipboard() != NULL)
+       {
+			EmptyClipboard();                            //将剪贴板内容清空
+			 hClip=GlobalAlloc(GMEM_MOVEABLE,str.GetLength()*2+2); 
+            //在堆上分配可移动的内存块，程序返回一个内存句柄
+            wchar_t * buff;                                 //定义指向字符型的指针变量
+            buff=(wchar_t*)GlobalLock(hClip);
+            //对分配的内存块进行加锁，将内存块句柄转化成一个指针,并将相应的引用计数器加1
+			//memcpy(buff,str.GetBuffer(),1+len);
+			//
+			//wsprintf(buff,L"%s",str.GetBuffer());
+			wcscpy(buff,  str.GetBuffer());
+			str.ReleaseBuffer();
+            //将用户输入的数据复制到指针变量中，实际上就是复制到分配的内存块中
+           GlobalUnlock(hClip);
+           //数据写入完毕，进行解锁操作，并将引用计数器数字减1
+           SetClipboardData(CF_TEXT,hClip);
+            //将存放有数据的内存块放入剪贴板的资源管理中
+		//	GlobalFree(hClip);
+           CloseClipboard();
+           //关闭剪贴板，释放剪贴板资源的占用权
+			
+      }
+}
+
+void CMyTryDlg::OnBnClickedButtonpaste()
+{
+	// TODO: 在此添加控件通知处理程序代码
+      HANDLE hClip;
+        //定义HANDLE句柄型变量用来指向GetClipboardData函数返回的句柄
+        if (OpenClipboard())
+        {
+            hClip=GetClipboardData(CF_TEXT);
+           //从剪贴板中取出一个内存的句柄
+            wchar_t* buff = (wchar_t*)GlobalLock(hClip);
+           //定义字符型指针变量用来保存内存块中的数据
+           //对内存块进行加锁，将内存句柄值转化为一个指针,并将内存块的引用计数器加一，内存中的数据也返回到指针型变量中
+            CString str(buff);
+            //将数据保存到字符型变量中
+            GlobalUnlock(hClip);  //字符型变量保存由剪贴板复制下来的数据
+            //将内存块的引用计数器减一
+            CloseClipboard();
+            //关闭剪贴板，释放剪贴板资源的占用权
+            SetDlgItemText(IDC_EDIT1,str);
+       }
+}

@@ -1,0 +1,16 @@
+如何修改窗口的背景色？？ 
+
+可以通过处理WM_ERASEBKGND消息来改变CView、CFrameWnd或CWnd对象的背景色。
+请看如下的程序段： 
+BOOL C**View::OnEraseBkgnd(CDC* pDC) 
+{ 
+   // 设置所要求背景色的刷子 
+   CBrush backBrush(RGB(255, 128, 128)); 
+   // 保存旧刷子 
+   CBrush* pOldBrush = pDC->SelectObject(&backBrush); 
+   CRect rect; 
+   pDC->GetClipBox(&rect);   // 擦除所需的区域 
+   pDC->PatBlt(rect.left, rect.top, rect.Width(), rect.Height(), PATCOPY); 
+   pDC->SelectObject(pOldBrush); 
+   return TRUE; 
+}

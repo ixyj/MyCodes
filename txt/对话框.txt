@@ -1,0 +1,3 @@
+JOptionPane.showMessageDialog(null, "Hello");
+JOptionPane.showConfirmDialog(null, "Hello");
+JOptionPane.showInputDialog(null, "Hello","world");

@@ -1,0 +1,74 @@
+我想在VC程序中获取USB口的摄像头数据，请问那位高手知不知道有没有什么API函数之类的啊！多谢了各位，如果有源代码更好！  
+---------------------------------------------------------------  
+ 
+使用vfw  
+ 
+                   char  achDeviceVersion[80]  ;            //  设备版本信息  
+                   char  achDeviceAndVersion[160];  //设备名及版本信息  
+                   int  uIndex;  
+                           DriverCount=0;//支持的设备驱动程序个数  
+             for(uIndex=0;uIndex<5;uIndex++)  
+                 {  
+                             if(capGetDriverDescription(uIndex,(LPSTR)achDeviceAndVersion,sizeof(achDeviceAndVersion),(LPSTR)achDeviceVersion,sizeof(achDeviceVersion)))  
+                             {  
+                             strcat(achDeviceAndVersion,",");  
+                     strcat(achDeviceAndVersion,achDeviceVersion);  
+                     DriverCount++;  
+ 
+                             }  
+                             else  
+                                         break;  
+                 }  
+ 
+                 if(DriverCount==0)  
+                             MessageBox("找不到视频设备，请确认已正确连接","错误信息",MB_ICONSTOP  |MB_OK);  
+             else  
+                 {  
+                   
+                             CMainFrame  *pFrame=(CMainFrame  *)AfxGetApp()->m_pMainWnd;  
+                         CTest11View  *pView=(CTest11View  *)pFrame->GetActiveView();  
+                             HWND  hWnd;  
+                             hWnd=pView->GetSafeHwnd();  
+                           
+                       RECT  rc;              
+                       GetClientRect(&rc);  
+               hWndCap=capCreateCaptureWindow(NULL,  
+                                   WS_CHILD  |WS_VISIBLE,30,70,  
+                                   (rc.right-rc.left)/4,(rc.bottom-rc.top)/4,  
+                                   hWnd,//parent  window  
+                                   0                    //chile  window  id  
+                                   );//建立视频采集窗口  
+                       ASSERT(hWndCap);  
+                       if(capDriverConnect(hWndCap,--uIndex))//判断采集窗口是否与0号采集卡驱动相连接  
+ 
+           {  
+                       //获取视频设备采集能力  
+                                   capDriverGetCaps(hWnd,&CapDriverCaps,sizeof(CAPDRIVERCAPS));  
+               if(CapDriverCaps.fCaptureInitialized)//初始化成功  
+                         
+                       {    //  设置Preview模式的频帧                          
+                       capPreviewRate(hWndCap,  20);    
+                       //启动Preview模式  
+                       capPreview(hWndCap,  TRUE);  
+                               //设置每帧结束后所调用的回调函数  
+                                   //capSetCallbackOnFrame(hWndCap,FrameCallbackProc);  
+                           
+                         //如果支持视频源选择，则弹出视频源选择对话框  
+                       if(CapDriverCaps.fHasDlgVideoSource)  
+                         capDlgVideoSource(hWnd);  
+                       //如果支持视频格式选择，则弹出视频格式选择对话框  
+               if(CapDriverCaps.fHasDlgVideoFormat)  
+                                   capDlgVideoFormat(hWnd);  
+                       //如果支持视频显示格式选择，则弹出视频显示格式选择对话框  
+               if(CapDriverCaps.fHasDlgVideoDisplay)  
+                                   capDlgVideoDisplay(hWnd);  
+                       }  
+                       else//初始化不成功  
+                             MessageBox("捕获卡初始化失败","错误信息",MB_ICONSTOP  |MB_OK);              
+     }  
+                       else  
+                     MessageBox("捕获卡连接失败","错误信息",MB_ICONSTOP  |MB_OK);              
+                 }  
+---------------------------------------------------------------  
+ 
+需要用到Vfw32.lib库，在project->setting->link->object/library  modules中添加

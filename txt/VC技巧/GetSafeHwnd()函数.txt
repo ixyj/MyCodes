@@ -1,0 +1,12 @@
+为什么要使用GetSafeHwnd()函数
+当我们想得到一个窗口对象（CWnd的派生对象）指针的句柄（HWND）时，最安全的方法是使用GetSafeHwnd()函数，通过下面的例子来看其理由：
+CWnd *pwnd = FindWindow(“ExploreWClass”,NULL); //希望找到资源管理器
+HWND hwnd = pwnd->m_hwnd;  //得到它的HWND
+这样的代码当开始得到的pwnd为空的时候就会出现一个“General protection error”,并关闭应用程序，一般不能对一个NULL指针访问其成员，如果用下面的代码：
+CWnd *pwnd = FindWindow(“ExploreWClass”,NULL); //希望找到资源管理器
+HWND hwnd = pwnd->GetSafeHwnd();  //得到它的HWND
+就不会出现问题，因为尽管当pwnd是NULL时，GetSafeHwnd仍然可以用，只是返回NULL，通过GetSafeHwnd()的实现代码就更清楚了：
+_AFXWIN_INLINE HWND CWnd::GetSafeHwnd() const
+{
+   return this == NULL?NULL:m_hWnd;
+}

@@ -1,0 +1,38 @@
+BOOL DeleteDirectory(LPCTSTR DirName)
+{
+    CFileFind tempFind; //声明一个CFileFind类变量，以用来搜索
+    char tempFileFind[200]; //用于定义搜索格式
+    sprintf(tempFileFind,"%s\\*.*",DirName);
+    //匹配格式为*.*,即该目录下的所有文件 
+    
+    BOOL IsFinded=(BOOL)tempFind.FindFile(tempFileFind);
+    //查找第一个文件
+    while(IsFinded)
+    {
+        IsFinded=(BOOL)tempFind.FindNextFile(); //递归搜索其他的文件 
+    if(!tempFind.IsDots()) //如果不是"."目录
+    {
+        char foundFileName[200];
+        strcpy(foundFileName,tempFind.GetFileName().GetBuffer(200));
+        if(tempFind.IsDirectory()) //如果是目录，则递归地调用
+        { //DeleteDirectory
+        char tempDir[200];
+        sprintf(tempDir,"%s\\%s",DirName,foundFileName);
+        DeleteDirectory(tempDir);
+        }
+        else
+        { //如果是文件则直接删除之
+            char tempFileName[200];
+            sprintf(tempFileName,"%s\\%s",DirName,foundFileName);
+            DeleteFile(tempFileName);
+        }
+    }
+    }
+    tempFind.Close();
+    if(!RemoveDirectory(DirName)) //删除目录
+    {
+        AfxMessageBox("删除目录失败！",MB_OK);
+        return FALSE;
+    }
+    return TRUE;
+}

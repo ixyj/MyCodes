@@ -1,0 +1,6 @@
+startActivityForResult与startActivity的不同之处在于：
+1、startActivity( ) 
+仅仅是跳转到目标页面，若是想跳回当前页面，则必须再使用一次startActivity( )。
+2、startActivityForResult( ) 
+可以一次性完成这项任务，当程序执行到这段代码的时候，假若从T1Activity跳转到下一个Text2Activity，而当这个Text2Activity调用了finish()方法以后，程序会自动跳转回T1Activity，并调用前一个T1Activity中的onActivityResult( )方法。 
+

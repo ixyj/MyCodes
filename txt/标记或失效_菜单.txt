@@ -1,0 +1,18 @@
+添加菜单消息,如下：
+void CDlg::OnButtonDownMessage()
+{
+//////消息动作//////////////
+……
+……
+//标记菜单，先获得菜单资源：(对话框添加菜单)
+CMenu menu;
+menu.LoadMenu(IDR_MENU);   
+SetMenu(&menu);   
+//======or======
+CMenu menu, *pMenu = NULL;
+menu.LoadMenuW(IDR_MAINFRAME);
+pMenu = menu.GetSubMenu(4);
+……
+……
+Menu->CheckMenuItem(ID_MenuItemID, MF_CHECKED /*or*/ MF_UNCHECKED);
+使菜单失效类似用法！

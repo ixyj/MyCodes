@@ -1,0 +1,12 @@
+//获取主窗口指针
+CMDIFrameWnd *pFrame = (CMDIFrameWnd*)AfxGetApp()->m_pMainWnd;
+// 获取子窗口指针
+CMDIChildWnd *pChild = (CMDIChildWnd *)pFrame->GetActiveFrame();
+//获取视类指针
+CView *pView = pChild->GetActiveView();
+
+//////////////////////////////////////////////////////
+//获取窗口指针
+CFrameWnd* pFrame = (CFrameWnd*)AfxGetApp()->m_pMainWnd;
+//获取视类指针
+CView * pView = (CView*)pFrame->GetActiveView();

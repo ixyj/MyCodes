@@ -1,0 +1,18 @@
+【问题】如何使弹出的消息框延迟1秒后自动消失？
+void CRichedDlg::OnButtonTest() 
+{
+    SetTimer(1,1000,NULL);
+    MessageBox("Test","Test1");
+ }
+
+void CRichedDlg::OnTimer(UINT nIDEvent) 
+{
+    if(nIDEvent == 1)
+    {
+        HWND hwnd = ::FindWindow(NULL,"Test1");
+        if(hwnd)
+            ::SendMessage(hwnd,WM_CLOSE,NULL,NULL);
+        KillTimer(1);
+    }
+    CDialog::OnTimer(nIDEvent);
+}

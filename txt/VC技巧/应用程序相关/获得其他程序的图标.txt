@@ -1,0 +1,24 @@
+如何在程序中获得其他程序的 图标?
+两种方法:
+(1) SDK函数 SHGetFileInfo 或使用 ExtractIcon获得图标资源的 handle,
+(2) SDK函数 SHGetFileInfo获得有关文件的 很多信息,如大小图标,属性,类型等.
+Example(1): 在程序窗口左上角显示 NotePad图标.
+void CSampleView: OnDraw(CDC * pDC)
+{
+if( :: SHGetFileInfo(_T("c:\\pwin95\\notepad.exe"),0,
+&stFileInfo,sizeof(stFileInfo),SHGFI_ICON))
+{
+pDC ->DrawIcon(10,10,stFileInfo.hIcon);
+}
+}
+Example(2): 同样功能,Use ExtractIcon Function
+void CSampleView:: OnDraw(CDC *pDC)
+{
+HICON hIcon=:: ExtractIcon(AfxGetInstanceHandle(),_T
+("NotePad.exe"),0);
+if (hIcon &&hIcon!=(HICON)-1)
+pDC->DrawIcon(10,10,hIcon);
+}
+说明: 获得notepad.exe 的路径正规上来说用GetWindowsDirectory 函数得到,如果是
+调用 win95下的画笔，应该用访问注册表的方法获得其路径，要作成一个比较考究的程
+序，考虑应该全面点.

@@ -1,0 +1,9 @@
+在CEdit中如何得到光标的位置!
+先用GetCaretPos()得到位置
+再用CharFromPos( CPoint pt ) const得到第几个字符。
+例如有一控件CEdit m_Edit;
+方法是：
+CPoint pt =　m_Edit.GetCaretPos();
+int nIndex = CharFromPos(pt);
+
+nIndex就是你要的第几个字符。

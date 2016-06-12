@@ -1,0 +1,23 @@
+LINK : warning LNK4098: defaultlib "msvcrtd.lib" conflicts with use of other libs; use /NODEFAULTLIB:library
+以上错误都是因为没有用将mfc动态库。
+要在project-->setting-->genenal
+在下面的Micro Foundation class
+选择Use MFC in a shared lib
+------------------------------------------------------------------
+将光标定位到怀疑有问题的代码行上按F9,在该行上设置一个断点,然后按F5进入调试状态,当程序运行到断点处之后,可以按分F10或F11来单步跟踪一下!
+-----------------------------------------
+7.   编译错误
+fatal  error  C1010:  unexpected  end  of  file  while  looking  for  precompiled  header  directive  
+
+#include  "Script.h"之前加入#include  "stdafx.h"
+-------------------------------------------------
+在安装VC时未安装MSDN, 自己再用MSDN安装盘安装后在VC中按F1无法调用？
+修改注册表是最直接的方法，具体过程如下: 
+在HKEY_CURRENT_USER/Software/Microsoft/DevStudio/6.0/Help下增加Enable,Filename,State三个主键,注意其类型,含义如下: 
+Enable 类型:DWORD，默认值是1，改变为0x00000001 
+Filename 类型:字符串改为c:\program files\....\MSDev98\help\Msdev.hlp 
+State 类型:DWORD 默认值为0，改变为0x00000001 
+-------------------------------------------------------------
+怎样处理ClassZiard找不到的系统消息 
+如果要在ClassWizard中处理WM_NCHITTEST等系统消息，请在ClassWizard中Class Info页中将
+Message filter改为Window就有了.      

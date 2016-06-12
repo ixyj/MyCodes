@@ -1,0 +1,29 @@
+API函数拷贝文件夹
+void  OnFilecopy()
+{
+     int nOk;
+     char  strSrc[]="c:\\dos\0c:\\pwin98\\command\0";
+     //可以改变源路径
+     char  strDst[]="c:\\temp\0";
+     //设置目的路径
+     char  strTitle[]="File copying";
+     //进度题头
+     SHFILEOPSTRUCT FileOp;
+     FileOp.hwnd=m_hWnd;
+     FileOp.wFunc=FO_COPY;
+     //执行文件拷贝
+     FileOp.pFrom=strSrc;
+     FileOp.pTo=strDst;
+     FileOp.fFlags=FOF_ALLOWUNDO;
+     FileOp.hNameMappings=NULL;
+     FileOp.lpszProgressTitle=strTitle;
+
+        nOk=SHFileOperation(&FileOp);
+        if(nOk)
+            TRACE("There is an error: %d\n",nOk);
+        else
+           TRACE("SHFileOperation finished successfully\n");
+
+         if（FileOp.fAnyOperationsAborted）
+            TRACE("Operation was aborted!\n");
+} 

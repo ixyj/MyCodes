@@ -1,0 +1,6 @@
+Visual C++中的Tools菜单中有有自定义工具的功能，
+它能把“Console应用程序的输出”输出到它的“Output window"中。
+这个的确很有吸引力，于是自己用“匿名管道”技术也试着实现了一下
+类似的功能：当Console应用程序中没有"MessageBox"时，的确很顺利，
+但是当那个Console应用程序中含有"MessageBox"语句时，从“匿名管道”
+读Console应用程序的输出数据时，会出现“死等待”，

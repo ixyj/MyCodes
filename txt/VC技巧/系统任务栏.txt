@@ -1,0 +1,12 @@
+是系统任务栏吗？？
+
+CWnd* GetTaskbar()
+{
+   CWnd* pRet = NULL ;
+   HWND hwnd = ::FindWindow("Shell_TrayWnd",NULL) ;
+   if(hwnd)
+   {
+      pRet = CWnd::FromHandle(hwnd) ;
+    }
+   return pRet ;
+}

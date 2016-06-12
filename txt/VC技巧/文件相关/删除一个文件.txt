@@ -1,0 +1,14 @@
+删除一个文件
+//example for CFile::Remove
+char* pFileName = "test.dat";
+TRY
+{
+    CFile::Remove( pFileName );
+}
+CATCH( CFileException,e)
+{
+    #ifdef _DEBUG
+        afxDump << "File " << pFileName << " cannot be removed\n";
+    #endif
+}
+END_CATCH

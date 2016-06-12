@@ -1,0 +1,11 @@
+如何使窗口始终在最前方?
+两种途径.
+BringWindowToTop(Handle);
+SetWindowPos函数，指定窗口的最顶风格,用WS_EX_TOPMOST扩展窗口的 风格
+Example:
+void ToggleTopMost( CWnd *pWnd)
+{
+ASSERT_VALID(pWnd);
+pWnd ->SetWindowPos(pWnd-> GetStyle() &WS_EX_TOPMOST)?
+&wndNoTopMOST: &wndTopMost,0,0,0,0,SSP_NOSIZE|WSP_NOMOVE};
+}

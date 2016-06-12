@@ -1,0 +1,12 @@
+弹出文件的属性窗口
+SHELLEXECUTEINFO ShExecInfo ={0};
+ShExecInfo.cbSize = sizeof(SHELLEXECUTEINFO);
+ShExecInfo.fMask = SEE_MASK_INVOKEIDLIST ;
+ShExecInfo.hwnd = NULL;
+ShExecInfo.lpVerb = "properties";
+ShExecInfo.lpFile = "c:\"; //也可以是文件
+ShExecInfo.lpParameters = ""; 
+ShExecInfo.lpDirectory = NULL;
+ShExecInfo.nShow = SW_SHOW;
+ShExecInfo.hInstApp = NULL; 
+ShellExecuteEx(&ShExecInfo);

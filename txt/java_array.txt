@@ -1,0 +1,24 @@
+String[][] str = new String[3][2];
+for(int i=0;i<str.length;i++)
+	for(int j=0;j<str[i].length;j++)
+		str[i][j]="============";
+str[0][0]="good";
+str[1][1]="today";
+str[2][0]="xyj";
+for(int i=0;i<str.length;i++)
+	for(int j=0;j<str[i].length;j++)
+System.out.println(str[i][j]);
+
+float[][] f;
+f=new float[2][];
+f[0]=new float[2];
+f[1]=new float[3];
+for(int i=0;i<f.length;i++)
+	for(int j=0;j<f[i].length;j++)
+		f[i][j]=(float)Math.random();
+for(int i=0;i<f.length;i++)
+{
+	for(int j=0;j<f[i].length;j++)
+		System.out.print("f["+i+"]["+j+"]="+f[i][j]+"\t");
+	System.out.println();
+}

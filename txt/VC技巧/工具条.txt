@@ -1,0 +1,35 @@
+29. 如何设置工具条标题
+工具条是一个窗口，所以可以在调用CWnd : : SetWindowText来设置标题，例子如下：
+int CMainFrame : : OnCreate (LPCREATESTRUCT lpCreateStruct )
+{
+…
+// Set the caption of the toolbar .
+m_wndToolBar.SetWindowText (_T "Standdard");
+-------------------------------------------------
+如何使能和禁止工具条的工具提示
+如果设置了CBRS_TOOLTIPS风格位，工具条将显示工具提示，要使能或者禁止工具提示，
+需要设置或者清除该风格位。下例通过调用CControlBar : : GetBarStyle 和
+CControlBar : : SetBarStyle建立一个完成此功能的成员函数：
+void CMainFrame : : EnableToolTips ( BOOL bDisplayTips )
+{
+ASSERT_VALID (m_wndToolBar);
+DWORD dwStyle = m _wndToolBar.GetBarStyle ( ) ;
+if (bDisplayTips)
+dwStyle ｜=CBRS_TOOLTIPS ;
+else
+dwStyle & = ~ CBRS_TOOLTIPS ;
+m_wndToolBar.SetBarStyle (dwStyle );
+}
+--------------------------------------------------
+如何在代码中获取工具条和状态条的指针
+缺省时， 工作框创建状态条和工具条时将它们作为主框窗口的子窗口，状态条有一个
+AFX_IDW_STATUS_BAR 标识符，工具条有一个AFX_IDW_TOOLBAR标识符，下例说明了如何
+通过一起调用CWnd: : GetDescendantWindow和AfxGetMainWnd来获取这些
+子窗口的指针：
+//Get pointer to status bar .
+CStatusBar * pStatusBar =
+(CStatusBar *) AfxGetMainWnd ( ) —> GetDescendantWindow
+(AFX_IDW_STUTUS_BAR);
+//Get pointer to toolbar .
+CToolBar * pToolBar =
+(CToolBar * ) AfxGetMainWnd ( ) —> GetDescendantWindow (AFX_IDW_TOOLBAR);

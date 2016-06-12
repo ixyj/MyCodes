@@ -1,0 +1,86 @@
+立即运行屏幕保护程序
+::SendMessage(GetSafeHwnd(), WM_SYSCOMMAND, SC_SCREENSAVE, 0);
+---------------------------------
+//获得计算机的名字
+char name[10];
+DWORD size = sizeof(name);
+GetComputerName(name,&size); 
+-----------------------------------
+//获得各种目录信息
+Windows目录: Use "GetWindowsDirectory“
+Windows下的system目录: Use "GetSystemDirectory"
+temp目录: Use "GetTempPath "
+当前目录: Use "GetCurrentDirectory"
+请注意前两个函数的第一个参数为 目录变量名，后一个为缓冲区; 后两个相反.
+-----------------------------------
+//怎样得到系统的分辨率
+int icy, icx;
+icx = GetSystemMetrics(SM_CXSCREEN);
+icy = GetSystemMetrics(SM_CYSCREEN);
+--------------------------------------
+//添加托盘
+void CWorkSheetTrayDlg::AddTaskBarIcon()
+{
+	m_Nid.cbSize = sizeof(m_Nid);
+	m_Nid.uFlags = NIF_MESSAGE | NIF_ICON | NIF_TIP;
+	m_Nid.hIcon=(HICON)LoadImage(AfxGetInstanceHandle(),
+			MAKEINTRESOURCE(IDI_SysIcon),IMAGE_ICON,16,16,NULL);
+
+	//加载系统缺省图标
+	strcpy(m_Nid.szTip,"潍坊检修申请管理系统");
+	//提示字符
+	m_Nid.uCallbackMessage=WM_USER + 10;
+	m_Nid.uID = 10;
+	m_Nid.hWnd=m_hWnd;
+	Shell_NotifyIcon(NIM_ADD,&m_Nid);
+}
+------------------------------------------------
+//删除托盘
+void CWorkSheetTrayDlg::DeleteTaskBarIcon()
+{
+//	NOTIFYICONDATA m_Nid;
+	m_Nid.cbSize=sizeof(m_Nid);
+	m_Nid.uID=10;
+	m_Nid.hWnd=m_hWnd;
+	Shell_NotifyIcon(NIM_DELETE,&m_Nid);
+}
+-------------------
+//设置光标
+	SetCaretPos(m_pPoint);
+//显示光标
+	ShowCaret();
+-------------------------------
+//显示盘符
+void CFileMakerView::FillDriveInfo()
+{
+	DWORD	dwDrives;
+	char	a;
+	CString DriveName;
+        dwDrives = GetLogicalDrives();
+        a = 'A';
+        while (dwDrives > 0)
+	{
+	  if (dwDrives % 2 == 1)
+	  {
+	    DriveName.Format("%c", a);
+	    GetTreeCtrl().InsertItem(DriveName,m_nImageClose, m_nImageOpen, TVI_ROOT, TVI_LAST);
+	  }
+        a++;
+	dwDrives /= 2;
+	}
+}
+---------------------------
+如何取得三个键盘提示灯当前状态？
+用API 函数 GetKeyboardState，例如：
+unsigned char kbuf[256];
+GetKeyboardState(kbuf);
+
+if(kbuf[VK_CAPITAL]&1)
+GetDlgItem(ID_CAPS_LOCK_KEY)->SetWindowText("On");
+else 
+GetDlgItem(ID_CAPS_LOCK_KEY)->SetWindowText("Off");
+
+if(kbuf[VK_NUMLOCK]&1)
+GetDlgItem(ID_NUM_LOCK_KEY)->SetWindowText("On");
+else 
+GetDlgItem(ID_NUM_LOCK_KEY)->SetWindowText("Off");

@@ -1,0 +1,25 @@
+//使程序启动时隐藏
+以对话框为例：
+
+BOOL CDialDlg::OnInitDialog()
+{
+   CDialog::OnInitDialog();
+
+   PostMessage(WM_SYSCOMMAND,SC_MAXIMIZE,FALSE);
+   return TRUE;  // return TRUE  unless you set the focus to a control
+}
+
+void CDialDlg::OnSysCommand(UINT nID, LPARAM lParam)
+{
+   if ((nID & 0xFFF0) == IDM_ABOUTBOX)
+   {
+      CAboutDlg dlgAbout;
+      dlgAbout.DoModal();
+   }
+   else if(nID == SC_MAXIMIZE)
+      ShowWindow(SW_HIDE);
+   else
+   {
+      CDialog::OnSysCommand(nID, lParam);
+   }
+} 

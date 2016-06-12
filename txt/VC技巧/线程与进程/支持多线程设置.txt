@@ -1,0 +1,1 @@
+project->settings:C/C++页：Category中选Code Generation,然后在Use run_time Library列表中选MultiThreaded Dll项即可

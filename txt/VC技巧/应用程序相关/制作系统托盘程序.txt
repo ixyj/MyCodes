@@ -1,0 +1,77 @@
+　　一、隐藏程序的主窗口
+
+　　首先，要使程序的主窗口不可见，并且不在任务栏上出现任务按钮，要做到这两点，需分别设置主边框窗口的风格和扩展风格：
+
+BOOL CMainFrame::PreCreateWindow(CREATESTRUCT& cs)
+{
+　cs.style =WS_POPUP;//使主窗口不可见
+　cs.dwExStyle |=WS_EX_TOOLWINDOW;//不显示任务按钮
+　return CFrameWnd::PreCreateWindow(cs);
+} 
+
+　　二、将表示程序运行的图标加入任务栏
+
+　　在主框架窗口的CMainFrame::OnCreate（）函数中调用上述函数，就可以在任务条上显示图标这一步是利用系统API函数Shell_NotifyIcon（）将一个图标显示在任务栏的通告区中。该函数的原型为：在调用该函数之前，需要确定其参数的取值。其中Shell_NotifyIcon（）函数的第一个参数是一个预定义的消息，可以取如下值之一：NIM_ADD、NIM_DELETE或NIM_MODIFY，分别表示添加图标、删除图标或修改图标。另一个参数为指向NOTIFYICONDATA类型的指针。其原型为：
+
+typedef struct _NOTIFYICONDATA {
+　DWORD cbSize;
+　HWND hWnd;
+　UINT uID;
+　UINT uFlags;
+　UINT uCallbackMessage;
+　HICON hIcon; 
+　charszTip[64]; }
+NOTIFYICONDATA  
+
+　　在该结构的成员中，cbSize为该结构所占的字节数，hWnd为接受该图标所发出的消息的窗口的句柄（鼠标在任务栏上程序图标上动作时图标将发出消息，这个消息用户要自己定义），uID为被显示图标的ID，uFlags指明其余的几个成员（hIcon、uCallBackMessage和szTip）的值是否有效，uCallbackMessage为一个用户自定义的消息，当用户在该图标上作用一些鼠标动作时，图标将向应用程序的主框架窗口（hWnd成员中指定的窗口）发出该消息，。hIcon为将在任务栏上被显示图标的句柄，szTip鼠标停留在该图标上时显示的字符串。
+
+int CMainFrame::OnCreate(LPCREATESTRUCT lpCreateStruct)
+{
+　NOTIFYICONDATA tnd;
+　tnd.cbSize=sizeof(NOTIFYICONDATA);
+　tnd.hWnd=this->m_hWnd;
+　tnd.uID=IDR_MAINFRAME;
+　tnd.uFlags=NIF_MESSAGE|NIF_ICON|NIF_TIP;
+　tnd.uCallbackMessage=WM_MYMESSAGE;
+　file://用户自定义的消息，即鼠标在任务栏上程序图标上动作时图标发送的消息
+　tnd.hIcon=LoadIcon(AfxGetInstanceHandle(),MAKEINTRESOURCE(IDR_MAINFRAME));
+　strcpy(tnd.szTip,"测试程序");//图标提示为"测试程序"
+　Shell_NotifyIcon(NIM_ADD,&tnd);//向任务栏添加图标
+} 
+三、用户与程序交互的实现
+
+　　用户进行交互，也就是当用户在该图标上单击或双击鼠标左键或右键时要执行相应的操作，至少也要响应用户终止该程序的意愿。上面已经提到，当用户在图标上进行鼠标动作时，将向hWnd成员中指定的窗口发出自定义的消息，该消息为uCallbackMessage成员所指定的WM_MYESSAGE，取值为WM_USER+101（如何自定义消息，我就不多说了）。我们要实现任务就是在hWnd窗口中响应该自定义消息：
+
+void CMainFrame::OnMYMESSAGE(WPARAM wParam,LPARAM lParam)
+{
+　UINT uID;//发出该消息的图标的ID
+　UINT uMouseMsg;//鼠标动作
+　POINT pt;
+　uID=(UINT) wParam;
+　uMouseMsg=(UINT) lParam;
+　if(uMouseMsg==WM_RBUTTONDOWN)//如果是单击右键
+　{
+　　switch(uID)
+　　{
+　　case IDR_MAINFRAME://如果是我们的图标
+　　　GetCursorPos(&pt);//取得鼠标位置
+　　　AfxGetApp( )-> m_pMainWnd->ShowWindow(SW_SHOWNORMAL);//显示程序窗口
+　　　break;
+　　　default:
+　　}
+　}
+　return; 
+} 
+ 
+　　四、程序结束时删除程序图标
+
+　　当程序结束时，需要删去通告区中的图标，这时还应该调用Shell_NotifyIcon函数，只不过第一个参数是表示删除图标的NIM_DELETE了：
+
+void CMainFrame::~CmainFrame() 
+{
+　NOTIFYICONDATA tnid;
+　tnid.cbSize=sizeof(NOTIFYICONDATA);
+　tnid.hWnd=this->m_hWnd;
+　tnid.uID=IDR_MAINFRAME;//保证删除的是我们的图标
+　Shell_NotifyIcon(NIM_DELETE,&tnid);
+} 

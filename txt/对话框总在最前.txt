@@ -1,0 +1,5 @@
+	CRect   rc; 
+	 GetWindowRect(&rc); 
+	 SetWindowPos(&wndTopMost,rc.left,rc.top,rc.bottom,rc.right,
+	 SWP_NOMOVE |SWP_NOSIZE |SWP_NOACTIVATE);
+//会有些问题

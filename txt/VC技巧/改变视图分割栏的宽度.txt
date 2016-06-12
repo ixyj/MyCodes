@@ -1,0 +1,15 @@
+怎样改变视图分割栏的宽度啊？系统默认的宽度有四个象素左右，显得太宽了，能否改成一个像素的？  
+---------------------------------------------------------------  
+ 
+重载！在构造涵数中可改变宽度如：  
+CSplitterWndEx::CSplitterWndEx():  
+       {  
+       m_cxSplitter=1;            //你要的一个像素的宽度  
+       m_cySplitter=1;  
+       m_cxBorderShare=0;  
+       m_cyBorderShare=0;  
+       m_cxSplitterGap=1;  
+       m_cySplitterGap=1;  
+       m_cxBorder=0;  
+       m_cyBorder=0;  
+}  

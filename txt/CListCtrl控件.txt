@@ -1,0 +1,324 @@
+VC的CListCtrl控件 
+/////////////////////////////////////////////////////////////////////
+1. CListCtrl 样式及设置
+
+2. 扩展样式设置
+
+3. 数据插入
+
+4. 一直选中Item
+
+5. 选中和取消选中Item
+
+6. 得到CListCtrl中所有行的checkbox的状态
+
+7. 得到CListCtrl中所有选中行的序号
+
+8. 得到item的信息
+
+9. 得到CListCtrl的所有列的header字符串内容
+
+10. 使CListCtrl中一项可见，即滚动滚动条
+
+11. 得到CListCtrl列数
+
+12. 删除所有列
+
+13. 得到单击的CListCtrl的行列号
+
+14. 判断是否点击在CListCtrl的checkbox上
+
+15. 右键点击CListCtrl的item弹出菜单
+
+16. CListCtrl进行大数据量更新时，避免闪烁
+--------------------------------------------------------------------------------
+
+1. CListCtrl 样式及设置
+LVS_ICON: 每个item显示大图标
+LVS_SMALLICON: 每个item显示小图标
+LVS_LIST: 显示一列带有小图标的item
+LVS_REPORT: 显示item详细资料
+
+如windows资源管理器，“查看”标签下的“大图标，小图标，列表，详细资料”
+
+LONG lStyle;
+lStyle=GetWindowLong(m_ListCtrl.m_hWnd, GWL_STYLE); //获取当前窗口style
+lStyle &= ~LVS_TYPEMASK; //清除显示方式位
+lStyle |= LVS_REPORT; //设置style
+SetWindowLong(m_ListCtrl.m_hWnd, GWL_STYLE, lStyle); //设置style
+
+
+--------------------------------------------------------------------------------
+
+2. 扩展样式设置
+
+
+DWORD dwStyle = m_ListCtrl.GetExtendedStyle(); //获取当前扩展样式
+dwStyle |= LVS_EX_FULLROWSELECT; //选中某行使整行高亮（report风格时）
+dwStyle |= LVS_EX_GRIDLINES; //网格线（report风格时）
+dwStyle |= LVS_EX_CHECKBOXES; //item前生成checkbox控件
+m_ListCtrl.SetExtendedStyle(dwStyle); //设置扩展风格
+
+
+--------------------------------------------------------------------------------
+
+3. 数据插入
+
+m_ListCtrl.InsertColumn(0,"名称",LVCFMT_LEFT,50); //插入列
+m_ListCtrl.InsertColumn(1,"备注",LVCFMT_LEFT,50);
+
+//直接插入:
+
+int nRow=m_ListCtrl.InsertItem(0, "VC++"); //插入行
+m_ListCtrl.SetItemText(nRow,1,"Visual C++ 6.0"); //设置数据
+
+//LVITEM 结构插入:
+
+LVITEM item={0};
+item.iItem=0; //行号
+item.mask=LVIF_TEXT; ;
+item.cchTextMax=15；//插入字符串长度
+item.pszText="Visual C++ 6.0";
+
+int nRow=m_ListCtrl.InsertItem(&item);
+
+m_ListCtrl.SetItemText(nRow,1,"Visual C++ 6.0");
+
+
+--------------------------------------------------------------------------------
+
+4. 一直选中Item
+
+选中style中的 Show selection always,
+
+或者添加扩展样式 LVS_SHOWSELALWAYS
+
+
+--------------------------------------------------------------------------------
+
+5. 选中和取消选中Item
+int nIndex = 0;
+//选中
+m_ListCtrl.SetItemState(nIndex,LVIS_SELECTED
+
+LVIS_FOCUSED,LVIS_SELECTED|LVIS_FOCUSED);
+//取消选中
+m_ListCtrl.SetItemState(nIndex,0,LVIS_SELECTED|LVIS_FOCUSED);
+
+
+--------------------------------------------------------------------------------
+
+6. 得到CListCtrl中所有行的checkbox的状态
+CString str;
+for(int i=0; i<m_ListCtrl.GetItemCount(); i++)
+
+{
+if(m_ListCtrl.GetItemState(i, LVIS_SELECTED)==
+
+LVIS_SELECTED || m_ListCtrl.GetCheck(i))
+{
+str.Format(_T("第%d行的checkbox为选中状态"), i);
+AfxMessageBox(str);
+}
+
+}
+
+
+--------------------------------------------------------------------------------
+
+7. 得到CListCtrl中所有选中行的序号
+
+//方法一：
+CString str;
+for(int i=0; i<m_ListCtrl.GetItemCount(); i++)
+{
+if(m_ListCtrl.GetItemState(i, LVIS_SELECTED) == LVIS_SELECTED )
+{
+str.Format(_T("选中了第%d行"), i);
+AfxMessageBox(str);
+}
+}
+
+//方法二：
+POSITION pos=m_ListCtrl.GetFirstSelectedItemPosition();
+if(pos==NULL)
+TRACE0("No items were selected!\n");
+else
+{
+while(pos)
+{
+int nItem=m_ListCtrl.GetNextSelectedItem(pos);
+TRACE1("Item %d was selected!\n", nItem);
+//添加其他操作
+
+}
+}
+
+
+--------------------------------------------------------------------------------
+
+8. 得到item的信息
+TCHAR szBuf[1024];
+LVITEM lvi;
+lvi.iItem = nItemIndex;
+lvi.iSubItem = 0;
+lvi.mask = LVIF_TEXT;
+lvi.pszText = szBuf;
+lvi.cchTextMax = 1024;
+m_ListCtrl.GetItem(&lvi);
+
+关于得到设置item的状态，还可以参考msdn文章
+Q173242: Use Masks to Set/Get Item States in CListCtrl
+http://support.microsoft.com/kb/173242/en-us
+
+
+--------------------------------------------------------------------------------
+
+9. 得到CListCtrl的所有列的header字符串内容
+LVCOLUMN lvcol;
+char str[256];
+int nColNum;
+CString strColumnName[3];//假如有3列
+
+nColNum = 0;
+lvcol.mask = LVCF_TEXT;
+lvcol.pszText = str;
+lvcol.cchTextMax = 256;
+while(m_list.GetColumn(nColNum, &lvcol))
+{
+strColumnName[nColNum] = lvcol.pszText;
+nColNum++;
+}
+
+
+--------------------------------------------------------------------------------
+
+10. 使CListCtrl中一项可见，即滚动滚动条
+m_ListCtrl.EnsureVisible(i, FALSE);
+
+
+--------------------------------------------------------------------------------
+
+11. 得到CListCtrl列数
+int nHeadNum=m_ListCtrl.GetHeaderCtrl()->GetItemCount();
+
+
+--------------------------------------------------------------------------------
+
+12. 删除所有列
+方法一：
+while(m_ListCtrl.DeleteColumn(0))
+//因为你删除了第一列后，后面的列会依次向上移动。
+
+方法二：
+int nColumns = 3; //列数
+for(int i=nColumns-1; i>=0; i--)
+
+m_ListCtrl.DeleteColumn(i);
+
+
+--------------------------------------------------------------------------------
+
+13. 得到单击的CListCtrl的行列号
+添加listctrl控件的NM_CLICK消息相应函数
+void CMyDlg::OnClickList1(NMHDR* pNMHDR, LRESULT* pResult)
+{
+//方法一:
+
+DWORD dwPos=GetMessagePos();
+CPoint point( LOWORD(dwPos), HIWORD(dwPos));
+
+m_ListCtrl.ScreenToClient(&point);
+
+LVHITTESTINFO lvinfo;
+lvinfo.pt=point;
+lvinfo.flags=LVHT_ABOVE;
+
+int nItem=m_ListCtrl.SubItemHitTest(&lvinfo);
+if(nItem!=-1)
+{
+CString strtemp;
+strtemp.Format("单击的是第%d行第%d列",
+
+lvinfo.iItem, lvinfo.iSubItem);
+AfxMessageBox(strtemp);
+}
+
+// 方法二:
+NM_LISTVIEW* pNMListView=(NM_LISTVIEW*)pNMHDR;
+if(pNMListView->iItem!=-1)
+{
+
+CString strtemp;
+strtemp.Format("单击的是第%d行第%d列",
+pNMListView->iItem, pNMListView->iSubItem);
+AfxMessageBox(strtemp);
+}
+
+*pResult = 0;
+
+}
+
+
+--------------------------------------------------------------------------------
+
+14. 判断是否点击在CListCtrl的checkbox上
+添加listctrl控件的NM_CLICK消息相应函数
+void CMyDlg::OnClickList1(NMHDR* pNMHDR, LRESULT* pResult)
+{
+
+DWORD dwPos=GetMessagePos();
+CPoint point(LOWORD(dwPos), HIWORD(dwPos));
+
+m_ListCtrl.ScreenToClient(&point);
+
+LVHITTESTINFO lvinfo;
+lvinfo.pt=point;
+lvinfo.flags=LVHT_ABOVE;
+
+UINT nFlag;
+int nItem=m_ListCtrl.HitTest(point, &nFlag);
+//判断是否点在checkbox上
+if(nFlag==LVHT_ONITEMSTATEICON)
+{
+AfxMessageBox("点在listctrl的checkbox上");
+}
+*pResult = 0;
+}
+
+
+--------------------------------------------------------------------------------
+
+15. 右键点击CListCtrl的item弹出菜单
+添加CListCtrl控件的NM_RCLICK消息相应函数
+void CMyDlg::OnRclickList1(NMHDR* pNMHDR, LRESULT* pResult)
+{
+NM_LISTVIEW* pNMListView=(NM_LISTVIEW*)pNMHDR;
+if(pNMListView->iItem!=-1)
+{
+DWORD dwPos = GetMessagePos();
+CPoint point( LOWORD(dwPos), HIWORD(dwPos) );
+
+
+CMenu menu;
+VERIFY( menu.LoadMenu( IDR_MENU1 ) );
+CMenu* popup = menu.GetSubMenu(0);
+ASSERT( popup != NULL );
+popup->TrackPopupMenu(TPM_LEFTALIGN | TPM_RIGHTBUTTON,
+
+point.x, point.y, this );
+
+}
+*pResult = 0;
+
+}
+
+
+--------------------------------------------------------------------------------
+
+16. CListCtrl进行大数据量更新时，避免闪烁
+m_ListCtrl.SetRedraw(FALSE);
+//更新内容
+m_ListCtrl.SetRedraw(TRUE);
+m_ListCtrl.Invalidate();
+m_ListCtrl.UpdateWindow();

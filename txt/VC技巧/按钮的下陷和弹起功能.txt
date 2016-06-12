@@ -1,0 +1,28 @@
+如何实现toolbar中的按钮点击后下陷，实现某功能，二次点击后又弹回并取消功能的效果
+
+
+设一变量m_bCheck标明有无在实现某功能;
+在COMMAND的响应函数中
+{
+  if(m_bCheck）
+  { 
+    m_bCheck=false;
+    ...//取消功能代码
+  }
+  else
+  {
+    m_bCheck=true;
+    ...//实现功能代码
+  }
+}
+在UPDATE_COMMAND_UI的响应函数中
+{
+  if(m_bCheck）
+  {
+     SetCheck(1);
+  }
+  else
+  {
+    SetCheck(0);
+  }
+} 

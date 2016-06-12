@@ -1,0 +1,21 @@
+如果你使用过MSN会看到，当他的程序在托盘里时，有人登录或收到消息时会出现一个小的提示窗口在托盘的上方（如果你的任务栏是在下边）。随着任务栏的位置不同，提示窗口的位置也会不同的。  
+这窗口的位置是怎么实现的？（在左下方或右上方）  
+ 
+---------------------------------------------------------------  
+ 
+API函数  AnimateWindow有类似的功能！  
+---------------------------------------------------------------  
+ 
+           APPBARDATA  abd;  
+ 
+       abd.cbSize  =  sizeof(abd);  
+ 
+       BOOL  bTaskBarIsAutohide  =  SHAppBarMessage(ABM_GETSTATE,  &abd)  &  ABS_AUTOHIDE;  
+ 
+       SHAppBarMessage(ABM_GETTASKBARPOS,  &abd);  
+ 
+           if  (!bTaskBarIsAutohide)  
+           {  
+                             //如果任务栏非自动隐藏，abd.rc返回任务栏窗口矩形区域，使用屏幕坐标，你只要将你的窗口出现位置进行相应调整即可，判断任务栏在屏幕的左右上下那个位置应该不难吧,  
+配合MoveWindow并用Timer就可以做出移动效果  
+           }

@@ -1,0 +1,55 @@
+有不少朋友在使用组件中使用非模式对话框或非模式属性表中出现Tab键、光标键及其他热键失效，TAB键不能够让光标在控件间移动光标，而在模式对话框中则正常。这种情况是不稳定的，有时候出现，有时候并不出现，真让人不解。
+分析这个问题，原因是ActiveX控件本身没有消息泵，而是由COM组件的客户端(主程序)拥有，因此，键盘输入消息被主程序拦截并未正常分发至COM组件的非模式对话框或者非模式PropertySheet。
+解决的办法是在自己派生的PropertySheet或者对话框类中安装一个Windows的WH_GETMESSAGE消息钩子，并且打开和处理键盘事件。
+代码如下：
+1.定义一个公共变量
+HHOOK 	hHook;
+2.写一个公共回调函数GetMsgProc处理键盘事件：
+// 用消息钩子解决非模式属性表中的Tab键及其他热键失效问题 
+// 钩子处理器
+LRESULT CALLBACK GetMsgProc(int nCode, WPARAM wParam, LPARAM lParam)
+{
+
+      // Switch the module state for the correct handle to be used.
+      AFX_MANAGE_STATE(AfxGetStaticModuleState( ));
+
+      // If this is a keystrokes message, translate it in controls'
+      // PreTranslateMessage().
+      LPMSG lpMsg = (LPMSG) lParam;
+      if( (nCode >= 0) &&
+         PM_REMOVE == wParam &&
+         (lpMsg->message >= WM_KEYFIRST && lpMsg->message <= WM_KEYLAST) &&
+         AfxGetApp()->PreTranslateMessage((LPMSG)lParam) )
+         {
+         // The value returned from this hookproc is ignored, and it cannot
+         // be used to tell Windows the message has been handled. To avoid
+         // further processing, convert the message to WM_NULL before
+         // returning.
+         lpMsg->message = WM_NULL;
+         lpMsg->lParam = 0L;
+         lpMsg->wParam = 0;
+         }
+
+
+
+      // Passes the hook information to the next hook procedure in
+      // the current hook chain.
+      return ::CallNextHookEx(hHook, nCode, wParam, lParam);
+ 
+}
+3. 在OnInitDialog函数中安装钩子
+
+	//安装对键盘事件的钩子
+     hHook = ::SetWindowsHookEx(
+         WH_GETMESSAGE,
+         GetMsgProc,
+         AfxGetInstanceHandle(),
+         GetCurrentThreadId());
+      ASSERT (hHook);
+4. 在关闭对话框时OnClose取消钩子
+
+//取消钩子
+   VERIFY (::UnhookWindowsHookEx (hHook));
+
+现在，编译程序，问题解决，Tab键能够正常响应了。
+

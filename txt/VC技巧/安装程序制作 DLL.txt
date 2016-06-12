@@ -1,0 +1,4 @@
+怎樣判斷vc install shield需要哪些*.dll文件?
+
+Microsoft Visual Studio 6.o Tools （安装VC时可选安装项）下有一个
+Dependency Walker 程序可以看出某个程序依赖的所有动态库

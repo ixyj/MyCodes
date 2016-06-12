@@ -1,0 +1,18 @@
+大家都遇到过CFileDialog文件对话框吧,它的参数让人头疼.下面解除大家的头疼.
+    先在使用文件对话框的类的类定义文件中加入对象定义CFileDialog m_MyOpenDialog(TRUE,"avi","*.avi")。随后，在需要使用该对话框的地方加入以下语句：
+    m_MyOpenDialog.Domodal();
+    就可以预览所有.avi文件.
+
+    其调用规则为：
+    函数原型:
+    CFileDialog(BOOL bOpenFileDialog,LPCTSTR lpszDefExt=NULL,LPCTSTR lpszFileName=NULL,DWORD dwFlags = OFN_HIDEREADONLY | OFN_OVERWRITEPR OMPT,LPCTSTR lpszFilter=NULL,CWnd * pParentWnd
+=NULL);
+    参数说明:
+    bOpenFileDialog:为TRUE或FALSE。TRUE为打开文件；FALSE为保存文件。
+    lpszDefExt     :为缺省的扩展名。
+    lpszFileName   :为显示在文件名组合框的编辑框的文件名，一般可选NULL
+    dwFlags        :为对话框风格，一般为OFN_HIDEREADONLY | OFN_OVERWRITEPROMPT,即隐藏只读选项和覆盖已有文件前提示。
+    LpszFilter     :为下拉列表枢中显示文件类型。
+    pParentWnd     :一般可选NULL。
+    例如：在文件类型列表框的编辑框要显示“可执行文件(*.exe)”，而在它的下拉列表框中列出“视频文件(*.avi)、All Files(*.*)”内容，则变量定义如下：CFileDialog m_MyOpenDialog(TRUE,"exe",NULL,OFN_HIDEREADONLY | OFN_OVERWRITEPROMPT,"可执行文件(*.exe) | *.exe|视频文件(*.bat) | *.bat |All Files (*.*) | *.* ||",NULL);
+    注:看看没有*.*后的||会是什么效果.

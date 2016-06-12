@@ -1,0 +1,42 @@
+HKEY hKEY;	//定义有关的hKEY，在查询结束时要关闭
+//打开与路径 data_Set相关的hKEY
+LPCTSTR data_Set = L"Software\\Microsoft\\Windows NT\\CurrentVersion\\CmposeR";
+//访问注册表，hKEY则保存此函数所打开的键的句柄
+long ret = ::RegOpenKeyEx(HKEY_LOCAL_MACHINE, data_Set, 0, KEY_READ, &hKEY);
+
+//查询的数据
+LPBYTE reg = new BYTE[8];//定义数据
+DWORD type = REG_SZ;//定义数据类型
+DWORD cbData = 8;//定义数据长度
+
+//打开失败
+if(ret != ERROR_SUCCESS)
+{
+	//设置有关的数据
+	ltoa(std::time(NULL), (char*)reg, 16);
+	//写入数据
+	ret = RegCreateKey(HKEY_LOCAL_MACHINE, data_Set, &hKEY);
+	if (ret == ERROR_SUCCESS)
+	{
+		//设置值
+		 ret = ::RegSetValueEx(hKEY, L"Cmpose", NULL, type, reg, cbData);
+		 RegCloseKey(hKEY);//关闭句柄
+		if (ret == ERROR_SUCCESS)
+		{
+			return true;	//写入成功
+		}
+	}
+
+	AfxMessageBox(L"错误：无法设置有关的注册表信息");
+	return false;
+}
+
+//打开成功，读数据
+ret = ::RegQueryValueEx(hKEY, L"Cmpose", NULL, &type, reg, &cbData);
+RegCloseKey(hKEY);//关闭句柄
+
+if (ret != ERROR_SUCCESS)//如果无法打开hKEY,则中止程序的执行
+{
+	AfxMessageBox(L"程序启动错误，请配置Windows操作系统！");
+	return false;
+}

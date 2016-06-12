@@ -1,0 +1,13 @@
+import java.io.*;
+
+throws IOException 
+
+BufferedReader buf = new BufferedReader(new InputStreamReader(System.in));
+String str = buf.readLine();
+float f = Float.parseFloat(str);
+
+///////////////////////////////////////////////////
+LineNumberReader input = new LineNumberReader(new InputStreamReader(System.in)); 
+String line; 
+while ((line = input.readLine ()) != null) 
+System.out.println(line); 

@@ -1,0 +1,10 @@
+void Cdata::OnBnClickedOk()
+{
+	CString strtxt = L"", str = L"";
+	int istart = 0, iend = 0;
+	m_edit.GetWindowTextW(strtxt);//m_edit----±à¼­¿ò±äÁ¿
+	m_edit.GetSel(istart, iend);
+	for (int i=istart; i<iend; ++i)
+		str += strtxt[i];
+	MessageBox(str);
+}

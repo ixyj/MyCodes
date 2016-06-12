@@ -1,0 +1,52 @@
+请问vc+里面的DBGrid控件怎么用呢？  
+怎么实现对数据库的连接与操作呢？  
+---------------------------------------------------------------  
+ 
+           //            CRdc            m_rdc;  
+//m_rdc.SetConnect("Driver={Microsoft  Access  Driver  (*.mdb)};DBQ=C:\\temp\\users.mdb;");  
+ 
+           m_rdc.SetSql("select  *  From  userinfo  order  by  firstname");  
+           m_rdc.Refresh();  
+ 
+ 
+ 
+////////////////create  CRdc  dynamically  
+int  CDbgridView::OnCreate(LPCREATESTRUCT  lpCreateStruct)    
+{  
+ 　if  (Cview::OnCreate(lpCreateStruct)  ==  －1)  
+                       return  －1;  
+             
+           RECT  r={0,0,100,30};  
+             
+           //        create  the  RDC    
+           m_rdcstudent.Create(_T("Student"),  
+           WS_CHILD,r,this,IDC_RDCSTUDENT);  
+ 　      m_rdcstudent.SetDataSourceName(_T(“Student"));  
+           m_rdcstudent.SetSql  
+           (_T(“Select  *  from  student,section"));  
+           m_rdcstudent.SetUserName(_T("admin"));  
+           m_rdcstudent.SetPassword(_T(""));  
+           m_rdcstudent.SetCursorDriver(2);  
+ 
+           //  create  the  DBGrid  control    
+         &  connect  it  to  IDC_RDCSTUDENT  
+m_dbgstudent.Create(_T(""),WS_VISIBLE  |WS_CHILD,r,  
+this,IDC_DBGSTUDENT);  
+LPUNKNOWN  pCursor=m_rdcstudent.GetDSCCursor();  
+ASSERT(pCursor!=NULL);  
+m_dbgstudent.SetDataSource(pCursor);  //bind  the  grid  
+m_dbgstudent.BindProperty(0x9,  &m_rdcstudent);  
+ 
+return  0;  
+}  
+ 
+void  CDbgridView::OnSize(UINT  nType,  int  cx,  int  cy)    
+{  
+           Cview::OnSize(nType,  cx,  cy);  
+             
+           //  TODO:  Add  your  message  handler  code  here  
+           Crect  rect;  
+           GetClientRect(rect);  
+       ::SetWindowPos(m_dbgstudent,HWND_TOP,0,0,rect.right    
+－rect.left,rect.bottom  －rect.top,SWP_SHOWWINDOW);  
+}  

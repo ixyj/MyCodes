@@ -1,0 +1,189 @@
+如何在列表控件中新增一行
+m_bmlist.InsertItem(iItem+1,str1,NULL);//这样仅能新增一行的第一列，如果第二列也有该怎么弄？
+
+LVITEM item;
+int i=0;//插入行位置
+CString s="11111";
+item.mask=LVIF_TEXT|LVIF_PARAM;
+item.iItem=i;
+item.iSubItem=0;
+item.pszText=(LPTSTR)(LPCTSTR)s;
+item.lParam=i;
+int iPos=m_list.InsertItem(&item);//插入新行
+s="222222";
+item.mask=LVIF_TEXT;
+item.iItem=iPos;              //指定行
+item.iSubItem=1;             //指定列
+item.pszText=(LPTSTR)(LPCTSTR)s;
+m_list.SetItem(&item);  //写第二列
+----------------------------------
+如何在控件里响应左右键消息
+BOOL CMydilog::PreTranslateMessage(MSG* pMsg) 
+{
+    if(GetFocus()==GetDlgItem(IDC_EDIT2))//判断焦点在不在框内
+     if(pMsg->message==WM_LBUTTONDOWN)
+             .....
+      if(pMsg->message==WM_LBUTTONUP)
+            .....
+----------------------------------
+//扩展风格:使 List 带有 整行选择、表格、整行预选 功能
+	DWORD dwStyleEx;
+	dwStyleEx = LVS_EX_FULLROWSELECT | LVS_REPORT | LVS_EX_ONECLICKACTIVATE; m_GndDzStatusList.SetExtendedStyle( dwStyleEx );
+------------------------------
+1. 如何禁止和使能控件
+控件也是窗口，所以可以调用CWnd : : EnableWindow使能和禁止控件。
+//Disable button controls .
+m_wndOK.EnableWindow (FALSE ) ;
+m_wndApply.EnableWindow (FALSE ) ;
+--------------------------------------------------
+2. 如何改变控件的字体
+由于控件是也是窗口，用户可以调用CWnd: : SetFont指定新字体。该函数用一个Cfont
+指针，要保证在控件撤消之前不能撤消字体对象。下例将下压按钮的字体改为8点Arial
+字体：
+//Declare font object in class declaration (.H file ).
+private :
+Cfont m_font ;
+// Set font in class implementation (.Cpp file ). Note m_wndButton is a
+//member variable added by ClassWizard.DDX routines hook the member
+//variable to a dialog button contrlo.
+BOOL CSampleDialog : : OnInitDialog ( )
+{
+…
+//Create an 8-point Arial font
+m_font . CreateFont (MulDiv (8 , -pDC—> GetDeviceCaps (LOGPIXELSY) , 72).
+0 , 0 , 0 , FW_NORMAL , 0 , 0, 0, ANSI_CHARSER, OUT_STROKE_PRECIS ,
+CLIP_STROKE _PRECIS , DRAFT _QUALITY
+VARIABLE_PITCH ｜FF_SWISS, _T ("Arial") );
+//Set font for push button .
+m_wndButton . SetFont (&m _font );
+…
+}
+---------------------------------------------------
+3. 如何在OLE控件中使用OLE_COLOR数据类型
+诸如COleControl : : GetFortColor和COleControl : : GetBackColor等函数返回OLE
+_COLOR数据类型的颜色，而GDI 对象诸如笔和刷子使用的是COLORREF数据类型，调用
+COleControl : : TranslateColor可以很容易地将OLE_COLOR类型改为COLORREF 类型。
+下例创建了一个当前背景颜色的刷子：
+void CSampleControl : : OnDraw (CDC* pdc, const Crect& rcBounds, const Crect&
+rcInvalid )
+{
+//Create a brush of the cuttent background color .
+CBrush brushBack (TranslateColor (GetBackColor ( ) ) );
+//Paint the background using the current background color .
+pdc—> FilllRect (rcBounds , &brushBack) ;
+//other drawign commands
+…
+}
+-------------------------------------------------
+4. 为什么旋转按钮控件看起来倒转
+需要调用CSpinCtrl : : SetRange 设置旋转按钮控件的范围，旋转按钮控件的缺省上
+限为0，缺省下限为100，这意味着增加时旋转按控件的值由100变为0。下例将旋转按
+钮控件的范围设置为0到100：
+BOOL CAboutDlg : : OnInitDialog ( )
+{
+CDialog : : OnInitDialog ( )
+//set the lower and upper limit of the spin button
+m_wndSpin . SetRange ( 0 ,100 ) ;
+return TRUE ;
+}
+Visual C++ 4.0 Print对话中的Copise旋转按钮控件也有同样的问题：按下Up按钮时
+拷贝的数目减少，而按下Down 按钮时拷贝的数目增加。
+-------------------------------------------------------------
+5. 为什么旋转按钮控件不能自动地更新它下面的编辑控件
+如果使用旋转按钮的autu buddy特性， 则必须保证在对话的标记顺序中buddy窗口优
+先于旋转按钮控件。从Layout 菜单中选择Tab Order 菜单项（或者按下Crtl+D）可以
+设置对话的标签顺序。
+----------------------------------------------------
+6. 如何用位图显示下压按钮
+Windows 95按钮有几处新的创建风格，尤其是BS_BITMAP和BS_ICON，要想具有位图按
+钮，创建按钮和调用CButton : : SetBitmap 或CButton : : SetIcon时要指定BS_BITMAP
+或BS_ICON风格。
+首先，设置按钮的图标属性。
+然后，当对话初始化时调用CButton: : SetIcon。注意：下例用图标代替位图，使用位
+图时要小心，因为不知道背景所有的颜色——并非每个人都使用浅灰色。
+BOOL CSampleDlg : : OnInitDialog ( )
+{
+CDialog : : OnInitDialog ( ) ;
+//set the images for the push buttons .
+m_wndButton1.SetIcon (AfxGetApp ( ) —> LoadIcon (IDI _ IPTION1) )
+m_wndButton2.SetIcon (AfxGetApp ( ) —> LoadIcon (IDI _ IPTION2) )
+m_wndButton3.SetIcon (AfxGetApp ( ) —> LoadIcon (IDI _ IPTION3) )
+return TRUE ;
+} //In class declaration (.H file ).
+private :
+CButton* m _pButton ;
+//In class implementation (.cpp file ) .
+m_pButton =new CButton ;
+ASSERT_VALID (m_pButton);
+m_pButton —>Create (_T ("Button Title ") , WS_CHILD ｜ WS_VISIBLE ｜
+BS_PUSHBUTTON.
+Crect ( 0, 0, 100 , 24) , this , IDC _MYBUTTON )
+----------------------------------------------------------
+7.Windows  编程时(not use MFC)怎么用程序指令移动编辑框中的光标呢？  
+向EDIT发送EM_SETSEL消息，wparam和lparam都放光标的位置
+-------------------------------------------------------
+8.在RichEditCtrl中如何设置一行文字的背景色？
+CColorDialog  colorDlg;  
+colorDlg.DoModal();  
+CHARFORMAT2  cf;  
+GetRichEditCtrl().GetSelectionCharFormat(cf);  
+cf.cbSize=sizeof(cf);  
+cf.dwMask=CFM_BACKCOLOR;  
+cf.crBackColor  =  colorDlg.GetColor();  
+cf.dwEffects  =  0;  
+long  lStart,  lEnd;  
+GetRichEditCtrl().GetSel(lStart,lEnd);  
+GetRichEditCtrl().SetSel(lStart,(lStart==lEnd?-1:lEnd));  
+GetRichEditCtrl().SendMessage(EM_SETCHARFORMAT,SCF_SELECTION,(LPARAM)&cf);  
+--------------------------------------------------------------- 
+9.  在dialog中放置了一个ListBox，  
+使用函数EnableWindow(),虽然可以使ListBox禁用，但背景并不变灰，  
+我不想继承ListBox类，是不是可以直接通过ListBox类的sendMessage()就可以达到目的  
+如果可以的话，sendMessage中的参数该怎么填？
+HBRUSH  CMyDaExDlg::OnCtlColor(CDC*  pDC,  CWnd*  pWnd,  UINT  nCtlColor)    
+{  
+       HBRUSH  hbr=CDialog::OnCtlColor(pDC,  pWnd,  nCtlColor);  
+        //  TODO:  Change  any  attributes  of  the  DC  here  
+       if  (CTLCOLOR_LISTBOX == nCtlColor)  
+       {  
+           LOGBRUSH  logBrush;  
+           logBrush.lbStyle  =  BS_HATCHED;  
+           logBrush.lbColor  =  RGB(0,  192,  192);  
+           logBrush.lbHatch  =  HS_CROSS;   
+           return  hbr  =  CreateBrushIndirect(&logBrush);  
+       }  
+       //  TODO:  Return  a  different  brush  if  the  default  is  not  desired                   return  hbr;  
+}  
+把    if  (nCtlColor  ==  CTLCOLOR_LISTBOX)  
+改为  if  (pWnd->GetDlgCtrlID()  ==  IDC_YOURLISTBOX)  
+就可以指定是改变哪个ListBox的颜色了。
+------------------------------------------
+10.我已得到这个EDIT的句柄了，怎么用SendMessage(）来发送消息来清空它的内容？  
+SendMessage(hEditWnd,WM_SETTEXT,0,"");
+-----------------------------------------------
+11.如何创建一个字回绕的CEditView
+重载CWnd : : PreCreateWindow 和修改CREATESTRUCT 结构，关闭CEditView 对象的
+ES_AUTOHSCROLL和WS_HSCROLL风格位， 由于CEditView : : PreCreateWindow显示设
+置cs. style，调用基类函数后要修改cs . style。
+BOOL CSampleEDitView : : PreCreateWindow (CREATESTRUCT&cs)
+{
+//First call basse class function .
+BOOL bResutl =CEditView : : PreCreateWindow (cs) ;
+// Now specify the new window style .
+cs.style &= ~ (ES_AUTOHSCROLL ｜WS_HSCROLL);
+return bResult ;
+}
+----------------------------------------------------
+在不使用通用文件打开对话的情况下如何显示一个文件列表
+调用CWnd: : DlgDirList或者CWnd: : DlgDirListComboBox， Windows 将自动地向列
+表框或组合框填充可用的驱动器名或者指定目录中的文件，下例将Windows目录中的文
+件填充在组合框中：
+BOOL CSampleDig : : OnInitDialog ( )
+{
+CDialog : : OnInitDialog ( )
+TCHAR szPath [MAX_PATH] = {"c:\\windows"} ;
+int nReslt = DlgDirListComboBox (szPath , IDC_COMBO , IDC_CURIDIR,
+DDL_READWRITE ｜DDL_READONLY｜DDL_HIDDEN｜
+DDL_SYSTEM｜DDL_ARCHIVE ) ;
+return TRUE ;
+}

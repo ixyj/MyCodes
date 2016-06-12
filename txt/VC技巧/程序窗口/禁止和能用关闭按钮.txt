@@ -1,0 +1,7 @@
+如何禁止和能用关闭按钮
+  Cmenu *pmenu = AfxGetMainWnd()->GetSystemMenu(FALSE);
+  if(pmenu)
+  {
+pmenu->EnableMenuItem(SC_CLOSE,MF_BYCOMMAND|MF_GRAYED);
+  }
+恢复时只需将MF_GRAYED改为MF_ENABLED

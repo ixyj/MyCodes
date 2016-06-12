@@ -1,0 +1,26 @@
+你可以使用EnumChildWindows来枚举一个窗口中的子窗口
+BOOL EnumChildWindows(
+  HWND hWndParent,         // 编辑框所在的父窗口的窗口句柄
+  WNDENUMPROC lpEnumFunc,  // 回调函数指针,在该回调函数中实现设置编辑框文本的功能
+  LPARAM lParam            // 该参数根据要实现的功能,代表不同的意义
+);
+
+例如:
+
+在你的应用程序中
+
+EnumChildWindows(hParentsWnd, enumChildProc);
+
+回调函数
+
+BOOL __stdcall enumChildProc(HWND hWnd,LPARAM lParam)
+{
+    char szClassName[20] = { 0 };
+    GetClassName(hWnd, szClassName, 20);
+    if (!strcmp(szClassName, "Edit") {
+        if (该控件是用户名称Edit)
+            SetWindowText(hWnd, "用户名称");
+        if (该控件是密码Edit)
+            SetWindowText(hWnd, "用户密码");
+    }
+}

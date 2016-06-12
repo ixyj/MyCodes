@@ -1,0 +1,5 @@
+CString Temp£»
+Temp = "11aa";
+int    base=16;
+char   *entptr;
+short sum = (short)strtol(Temp,&entptr,base);

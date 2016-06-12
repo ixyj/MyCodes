@@ -1,0 +1,11 @@
+怎样得到程序工作的当前目录
+CString GetAppPath()
+{
+	char exepath[MAX_PATH];
+	CString strdir, tmpdir;
+	memset(exepath,0,MAX_PATH);
+	GetModuleFileName(NULL,exepath,MAX_PATH);
+	tmpdir = exepath;
+	strdir = tmpdir.Left(tmpdir.ReverseFind('\\'));
+	return strdir;
+}

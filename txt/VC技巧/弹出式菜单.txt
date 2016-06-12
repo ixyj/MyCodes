@@ -1,0 +1,3 @@
+【问题】mfc中弹出式菜单怎么产生呀？
+project->add to project->components and controls:
+选Visual c++ Components,然后选pop-up menu，Insert后选择需要弹出式菜单的类。

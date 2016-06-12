@@ -1,0 +1,10 @@
+判该程序是否运行(BOOL CMakeSheetApp::InitInstance())
+HANDLE Handle;
+Handle = CreateMutex(NULL, TRUE, _T("MakeSheet3.0"));
+if (Handle == NULL)
+	return FALSE;
+if (GetLastError() == ERROR_ALREADY_EXISTS)
+{
+	AfxMessageBox("MakeSheet3.0已运行!", MB_ICONSTOP);
+	return FALSE;
+}

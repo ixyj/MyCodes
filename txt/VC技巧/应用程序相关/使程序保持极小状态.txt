@@ -1,0 +1,9 @@
+如何使程序保持极小状态?
+
+
+在恢复程序窗体大小时， Windows 会发送WM_QUERY-OPEN 消息，用
+ClassWizard设置成员函数 OnQueryOpen() ,add following code:
+Bool CMainFrame:: OnQueryOpen( )
+{
+Return false;
+}

@@ -1,0 +1,37 @@
+ODBC	open SQL server database
+	CDatabase db;
+	db.OpenEx("DRIVER={SQL Server};Server=Cell;DATABASE=zhg;UID=sa;PWD=;");
+	CRecordset rs(&db);
+	rs.Open(AFX_DB_USE_DEFAULT_TYPE,"select * From title);
+	while(rs.IsEOF()==false)
+	{
+		CString str;
+		CString strtype;
+		rs.GetFieldValue((short)0,strtype);
+		CDBVariant varprice;
+		rs.GetFieldValue(1,varprice);
+		str.Format("type:%s,avg(price):%f",strtype,varprice.m_dblVal);
+		AfxMessageBox(str);
+		rs.MoveNext();
+	}
+	rs.Close();
+	db.Close();
+//Open ms access database
+	CDatabase db;
+	db.OpenEx("Driver={Microsoft Access Driver (*.mdb)};DBQ=C:\\temp\\db1.mdb;");
+	CRecordset rs(&db);
+	rs.Open(AFX_DB_USE_DEFAULT_TYPE,"select * From table1");
+	int nfieldcount=rs.GetODBCFieldCount();
+	CString msg;
+	msg.Format("There are %d fields in table1",nfieldcount);
+	AfxMessageBox(msg);
+	//field 0 is int field,name "intfield",retrieve by field index
+	CDBVariant dbvar;
+	rs.GetFieldValue((short)0,dbvar);
+	//field 1 is string field,name "strfield",retrieve by field name
+	CString dbstrvar;
+	rs.GetFieldValue("strfield",dbstrvar);
+	msg.Format("field 0 value:%d,field name strfield value=%s",dbvar.m_iVal,dbstrvar);
+	AfxMessageBox(msg);
+	rs.Close();
+	db.Close();

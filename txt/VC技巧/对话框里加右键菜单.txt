@@ -1,0 +1,17 @@
+要在对话框里加一个右键菜单，有没有什么简单的方法？？  
+---------------------------------------------------------------  
+ 
+void  CMyDlg::OnRButtonUp(UINT  nFlags,  CPoint  point)    
+{  
+           //  TODO:  Add  your  message  handler  code  here  and/or  call  default  
+           CMenu  menu,*pmenu;  
+           menu.LoadMenu(IDR_MENU1);  
+           pmenu=menu.GetSubMenu(0);  
+ 
+           CPoint  ptScreen(point);  
+           ClientToScreen(&ptScreen);  
+ 
+           pmenu->TrackPopupMenu(TPM_RIGHTBUTTON,ptScreen.x,ptScreen.y,this);  
+ 
+           CDialog::OnRButtonUp(nFlags,  point);  
+}  

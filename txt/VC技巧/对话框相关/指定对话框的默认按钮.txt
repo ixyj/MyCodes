@@ -1,0 +1,10 @@
+如何指定对话框的默认按钮
+当建立一个对话框的时候，在默认条件下，确定按钮（IDOK）是默认按钮，如果需要改变默认的按钮有两种方法：
+其一： 直接在确定按钮（IDOK）的属性里去掉Default button风格的选项
+其二： 在运行的时候用代码实现，如：
+  //去掉确定按钮（IDOK）的默认按钮
+Cbutton *pokbutton = (Cbutton *)GetDlgItem(IDOK);
+Pokbutton->ModifyStyle(BS_DEFPUSHBUTTON,0);
+  //添加IDCANCEL的默认按钮风格
+Cbutton *pcancelbutton = (Cbutton *)GetDlgItem(IDCANCEL);
+pcancelbutton->SetButtonStyle(BS_DEFPUSHBUTTON);

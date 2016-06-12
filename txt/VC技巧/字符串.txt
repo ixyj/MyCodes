@@ -1,0 +1,48 @@
+53. 串太长时如何在其末尾显示一个省略号
+调用CDC:: DrawText 并指定DT_END_ELLIPSIS 标志，这样就可以用小略号取代串末尾
+的字符使其适合于指定的边界矩形。如果要显示路径信息，指定DT_END_ELLIPSIS标志
+并省略号取代串中间的字符。
+void CSampleView:: OnDraw (CDC* pDC)
+{
+CTestDoc* pDoc=GetDocument ();
+ASSERT_VALID (pDoc);
+//Add ellpsis to end of string if it does not fit
+pDC->Drawtext (CString ("This is a long string"),
+CRect (10, 10, 80, 30), DT_LEFT | DT_END_ELLIPSIS);
+//Add ellpsis to middle of string if it does not fit
+pDC->DrawText (AfxgetApp () ->m_pszhelpfilePath,
+CRect (10, 40, 200, 60), DT_LEFT | DT_PATH_ELLIPSIS);
+}
+-------------------------------------------------------------
+54. 如何快速地格式化一个CString 对象
+调用CString:: Format，该函数和printf 函数具有相同的参数，下例说明了如何使用
+Format函数：
+//Get size of window.
+CRect rcWindow;
+GetWindowRect (rcWindow);
+//Format message string.
+CString strMessage;
+strMessage.Format (_T ("Window Size (%d, %d)"),
+rcWindow.Width (), rcWindow.Height ());
+//Display the message.
+MessageBox (strmessage);
+--------------------------------------------
+52. 如何正确显示包含标签字符的串
+调用GDI文本绘画函数时需要展开标签字符，这可以通过调用CDC:: TabbedTextOut 或
+者CDC:: DrawText并指定DT_EXPANDTABS标志来完成。TabbedTextOut函数允许指定标
+签位的数组，下例指定每20设备单位展开一个标签：
+void CSampleView:: OnDraw (CDC* pDC)
+{
+CTestDoc* pDoc=GetDocument ();
+ASSERT_VALID (pDoC);
+CString str;
+str.Format (_T ("Cathy\tNorman\tOliver"));
+int nTabStop=20; //tabs are every 20 pixels
+pDC->TabbedtextOut (10, 10, str, 1, &nTabStop, 10);
+}
+------------------------------------------------------
+//删除CString中的%号
+	CString sString.Remove('%');
+
+怎样将字串的前后空格去掉？哪个函数可实现？
+转换成CString,然后用TrimRight就可以了

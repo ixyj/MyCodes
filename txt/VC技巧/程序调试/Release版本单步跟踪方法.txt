@@ -1,0 +1,6 @@
+Release版本单步跟踪方法：
+选中Win32 Release然后
+Project->setting->C/C＋＋ ->Category->General
+                              ->Optimization->Disable（Debug）
+                              ->Debug Info->Program DataBase
+                  ->Link－－->Generate Debug Info打上钩

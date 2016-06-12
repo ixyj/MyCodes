@@ -1,0 +1,54 @@
+49. 如何创建一个具有特定点大小的字体
+可以指定字体逻辑单位的大小，但有时指定字体的点的大小可能会更方便一些。可以如
+下将字体的点转换为字体的高度：
+int nHeigth=mulDiv (nPointSize, -dc.GetDeviceCaps (LOGPIXELSY), 72);
+下例创建了一个8点的Apial字体：
+CClientDC dc (AqfxGetMainWnd ());
+m_font. CreateFont (MulDiv (8, -dc.GetDeviceCaps (LOGPIXELSY),
+72),0,0,0,FW_NORMAL,0,0,0,ANSI_CHARSET,
+OUT_STROKE_PRECIS,CLIP_STROKE_PRECIS,DRAFT_QUALITY,
+VARIABLE_PITCH | FF-SWISS,_T ("Arial"));
+------------------------------------------------
+//得到当前字体的信息
+	TEXTMETRIC tm;
+	CClientDC dc(this);
+	dc.GetTextMetrics(&tm);
+------------------------------------
+51. 如何显示旋转文本
+只要用户使用TrueType或者GDI笔或字体就可以显示旋转文本(有些硬件设备也支持旋
+转光栅字体)。LOGFONT 结构中的ifEscapement 成员指定了文本行和x 轴的角度，角度
+的单位是十分之一度而不是度，例如，ifEscapement 为450 表示字体旋转45度。为确
+保所有的字体沿坐标系统的同一方向旋转，一定要设置ifEscapement 成员的
+CLIP_LH_ANGLES位，否则，有些字体可能反向旋转。下例使用了14点Arial字体每间
+隔15度画一个串。
+void CSampleView:: OnDraw (CDC* pDC)
+{
+//Determine the size of the window.
+CRect rcClient;
+GetClientRect (rcClient);
+//Create sample string.
+CString str (_T ("Wheeee．．．I am rotating!"));
+//Draw transparent, red text.
+pDC->SetBkMode (TRANSPARENT);
+pDC->SetTextColor (RGB (255,0,0));
+CFont font; //font object
+LOGFONT stFont; //font definition
+//Set font attributes that will not change.
+memset (&stFont, 0, sizeof (LOGFONT));
+stFont.ifheight=MulDiv (14, -pDC->GetDeviceCaps (LOGPIXELSY), 72);
+stFont.ifWeight=FW_NORMAL;
+stFont.ifClipPrecision=LCIP_LH_ANGLES;
+strcpy (stFont.lfFaceName, "Arial");
+//Draw text at 15degree intervals.
+for (int nAngle=0; nAngle<3600; nAngle+=150)
+{
+//Specify new angle.
+stFont.lfEscapement=nAngle;
+//Create and select font into dc.
+font.CreateFontIndirect (&stfont);
+CFont* pOldFont=pDC->SelectObject (&font);
+//Draw the text.
+pDC->SelectObject (pOldFont);
+font.DelectObjext ();
+}
+}

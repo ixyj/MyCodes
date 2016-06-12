@@ -1,0 +1,31 @@
+REFERENCE @"/shares/searchDM/distrib/released/SLAPI/SearchLogApi.dll";
+REFERENCE @"/shares/searchDM/distrib/released/SLAPI/Microsoft.Live.Json.dll";
+REFERENCE @"/shares/searchDM/distrib/released/SLAPI/Microsoft.DataMining.Bing.DataModel.dll";
+REFERENCE @"/shares/searchDM/distrib/released/SLAPI/Microsoft.DataMining.CommonDataPlatform.Interface.dll";
+REFERENCE @"/shares/searchDM/distrib/released/SLAPI/Microsoft.Instrumentation.Schemas.dll";
+
+#DECLARE during string = DateTime.Now.AddDays(-4).ToString("yyyy-MM-dd");
+
+SlapiPageView =
+    VIEW "/shares/searchDM/distrib/released/SLAPI/SearchLogPageView.view"
+    PARAMS
+    (
+        Start = @during,
+        End = @during,
+        UseSample = false,
+        Dataset = "Bing.com,Mobile"
+    );
+
+BingKnowsLog =
+    SELECT Request_Url AS url,
+           Query_RawQuery.ToLower() AS query,
+           IF(Page_Clicks == null, 0, Page_Clicks.Count) AS clicks
+    FROM SlapiPageView
+    WHERE Market == "zh-CN" AND Query_IsNormal AND NOT User_HasMsIp AND NOT Helper.IsCrawler(Request_UserAgent) AND Helper.IsBingKnows(Request_Url);
+
+OUTPUT
+TO SSTREAM @"/users/yajxu/BingKnows/Log/Crawling.ss"
+CLUSTERED BY query
+SORTED BY query
+WITH STREAMEXPIRY "15";
+

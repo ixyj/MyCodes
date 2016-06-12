@@ -1,0 +1,7 @@
+哪位高手能告诉我在最大化窗口时怎样保持窗口拆分比例? 
+在主框架里响应WM_SIZE消息。然后在里面添加代码
+    CRect rect;
+   GetClientRect(&rect);
+   rect.Width = rect.Width/3;
+   m_SplitterWnd.GetPane(0,0)->MoveWindow(rect);
+   RecalcLayout(); 

@@ -1,0 +1,13 @@
+void COutlineView::OnRButtonDown(UINT nFlags, CPoint point)
+{
+	// TODO: Add your message handler code here and/or call default
+	CMenu menu, *pMenu = NULL;
+
+	ClientToScreen(&point);
+
+	menu.LoadMenuW(IDR_MAINFRAME);
+	pMenu = menu.GetSubMenu(4);
+	pMenu->TrackPopupMenu(TPM_LEFTALIGN | TPM_LEFTBUTTON | TPM_VERTICAL, point.x, point.y, this);
+
+	CView::OnRButtonDown(nFlags, point);
+}

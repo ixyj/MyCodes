@@ -1,0 +1,7 @@
+CColorDialog colorDlg;
+	colorDlg.m_cc.Flags   |= CC_FULLOPEN | CC_RGBINIT;//全部展开 
+	colorDlg.m_cc.rgbResult= color ;/选择定义的一个颜色
+	if (colorDlg.DoModal() == IDOK)
+	{
+		color = colorDlg.GetColor();
+	}

@@ -1,0 +1,15 @@
+try
+	{
+		hr = m_pConnection.CreateInstance("ADODB.Connection");///创建Connection对象
+		if(SUCCEEDED(hr))
+		{m_pConnection->Open("Provider=Microsoft.Jet.OLEDB.4.0;User ID=Admin;Data Source=Cb_DATA.mdb;Jet OLEDB:DataBase Password=123;Mode=Share Deny Read|Share Deny Write","","",adModeUnknown);
+		  m_pConnection->Execute("ALTER DATABASE PASSWORD [456] [123] ",NULL,adCmdText);
+		}
+	}
+	catch(_com_error &e)///捕捉异常
+	{
+		CString errormessage;
+		errormessage.Format("连接数据库失败!\r\n错误信息:%s",e.ErrorMessage());
+		AfxMessageBox(errormessage);///显示错误信息
+		return FALSE;
+	}

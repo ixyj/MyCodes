@@ -1,0 +1,4 @@
+如何获取应用程序的实例句柄?
+应用程序的 实例句柄保存在CWinAppIm_hInstance 中,可以这么调用
+AfxGetInstancdHandle获得句柄.
+Example: HANDLE hInstance=AfxGetInstanceHandle();

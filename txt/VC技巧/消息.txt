@@ -1,0 +1,33 @@
+8. 如何自定义消息
+.h中
+#define WM_DO_MESSAGE WM_USER+100
+
+//{{AFX_MSG(...)
+    ......
+    //}}AFX_MSG
+    afx_msg LRESULT OnDoMessage(WPARAM wParam,LPARAM lParam);
+         ......
+    DECLARE_MESSAGE_MAP()
+
+
+.cpp中
+BEGIN_MESSAGE_MAP(...)
+    //{{AFX_MSG_MAP(...)
+    ......
+    //}}AFX_MSG_MAP
+    // Global help commands
+    ON_MESSAGE(WM_DO_MESSAGE,OnDoMessage)
+         ......
+END_MESSAGE_MAP()
+
+LRESULT CTest8Dlg::OnDoMessage(WPARAM wParam,LPARAM lParam) 
+{
+                  .....你的操作；//如int k=(int)wParam;等等
+        return 0L;
+} 
+------------------------------------------
+模拟发送键盘消息次按下WIN+D键,
+keybd_event(VK_LWIN,0,0,0);  
+keybd_event('D',0,0,0);  
+keybd_event(VK_LWIN,0,KEYEVENTF_KEYUP,0);  
+keybd_event('D',0,KEYEVENTF_KEYUP,0); 

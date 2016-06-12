@@ -1,0 +1,37 @@
+【问题】请问如何改变SDI生成界面的边框的颜色？
+假设你的SDI工程所生成的view类为:CSDIFrameColorView,从CView派生.
+1:在SDIFrameColorView.h中,增加成员函数:
+public:
+    void DrawFrameColor(HWND hWnd,COLORREF refColor);
+2:在SDIFrameColorView.cpp中
+2.1实现DrawFrameColor函数
+void CSDIFrameColorView::DrawFrameColor(HWND hWnd,COLORREF refColor)
+{    RECT stRect;
+    // Get the coordinates of the window on the screen
+    ::GetWindowRect(hWnd, &stRect);
+     // Get a handle to the window's device context
+    HDC hDC = ::GetWindowDC(hWnd);
+    HPEN hPen;
+    hPen = CreatePen(PS_INSIDEFRAME, 2* GetSystemMetrics(SM_CXBORDER), refColor);
+        // Draw the rectangle around the window
+    HPEN   hOldPen   = (HPEN)SelectObject(hDC, hPen);
+    HBRUSH hOldBrush = (HBRUSH)SelectObject(hDC, GetStockObject(NULL_BRUSH));
+        Rectangle(hDC, 0, 0, (stRect.right - stRect.left), (stRect.bottom - stRect.top));
+    //Give the window its device context back, and destroy our pen
+    ::ReleaseDC(hWnd, hDC);
+    SelectObject(hDC, hOldPen);
+    SelectObject(hDC, hOldBrush);
+    DeleteObject(hPen);
+    DeleteObject(hDC);
+}
+2.2重载OnDraw
+void CSDIFrameColorView::OnDraw(CDC* pDC)
+{
+    CSDIFrameBorderDoc* pDoc = GetDocument();
+    ASSERT_VALID(pDoc);
+    // TODO: add draw code for native data here
+    CWnd* pWnd = GetParent();
+    if(pWnd)
+    {            DrawFrameColor(pWnd->m_hWnd,RGB(255,0,0));//红色边框
+  }
+}

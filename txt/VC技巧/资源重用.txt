@@ -1,0 +1,3 @@
+方法1：
+在原工程的classView中选中这个class，然后右键菜单，Add to Gallery,然后，在另外工程中，选择Project->Add to Project->Components and Controls...,选择你刚才加入的后缀为ogx的文件，就可以。
+方法2：在你的要加入的工程中打开原工程的rc文件，然后选中你要加入的dialog,拖到左边的ResourceView中的Dialog中即可！

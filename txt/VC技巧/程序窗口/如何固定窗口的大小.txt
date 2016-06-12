@@ -1,0 +1,8 @@
+在CMainFrame函数里添加下面的函数响应
+void CMainFrame::OnGetMinMaxInfo(MINMAXINFO FAR* lpMMI) 
+{
+	// TODO: Add your message handler code here and/or call default
+	lpMMI->ptMaxTrackSize=CPoint(600,400);
+	lpMMI->ptMinTrackSize=CPoint(600,400);
+	CFrameWnd::OnGetMinMaxInfo(lpMMI);
+}

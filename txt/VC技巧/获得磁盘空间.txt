@@ -1,0 +1,6 @@
+unsigned __int64 i64FreeBytesToCaller,i64TotalBytes,i64FreeBytes;
+
+fResult = pGetDiskFreeSpaceEx (pszDrive,
+                (PULARGE_INTEGER)&i64FreeBytesToCaller,
+                (PULARGE_INTEGER)&i64TotalBytes,
+                (PULARGE_INTEGER)&i64FreeBytes);

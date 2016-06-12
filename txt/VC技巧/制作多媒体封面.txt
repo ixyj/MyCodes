@@ -1,0 +1,282 @@
+作者：SKYHORSEBJ
+email: XUEY@CIDC.COM.CN
+日期：2001-7-4 17:29:48
+当我们使用Visual C++(以下简称VC)开发的应用程序时,若能为应用程序制作一个生动的多媒体封面(如播放一段AVI影视)一定能使应用程序增色不少。有两种方法可以实现这个功能,一种方法是使用底层AVI文件函数,从AVI视频文件中读取视频流,尽管这种方法可以控制整个播放过程,但需要编写大量代码;另一种更简便的实现方法是使用现有的Video for W indows SDK的窗口类MCIWnd(媒体控制界面窗口),这种方法比较易于操作,现介绍如下。 
+
+设计思想及关键技术 
+
+MCIWnd是一个控制多媒体设备(如MIDI、数字视频、VCR以及CD音频设备等)的窗口类,要制作多媒体封面只需创建该类的一个窗口,然后向它发送打开和控制MCI设置的消息。为实现封面效果,我们应当在Initial Instance()函数执行初始化任务之前,对AVI文件进行播放,主要使用Video for Windows SDK的以下几个函数: 
+
+1.MCIWndRegisterClass()注册MCIWnd窗口类。
+
+2.MCIWndCreate() 
+
+·函数原型
+
+HWND MCIWndCreate(HWND hwndParent,HINSTANCE hInstance, DWORD dwStyle,LPSTRs zFile); 
+
+·实现功能
+
+该函数创建一个使用MCI设备的窗口,返回MCI设备窗口的句柄。
+
+·参数说明
+
+hwndParent:父窗口句柄,在本应用中父窗口应为NULL; 
+
+hInstance: 当前实例句柄,可以用AfxGet InstanceHandle()函数获得; 
+
+dwStyle: MCIWnd窗口的风格; 
+
+szFile: 打开的MCI设备的名称,在此处设为NULL。
+
+3.MCIWndOpenO 
+
+·函数原型
+
+LONG MCIWndOpen(HWND hwnd,LPVOID szFile,UINT wFlags) 
+
+·实现功能
+
+向MCIWnd窗口发送MCIWNDM_OPEN消息,打开某MCI设备,将其关联到
+一个MCIWnd窗口。若调用成功则返回值为0。
+
+
+·参数说明
+
+
+hwnd:MCI窗口句柄; 
+
+
+szFile:MCI文件名; 
+
+
+wFlags:设备打开方式标识。
+
+
+4.MCIWndPlay() 
+
+
+·函数原型
+
+
+LONG MCIWndPlay(HWND hwnd) 
+
+
+·实现功能
+
+
+发送MCI_PLAY消息,MCIWnd窗口接收到该消息,播放已经打开的MCI文件。
+
+
+·参数说明
+
+
+hwnd:MCI窗口句柄; 
+
+
+5.MCIWndUseTime() 
+
+
+该函数将MCI设备的时间格式设置为毫秒;设置其它时间格式可以用函数MCIWndSetTime Format()实现。
+
+
+6.MCIWndGetLength() 
+
+
+该函数向MCIWnd窗口发送MCIWNDM_GETLENGTH消息,根据MCI设备所使用的
+时间格式返回文件的长度。
+
+
+7.MCIWndDestroy() 
+
+
+该函数向窗口发送一个WM_CLOSE消息,窗口接收到该消息之后,关闭所打
+开的MCI文件,并关闭窗口。虽然SDK还提供了一个MCIWndClose函数,但
+该函数只能关闭在MCIWnd窗口中打开的文件,而MCIWnd窗口仍处于开启
+状态,仍可以打开其它MCI文件并进行播放。
+
+
+
+实现步骤
+
+
+
+
+
+
+假设我们已经通过MFC AppWizard(EXE)建立了一个名为Example的工程,则该应用至少包含有CExampleApp、CMainFrame、CExampleView三个类。
+下面我们给这个应用加入多媒体封面,具体实现步骤如下: 
+
+
+1.编辑Stdafx.h 
+
+
+在Stdafx.h中放入包含文件可以使用预编译头文件中的所有多媒体信息。由于项目中的每一个文件已经包括了Stdafx.h,所以在其它地方不必包含
+这些多媒体文件。在Stdafx.h中放入包含文件可以使用预编译头文件中的所有多媒体信息。由于项目中的每一个文件已经包括了Stdafx.h,所以在
+其它地方不必包含这些多媒体文件。
+
+
+#include＜afxwin.h＞ //MFC core and standard 
+
+
+components 
+
+
+#include＜afxext.h＞ //MFC extensions 
+
+
+#include＜vfw.h＞
+
+
+#pragma comment(lib,"vfw32.lib") 
+
+
+2.编辑CExampleApp::InitInstance() 
+
+
+注册MCIWnd窗口类,打开MCIWnd窗口,并播放AVI文件,最后关闭MCIWnd窗口,然后开始应用程序的常规初始化。
+
+
+
+
+
+BOOL CExampleApp::InitInstance()
+
+
+
+{
+
+
+
+if(!MCIWndRegisterClass())   //注册MCIWnd窗口类
+
+
+
+   return FALSE;
+
+
+
+HWNDm_hAVI //定义一个播放AVI文件的窗口句柄
+
+
+
+m_hAVI=MCIWndCreate(NULL,AfxGetInstanceHandle(),
+
+
+
+             MCIWNDF_NOPLAYBAR|
+
+
+
+             WS_VISIBLE|
+
+
+
+             WS_POPUT,
+
+
+
+             NULL); //创建MCIWnd窗口
+
+
+
+  if(m_hAVI=NULL)
+
+
+
+ return FALSE;
+
+
+
+ constCString filename="d:\\zhp\\example.avi"  //AVI文件名
+
+
+
+  if(filename.GetLength()＞0)
+
+
+
+  {
+
+
+
+  MCIWndOpen(m_hAVI,(LPCSTR)filename,0);           //打开设备文件
+
+
+
+  if(MCIWndUseTime(m_haAVI)!=0)
+
+
+
+//设置MCI时间格式
+
+
+
+return FALSE;
+
+
+
+long PlayTime=MCIWndGetLength(m_hAVI);
+
+
+
+//获得AVI文件的播放时间长度
+
+
+
+MCIWndPlay(m_hAVI);     //播放AVI影视文件
+
+
+
+  ::Sleep(PlayTime);              //进程休眠
+
+
+
+ MCIWndDestroy(m_hAVI);      //关闭MCI窗口
+
+
+
+}
+
+
+
+//开始常规初始化
+
+
+
+#ifdef_AFXDLL
+
+
+
+ Enable3dControls();   //Call this when using MFC in a shared DLL
+
+
+
+#else
+
+
+
+Enable3dControlsStatic();  //Call this when linking to MFC statically
+
+
+
+#endif
+
+
+
+……
+
+
+
+}
+
+
+
+
+
+
+由于Windows系统是多任务、多进程并行的,因此要让InitialInstance进程休眠,等待M CIWndPlay进程播放AVI文件结束后才能继续执行
+InitialInstance进程,否则系统将在播放A VI影视的同时执行应用程序的初始化,不能达到动画封面效果。在以上代码中,阴影部分的程序段的
+功能就是获得AVI文件播放时间长度PlayTime,然后使用::Sleep()函数让进程休眠Pl ayTime毫秒后关闭MCIWnd窗口。
+
+

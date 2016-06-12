@@ -1,0 +1,19 @@
+为对话框添加菜单栏很简单，只需在OnInitDialog（）函数中添加如下代码：
+   CMenu* pMenu = new CMenu;
+   BOOL bRet = pMenu->LoadMenu(菜单资源ID);   
+   SetMenu(pMenu);   
+   delete pMenu;
+
+
+////////////////////////////////////////////////////////////////////
+为对话框添加工具栏也很简单，首先在Dlg类中添加成员变量：
+   CToolBar m_ToolBar;
+并在OnInitDialog（）函数中添加如下代码：
+
+if(!m_ToolBar.CreateEx(this, TBSTYLE_FLAT, WS_CHILD|WS_VISIBLE|CBRS_TOP|CBRS_GRIPPER|CBRS_TOOLTIPS|CBRS_SIZE_DYNAMIC|CBRS_BORDER_3D)
+  ||!m_ToolBar.LoadToolBar(IDR_TOOLBAR_GRAPHICS))
+ {
+	  TRACE0("创建工具条失败\n");
+	  return FALSE;
+ }
+ RepositionBars(AFX_IDW_CONTROLBAR_FIRST, AFX_IDW_CONTROLBAR_LAST, 0);

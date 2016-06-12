@@ -1,0 +1,30 @@
+CreateThread()  与AfxBeginThread（）有什么区别？？
+区别比较大，CreateThread是Win32函数，AfxBeginThread不仅仅队它进行了封装，更重要的是他还初始化了主结构使用的内部状态信息，再线成创建的过程中执行合理的检查，并采用一定的方法来确保以线成安全的方式访问C运行时库中的函数。
+-----------------------------------------
+创建进程运行程序
+  PROCESS_INFORMATION pi;
+    STARTUPINFO si;
+    memset(&si,0,sizeof(si));
+    si.cb=sizeof(si);
+    si.wShowWindow=SW_SHOW;
+    si.dwFlags=STARTF_USESHOWWINDOW;
+    BOOL fRet=CreateProcess(NULL,
+        "notepad.exe",
+                      NULL,
+                      NULL,
+                      FALSE,
+                      NULL,
+                      NULL,
+                      NULL,
+                      &si,
+                      &pi);
+    
+    return 0;
+} 
+如何在一个进程中读取另外一个进程的内存
+1: HANDLE TargetProcess = OpenProcess()打开你要写入的进程的句柄
+2: VirtualQueryEx(TargetProcess...BaseAddress)   检查要写入的内存页的属性
+3：如果不可些，用VirtualProtectEx(TargetProcess...)  改为可写
+4：WriteProcessMemory(TargetProcess...) 写入你要写的内存。
+整个算法用__try/__except 包起来，以防不测。
+具体参数看MSDN

@@ -1,0 +1,67 @@
+//设置菜单某项的字体为粗体
+CMenu* pMainMenu = AfxGetMainWnd()->GetMenu();
+CMenu* pSubMenu = NULL;
+int i;
+for (i=0; i<(int)pMainMenu->GetMenuItemCount(); i++)
+{
+    pSubMenu = pMainMenu->GetSubMenu(i);
+    if (pSubMenu && pSubMenu->GetMenuItemID(0) == ID_FILE_NEW)
+             break;
+}
+::SetMenuDefaultItem(pSubMenu->m_hMenu,0,TRUE); 
+-------------------------------------------------
+//菜单加对勾
+pCmdUI->SetCheck(m_bIsDrawLine);
+---------------------------------------
+//如何在基于对话框的程序中加载菜单?
+首先您在资源编辑器里制作好菜单,假设ID为IDR_MENU1.
+然后打开对话框的属性窗口,在Dialog属性里的General中选择你的Menu菜单的ID就行了
+---------------------------------------
+//如何在菜单中加入 XX.chm  帮助文件
+把XX.chm和*.exe放在同一个目录
+TCHAR exeFullPath[MAX_PATH];   
+::GetModuleFileName(NULL,exeFullPath,MAX_PATH);
+CString s=exeFullPath;
+int index=s.ReverseFind('\\');
+CString path=s.Left(index);
+path=path+"\\XX.chm";
+ShellExecute(NULL,NULL,LPCTSTR(path),NULL,NULL,SW_SHOW); 
+----------------------------------------------------------------
+使菜单的某一项变灰…………
+
+打开类向导(class  wizard),  
+找到你的菜单某项的ID,如ID_FILE_SAVE,  
+点击选中,在右边一message栏里会看到  
+COMMAND  
+UPDATE_COMMAND_UI  
+选择UPDATE_COMMAND_UI,  
+添加函数,得OnUpdateFileSave()  
+在其中加入:  
+   pCmdUI->Enable(false);  
+这样就使其变灰了,  
+同理,改为true就可用了  
+---------------------------------------
+如何制作鼠标的右键菜单？
+鼠标右击事件中
+CMenu m_PopMenu;
+m_PopMenu.LoadMenu(IDR_Popup_Print);
+ClientToScreen(&point);
+CMenu *psub = (CMenu *)m_PopMenu.GetSubMenu(0);
+psub->TrackPopupMenu(TPM_LEFTALIGN|TPM_RIGHTBUTTON,point.x,point.y,this);
+m_PopMenu.DestroyMenu();
+其中IDR_Popup_Print指的是你所建的菜单的ID号
+
+映射CMainFrame的WM_CONTEXTMENU消息
+在其中加入:
+    
+    CMenu popupmenu;
+     popupmenu.LoadMenu(IDR_MENU1);
+    popupmenu.GetSubMenu(0)->TrackPopupMenu(TPM_LEFTALIGN,point.x,point.y,this);
+(2)映射WM_RBUTTONDOWN消息
+在其中加入:
+        CMenu popupmenu;
+    CPoint pointcursor;
+    GetCursorPos(&pointcursor);
+     popupmenu.LoadMenu(IDR_MENU1);
+    popupmenu.GetSubMenu(0)->TrackPopupMenu(TPM_LEFTALIGN,pointcursor.x,pointcursor.y,this);
+IDR_MENU1为你用资源编辑器编辑的菜单

@@ -1,0 +1,15 @@
+list列表框，有多个列，如何在程序中知道按了哪个列的标题
+
+响应LVN_COLUMNCLICK消息
+
+void YourDlg::OnColumnclickClcurveList(NMHDR* pNMHDR, LRESULT* pResult) 
+{
+    NM_LISTVIEW* pNMListView = (NM_LISTVIEW*)pNMHDR;
+    // TODO: Add your control notification handler code here
+    int iCol=pNMListView->iSubItem;//从0开始计数的列号
+    iCol+=1;//列号+1
+    CString strColNO;
+    strColNO.Format("你单击了第 %d 列",iCol);
+    AfxMessageBox(strColNO);
+    *pResult = 0;
+}

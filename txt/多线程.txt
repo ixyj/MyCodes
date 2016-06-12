@@ -1,0 +1,40 @@
+void CtempView::OnDraw(CDC* pDC)         //显示效果
+{
+	CtempDoc* pDoc = GetDocument();
+	ASSERT_VALID(pDoc);
+	if (!pDoc)
+		return;
+	pDC->TextOutW(x,y%60+30,L"垂直滚动");//x、y-----类成员变量
+}
+
+
+DWORD WINAPI thread(LPVOID pParam)   //定义线程，手动添加
+{
+CtempView* pdlg =(CtempView*)pParam;
+CDC *pDC =pdlg->GetDC();
+for(int i=0; i<360;i++)
+{
+	pDC->TextOutW(pdlg->x, pdlg->y %60+30,L"垂直滚动");
+	pdlg->y+=2;pdlg->Invalidate();
+	Sleep(50);
+}
+return 0;
+}
+
+void CtempView::RunThread(void)   //运行线程
+{
+	DWORD nThreadID;
+	HANDLE handle = CreateThread(NULL,0,thread,(LPVOID)this,
+		CREATE_SUSPENDED,&nThreadID);
+	SetThreadPriority(handle,THREAD_PRIORITY_ABOVE_NORMAL);
+	ResumeThread(handle);
+}
+
+///////////////////////////////////////////////////
+正式的工作者线程如下定义：
+定义工作者函数
+UINT Work(LPVOID pParam);
+
+然后开启线程：
+AfxBeginThreadWork, pParam);
+注：此处pParam会作为Work的参数传入

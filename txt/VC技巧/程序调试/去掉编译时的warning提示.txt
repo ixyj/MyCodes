@@ -1,0 +1,3 @@
+如何去掉编译时输出框出的warning提示
+
+project->setting->c/c++下的warning level 可以调的最高的是4什么都会出来了，你不想让它们出来，调到NONE。

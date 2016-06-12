@@ -1,0 +1,57 @@
+1.头文件中添加类成员（消息函数）：
+DECLARE_MESSAGE_MAP()
+afx_msg void OnTimer(UINT_PTR nIDEvent);
+
+2.源文件中添加消息映射：
+BEGIN_MESSAGE_MAP(CDerive, CBase)
+	……
+	ON_WM_TIMER()
+END_MESSAGE_MAP()
+并添加实现代码：
+void CDerive::OnTimer(UINT_PTR nIDEvent)
+{
+	// TODO: 在此添加消息处理程序代码和/或调用默认值
+	switch (nIDEvent)
+	{
+		case 1:  //计时器1
+			……
+			break;
+		case 2:  //计时器2
+			……
+			break;
+		……
+		……
+		default:
+			KillTimer(nIDEvent); //删除计时器
+			break;
+	}
+
+	CBase::OnTimer(nIDEvent);	
+}
+
+3.需要时启动计时器:
+SetTimer(1,400, NULL);
+
+
+UINT_PTR SetTimer(UINT_PTR nIDEvent, UINT nElapse, void (CALLBACK* lpfnTimer)(HWND, UINT, UINT_PTR, DWORD));
+BOOL KillTimer(UINT_PTR nIDEvent);
+
+
+///////////////////////////////////////////////////////////////////////////////////
+非窗口类中设置定时器
+SetTimer的函数原型如下：
+UINT_PTR SetTimer( HWND hWnd, UINT_PTR nIDEvent, UINT uElapse, TIMERPROC lpTimerFunc);
+调用SetTimer时不指定窗口句柄(为NULL)，nIDEvent参数自然被忽略，lpTimerFunc不为NULL而指定为lpTimerFunc的指针。此时SetTimer的返回值正是新建立的计时器的ID，需将这个ID保存以供KillTimer销毁计时器时所用。当然，KillTimer的hWnd参数也置为NULL。这种方法同样用TimerProc处理WM_TIMER消息。
+
+UINT_PTR iTimerID = SetTimer(NULL,0,1000,TimerProc) ;
+……
+KillTimer(NULL,iTimerID) ;
+
+TimerProc定义如下：
+
+VOID CALLBACK TimerProc(HWND hwnd,UINT uMsg,UINT idEvent,DWORD dwTime)
+{
+　//处理WM_TIMER讯息 
+}
+
+注：SetTimer用于线程中无法调用TimerProc！

@@ -1,0 +1,17 @@
+怎样判断一个文件路径是否正确？
+用CFileFind:
+  CFileFind finder;
+  BOOL bWorking = finder.FindFile("C:\bbb");
+  if(!bWorking)
+  {
+    AfxMessageBox("不存在！");
+  }
+
+判断一个文件是否存在
+CFileFind find;
+if (!find.FindFile("Yourfile.exe"))
+  // 不存在
+find.Close();
+
+------------------------
+ 

@@ -1,0 +1,207 @@
+// 以下函数模板均出之 functional 文件 ， 在 vs2008 下编译通过
+
+1 ， std::plus
+
+作用 ： 泛型加法，需要模板参数支持 + 操作符
+用法 ： int result = std::plus<int>()( 3 , 4 ) ;    // result = 7
+
+2 ， std::minus
+
+作用 ： 泛型减法 ，需要模板参数支持 - 操作符
+用法 ： int result = std::minus<int>()( 4 , 3 ) ;   // result = 1
+
+3 ， std::multiplies
+
+作用 ： 泛型乘法 ，需要模板参数支持 * 操作符
+用法 ： int result = std::multiplies<int>()( 3 , 4 ) ;   // result = 12
+
+4 ， std::divides
+
+作用 ： 泛型除法 ， 需要模板参数支持 / 操作符
+用法 ： int result = std::divides<int>()( 12 , 3 );   // result = 4
+
+5 ， std::modulus
+
+作用 ： 泛型取模 ， 需要模板参数支持 % 操作符
+用法 ： int result = std::modulus<int>()( 4 , 3 );    // result = 1
+
+6 ， std::negate
+
+作用 ： 泛型取反 ， 需要模板参数支持 - 操作符
+用法 ： int result = std::negate<int>()( 3 ) ;             // result = -3
+
+7 ， std::equal_to
+
+作用 ： 泛型相等 ， 需要模板参数支持 == 操作符
+用法 ： bool result = std::equal_to<int>()( 3 , 3 ) ;   // result = [true]
+
+8 ， std::not_equal_to
+
+作用 ： 泛型不等 ， 需要模板参数支持 != 操作符
+用法 ： bool result = std::not_equal_to<int>()( 3 , 3 ) ; // result = [false]
+
+9 ， std::greater
+
+作用 ： 泛型大于 ， 需要模板参数支持 > 操作符
+用法 ： bool result = std::greater<int>()( 4 , 3 ) ;        // result = [true]
+
+10 ， std::less
+
+作用 ： 泛型小于 ， 需要模板参数支持 < 操作付
+用法 ： bool result = std::less<int>()( 4 , 3 ) ;          // result = [false]
+
+11 ， std::greater_equal
+
+作用 ： 泛型大于等于 ， 需要模板参数支持 >= 操作符
+用法 ： bool result = std::greater<int>()( 4 , 3 ) ;        // result = [true]
+
+12 ， std::less_equal
+
+作用 ： 泛型小于等于 ， 需要模板参数支持 <= 操作符
+用法 ： bool result = std::less_equal<int>()( 4 ,3 ) ;       // result = [false]
+
+13 ， std::logical_and
+
+作用 ： 泛型逻辑与 ， 需要模板参数支持 && 操作符
+用法 ： bool result = std::logical_and<bool>()( ( 4 > 3 ) , ( 5 > 3 ) ); // result = [true]
+
+13 ， std::logical_or
+
+作用 ： 泛型逻辑或 ， 需要模板参数支持 || 操作符
+用法 ： bool result = std::logical_or<bool>()( ( 4 > 3 ) , ( 5 > 3 ) ); // result = [true]
+
+14 ， std::logical_not
+
+作用 ： 泛型逻辑非 ， 需要模板参数支持 ! 操作符
+用法 ： bool result = std::logical_not<bool>()( (4 > 3 ) ) ;         // result = [false]
+
+15 ， std::not1
+
+作用 ： 泛型函数体结果取反 ，泛型函数带有一个参数
+用法 ： bool result = std::not1(std::logical_not<bool>())( 4 > 3 ) ; // result = [true]
+
+16 ， std::not2
+
+作用 ： 泛型函数结果取反 ， 泛型函数带有两个参数
+用法 ： bool result = std::not2(std::equal_to<int>())( 3 , 3 ) ;      // result = [false]
+
+17 ， std::bind1st
+
+作用 ： 将一个带有两个参数的函数转换为 第一个 参数固定 的 
+        带有一个参数 operator() 操作符的 函数对象[std::binder1st]
+用法 ： bool result = std::bind1st(std::less<int>() , 3 )( 4 ) ;      // result = [true]
+
+18 ， std::bind2nd
+
+作用 ： 将一个带有两个参数的函数转换为 第二个 参数固定 的 
+        带有一个参数 operator() 操作符的 函数对象[std::binder2nd]
+用法 ： bool result = std::bind2nd(std::less<int>() , 3 )( 4 ) ;      // result = [false]
+
+19 ， std::ptr_fun
+
+作用 ： 将一个普通转换为一个C++函数对象[ pointer_to_unary_function , pointer_to_binary_function ] ，
+        并做调用
+用法 ：
+
+bool g1( int n1 )
+{
+     return n1 > 0 ;
+};
+
+
+bool g2( int n1 , int n2 )
+{
+    return n1 > n2 ;
+};
+//----------------------------------
+
+bool result1 = std::ptr_fun<int , bool>(g1)( 3 );                       // result1 = [true] 
+bool result2 = std::ptr_fun<int , int , bool>(g2)( 3 ,4 ) ;            // result = [false]
+
+20 ， std::mem_fun [std::mem_fun1]
+
+作用 ： 将类成员函数指针转化为函数对象
+        [mem_fun_t , mem_fun1_t , const_mem_fun_t , const_mem_fun1_t]
+        以指针方式调用
+        注意，函数成员不能有重载，否则 编译报错
+用法 ：
+
+class A
+{
+public:
+int print_no_arg( )         //-> mem_fun_t
+{
+      cout<<" no arg mem fun "<<endl;
+      return 0 ;
+}
+
+int print_one_arg( int i )   // -> mem_fun1_t
+{
+      cout<<" has arg mem fun , i = "<<i<<endl;
+      return 0 ;
+}
+};
+// 对于 const 成员函数的支持 例子就不举了，和普通的一样
+
+int main(int argc, char* argv[])
+{
+     A a ;
+     std::mem_fun< int , A>(&A::print_no_arg)(&a);
+     std::mem_fun< int , A , int>(&A::print_one_arg)(&a , 3);
+     std::mem_fun1< int ,A , int>(&A::print_one_arg)(&a , 4);
+
+     system("pause");
+    return 0;
+}
+
+结果 ：
+
+no arg mem fun
+has arg mem fun , i = 3
+has arg mem fun , i = 4
+//------------------------------------------------------------------
+
+
+21 ， std::mem_fun_ref [ std::mem_fun1_ref ]
+
+作用 ： 将类成员函数指针转化为函数对象 
+         [mem_fun_ref_t , mem_fun1_ref_t , const_mem_fun_ref_t , const_mem_fun1_ref_t]
+        以引用方式调用
+        注意，函数成员不能有重载，否则 编译报错
+用法 ：
+
+class A ;    //    定义 同 20 
+
+int main(int argc, char* argv[])
+{
+     A a ;
+     std::mem_fun_ref< int , A>(&A::print_no_arg)(a);
+     std::mem_fun_ref<int , A ,int>(&A::print_one_arg)(a , 3 );
+     std::mem_fun1_ref<int , A , int>(&A::print_one_arg)(a , 4);
+
+     system("pause");
+     return 0;
+}
+//------------------------------------------------------------------
+
+
+22 ， std::tr1::mem_fn
+
+作用 ： 支持多个参数的类成员函数向函数对象的转换 ，以指针方式调用
+用法 ：
+
+class A ;    //    定义 同 20 
+
+// 这里只给出 0 个参数 和 1 个参数的例子
+
+int main(int argc, char* argv[])
+{
+
+     A a ;
+     std::tr1::mem_fn< int , A>(&A::print_no_arg)(&a);
+     std::tr1::mem_fn<int , A , int>(&A::print_one_arg)(&a , 4);
+
+     system("pause");
+     return 0;
+}
+

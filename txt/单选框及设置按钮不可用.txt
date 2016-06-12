@@ -1,0 +1,21 @@
+单选框设置 及 设置按钮不可用
+BOOL CChaiFen::OnInitDialog()
+{
+	CDialog::OnInitDialog();
+	if (m_nType == 0)
+		CheckRadioButton(IDC_RADIO_GenSui, IDC_RADIO_MiaoHong,  IDC_RADIO_BiHua);
+	else if (m_nType == 1)
+		CheckRadioButton(IDC_RADIO_GenSui, IDC_RADIO_MiaoHong,  IDC_RADIO_MiaoHong);
+	else
+		CheckRadioButton(IDC_RADIO_GenSui, IDC_RADIO_MiaoHong,  IDC_RADIO_GenSui);
+
+		::EnableWindow(*GetDlgItem(IDC_backgroundColor), m_nType == 1 ? true : false);//true----ID为IDC_backgroundColor的按钮可用，否则不可用
+	return TRUE;  
+}
+
+//CheckRadioButton(firstRadioButton,lastRadioButton,checkinRadioButton), we think they have been  grouped;
+
+附：键盘响应事件
+OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags)
+
+可以修改对话框的构造函数，但好像不太符合Ｃ＋＋标准，及有默认值的参数从左开始！

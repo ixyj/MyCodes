@@ -1,0 +1,11 @@
+如何让窗口和 MDI窗口一启动就最大化和最小化?
+先说窗口。
+在 InitStance 函数中设定 m_nCmdShow的 取值.
+m_nCmdShow=SW_SHOWMAXMIZED ; //最大化
+m_nCmdShow=SW_SHOWMINMIZED ; //最小化
+m_nCmdShow=SW_SHOWNORMAL ; //正常方式
+MDI窗口:
+如果是创建新的应用程序,可以用 MFC AppWizard 的Advanced 按钮并在MDI 子窗口风
+格组中检测最大化或最小化; 还可以重载 MDI Window 的PreCreateWindow函数，设置
+WS_MAXMIZE or WS_MINMIZE;如果从 CMDIChildWnd 派生,调用 OnInitialUpdate函数中
+的 CWnd::Show Window来指定 MDI Child Window的 风格。

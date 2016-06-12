@@ -1,0 +1,7 @@
+JFrame frame = new JFrame();
+JTextArea textArea = new JTextArea();
+frame.getContentPane().add(textArea);
+		
+JScrollPane scrollPane = new JScrollPane(textArea);
+scrollPane.setBounds(61, 60, 200, 83);
+frame.getContentPane().add(scrollPane);

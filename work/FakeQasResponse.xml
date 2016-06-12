@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<componentRepository xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="SyntaxValidator.xsd">
+  <plugin name="FakeQasResponse" namespace="AutoSuggest.Plugins" version="1.0">
+    <inputs>
+      <input name="query" schema="Platform.Query" version="1.0" required="true" />
+      <input name="classifiers" schema="Platform.StringData" version="1.0" collection="true" required="true" />
+      <input name="domains" schema="Platform.StringData" version="1.0" collection="true" required="true" />
+    </inputs>
+    <outputs>
+      <output name="output" schema="QAS.Inmemory.QueryRepresentation.QueryRepresentationResponse" version="1.0" />
+    </outputs>
+    <private>
+      <runtimeConfig>
+        <assemblyName>AutoSuggest_1.dll</assemblyName>
+        <entryPointType>AutoSuggest.Plugins.FakeQasResponse</entryPointType>
+      </runtimeConfig>
+    </private>
+  </plugin>
+</componentRepository>

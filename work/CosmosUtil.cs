@@ -22,6 +22,7 @@
                 Console.WriteLine(ex.ToString());
                 Console.WriteLine("this.exe -r/regex -o/overwrite -u/upload/d/download src dest  {partial match}");
                 Console.WriteLine(@"Regex path is like : '..\\\d+.*' or '..\as.*'");
+                Console.WriteLine(@"Binary mode if not specified -t/text (Only in Uploading)");
             }
         }
     }
@@ -31,6 +32,7 @@
         private static bool _isRegex = false;
         private static bool _isOverwrite = false;
         private static bool? _isUpload = null;
+        private static bool _isText = false;  // binary assumed if not specified
         private static string _source = null;
         private static string _destination = null;
 
@@ -56,6 +58,10 @@
                     case "-overwrite":
                         _isOverwrite = true;
                         break;
+                    case "-t":
+                    case "-text":
+                        _isText = true;
+                        break;
                     default:
                         if (string.IsNullOrWhiteSpace(_source))
                         {
@@ -73,7 +79,7 @@
             {
                 throw new ArgumentException("No upload/download argment!");
             }
-            
+
             if (_isUpload ?? false)
             {
                 Upload();
@@ -181,7 +187,7 @@
             {
                 try
                 {
-                    VC.Upload(file, tempFile, true);
+                    VC.Upload(file, tempFile, 0L, 9223372036854775807L, true, new TimeSpan(0L), _isText);
                     break;
                 }
                 catch
@@ -246,7 +252,7 @@
 
             if (isOverWrite && File.Exists(file))
             {
-                File.SetAttributes(file,FileAttributes.Normal);
+                File.SetAttributes(file, FileAttributes.Normal);
                 File.Delete(file);
             }
 

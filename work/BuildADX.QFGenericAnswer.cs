@@ -1,41 +1,48 @@
 ﻿namespace csTest
 {
     using System.IO;
+	using System.Linq;
+	using System.Linq.Expressions;
 
     class Program
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
-            GenerateQFDataFile(@"\\STCVM-A25\Users\v-dawsun\Desktop\Share\TableAResult2.txt", @"C:\Users\yajxu\Desktop\adx.qf.generic.xml");
+            GenerateQFDataFile(@"\\STCVM-A25\Users\v-dawsun\Desktop\Share\TableAResult2.txt", new [] { @"C:\Users\yajxu\Desktop\adx.qf.generic1.xml", @"C:\Users\yajxu\Desktop\adx.qf.generic2.xml" , @"C:\Users\yajxu\Desktop\adx.qf.generic3.xml" });
         }
 
-        private static void GenerateQFDataFile(string inFile, string outFile)
+        private static void GenerateQFDataFile(string inFile, string[] outFiles)
         {
             var reader = new StreamReader(inFile);
-            var writer = new StreamWriter(outFile);
+            var writers = outFiles.Select(x => new StreamWriter(x)).ToList();
             string line;
-            ulong count = 0;
+            var counts = writers.Select(x => 0UL).ToArray();
+            var selector = 0;
 
-            WordBreaker.Initialize();
-            writer.Write("<Items>\n");
+            writers.ForEach(x => x.Write("<Items>\n"));
+            WordBreaker.Initialize();    
             while ((line = reader.ReadLine()) != null)
             {
+                var writer = writers[selector];
+                var cnt = ++counts[selector];
                 writer.Write("<Item KifSchema=\"MsnJVData.EmptyAnswer[1.0]\" Id=\"Record");
-                writer.Write(count++);
+                writer.Write(cnt);
                 writer.Write("\"><Trigger IsTriggeredBySuggestion=\"true\">");
                 writer.Write(Normalize(line));
                 writer.Write("</Trigger><Trigger>");
                 writer.Write(Normalize(WordBreaker.BreakWords(line, "zh-CN", false)));
                 writer.Write("</Trigger></Item>\n");
 
-                if (count % 100 == 0)
+                if (cnt % 100 == 0)
                 {
                     writer.Flush();
                 }
+                 
+                selector = (selector + 1) % writers.Count;
             }
 
-            writer.Write("</Items>");
-            writer.Close();
+            writers.ForEach(x => x.Write("</Items>"));
+            writers.ForEach(x => x.Close()); 
             reader.Close();
         }
 

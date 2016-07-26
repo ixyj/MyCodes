@@ -13,15 +13,15 @@
         public static void Main(string[] args)
         {
             try
-            {
+            {      
                 var cmd = new CosmosUtil();
-                cmd.Excute(args);
+                cmd.Excute(args); 
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.ToString());
-                Console.WriteLine("this.exe -r/regex -o/overwrite -u/upload/d/download src dest  {partial match}");
-                Console.WriteLine(@"Regex path is like : '..\\\d+.*' or '..\as.*'");
+                Console.WriteLine("this.exe -r/regex -o/overwrite -u/upload/d/download -t/text src dest {partial match}");
+                Console.WriteLine(@"Regex must not exist in folder path, and start with '@@' (not included) if containing char '\'");
                 Console.WriteLine(@"Binary mode if not specified -t/text (Only in Uploading)");
             }
         }
@@ -93,16 +93,16 @@
 
         private void ExtractRegex(string path, out string dir, out string pattern, string separator)
         {
-            if (path.Contains(@"\\"))
+            if (path.Contains("@@"))
             {
-                var index = path.Substring(0, path.IndexOf(@"\\"));
-                dir = index + @"\";
-                pattern = path.Substring(dir.Length + 1);
+                var index = path.Substring(0, path.IndexOf("@@"));
+                dir = index.Substring(0, index.LastIndexOf(separator, StringComparison.Ordinal) + 1);
+                pattern = path.Substring(dir.Length).Replace("@@", String.Empty);
             }
             else
             {
-                dir = _source.Substring(0, _source.LastIndexOf(separator, StringComparison.Ordinal) + 1);
-                pattern = _source.Substring(dir.Length);
+                dir = path.Substring(0, path.LastIndexOf(separator, StringComparison.Ordinal) + 1);
+                pattern = path.Substring(dir.Length);
             }
         }
 

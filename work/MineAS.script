@@ -1,0 +1,250 @@
+﻿REFERENCE @"/shares/searchDM/distrib/released/SLAPI/SearchLogApi.dll";
+REFERENCE @"/shares/searchDM/distrib/released/SLAPI/Microsoft.Bond.Interfaces.dll";
+REFERENCE @"/shares/searchDM/distrib/released/SLAPI/Microsoft.Instrumentation.Schemas.dll";
+REFERENCE @"/shares/searchDM/distrib/released/SLAPI/Microsoft.DataMining.CommonDataPlatform.Interface.dll";
+REFERENCE @"/shares/searchDM/distrib/released/SLAPI/Microsoft.Live.Json.dll";
+REFERENCE @"/shares/searchDM/distrib/released/SLAPI/Microsoft.DataMining.Bing.DataModel.dll";
+REFERENCE "System.Web.dll";
+REFERENCE "System.Xml.dll";
+REFERENCE "System.Xml.Linq.dll";
+
+SlapiPageView =
+    VIEW @"/shares/searchDM/distrib/released/SLAPI/SearchLogPageView.view"
+    PARAMS
+    (
+        Start = "2016-07-27",
+        End = "2016-07-28",
+        UseSample = true,
+        Dataset = "Bing.com"
+    );
+
+Source =
+    SELECT Query_RawQuery,
+           DataSources
+    FROM SlapiPageView
+    WHERE Query_IsNormal
+          AND Query_IsAutoSuggest
+          AND Request_FdPartnerEntry == "autosuggest"
+          AND REGEX(@"https?://[^\.]+\.bing\.com/").IsMatch(Request_Url)
+          AND Vertical.ToLower() == "web"
+          AND Market == "zh-CN";
+
+RawData =
+    PROCESS SlapiPageView
+    PRODUCE *
+    USING SuggestionExtractor;
+
+OUTPUT
+(
+    SELECT DISTINCT SugType
+    FROM RawData
+)
+TO @"/my/Debug/debug.tmp2.txt";
+
+#CS
+using Microsoft.SCOPE.Types;
+using Microsoft.SCOPE.Interfaces;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Text;
+using ScopeRuntime;
+using System.Xml;
+using System.Xml.Linq;
+using System.Text.RegularExpressions;
+
+
+public class SuggestionExtractor : Processor
+{
+    public override Schema Produces(string[] requestedColumns, string[] args, Schema input)
+    {
+        return new Schema("Prefix, SugText, SugType, SugPosition:int, Clicked:bool");
+    }
+
+    public override IEnumerable<Row> Process(RowSet input, Row output, string[] args)
+    {
+        foreach (Row row in input.Rows)
+        {
+            var dataSourceList = row["DataSources"].Value as MS.Internal.Bing.DataMining.SearchLogApi.DataSourceList;
+            if (dataSourceList == null)
+            {
+                continue;
+            }
+
+            var suggestionsData = dataSourceList.FindElementsWithProperty("T", "D.Suggestions")[0];
+            if (suggestionsData == null || suggestionsData.IsDummy)
+            {
+                continue;
+            }
+
+            var position = 0;
+            output["Prefix"].UnsafeSet(row["Query_RawQuery"].String);
+            foreach (var suggestion in suggestionsData.Children)
+            {
+                try
+                {
+                    output["SugText"].UnsafeSet(suggestion.GetDataPropertyOrDefault(SuggestionDataType.SuggestionText, string.Empty));
+                    output["SugType"].UnsafeSet(suggestion.GetDataPropertyOrDefault(SuggestionDataType.SuggestionType, string.Empty));
+                    output["Clicked"].UnsafeSet(suggestion.Clicks.Count > 0);
+                    output["SugPosition"].UnsafeSet(++position);
+                }
+                catch
+                {
+                    continue;
+                }
+
+                yield return output;
+            }
+        }
+    }
+}
+
+internal static class SuggestionDataType
+{
+    /// <summary>
+    /// The application id key.
+    /// </summary>
+    internal const string CharmAppID = "AppID";
+
+    /// <summary>
+    /// Key property - unique identifier for the suggestion.
+    /// </summary>
+    internal const string Key = "K";
+
+    /// <summary>
+    /// The key for the url element
+    /// </summary>
+    internal const string CharmUrl = "Url";
+
+    /// <summary>
+    /// Preview pane property
+    /// </summary>
+    internal const string PreviewPane = "PVW";
+
+    /// <summary>
+    /// Open by default property
+    /// </summary>
+    internal const string OpenByDefault = "OBD";
+
+    /// <summary>
+    /// Suggestion text property
+    /// </summary>
+    internal const string SuggestionText = "Q";
+
+    /// <summary>
+    /// Suggestion type property
+    /// </summary>
+    internal const string SuggestionType = "Val";
+
+    /// <summary>
+    /// Suggestion log meta
+    /// </summary>
+    internal const string SuggestionMeta = "LM";
+
+    /// <summary>
+    /// Open by default property
+    /// </summary>
+    internal const string CharmOpenByDefault = "OBD";
+
+    /// <summary>
+    /// Suggestion text property
+    /// </summary>
+    internal const string CharmSuggestionText = "Tx";
+
+    /// <summary>
+    /// Local suggestion type property
+    /// </summary>
+    internal const string CharmLocalSuggestionType = "N";
+
+    /// <summary>
+    /// Suggestion log meta
+    /// </summary>
+    internal const string CharmSuggestionMeta = "LM";
+
+    /// <summary>
+    /// Extension of file
+    /// </summary>
+    internal const string ThresholdSuggestionExt = "Ext";
+
+    /// <summary>
+    /// Last Access Date
+    /// </summary>
+    internal const string ThresholdSuggestionLAD = "LAD";
+
+    /// <summary>
+    /// Last Modified Date
+    /// </summary>
+    internal const string ThresholdSuggestionLMD = "LMD";
+
+    /// <summary>
+    /// Creation Date Time
+    /// </summary>
+    internal const string ThresholdSuggestionCDT = "CDT";
+
+    /// <summary>
+    /// Rank from Provider
+    /// </summary>
+    internal const string ThresholdSuggestionRank = "Rank";
+
+    /// <summary>
+    /// Number of App launches
+    /// </summary>
+    internal const string ThresholdSuggestionAppLnch = "AppLnch";
+
+    /// <summary>
+    /// Is Modern App
+    /// </summary>
+    internal const string ThresholdSuggestionMDN = "MDN";
+
+    /// <summary>
+    /// Suggestion PCS Data
+    /// </summary>
+    internal const string ThresholdSuggestionPCS = "PCS";
+
+    /// <summary>
+    /// Suggestion HCMS Data
+    /// </summary>
+    internal const string ThresholdSuggestionHCMS = "HCMS";
+
+    /// <summary>
+    /// Suggestion Group
+    /// </summary>
+    internal const string ThresholdSuggestionGroup = "Gr";
+
+    /// <summary>
+    /// Suggestion HandOff
+    /// </summary>
+    internal const string ThresholdSuggestionHandoff = "Ho";
+
+    /// <summary>
+    /// Suggestion rankingScore
+    /// </summary>
+    internal const string ThresholdRankingScore = "rankingScore";
+
+    /// <summary>
+    /// Suggestion TopHit Confidence Score
+    /// </summary>
+    internal const string ThresholdTopHitConfidenceScore = "topHitConfidenceScore";
+
+    /// <summary>
+    /// Suggestion featureStore 
+    /// </summary>
+    internal const string ThresholdFeatureStore = "featureStore";
+
+    /// <summary>
+    /// Fast Rank Model Id used for this impressions
+    /// </summary>
+    internal const string ThresholdFastRankModelId = "fastRankModelId";
+
+    /// <summary>
+    /// Fast Rank Classifier Model Id used for this impressions
+    /// </summary>
+    internal const string ThresholdFastRankClassifierModelId = "fastRankClassifierModelId";
+
+    /// <summary>
+    /// Threshold BCS Version used for this impressions
+    /// </summary>
+    internal const string ThresholdBCSVersion = "bcsVersion";
+}
+ 
+#ENDCS

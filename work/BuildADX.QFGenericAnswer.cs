@@ -9,7 +9,7 @@ namespace csTest
     {
         private static void Main(string[] args)
         {
-            GenerateQFDataFile(@"\\STCVM-A25\Users\v-dawsun\Desktop\Share\TableAResult2.txt", new[] { @"C:\Users\yajxu\Desktop\adx.qf.generic1.xml", @"C:\Users\yajxu\Desktop\adx.qf.generic2.xml" });
+            GenerateQFDataFile(@"C:\Users\yajxu\Desktop\olympics_query.txt", new[] { @"C:\Users\yajxu\Desktop\olympics_query.out.txt" });
         }
 
         private static void GenerateQFDataFile(string inFile, string[] outFiles)
@@ -21,7 +21,7 @@ namespace csTest
             var selector = 0;
 
             writers.ForEach(x => x.Write("<Items>\n\t<Item KifSchema=\"MsnJVData.EmptyAnswer[1.0]\" Id=\"Record_All\">\n"));
-            WordBreaker.Initialize();
+            // WordBreaker.Initialize();
             while ((line = reader.ReadLine()) != null)
             {
                 var raw = Normalize(line);
@@ -29,11 +29,12 @@ namespace csTest
                 {
                     Console.WriteLine("Empty line: " + line);
                     continue;
-                }    
+                }
 
                 var writer = writers[selector];
-                var cnt = ++counts[selector];  
-                var normalized = Normalize(WordBreaker.BreakWords(line, "zh-CN", false));
+                var cnt = ++counts[selector];
+                // var normalized = Normalize(WordBreaker.BreakWords(line, "zh-CN", false));
+                var normalized = Normalize(line.Trim());
                 writer.Write("\t\t");
                 if (string.IsNullOrWhiteSpace(normalized))
                 {
@@ -41,13 +42,13 @@ namespace csTest
                 }
                 else
                 {
-                    writer.Write("<Trigger>");
+                    writer.Write("<Trigger DisableNormalization=\"true\">");
                     writer.Write(normalized);
                     writer.Write("</Trigger>");
                 }
 
 
-                if (!string.Equals(raw, normalized))
+                // if (!string.Equals(raw, normalized))
                 {
                     writer.Write("<Trigger IsTriggeredBySuggestion=\"true\">");
                     writer.Write(raw);
@@ -67,7 +68,7 @@ namespace csTest
             writers.ForEach(x => x.Close());
             reader.Close();
         }
-                     
+
         private static string Normalize(string text)
         {
             if (string.IsNullOrWhiteSpace(text))

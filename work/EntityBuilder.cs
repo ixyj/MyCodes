@@ -1,6 +1,4 @@
-﻿using System.Xml.Linq;
-
-namespace EntityBuilder
+﻿namespace EntityBuilder
 {
     using Entities;
     using Entities.Common;
@@ -26,7 +24,7 @@ namespace EntityBuilder
         public static int Main(string[] args)
         {
             try
-            {      
+            {
                 var dictsApp = ParseAppXml(@"C:\Users\yajxu\Desktop\Satori\CompositeApp.Normalized.Xml");
                 var dictsTv = ParseTVSeries(@"C:\Users\yajxu\Desktop\Satori\TVSeries.Normalized.Xml");
                 var dictsYesky = ParseYesky(@"C:\Users\yajxu\Desktop\Satori\Yesky.Normalized.Xml");
@@ -362,8 +360,7 @@ namespace EntityBuilder
             }
         }
     }
-
-
+      
     public class XapHelper
     {
         internal const string kifMajorVersionAttributeName = "KifMajorVersion";
@@ -497,7 +494,6 @@ namespace EntityBuilder
             return dict;
         }
     }
-
 
     public class Helper
     {

@@ -1,0 +1,636 @@
+扫雷	game		扫雷	扫雷.png	《扫雷》是一款大众类的益智小游戏，于1992年发行。游戏目标是在最短的时间内根据点击格子出现的数字找出所有非雷格子，同时避免踩雷。	5b339c2c-a4b6-bea2-3752-9b533467c0c5	OJ.zjVe40nNXWMxqQ	228	228
+lol	navigational	http://lol.qq.com/	英雄联盟	lol.jpg	美国riot games开发，中国大陆地区由腾讯游戏运营的网络游戏。	b0950cc3-a84d-1182-bfee-1ac169781158	OJ.9ws1O0RqwAIHQw	228	205
+hao	navigational	https://www.hao123.com/	hao123	hao123.png	hao123是最具权威的中文上网导航，汇集最优秀的网站及资源。	756556bc-923a-5509-be5e-cddfe79a48d2	OJ.w7tpXi0YSU2fpg	256	256
+123	navigational	https://www.hao123.com/	hao123	hao123.png	hao123是最具权威的中文上网导航，汇集最优秀的网站及资源。	f56d495a-45fb-9445-d36f-5d8033e188f5	OJ.w7tpXi0YSU2fpg	256	256
+百度	navigational	http://www.baidu.com/	百度	百度.jpg	全球最大的中文搜索引擎、致力于让网民更便捷地获取信息，找到所求。	3cc1a27d-02a7-d7a9-9b15-78fcaa616f20	OJ.ZTAyBIUBo2AHQg	360	360
+蜘蛛	game		蜘蛛纸牌	蜘蛛纸牌.jpg	《蜘蛛纸牌》是由oberon games开发的一款休闲益智类游戏，该游戏已由microsoft于2010年发行。游戏的目标是以最少的移动次数将牌面中的十叠牌以及待发的五组，共计八副牌整理移除。当所有牌被移除整理到界面的左下方，游戏获胜。	969cc4bd-6b58-18dc-4e97-cd9d4039fb43	OJ.7yjwx9MhcWMANg	717	717
+纸牌	game		纸牌	纸牌.png	windows小游戏“《纸牌》的目标是利用左上角牌叠中所有的牌，在右上角组成以 a 打头，从 a 到 k 顺序排列的四套花色牌叠。	2412df4b-fc81-8666-d9cd-89bdf482eda1	OJ.x4JnBC0F0RwkjA	430	417
+zhizhu	game		蜘蛛纸牌	蜘蛛纸牌.jpg	《蜘蛛纸牌》是由oberon games开发的一款休闲益智类游戏，该游戏已由microsoft于2010年发行。游戏的目标是以最少的移动次数将牌面中的十叠牌以及待发的五组，共计八副牌整理移除。当所有牌被移除整理到界面的左下方，游戏获胜。	d3759997-01ce-df14-8686-da12c2afe972	OJ.7yjwx9MhcWMANg	717	717
+saolei	game		扫雷	扫雷.png	《扫雷》是一款大众类的益智小游戏，于1992年发行。游戏目标是在最短的时间内根据点击格子出现的数字找出所有非雷格子，同时避免踩雷。	77bb993e-053e-2a76-a632-9b4820224853	OJ.zjVe40nNXWMxqQ	228	228
+battle	game	所指的战网（battle.net ）的intent并不强，还有其他多种意向（韩国组合/单车品牌/英国组合）	战网	战网.png	战网是暴雪公司架设的游戏对战平台。战网是一种直接连入internet的方式， 它可以使得来自世界各地的游戏者相互探险旅行。	5a642900-8042-b88a-8cb0-a6942dda230e	OJ.SGenUsuhPJlDsQ	289	276
+炉石	game	炉石（hearthstone）是一种用来返回城镇的游戏道具，美国暴雪娱乐公司blizzard entertainment出品的系列游戏《暗黑破坏神》及《魔兽世界》中的重要道具之一。	炉石传说	炉石传说.jpg	《炉石传说》是暴雪娱乐开发的首款集换式卡牌游戏。魔兽世界中的九大职业悉数登场。游戏5分钟上手，10分钟一局。	339a87e2-0be2-d4da-4208-fc990d4dfd90	OJ.HW5ozsJZenduPg	222	222
+4399	game		4399小游戏	4399小游戏.jpg	4399是中国最早的和领先的在线休闲小游戏平台，从建立至今，4399坚持的是用户第一，以“用户体验”为核心的建站模式，免费为用户提供各种绿色、安全、健康的游戏，不断完善服务策略，赢得了众多忠实的用户。	52d98fe5-0e92-3ad2-076b-0596eeb395e8	OJ.zoVPCq3gEzjp9w	275	220
+rr	navigational	http://www.renren.com/	人人网	人人网.png	"校内是一个真实的社交网络,联络你和你周围的朋友。"	dde22b23-47cd-f95a-6823-233dbd197521	OJ.BeuctmoQgn7ujQ	512	512
+battle.net	game		战网	战网.png	战网是暴雪公司架设的游戏对战平台。战网是一种直接连入internet的方式， 它可以使得来自世界各地的游戏者相互探险旅行。	6c1b5200-d518-81bc-ba65-2afd2ecb1eab	OJ.SGenUsuhPJlDsQ	289	276
+hon	game		超神英雄	超神英雄.jpg	《超神英雄》（hon）是由美国s2 games开发的moba网游，由腾讯公司运营，继承dota正统玩法，海外地区稳定运营三年拥有6000万玩家，是全世界第一款有着独立客户端的moba网游。	5dbcf113-676d-1f54-51c1-8fb1e8ed1055	OJ.1zlSw1OYdKGlKg	546	546
+必应	navigational	http://www.bing.com/	必应	bing.png	"微软必应搜索是国际领先的搜索引擎,为中国用户提供网页、图片、视频、词典、翻译、资讯、地图等全球信息搜索服务。"	f2c77ab3-c1df-d769-ba8a-c5a3059eb9aa	OJ.xS1MxDYLoA9IHg	96	96
+zhi'zhu	game		蜘蛛纸牌	蜘蛛纸牌.jpg	《蜘蛛纸牌》是由oberon games开发的一款休闲益智类游戏，该游戏已由microsoft于2010年发行。游戏的目标是以最少的移动次数将牌面中的十叠牌以及待发的五组，共计八副牌整理移除。当所有牌被移除整理到界面的左下方，游戏获胜。	bce47448-e8c0-fe0b-f242-896d46beeaed	OJ.7yjwx9MhcWMANg	717	717
+fire	navigational	http://www.firefox.com.cn/download/	火狐浏览器	火狐浏览器.jpg	一个自由及开放源代码网页浏览器，使用gecko排版引擎，支持多种操作系统。	5193085f-b40a-4df1-4dd6-1b4e67f89de0	OJ.jhghTHuFgkdtOQ	512	512
+蜘蛛纸牌	game		蜘蛛纸牌	蜘蛛纸牌.jpg	《蜘蛛纸牌》是由oberon games开发的一款休闲益智类游戏，该游戏已由microsoft于2010年发行。游戏的目标是以最少的移动次数将牌面中的十叠牌以及待发的五组，共计八副牌整理移除。当所有牌被移除整理到界面的左下方，游戏获胜。	8e6383db-66df-a3cf-9efa-7d999cee6934	OJ.7yjwx9MhcWMANg	717	717
+4444	game		4444	4444.jpg	4444 是一款玩法独特的动作解谜游戏。把四个同样颜色和大小的方块合并起来，组成一个更大的同色方块即可。把棋盘上的所有方块组合成一个大方块即可通关。	8ba1cc10-edfc-b86f-9490-52e073cdb57f	OJ.QqYyHlMIDRzs0g	257	280
+bing	navigational	http://www.bing.com/	必应	bing.png	"微软必应搜索是国际领先的搜索引擎,为中国用户提供网页、图片、视频、词典、翻译、资讯、地图等全球信息搜索服务。"	857840f0-056d-bd0d-aef0-f1980b157522	OJ.xS1MxDYLoA9IHg	96	96
+99宿舍	navigational	http://cet.99sushe.com/	99宿舍	99宿舍.jpg	一家国内领先的大学生综合互动平台服务商。每年为中国大学生提供权威独家免费英语四六级考试查分服务。	191431a6-d36a-e7bb-831f-eff4c249888f	OJ.7sOW2T7e9b1Sxw	190	181
+快玩	game		快玩游戏	快玩游戏.jpg	快玩游戏是快播公司旗下产品，是中国首个一点即玩、一点即用的游戏/软件客户端平台。	58ee3253-ee06-e43b-56ce-869abe726a41	OJ.UzvdwJvypY4fjA	180	180
+阿里巴巴	navigational	https://www.1688.com/	阿里巴巴	阿里巴巴.jpg	"全球企业间(b2b)电子商务的著名品牌,为数千万网商提供海量商机信息和便捷安全的在线交易市场,也是商人们以商会友、真实互动的社区平台。"	d22e11cd-a443-3c38-b00f-c5803aebff97	OJ.YO70FYvilLJquw	555	555
+bai'du	navigational	http://www.baidu.com/	百度	百度.jpg	全球最大的中文搜索引擎、致力于让网民更便捷地获取信息，找到所求。	784f0bb1-d069-745e-07f6-f7d704b7baea	OJ.ZTAyBIUBo2AHQg	360	360
+新浪	navigational	http://www.sina.com.cn/	新浪	新浪网.jpg	新浪网为全球用户24小时提供全面及时的中文资讯	be7c4479-b9d7-af5e-2069-6784ffda195d	OJ.Yxhx546XkokgZQ	472	472
+war3	game		魔兽争霸ⅲ	魔兽争霸ⅲ.jpg	《魔兽争霸》（warcraft ）是美国的暴雪娱乐制作的一款即时战略题材单机游戏，混乱之治（原版）于2002年7月发行。最新官方资料片为为《魔兽争霸3：冰封王座》。	c3b9e7fb-8ef1-765a-cddb-ffebfc881949	OJ.iM706QQaetFsRg	300	282
+baidu	navigational	http://www.baidu.com/	百度	百度.jpg	全球最大的中文搜索引擎、致力于让网民更便捷地获取信息，找到所求。	fd3a1cc1-6777-7648-2f16-426ba9584123	OJ.ZTAyBIUBo2AHQg	360	360
+魔兽	game		魔兽世界	魔兽世界.jpg	《魔兽世界》（world of warcraft）是由著名游戏公司暴雪娱乐所制作的第一款网络游戏，属于大型多人在线角色扮演游戏。	ebd89694-90c4-8879-b437-c2463ccda3a9	OJ.80c1dKek36OKpw	706	704
+liebao	navigational	http://www.liebao.cn/	猎豹浏览器	猎豹浏览器.jpg	"首款双核安全浏览器, 更安全, 更快速, 更炫酷。"	65f796f0-8bdb-2bb8-2c9d-76c8620da780	OJ.CUUli98wQkyr7g	488	488
+epson	navigational	http://www.epson.com.cn/	爱普生	爱普生.jpg	爱普生(epson)在中国开展的业务主要有打印机、扫描仪、投影机等信息关联产品业务、电子元器件业务、以及工业自动化设备业务。	9acfef4a-19e7-428f-c73b-55a7660feb27	OJ.T64cMJHNM12Dwg	533	485
+www.baidu.com	navigational	http://www.baidu.com/	百度	百度.jpg	全球最大的中文搜索引擎、致力于让网民更便捷地获取信息，找到所求。	0510e381-5748-13a9-2c01-de2b9b37518c	OJ.ZTAyBIUBo2AHQg	360	360
+tga	navigational	http://tga.plu.cn/	tga直播	tga.jpg	"最全的赛事直播,最丰富的游戏视频互动平台."	d4e03942-be68-599a-0608-8a4e7d1e868b	OJ.NBfLrgnBsqu1Jg	309	309
+空当接龙	game		空当接龙	空当接龙.jpg	《空当接龙》是oberon games开发的一款的棋牌类单机游戏，1995年于windows系统自带发行。该种纸牌游戏形式，用一副牌玩。获胜的关键在于玩牌区角处的四个“可用单元”。	d21366fc-bada-f633-b9b3-c1c80880c8a4	OJ.b0WWr8aBnNs9wg	500	479
+牛彩	navigational	http://www.niucaipt.cn/	牛彩	牛彩.png	值得信赖的投资理财平台	7ddf42c5-da4d-1045-116f-6d7e1af00fde	OJ.i0RGaHXXhQDs0w	306	305
+yingyin	navigational	http://www.xfplay.com/	影音先锋	影音先锋.png	"影音先锋播放器,最具人性化体验的多媒体播放器"	2d78414d-0675-8d33-73e2-26277de7ea3c	OJ.KYvqeHy73EZ06A	300	300
+12306	navigational	http://www.12306.cn/mormhweb/	铁路客户服务中心	12306.png	铁道部火车票网上订票唯一官网	c33ab526-26ee-fa7b-6809-7d1c28fb3d95	OJ.I6cFX5RmEwDohA	512	512
+360w	navigational	http://wifi.360.cn/	360wifi	360wifi.jpg	"360集团旗下wifi产品服务平台,延续360的安全基因,为用户提供手机免费上网的一站式服务"	6849552f-d803-c22f-614d-a74a185d4f64	OJ.Dq1YF0uCGeI63A	350	350
+三维弹球	game		三维弹球	三维弹球.jpg	三维弹球（3d pinball）是windows xp里面附带的一款使用键盘操作的电脑游戏，实际上支持windows 98/xp/vista/7。游戏的主要目的是发射球，然后通过命中缓冲器、目标和旗帜来赢取尽量多的分数。	63c47137-accc-f71b-afb9-e41003bfb379	OJ.EOXS3eJNRrk2fA	500	460
+aiqiy	navigational	http://www.iqiyi.com/	爱奇艺	爱奇艺.jpg	国内首家专注于提供免费、高清网络视频服务的大型视频网站	cb404d06-d017-be76-2eb3-fd6bf387de9c	OJ.NUhtxJ0TOQei9Q	200	200
+jins	navigational	http://www.jins-cn.com/	晴姿	晴姿.jpg	"源自日本的时尚眼镜品牌,目前在中国有超过70家门店和天猫、京东旗舰店。"	f1033d7e-6ae3-2dac-cf72-028fdeef4416	OJ.sQNlJVoXFL8gKA	232	232
+xiaomi	navigational	http://www.mi.com/sg/	小米商城	小米.png	小米商城 - 小米手机官方网站，直营小米公司旗下所有产品。	42019a4a-5e38-b91e-0b03-dc8e2b9f57b5	OJ.RHRpIYmWcEsgGA	190	190
+华为	navigational	http://www.huawei.com/cn/	华为	华为.jpg	全球领先的信息与通信解决方案供应商。	551c920e-f9d8-49f3-4ea1-455f8296fc5d	OJ.dhYc0dwIX0WY6Q	1500	1500
+tpg	navigational	http://www.tpg.com.au/	tpg	tpg.png	tpg（德太投资）是世界最大的私募股权投资机构之一	e018ee97-7a03-c952-8af0-b15ff5369f15	OJ.hGLsSUCk62bAKw	513	512
+新浪邮箱	navigational	https://mail.sina.com.cn/	新浪邮箱	新浪邮箱.jpg	"新浪邮箱,提供以@sina.com和@sina.cn为后缀的免费邮箱。"	a61bc8c8-a4aa-fc8c-dfee-b21bde7799ac	OJ.BveTOXNr7knvUQ	179	179
+biying	navigational	http://www.bing.com/	必应	bing.png	"微软必应搜索是国际领先的搜索引擎,为中国用户提供网页、图片、视频、词典、翻译、资讯、地图等全球信息搜索服务。"	e814e5a4-d416-5b66-85de-ce63568bd374	OJ.xS1MxDYLoA9IHg	96	96
+go'o	navigational	https://www.google.com.hk/	谷歌	谷歌.jpg	谷歌是一家美国的跨国科技企业，致力于互联网搜索、云计算、广告技术等领域，开发并提供大量基于互联网的产品与服务	5839595b-3aea-0c59-e8d0-b111520dded5	OJ.Gq9yt4YTcbtndw	596	595
+jd	navigational	http://www.jd.com/	京东	京东.jpg	专业的综合网上购物商城，销售超数万品牌、4020万种商品，囊括家电、手机、电脑、服装、图书、母婴、个护、食品、旅游等13大品类	cf78fc92-7e12-36d1-b9b1-e0abcaa490ae	OJ.Tv5rtgy9ku9wHQ	288	288
+zhanwang	navigational	http://www.battlenet.com.cn/zh/	战网	战网.jpg	"与成千上万玩家在线互动,并共同探索前所未有无与伦比的史诗级游戏体验!"	412f6570-947b-eb9a-3ae6-4b89a522a877	OJ.dOriKFj0PCGkXg	242	242
+baidu	navigational	http://www.baidu.com/	百度	百度.jpg	全球最大的中文搜索引擎、致力于让网民更便捷地获取信息，找到所求。	fd3a1cc1-6777-7648-2f16-426ba9584123	OJ.ZTAyBIUBo2AHQg	360	360
+b	navigational	http://www.bilibili.com/	哔哩哔哩弹幕视频网	哔哩哔哩.jpg	"bilibili是国内知名的视频弹幕网站,这里有最及时的动漫新番,最棒的acg氛围,最有创意的up主。"	d7df2b8b-f56c-4293-a10d-f7a40c4e8512	OJ.J2OVg3p0RJ3Wcw	294	219
+g	navigational	https://www.google.com.hk/	谷歌	谷歌.jpg	谷歌是一家美国的跨国科技企业，致力于互联网搜索、云计算、广告技术等领域，开发并提供大量基于互联网的产品与服务	4350b156-d032-d555-ea34-6073b40e3b2b	OJ.Gq9yt4YTcbtndw	596	595
+yun	navigational	https://pan.baidu.com/	百度云 	百度云.png	"百度云是百度公司推出的一款云服务产品。通过百度云,您可以将照片、文档、音乐、通讯录数据在各类设备中使用,在众多朋友圈里分享与交流"	56c746b6-840e-8333-606c-6110839110b1	OJ.xm0WH7Dhh8wnuA	1024	1024
+visio	navigational	https://www.microsoft.com/china/office365/signup.html?wt.mc_id=o365industry-search-baidu609	office visio	office visio.jpg	一款便于it和商务专业人员就复杂信息、系统和流程进行可视化处理、分析和交流的软件。	af6b487f-a201-a019-0730-f24a17f664a0	OJ.w0jsvYd39QdMuA	225	225
+qu	navigational	http://www.qunar.com/	去哪儿网 	去哪儿网.jpg	提供国内外特价机票，酒店，旅游度假，景点门票产品一站式预订服务。	74654425-7b85-b993-6e98-44079503e59f	OJ.XfDN24y0ptG8Mw	213	213
+爱奇艺	navigational	http://www.iqiyi.com/	爱奇艺	爱奇艺.jpg	国内首家专注于提供免费、高清网络视频服务的大型视频网站	c0e0f130-135f-6e49-f0a5-9df49ba6ed93	OJ.NUhtxJ0TOQei9Q	200	200
+鲁大师	navigational	http://www.ludashi.com/	鲁大师	鲁大师.jpg	"国内最大的免费系统工具软件,免费提供硬件真伪辨别、电脑(手机)稳定保障、系统性能提升。"	600f0812-9f73-2cf1-ca83-122cff24bd8e	OJ.Wu8FBJizhhMs0Q	294	294
+qq音乐	navigational	http://y.qq.com/#type=index	qq音乐	qq音乐.jpg	"腾讯公司推出的一款免费音乐服务,海量音乐在线试听。"	93ce925d-aee6-74c0-e181-68269f897428	OJ.09TDkxOGmIRD0g	274	274
+酷狗	navigational	http://www.kugou.com/	酷狗音乐	酷狗音乐.jpg	"酷狗音乐旗下最新最全的在线正版音乐网站,本站为您免费提供最全的在线音乐试听下载,以及全球海量电台和mv播放服务、最新音乐播放器下载。"	27119371-91d7-4c2e-47cb-4511befe7e89	OJ.gWIcsOUkLzXQ8A	262	262
+yyy	navigational	http://www.yy.com/	yy直播	yy直播.png	yy游戏直播，是多玩yy官方于2012年正式推出的将游戏与解说同步结合的一款插件。	e7d608fe-9ca6-5633-e3fd-4a99e09fd3e6	OJ.o5oNY6VVMjDyFw	468	468
+优酷	navigational	http://www.youku.com/	优酷	优酷.jpg	优酷是中国领先的视频分享网站	9d110b01-fcf3-b65b-d0d0-ed6fbb9cfaa3	OJ.XC0sZn6HCncWxQ	331	331
+猎豹	navigational	http://www.liebao.cn/	猎豹浏览器	猎豹浏览器.jpg	"首款双核安全浏览器, 更安全, 更快速, 更炫酷。"	30c61427-d59b-6345-0b60-7a82c622d94a	OJ.CUUli98wQkyr7g	488	488
+wps	navigational	http://www.wps.cn/	wps office	wps.jpg	wps office官方网站是金山公司旗下的办公软件学习和分享网站	632a6893-0126-2ce9-0e24-8c003b38fff7	OJ.r58KbVcXTe0Few	1181	1181
+迅	navigational	http://dl.xunlei.com/	迅雷	迅雷.png	"迅雷是中国拥有核心技术的互联网众筹云计算服务商,也是领先的互联网下载服务提供商和付费会员产品提供商。"	cf8dea33-c4b7-06fb-0b4e-912f7fc99451	OJ.F3uYnjGytTmk0g	1221	1221
+有道	navigational	http://fanyi.youdao.com/	有道词典	有道.jpg	有道翻译提供即时免费的中、英、日、韩、法、俄、西班牙文全文翻译、网页翻译服务。	32931401-b4f0-fad1-9673-a1f3e6894b23	OJ.MWGl00GJev6FSg	490	489
+遨游	navigational	http://www.maxthon.cn/	遨游云浏览器	遨游云浏览器.jpg	业界首款有效地打通多种浏览设备的下一代浏览器。	c9cd5a10-9f73-449e-c8af-8c3727ca4d8d	OJ.qAUmlIyE1Bf0ow	254	253
+steam	navigational	http://store.steampowered.com/	steam	steam.jpg	steam平台是一款目前全球最大的综合性数字发行平台。	3b69641b-ce3a-58ac-3488-9983409277d4	OJ.BN0yIxIkd4rp6A	352	351
+11	navigational	http://www.5211game.com/	11对战平台	11对战平台.jpg	利用最先进技术吸引最新潮的玩家，无论是dota大神还是dota新手都能在11对战平台找到自己的乐园。	d72b6a4f-08a2-3799-13de-883d350791de	OJ.AqIqxNBY36W2RA	483	482
+win10	navigational	https://www.microsoft.com/zh-cn/windows/	win10	win10.png	美国微软公司所研发的新一代跨平台及设备应用的操作系统。	f9f4a1fd-3739-c0d2-7a5a-e6ee35e34099	OJ.PGg8foXRTlZR9Q	469	470
+m'm	navigational	http://www.mms.com/	m&m's	m&m’s.jpg	"m&m's是世界最大宠物食品和休闲食品制造商美国跨国食品公司玛氏(mars)公司在中国推出的系列产品之一,是世界第一大巧克力品牌。"	39c49a3d-3c13-cf36-467a-cb785611e795	OJ.PMylDhySS005eQ	600	600
+weixin	navigational	http://weixin.qq.com/	微信	微信.png	腾讯公司于2011年1月21日推出的一个为智能终端提供即时通讯服务的免费应用程序。	baea9839-7244-ed37-c712-74c4eac3705b	OJ.eCn0sCKXCTC9Zg	1024	1024
+zhan	navigational	http://www.zhanqi.tv/	战旗直播	战旗直播.png	战旗tv游戏直播平台提供高清、流畅的视频直播和电子竞技游戏直播。	8a935f4d-9807-915e-3f47-cf0465414e61	OJ.0TpgD0mfmDB0tw	402	402
+tgp	navigational	http://tgp.qq.com/	腾讯游戏平台	tgp.jpg	腾讯游戏平台的缩写，囊括了腾讯全平台的游戏，支持游戏管理，加速游戏，保护游戏，免密码一键登录以及下载更新游戏等功能。	57eb80cc-5856-ded3-3d09-0bee44ee2f62	OJ.0zhfDO0Csb68VQ	180	180
+淘宝	navigational	https://www.taobao.com/	淘宝网	淘宝网.jpg	淘宝网是亚太地区较大的网络零售、商圈，由阿里巴巴集团在2003年5月创立	9e1cbcee-0398-568c-3071-5944292db565	OJ.VYpLyzjOGHaB4g	512	512
+hao	navigational	https://www.hao123.com/	hao123	hao123.png	hao123是最具权威的中文上网导航，汇集最优秀的网站及资源。	756556bc-923a-5509-be5e-cddfe79a48d2	OJ.w7tpXi0YSU2fpg	256	256
+4399	navigational	http://www.4399.com/	4399小游戏	4399小游戏.jpg	"4399是中国领先的小游戏专业网站,免费为你提供小游戏大全。"	52d98fe5-0e92-3ad2-076b-0596eeb395e8	OJ.zoVPCq3gEzjp9w	275	220
+阿里旺旺	navigational	http://wangwang.taobao.com/	阿里旺旺	阿里旺旺.jpg	淘宝和阿里巴巴为商人量身定做的免费网上商务沟通软件/聊天工具。	2edf8305-7fd0-2445-9a3a-0894570e81be	OJ.zZgajx0u8A1brQ	322	322
+xun'lei	navigational	http://dl.xunlei.com/	迅雷	迅雷.png	"迅雷是中国拥有核心技术的互联网众筹云计算服务商,也是领先的互联网下载服务提供商和付费会员产品提供商。"	acfe35f0-b695-3bd0-9b81-a73596724a61	OJ.F3uYnjGytTmk0g	1221	1221
+jj	navigational	http://www.jj.cn/	 jj斗地主	jj斗地主.jpg	"jj比赛产品包括:jj斗地主,jj麻将,jj德州扑克等，是全民娱乐的专业棋牌在线竞技平台,首创竞技比赛模式,免费赢奖品。"	2a7f72c6-de7a-f1e6-36d8-4e5a43352742	OJ.lt1P0pIlVj1hSA	285	285
+shou	navigational	http://www.shou.edu.cn/	上海海洋大学	上海海洋大学.jpg	上海市人民政府与国家海洋局、国家农业部共建的农林类高等院校，国家首批卓越农林人才教育培养计划改革试点高校。	c3552b09-13fb-a8e2-3f35-257869bebdfa	OJ.CUr6v7eFAaEWvA	200	200
+enm	navigational	http://enmco.com/	escuela naval militar de oficiales	escuela naval militar de oficiales.jpg	a spanish navy institution	dbac2f36-37f4-fc7f-86a5-6dcf672b74d7	OJ.dE4dhKV62RIOmQ	250	250
+ge	navigational	http://www.ge.com/	美国通用电气公司 general electric company	美国通用电气公司 general electric company.png	创立于1892年，又称奇异公司，是世界上最大的提供技术和服务业务的跨国公司	ca10b72a-40df-3177-4688-7cb1910464a7	OJ.Sp7r6FeH759FVA	224	225
+ping	navigational	http://ping.chinaz.com/	ping	ping.jpg	ping是一种电脑网络工具，用來测试数据包能否通过ip协议到达特定主机。	954b7d80-b7ab-6b14-bae6-6fe752cb279e	OJ.dyl2OgJqZbOB6w	480	480
+shadowsocks	navigational	https://www.shadowsocks.com/client.html	shadowsocks 影梭	shadowsocks 影梭.jpg	一只开源个socks代理软件，用来突破网络审查。可以运行勒windows、os x、移动设备搭路由器（openwrt等）等交关种平台上	21c1b22f-fea1-020a-6e69-ae5cda440ad7	OJ.DIUUvEhGvqJvPg	300	300
+cccc	navigational	http://en.ccccltd.cn/	中国交通建设股份有限公司	中国交通建设股份有限公司.jpg	全国唯一的国家级专门从事城市开发投资建设的企业	6852f464-7beb-4b98-6768-9854bb32178f	OJ.rfSmwAxNWBGyHA	542	542
+美图秀秀	navigational	http://xiuxiu.web.meitu.com/	美图秀秀	美图秀秀.png	一款免费图片处理软件	0e188197-ff67-b72f-bcca-f56a771e0ae6	OJ.lRVwRdabkF7E6Q	500	500
+ituns	navigational	https://www.apple.com/cn/itunes/download/	itunes	itunes.png	itunes是一款数字媒体播放应用程序，是供mac和pc使用的一款免费应用软件，能管理和播放数字音乐和视频	0df210fa-4d99-c2fa-daf9-66f5fa157a47	OJ.vEyu0GCvYeP4Lw	1024	1024
+战网	navigational	http://www.battlenet.com.cn/zh/	战网	战网.jpg	战网是暴雪公司架设的游戏对战平台。	514932a3-849b-9d48-c3cf-c1f8e693ecfe	OJ.dOriKFj0PCGkXg	242	242
+youdao	navigational	http://fanyi.youdao.com/	有道	有道.jpg	有道翻译提供即时免费的中、英、日、韩、法、俄、西班牙文全文翻译、网页翻译服务。 	b7145828-e132-1208-64c7-2295530e901b	OJ.MWGl00GJev6FSg	490	489
+tao	navigational	https://www.taobao.com/	淘宝网	淘宝网.jpg	淘宝网是亚太地区较大的网络零售、商圈，由阿里巴巴集团在2003年5月创立	4fc5e776-a7a9-2cad-9370-1112e69c4db3	OJ.VYpLyzjOGHaB4g	512	512
+纸牌	game		纸牌	纸牌.png	windows小游戏“《纸牌》的目标是利用左上角牌叠中所有的牌，在右上角组成以 a 打头，从 a 到 k 顺序排列的四套花色牌叠。	2412df4b-fc81-8666-d9cd-89bdf482eda1	OJ.x4JnBC0F0RwkjA	430	417
+sougou	navigational	https://www.sogou.com/	搜狗搜索引擎	搜狗搜索.jpg	搜狗是搜狐公司的旗下子公司，于2004年8月3日推出，目的是增强搜狐网的搜索技能，主要经营搜狐公司的搜索业务	ee575f62-28be-25d5-39fe-a697fd48bb09	OJ.5iM34OHGNH4aVQ	394	394
+1234	navigational	http://www.1234.me/	1234网址导航	1234网址导航.jpg	"1234.me网址导航为您收集电影、音乐、游戏、淘宝购物等网址,生活网址大全,搜索实用查询等各种分类中的优秀网站"	76afd43b-7ebb-c073-b717-735ee42605ec	OJ.sTwWoXHTAhfwqQ	331	332
+cc	navigational	http://cc.163.com/	网易cc 	网易cc.jpg	"网易cc是网易推出的大型游戏娱乐直播平台,提供游戏直播、游戏录像、美女直播等服务"	12892305-d3a1-1f93-5d7c-ab0c69c76003	OJ.GU8M1nuQHMzUog	457	457
+a'w	navigational	http://www.awrestaurants.com/	a&w restaurants	a&w restaurants.png	a&w餐厅以“热狗”快餐为主要特色，在全球拥有1100多家餐厅	d84323a4-4300-bee2-9e02-bc5153f2b80f	OJ.1KhVk43EXwlLOw	550	550
+鲁	navigational	http://www.ludashi.com/	鲁大师	鲁大师.jpg	鲁大师是新一代的系统工具。它能轻松辨别电脑硬件真伪，保护电脑稳定运行，清查电脑病毒隐患，优化清理系统，提升电脑运行速度。	f5483506-e3b3-81b3-5a4f-abb8a4281ff4	OJ.Wu8FBJizhhMs0Q	294	294
+123	navigational	https://www.hao123.com/	hao123	hao123.png	hao123是一个上网导航，百度旗下核心产品。	f56d495a-45fb-9445-d36f-5d8033e188f5	OJ.w7tpXi0YSU2fpg	256	256
+65	navigational	http://www.65.com/	65游戏	65游戏.png	65游戏是广州凡跃计算机系统股份有限公司旗下的专业网页游戏平台，创建于2013年，公司位于广州市科技园。 	ac0223f4-1ac5-ca67-de9c-c1bd3c81670a	OJ.Og1HVlxpcihdEw	167	166
+酷	navigational	http://www.kugou.com/	酷狗音乐	酷狗音乐.png	酷狗音乐是一款中国国内最先提供在线试听功能的音频播放软件，酷狗音乐播放器有着丰富的音乐资源，新老歌、流行歌曲搜索。	74d31562-528c-2674-c796-9d293e607f74	OJ.ve9ZynZ6L403Hw	1024	1024
+adobe	navigational	http://www.adobe.com/cn/	adobe	adobe.jpg	adobe 创建于1982年，是世界领先数字媒体和在线营销方案的供应商。	97304ed8-4d5e-3ece-eb9c-ed7ea640e140	OJ.iEqOQK039AUpPw	300	300
+bai'du	navigational	http://www.baidu.com	百度	百度.jpg	全球最大的中文搜索引擎、最大的中文网站	784f0bb1-d069-745e-07f6-f7d704b7baea	OJ.ZTAyBIUBo2AHQg	360	360
+shougou	navigational	https://www.sogou.com/	搜狗搜索引擎	搜狗搜索.jpg	搜狗是搜狐公司的旗下子公司，于2004年8月3日推出，目的是增强搜狐网的搜索技能，主要经营搜狐公司的搜索业务	b2df968d-8543-fed3-1d34-ac04414bd6b9	OJ.5iM34OHGNH4aVQ	394	394
+12306	navigational	http://www.12306.cn/mormhweb/	12306	12306.png	铁道部火车票网上订票唯一官网	c33ab526-26ee-fa7b-6809-7d1c28fb3d95	OJ.I6cFX5RmEwDohA	512	512
+ci	navigational	http://codeigniter.org.cn/	codelgniter 	codelgniter.png	codeigniter 是一个小巧但功能强大的 php 框架，作为一个简单而“优雅”的工具包，它可以为开发者们建立功能完善的 web 应用程序。	42f2fd5c-dff6-40e3-4395-92e4d9d12464	OJ.UOAdgG0WPj0PYg	205	204
+iis	navigational	http://www.iis.net/	internet information services	internet information services.png	互联网信息服务，是由微软公司提供的基于运行microsoft windows的互联网基本服务。	4e43f6b9-2888-4ffe-8909-d48eda827e0b	OJ.q6gmqzVQkzycgw	385	384
+微	navigational	https://wx.qq.com/	微信网页版	微信网页版.png	腾讯为超过三亿人使用的微信的用户开发的一款pc微信版本	0a2cfe92-83fa-d365-911b-6248ff24da91	OJ.M4eLxqQCF00YNQ	1024	1024
+京东	navigational	http://www.jd.com/	京东	京东.jpg	专业的综合网上购物商城，销售超数万品牌、4020万种商品，囊括家电、手机、电脑、服装、图书、母婴、个护、食品、旅游等13大品类。	c9a0edc8-a88b-14cb-15ae-73e319257ce4	OJ.Tv5rtgy9ku9wHQ	288	288
+hu'ya	navigational	http://www.huya.com/	虎牙直播	虎牙直播.jpg	虎牙直播，yy旗下直播网站，提供高清、流畅的游戏直播、美食直播、娱乐直播、美女直播等多种直播内容	fa285aec-fb51-6f47-3a51-b7644463dfb5	OJ.Gr6qqbHSloCoEg	200	200
+uc	navigational	http://www.uc.cn/	uc浏览器	uc浏览器.png	uc浏览器是全球使用量最大的第三方手机浏览器，全球用户超过5亿，日活跃用户超过1亿，是阿里巴巴移动事业部旗下核心产品。	e29bcbeb-72fd-4dc9-213f-a6bd64c48c85	OJ.2x4pStdiGCgDqg	392	400
+金山	navigational	http://www.kingsoft.com/	金山在线	金山在线.jpg	致力于为全球用户提供快捷、简单、安全的互联网及移动上网体验。	368a9a4a-0fc6-d227-9dd2-53d2e9662d1b	OJ.Am3y8gZJ4a76uw	218	218
+爱	navigational	http://www.iqiyi.com/	爱奇艺	爱奇艺.jpg	 爱奇艺影音是一款专注视频播放的客户端软件	e0bbe342-5e2b-0cda-6b63-71a23b87543b	OJ.NUhtxJ0TOQei9Q	200	200
+baiduyun	navigational	https://pan.baidu.com/	百度云 	百度云.png	"百度云是百度公司推出的一款云服务产品。通过百度云,您可以将照片、文档、音乐、通讯录数据在各类设备中使用,在众多朋友圈里分享与交流"	2ecc2778-e3f2-e63c-100b-67f69927f8c2	OJ.xm0WH7Dhh8wnuA	1024	1024
+xs	navigational	http://www.xspliter.com/	xs论坛	xs论坛.png	"xs论坛是以xsplit和obs为主的视频录制、直播交流论坛,为游戏解说、视频直播录制爱好者提供良好的交流平台"	577c7a52-fc03-c8b6-ee11-497b347cb07e	OJ.ZelfuKzhGSTw2g	252	252
+youku	navigational	http://www.youku.com/	优酷	优酷.jpg	优酷是中国领先的视频分享网站	a8fd9b94-94c9-deda-dc8c-d6d9687c5f42	OJ.XC0sZn6HCncWxQ	331	331
+36060	navigational	http://www.360.com/	360公司官网	360公司官网.png	"360免费安全软件平台和智能硬件家居平台,免费安全软件平台为用户提供360安全卫士、360免费杀毒软件、360企业杀毒软件、360安全浏览器等安全软件"	916aca9c-b171-1d0c-f563-f27e5c0dc836	OJ.kKeqReARvD1TQA	512	512
+7	navigational	http://www.7k7k.com/	7k7k小游戏	7k7k小游戏.png	7k7k是国内最专业的休闲游戏网站之一，创建于2003年，致力于搜集互联网广泛的小游戏资源，开发和运营网页游戏，代表作品有飘渺仙缘、冒险王等，是国内老牌小游戏网站。	a87671ac-72b0-befe-952a-4d7595b1bd54	OJ.ecPqtBwheUAjDg	208	208
+bai	navigational	http://www.baidu.com	百度	百度.jpg	全球最大的中文搜索引擎、最大的中文网站	51ea02bd-464a-256a-b8c7-006f15701249	OJ.ZTAyBIUBo2AHQg	360	360
+feng	navigational	http://www.feng.com/	威锋网	威锋网.jpg	"威锋网诞生于2007年1月10日,与美国苹果公司(apple inc.)公布iphone是同一天,也是最早建立的关于iphone专题网站,"	022911c7-037d-124d-bc29-3b079e1848ae	OJ.uow7m0YKLIZGcA	230	230
+outlook	navigational	https://www.outlook.com	outlook	outlook.jpg	microsoft office outlook是微软办公软件套装的组件之一，它对windows自带的outlook express的功能进行了扩充。	64563b91-b728-85a8-e17b-0a1dbbb002d6	OJ.pnIub4vlFYaEmQ	402	392
+wei'xin	navigational	https://wx.qq.com/	微信网页版	微信网页版.png	腾讯为超过三亿人使用的微信的用户开发的一款pc微信版本	c386e239-0fa3-f485-d8b9-26f1740751cb	OJ.M4eLxqQCF00YNQ	1024	1024
+yunpan	navigational	https://yunpan.360.cn/	360云盘	360云盘.png	360云盘是奇虎360开发的分享式云存储服务产品。为广大普通网民提供了存储容量大、免费、安全、便携、稳定的跨平台文件存储、备份、传递和共享服务。	9675500f-a7c0-fb98-87f6-d74deb5fb7ba	OJ.I0ieoy5cvYlyWQ	96	96
+谷歌	navigational	https://www.google.com.hk/	谷歌	谷歌.jpg	谷歌是一家美国的跨国科技企业，致力于互联网搜索、云计算、广告技术等领域，开发并提供大量基于互联网的产品与服务	b223262a-29d3-6e5d-f1af-6f63c9fe878e	OJ.Gq9yt4YTcbtndw	596	595
+全民	navigational	http://www.quanmin.tv/	全民tv	全民tv.png	"全民tv提供高清、流畅、丰富的游戏直播和赛事直播服务,为广大的游戏玩家构建一个尊重观众、尊重主播的全民直播平台"	e798d8d9-2ed1-dea2-8d42-236990f789db	OJ.lhU3yHKb7p5yuA	168	168
+aiqiyi	navigational	http://www.iqiyi.com/	爱奇艺	爱奇艺.jpg	 爱奇艺影音是一款专注视频播放的客户端软件	c63e4566-ec52-9998-b63b-b6d44e6bf504	OJ.NUhtxJ0TOQei9Q	200	200
+xc	navigational	http://www.ctrip.com/	携程网	携程网.jpg	携程酒店预订、机票查询、买火车票、旅游度假、订汽车票、办签证、租车、买门票一站式服务	93f58b76-0af5-801e-45c4-935c79e6c0fd	OJ.SskVKHFymKyGxQ	200	200
+美图	navigational	http://xiuxiu.web.meitu.com/	美图秀秀	美图秀秀.png	一款免费图片处理软件	a2fed3ec-2a55-7b27-476b-3b5ba9f4a39b	OJ.lRVwRdabkF7E6Q	500	500
+67	navigational	http://www.67.com/	中国娱乐网	中国娱乐网.png	中国娱乐网成立于2003年，以报道内地、港台、日韩、欧美娱乐新闻为主，涵盖音乐、电影、电视、游戏、视频、演艺、明星、图片、论坛等众多娱乐相关领域	52f3f666-5420-a96f-7132-bb8bde5e7caf	OJ.0hjDn4WSSSgGaQ	211	233
+招商	navigational	http://www.cmbchina.com/	招商银行	招商银行.jpg	招商银行成立于1987年(丁卯年)4月8日，是中国第一家完全由企业法人持股的股份制商业银行，总行设在深圳。	cfcabfcb-3835-db30-c31b-52cc845c4628	OJ.7pE0T388pGsDgw	202	170
+rr	navigational	http://www.renren.com/	人人网	人人网.png	人人网是中国领先的实名制社交网络平台。人人网在用户数、页面浏览量、访问次数和用户花费时长等方面均占据优势地位	dde22b23-47cd-f95a-6823-233dbd197521	OJ.BeuctmoQgn7ujQ	512	512
+360wifi	navigational	http://wifi.360.cn/	360wifi	360wifi.png	360wifi，360集团旗下wifi产品服务平台，延续360的安全基因，为用户提供手机免费上网的一站式服务，产品包括360随身wifi和360免费wifi	88f59115-17ad-fd96-9afa-71d1c77a9f04	OJ.MiAdbdjcGVrdMw	162	163
+1111	navigational	http://www.1111.com.tw/	1111人力银行 	1111人力银行.png	1111人力銀行是找工作、找人才最快速的人力銀行。	13c1efb9-84f7-582a-f02c-6ecb22a450f8	OJ.pAPU8w6TLsv0Cw	175	174
+ludashi	navigational	http://www.ludashi.com/	鲁大师	鲁大师.jpg	鲁大师是新一代的系统工具。它能轻松辨别电脑硬件真伪，保护电脑稳定运行，清查电脑病毒隐患，优化清理系统，提升电脑运行速度。	39656e35-cf4f-c77f-b04a-cfd178b9ca56	OJ.Wu8FBJizhhMs0Q	294	294
+foxmail	navigational	http://www.foxmail.com/	foxmail	foxmail.png	foxmail邮件客户端软件，是中国最著名的软件产品之一，中文版使用人数超过400万，英文版的用户遍布20多个国家，名列“十大国产软件”，被 太平洋电脑网评为五星级软件	af9f68a6-e5c0-6a8d-b838-59663cd1e9e4	OJ.qQHwnMCq0RyJuQ	256	256
+weixing	navigational	http://weixin.qq.com/	微信网页版	微信网页版.png	腾讯为超过三亿人使用的微信的用户开发的一款pc微信版本	cbe3f12e-57f4-310f-eca3-4426929030fe	OJ.M4eLxqQCF00YNQ	1024	1024
+lo	navigational	http://lol.qq.com/	英雄联盟	lol.jpg	《英雄联盟》（简称lol）是由美国riot games开发，中国大陆地区由腾讯游戏运营的网络游戏	f2b48af5-9441-3e9c-fb62-3f6ce01bb585	OJ.9ws1O0RqwAIHQw	228	205
+saom	navigational	http://www.saom.com.cn/	上海特旺光电材料有限公司	上海特旺光电材料有限公司.png	上海特旺光电材料有限公司是一家生产蒸发镀膜材料、溅射靶材和真空镀膜用衬垫坩埚及坩埚托的专业生产企业	be5a5512-3495-afbb-ac0f-a26c50946b5a	OJ.hYS1JZJZUd9crQ	160	160
+jia	navigational	http://www.jia.com/	齐家装修网	齐家装修网.png	齐家网是一家全国装修、建材、家居领域电子商务网站	a64ff5ef-2a78-74a8-1cbb-4fce4689193d	OJ.2Ei0ClG2Eulmcg	116	116
+j'j	navigational	 http://www.jj.cn/	 jj斗地主	jj斗地主.png	jj比赛，jj斗地主，是全国最大的斗地主、麻将、德州扑克等棋牌类游戏在线竞技平台。	9b30ba1a-4615-d597-4de6-cfe929b2a7f4	OJ.qlAKgAF7VoWGpw	207	207
+驱动人生	navigational	http://www.160.com/	驱动人生	驱动人生.png	驱动人生是一家专注于电脑驱动管理工具、免费wifi共享软件、个性桌面壁纸软件、手机日历软件及亲子教育软件相关的互联网pc/手机软件研发公司。	8bc888d3-d097-d497-bbcd-a957a15fd10d	OJ.41DqDmr0I0BKoQ	185	185
+zui	navigational	http://www.zui.com/	zui	zui.png	zui是zuk基于android原生系统为旗下智能手机深度定制的操作系统	aa7696fc-5fad-140e-55bf-90eebe61a58f	OJ.ByJa91nebLAFKQ	104	105
+千	navigational	http://www.58pic.com/	千图网	千图网.png	"千图网是专注免费设计素材下载的网站!提供矢量图素材,矢量背景图片,矢量图库,还有psd素材,ps素材,设计模板,设计素材,ppt素材,以及网页素材"	10f174bc-2d2f-dd57-04da-015b1db88c4f	OJ.ni1nn0Mwk1MP6Q	162	162
+wif	navigational	http://www.wifigx.com/	wifi共享精灵	wifi共享精灵.png	wifiwifi共享精灵是基于笔记本电脑无线设置一键共享免费上网的wifi共享软件	cfbc051f-05f5-d365-e32a-11a4d327d7b2	OJ.sd7ja1l4Ox7i2w	240	240
+zhe	navigational	http://www.zhe800.com/	折800官网 	折800.png	"汇集独家特约【淘宝网2-5折商品】,以天天有九块九包邮超值宝贝著名。价格足够低,先到先得"	f0a5d147-aae8-1cbd-305e-6a133987b106	OJ.DP6seKSn0mZKCQ	205	204
+猎	navigational	https://www.liepin.com/	猎聘网	猎聘网.jpg	猎聘网，知名中高端人才招聘网站，汇聚行业名企。为求职者提供免费注册，高薪职位推送，猎头精准推荐，48小时急速反馈等服务	1a7ab54f-e2a5-d9d0-a9a2-145a18d34c18	OJ.HRRwT7k0w8Gepw	200	200
+阿里	navigational	https://www.1688.com/index.html	阿里巴巴	阿里巴巴.jpg	"全球企业间(b2b)电子商务的著名品牌,为数千万网商提供海量商机信息和便捷安全的在线交易市场,也是商人们以商会友、真实互动的社区平台。"	deef9302-37a5-cec2-74fd-04e1213d583a	OJ.YO70FYvilLJquw	555	555
+java	navigational	http://www.java.com/zh_cn/	java	java.png	java是一种可以撰写跨平台应用程序的面向对象的程序设计语言	91162576-f235-633a-9ed3-22c10c668e2d	OJ.gBcCHxjsBJ08Jg	1433	1434
+chuanyue	navigational	http://cf.qq.com/	穿越火线	穿越火线.png	"穿越火线(简称cf)是一款腾讯代理的fps类游戏,穿越火线官网提供游戏视频及游戏攻略"	6c420c2c-d057-fa2b-1913-6719272fa734	OJ.ZBQEQTcC5gIiNA	228	228
+cf	navigational	http://cf.qq.com/	穿越火线	穿越火线.png	"穿越火线(简称cf)是一款腾讯代理的fps类游戏,穿越火线官网提供游戏视频及游戏攻略"	e21dac02-0c93-ca28-e414-4d3dccf2dcd3	OJ.ZBQEQTcC5gIiNA	228	228
+kuan	navigational	http://www.coolapk.com/	酷安网	酷安网.jpg	酷安网成立于2010年4月，是一个新兴的android手机精品资源下载分享站	515b3621-ab02-21bd-ffd0-9995373e3e0f	OJ.BPigqdTbMg13gQ	208	209
+邮箱	navigational	http://mail.126.com/	126网易免费邮箱	126邮箱.jpg	网易公司于2001年11月推出的免费的电子邮箱，是网易公司倾力打造的专业电子邮箱。	8ce5e9f4-82b0-b339-7a3c-9a3dbc438815	OJ.8Ik0a5bw0jCRLg	268	268
+apple	navigational	http://www.apple.com/cn/	apple	apple.png	苹果是来自美国的全球最知名的数码电子产品品牌之一，成立于1976年。苹果在高科技企业中以创新而闻名世界，其最知名的产品包括apple ii、麦金塔电脑（mac）、ipod音乐播放器、itunes商店、iphone智能手机和ipad平板电脑等。	22245fe4-c0c4-5d1b-658c-8f536aa61479	OJ.1vjsOoCz0bdQgw	1024	1024
+iphone	navigational	http://www.apple.com/cn/iphone/	iphone官网	iphone.png	iphone，是美国苹果公司研发的智能手机，它搭载ios操作系统。	f12334ff-fb0b-37c3-4e4d-0682b11f27dd	OJ.jp08CNgUU7hfDQ	1024	1024
+baojia	navigational	http://www.baojia.com/	宝驾租车	宝驾租车.jpg	租车就来宝驾租车，您首选的汽车租赁平台，逾7千款近10万辆汽车租赁车供您自驾租车选择。	afac7cc2-02b0-535c-d85e-8d320eece2ce	OJ.4xtZiYvbwbARTg	217	218
+2345	navigational	http://www.2345.com/	2345网址导航	2345网址导航.jpg	"2345.com热门网址导航站网罗精彩实用网址,如音乐、小说、nba、财经、购物、视频、软件及热门游戏网址大全等"	c87ccc00-3a1a-e606-bfb0-017ba533f8d2	OJ.mQvDem3gJM90sg	204	205
+smarta	navigational	https://smarta.com/	 smarta	smarta.jpg	business advice and tools for startups & small businesses	086227ea-bede-7659-ffd3-d612fdb773eb	OJ.gPzvsKXiU0oanA	291	290
+穿越火线	navigational	http://cf.qq.com/	穿越火线	穿越火线.png	"穿越火线(简称cf)是一款腾讯代理的fps类游戏,穿越火线官网提供游戏视频及游戏攻略"	308a623e-dd02-322c-d949-d74b9f3f1def	OJ.ZBQEQTcC5gIiNA	228	228
+西瓜	navigational	http://www.xigua110.com/	西瓜电影	西瓜电影.png	"西瓜影院提供最全的2016最新电影,西瓜影音播放器电影网站以及各种好看的电影、电视剧、动漫、综艺的在线观看"	c563bfea-a58f-8c84-ee53-b48eb3366656	OJ.nzL9PjGreFfugg	197	198
+netpl	navigational	http://netpl.pl/	netpl	netpl.png	"this is an example of a wordpress page, you could edit this to put information about yourself or your site so readers know where you are coming from"	26bd6319-8cc5-454c-5f83-92b4e2062008	OJ.IEz0VysfmFZy8w	206	205
+kao	navigational	http://www.kao.com/jp/index.html	kao 花王株式会社	kao 花王株式会社.jpg	"妙而舒、乐而雅、洁霸、碧柔及珂润等品牌,日本最大的日用消费品公司"	a187586d-e0d8-934d-d5b5-44de8a8ce972	OJ.SO4l6HUvQ2qgbQ	416	416
+ccc	navigational	http://www.ccc-cn.org/	中国强制产品ccc认证	中国强制产品ccc认证.jpg	ccc认证即是“中国强制认证”，其英文名称为“china compulsory certification”，缩写为ccc。ccc认证对涉及到的产品执行国家强制的安全认证。2001年12月，国家质检总局发布了《强制性产品认证管理规定》，以强制性产品认证制度替代原来的进口商品安全质量许可制度和电工产品安全认证制度。中国强制性产品认证简称ccc认证或3c认证。是一种法定的强制性安全认证制度，也是国际上广泛采用的保护消费者权益、维护消费者人身财产安全的基本做法。列入《实施强制性产品认证的产品目录》中的产品包括家用电器、汽车、安全玻璃、医疗器械、电线电缆、玩具等产品，其中cqc被指定承担ccc目录范围内18大类146种产品的3c认证工作	96f44fe2-78af-8b28-f16e-d0d49041ac65	OJ.Dhc5ib2ormBabg	311	312
+zhao'h	navigational	http://www.cmbchina.com/	招商银行	招商银行.jpg	招商银行成立于1987年(丁卯年)4月8日，是中国第一家完全由企业法人持股的股份制商业银行，总行设在深圳。	7990f2a6-0eee-7b6a-cff9-11e0e17c1443	OJ.7pE0T388pGsDgw	202	170
+招商银行	navigational	http://www.cmbchina.com/	招商银行	招商银行.jpg	招商银行成立于1987年(丁卯年)4月8日，是中国第一家完全由企业法人持股的股份制商业银行，总行设在深圳。	72b12ece-e2bc-6201-0f2b-61f61308ed31	OJ.7pE0T388pGsDgw	202	170
+腾讯	navigational	http://www.qq.com/	腾讯	腾讯网.jpg	"腾讯网(www.qq.com)是中国浏览量最大的中文门户网站,是腾讯公司推出的集新闻信息、互动社区、娱乐产品和基础服务为一体的大型综合门户网站"	bb5075e5-e78b-7130-79bd-abbf2278b7e8	OJ.V06V6ksdZyayhQ	360	360
+asdf	navigational	http://www.asdf.com/	asdf	asdf.png	welcome to asdf. find out more or join the forums.	e8717747-0f1d-9a8b-3bd0-e0aa336c4dee	OJ.IuWARBZ0R0LjTw	375	335
+豌豆荚	navigational	https://www.wandoujia.com/	豌豆荚	豌豆荚.jpg	豌豆荚是中国 android用户中人气、活跃度很高的“移动内容搜索”，也是中国移动互联网领域的创新企业	dc2dc021-5b60-f9e7-b50f-2a39142ddf55	OJ.ZcK0VYsfaycjXw	300	300
+it	navigational	http://www.ithome.com/	it之家	it之家.png	"it之家,青岛软媒旗下,国内顶级it科技门户网站。快速精选it新闻,实时报道科技周边"	343a8714-6611-d0df-5e68-42f15f644f6a	OJ.BBj0PQ5YRN25Yg	130	131
+uu	navigational	http://www.uu898.com/ 	悠悠游戏服务网	悠悠游戏服务网.jpg	"uu898是一个最大最安全的网络游戏交易平台,真诚为广大玩家提供手游、游戏币、游戏账号、点卡、装备、金币元宝、游戏代练等交易服务。"	9ad4d049-87c7-ad00-ba1e-6295c8106240	OJ.9VwJ9PTIhx82zg	200	200
+百度	navigational	http://www.baidu.com	百度	百度.jpg	全球最大的中文搜索引擎、致力于让网民更便捷地获取信息，找到所求。	3cc1a27d-02a7-d7a9-9b15-78fcaa616f20	OJ.ZTAyBIUBo2AHQg	360	360
+4	navigational	http://www.4399.com/	4399小游戏	4399小游戏.jpg	"4399是中国领先的小游戏专业网站,免费为你提供小游戏大全。"	ffb48740-929c-61f6-229b-dcc742febaed	OJ.zoVPCq3gEzjp9w	275	220
+4399	navigational	http://www.4399.com/	4399小游戏	4399小游戏.jpg	"4399是中国领先的小游戏专业网站,免费为你提供小游戏大全。"	52d98fe5-0e92-3ad2-076b-0596eeb395e8	OJ.zoVPCq3gEzjp9w	275	220
+baidu	navigational	http://www.baidu.com	百度	百度.jpg	全球最大的中文搜索引擎、致力于让网民更便捷地获取信息，找到所求。	fd3a1cc1-6777-7648-2f16-426ba9584123	OJ.ZTAyBIUBo2AHQg	360	360
+uuu	navigational	http://www.bailing68.com/	uuu加速器 	uuu加速器.png	"专业稳定的网络加速器!多国线路,百兆带宽,不限流量速度,注册即可免费试用。"	b5f15861-3dc3-f664-2bd5-69a55e338a79	OJ.ghRMdzS8ErMFjg	120	120
+q	navigational	http://www.qzone.cc/	q友乐园	q友乐园.png	"q友乐园是一家专注分享qq个性签名,qq头像,qq网名,与qq分组的个性网站,同时还有数不尽的唯美图片与心情日记等你发现."	b5549b52-88f3-bc21-c6e5-cbf8f423dac6	OJ.0K3Y8MBd3dQGyA	256	256
+优酷	navigational	http://www.youku.com/	优酷	优酷.jpg	优酷是中国领先的视频分享网站	9d110b01-fcf3-b65b-d0d0-ed6fbb9cfaa3	OJ.XC0sZn6HCncWxQ	331	331
+搜狗	navigational	http://pinyin.sogou.com/	搜狗拼音输入法	搜狗输入法.png	"荣获多个国内软件大奖的搜狗拼音输入法是一款打字超准、词库超大、速度飞快、外观漂亮、用了让您爱不释手的输入法,是您装机必备的好选择。"	20cc1d1d-ecfb-d3c7-812b-121dbcfe1910	OJ.bxBQB7oOK0toSw	170	170
+sougou	navigational	https://www.sogou.com/	搜狗搜索	搜狗搜索.jpg	"中国最领先的中文搜索引擎,支持微信公众号、文章搜索,通过独有的sogourank技术及人工智能算法为您提供最快、最准、最全的搜索服务。"	ee575f62-28be-25d5-39fe-a697fd48bb09	OJ.5iM34OHGNH4aVQ	394	394
+bai'du	navigational	http://www.baidu.com	百度	百度.jpg	全球最大的中文搜索引擎、致力于让网民更便捷地获取信息，找到所求。	784f0bb1-d069-745e-07f6-f7d704b7baea	OJ.ZTAyBIUBo2AHQg	360	360
+steam	navigational	http://store.steampowered.com/	steam	steam.jpg	steam平台是一款目前全球最大的综合性数字发行平台。	3b69641b-ce3a-58ac-3488-9983409277d4	OJ.BN0yIxIkd4rp6A	352	351
+淘宝	navigational	https://www.taobao.com/	淘宝网	淘宝网.jpg	淘宝网是亚太地区较大的网络零售、商圈，由阿里巴巴集团在2003年5月创立	9e1cbcee-0398-568c-3071-5944292db565	OJ.VYpLyzjOGHaB4g	512	512
+爱奇艺	navigational	http://www.iqiyi.com/	爱奇艺	爱奇艺.jpg	国内首家专注于提供免费、高清网络视频服务的大型视频网站	c0e0f130-135f-6e49-f0a5-9df49ba6ed93	OJ.NUhtxJ0TOQei9Q	200	200
+鲁大师	navigational	http://www.ludashi.com/	鲁大师	鲁大师.jpg	"国内最大的免费系统工具软件,免费提供硬件真伪辨别、电脑(手机)稳定保障、系统性能提升。"	600f0812-9f73-2cf1-ca83-122cff24bd8e	OJ.Wu8FBJizhhMs0Q	294	294
+网易	navigational	http://www.163.com/	网易	网易.jpg	"网易是中国领先的互联网技术公司,为用户提供免费邮箱、游戏、搜索引擎服务,开设新闻、娱乐、体育等30多个内容频道,及博客、视频、论坛等互动交流,网聚人的力量。"	3036009f-0dbd-44cf-a2e8-7972f426a9ce	OJ.g0COqnNaUhe4kQ	175	175
+百	navigational	http://www.baidu.com	百度	百度.jpg	全球最大的中文搜索引擎、致力于让网民更便捷地获取信息，找到所求。	613966cc-ff16-c237-24ca-5a444e5047d6	OJ.ZTAyBIUBo2AHQg	360	360
+aiqiyi	navigational	http://www.iqiyi.com/	爱奇艺	爱奇艺.jpg	国内首家专注于提供免费、高清网络视频服务的大型视频网站	c63e4566-ec52-9998-b63b-b6d44e6bf504	OJ.NUhtxJ0TOQei9Q	200	200
+it	navigational	http://www.itsale.com.cn/	香港i.t官网	i.t.jpg	香港最具规模的时装品牌零售店之一，是时尚追逐者和众多明星必到的潮流“圣地”。	343a8714-6611-d0df-5e68-42f15f644f6a	OJ.JRws2pcICljhIg	177	177
+43	navigational	http://www.4399.com/	4399小游戏	4399小游戏.jpg	"4399是中国领先的小游戏专业网站,免费为你提供小游戏大全。"	c0da71cc-9f60-4d3d-daee-0663953eb6c1	OJ.zoVPCq3gEzjp9w	275	220
+youku	navigational	http://www.youku.com/	优酷	优酷.jpg	优酷是中国领先的视频分享网站	a8fd9b94-94c9-deda-dc8c-d6d9687c5f42	OJ.XC0sZn6HCncWxQ	331	331
+adobe	navigational	http://www.adobe.com/cn/	adobe	adobe.jpg	adobe 创建于1982年，是世界领先数字媒体和在线营销方案的供应商。	97304ed8-4d5e-3ece-eb9c-ed7ea640e140	OJ.iEqOQK039AUpPw	300	300
+163	navigational	http://www.163.com/	网易	网易.jpg	"网易是中国领先的互联网技术公司,为用户提供免费邮箱、游戏、搜索引擎服务,开设新闻、娱乐、体育等30多个内容频道,及博客、视频、论坛等互动交流,网聚人的力量。"	c6ff3fae-a025-4acd-931a-937afbc8a784	OJ.g0COqnNaUhe4kQ	175	175
+战网	navigational	http://www.battlenet.com.cn/zh/	战网	战网.jpg	战网是暴雪公司架设的游戏对战平台。	514932a3-849b-9d48-c3cf-c1f8e693ecfe	OJ.dOriKFj0PCGkXg	242	242
+taobao	navigational	https://www.taobao.com/	淘宝网	淘宝网.jpg	淘宝网是亚太地区较大的网络零售、商圈，由阿里巴巴集团在2003年5月创立	26bac509-edd5-fd86-dd81-95e70c1d6d44	OJ.VYpLyzjOGHaB4g	512	512
+2345	navigational	http://www.2345.com/	2345网址大全	2345网址大全.jpg	2345网址导航收录了网民需要的各类网站，提供实用查询、邮箱登录、天气预报、搜索引擎、在线收藏等常用网络服务。	c87ccc00-3a1a-e606-bfb0-017ba533f8d2	OJ.2F4OLbJhLySvQA	194	194
+jj	navigational	http://www.jj.cn/	 jj斗地主	jj斗地主.jpg	jj比赛，jj斗地主，是全国最大的斗地主、麻将、德州扑克等棋牌类游戏在线竞技平台。	2a7f72c6-de7a-f1e6-36d8-4e5a43352742	OJ.lt1P0pIlVj1hSA	285	285
+sou	navigational	https://www.sogou.com/	搜狗搜索	搜狗搜索.jpg	"中国最领先的中文搜索引擎,支持微信公众号、文章搜索,通过独有的sogourank技术及人工智能算法为您提供最快、最准、最全的搜索服务。"	b9423150-b8d9-1b55-7c64-96ef827ba689	OJ.5iM34OHGNH4aVQ	394	394
+115	navigational	http://115.com/	115网盘	115网盘.jpg	115网盘是广东一一五科技有限公司于2009年推出的网络数据在线存储服务。	f35f25d9-1f1f-ece3-8ced-7ccb01d83bee	OJ.aQUmXJlZdpgZGA	168	168
+360wifi	navigational	http://wifi.360.cn/	360wifi	360wifi.jpg	"360集团旗下wifi产品服务平台,延续360的安全基因,为用户提供手机免费上网的一站式服务"	88f59115-17ad-fd96-9afa-71d1c77a9f04	OJ.Dq1YF0uCGeI63A	350	350
+tengxun	navigational	http://www.qq.com/	腾讯	腾讯网.jpg	"腾讯网(www.qq.com)是中国浏览量最大的中文门户网站,是腾讯公司推出的集新闻信息、互动社区、娱乐产品和基础服务为一体的大型综合门户网站"	fbb171a6-2ec9-deef-c2f9-64d24cc5e949	OJ.V06V6ksdZyayhQ	360	360
+招商	navigational	http://www.cmbchina.com/	招商银行	招商银行.jpg	招商银行成立于1987年(丁卯年)4月8日，是中国第一家完全由企业法人持股的股份制商业银行，总行设在深圳。	cfcabfcb-3835-db30-c31b-52cc845c4628	OJ.7pE0T388pGsDgw	202	170
+sou'gou	navigational	https://www.sogou.com/	搜狗搜索	搜狗搜索.jpg	"中国最领先的中文搜索引擎,支持微信公众号、文章搜索,通过独有的sogourank技术及人工智能算法为您提供最快、最准、最全的搜索服务。"	985f19f8-c55a-d0bd-2cee-9e861725fff3	OJ.5iM34OHGNH4aVQ	394	394
+58	navigational	http://www.58.com/	58同城	58同城.jpg	58同城—美国纽交所上市公司，国内专业的“本地、免费、真实、高效”生活服务平台！	23bd1425-f6fd-a3a8-8ba8-8d2cc219a65f	OJ.Oorw5rOhHS3J4w	324	323
+vmware	navigational	http://www.vmware.com/sg	vmware	vmware.jpg	vmware（中文名威睿”，纽约证券交易所“代码：vmw） 虚拟机软件，是全球桌面到数据中心虚拟化解决方案的领导厂商。	6a4e6758-e517-3789-d90b-5ff674722030	OJ.NpYZL0EPudi0rg	1037	1038
+微	navigational	http://www.weibo.com/	新浪微博	微博.jpg	新浪微博是全中国最主流，最具人气，当前最火爆的微博产品。用一句话随意记录生活，用手机随时随地发微博。	0a2cfe92-83fa-d365-911b-6248ff24da91	OJ.AlUlEUcSRRyWKA	300	300
+java	navigational	http://www.java.com/en/	java	java.png	java是一种可以撰写跨平台应用程序的面向对象的程序设计语言。	91162576-f235-633a-9ed3-22c10c668e2d	OJ.gBcCHxjsBJ08Jg	1433	1434
+ai'qi'yi	navigational	http://www.iqiyi.com/	爱奇艺	爱奇艺.jpg	国内首家专注于提供免费、高清网络视频服务的大型视频网站	d91fdf36-305c-fad3-ee8e-33d4ff5b4557	OJ.NUhtxJ0TOQei9Q	200	200
+amd	navigational	http://www.amd.com/zh-cn/	amd	amd.jpg	"amd (nyse: amd) 提供极具开创性的图形和计算解决方案,携手客户和合作伙伴,不断为人们的工作、生活和娱乐带来新体验。"	044a7987-ced6-5afe-07c4-5a43609340f4	OJ.UsVleso5Vtixew	320	320
+豌豆荚	navigational	https://www.wandoujia.com/	豌豆荚	豌豆荚.jpg	豌豆荚是中国 android用户中人气、活跃度很高的“移动内容搜索”，也是中国移动互联网领域的创新企业	dc2dc021-5b60-f9e7-b50f-2a39142ddf55	OJ.ZcK0VYsfaycjXw	300	300
+酷	navigational	http://www.ku6.com/	酷六网	酷六网.png	酷六网是中国的视频网站之一。通过不断为用户提供最新鲜、最有趣的视频内容，酷六网始终活跃在中国在线视频市场的最前沿。	74d31562-528c-2674-c796-9d293e607f74	OJ.Ia0cGWxgBg79vw	239	211
+baid	navigational	http://www.baidu.com	百度	百度.jpg	全球最大的中文搜索引擎、致力于让网民更便捷地获取信息，找到所求。	57e73e43-bcb8-3966-08cd-84ebc132d95d	OJ.ZTAyBIUBo2AHQg	360	360
+thunder	navigational	http://dl.xunlei.com/	迅雷	迅雷.png	"迅雷是中国拥有核心技术的互联网众筹云计算服务商,也是领先的互联网下载服务提供商和付费会员产品提供商。"	4235be4c-8d3a-216f-30c0-52be581d9cf7	OJ.F3uYnjGytTmk0g	1221	1221
+12306	navigational	http://www.12306.cn/mormhweb/	12306	12306.png	铁道部火车票网上订票唯一官网	c33ab526-26ee-fa7b-6809-7d1c28fb3d95	OJ.I6cFX5RmEwDohA	512	512
+hp	navigational	http://www.hp.com/	惠普	惠普.png	是一家全球性的资讯科技公司，主要专注于打印机、数码影像、软件、计算机与资讯服务等业务。	b4d0bf91-b507-9c28-ce75-f9c30b01a82b	OJ.6ovaVWFNzBgHzg	225	225
+微博	navigational	http://www.weibo.com/	新浪微博	微博.jpg	新浪微博是全中国最主流，最具人气，当前最火爆的微博产品。用一句话随意记录生活，用手机随时随地发微博。	f6ec5fd4-ad79-2fdb-4bb2-5f9d721223f5	OJ.AlUlEUcSRRyWKA	300	300
+鲁	navigational	http://www.ludashi.com/	鲁大师	鲁大师.jpg	"国内最大的免费系统工具软件,免费提供硬件真伪辨别、电脑(手机)稳定保障、系统性能提升。"	f5483506-e3b3-81b3-5a4f-abb8a4281ff4	OJ.Wu8FBJizhhMs0Q	294	294
+126	navigational	http://mail.126.com/	126网易免费邮	126邮箱.jpg	网易公司于2001年11月推出的免费的电子邮箱，是网易公司倾力打造的专业电子邮箱。	234fb20a-8ad3-d429-b6a4-ca3e6c0750ed	OJ.8Ik0a5bw0jCRLg	268	268
+you'ku	navigational	http://www.youku.com/	优酷	优酷.jpg	优酷是中国领先的视频分享网站	22ffdbd5-b275-2eb4-f2dd-d4a487ee3c17	OJ.XC0sZn6HCncWxQ	331	331
+bn	navigational	http://www.battlenet.com.cn/zh/	战网	战网.jpg	战网是暴雪公司架设的游戏对战平台。	c4c1f334-788a-6d5b-4b84-55255154532a	OJ.dOriKFj0PCGkXg	242	242
+zhe	navigational	http://www.zhe800.com/	折800官网 	折800.png	"汇集独家特约【淘宝网2-5折商品】,以天天有九块九包邮超值宝贝著名。价格足够低,先到先得"	f0a5d147-aae8-1cbd-305e-6a133987b106	OJ.DP6seKSn0mZKCQ	205	204
+小米	navigational	http://www.mi.com/sg/	小米商城	小米.png	北京小米科技有限责任公司成立2010年4月，是一家专注于智能产品自主研发的移动互联网公司。	cafece23-1374-02c7-949f-b33c89670b38	OJ.RHRpIYmWcEsgGA	190	190
+cntv	navigational	http://www.cctv.com/default.shtml	央视网	央视网.jpg	由央视国际网络有限公司主办，是中央电视台旗下的国家网络广播电视播出机构，于2009年12月28日正式开播。	aacec4f4-08f1-7331-5f36-d0be234eac96	OJ.SF0gCc8PAn5sJA	611	610
+bd	navigational	http://www.bd-film.com/	bd影视	bd影视.png	"主要提供丰富的影视资源下载,并且可以在线云播预览,上映之后三个月内发布枪版,三个月之后发布蓝光高清下载"	b16fec56-4686-764c-df85-b41177bbb1fd	OJ.ZMYJ12nRi08A8A	281	281
+realtek	navigational	http://www.realtek.com.tw/	瑞昱官网	realtek.png	瑞昱已成功开发出多种领域的应用集成电路，产品线横跨通讯网路、电脑周边、多媒体、超宽频等技术，与世界先进产业主流并驾齐驱。	157c112f-7145-b981-d931-1c9e8e451e33	OJ.cEstd1BRHABgMQ	348	348
+招商银行	navigational	http://www.cmbchina.com/	招商银行	招商银行.jpg	招商银行成立于1987年(丁卯年)4月8日，是中国第一家完全由企业法人持股的股份制商业银行，总行设在深圳。	72b12ece-e2bc-6201-0f2b-61f61308ed31	OJ.7pE0T388pGsDgw	202	170
+搜狐	navigational	http://www.sohu.com/	搜狐网	搜狐网.jpg	"搜狐网为用户提供24小时不间断的最新资讯,及搜索、邮件等网络服务。"	45914ad7-674f-1e3e-bec6-b728a15b32be	OJ.73aIHFQ6VVAUgw	292	292
+tao'bao	navigational	https://www.taobao.com/	淘宝网	淘宝网.jpg	淘宝网是亚太地区较大的网络零售、商圈，由阿里巴巴集团在2003年5月创立	f439621f-5245-a046-2514-d0463669be27	OJ.VYpLyzjOGHaB4g	512	512
+wang'yi	navigational	http://www.163.com/	网易	网易.jpg	"网易是中国领先的互联网技术公司,为用户提供免费邮箱、游戏、搜索引擎服务,开设新闻、娱乐、体育等30多个内容频道,及博客、视频、论坛等互动交流,网聚人的力量。"	006dd31d-cefe-e102-52cd-9ab351ff96d8	OJ.g0COqnNaUhe4kQ	175	175
+乐视	navigational	http://www.le.com/	乐视视频	乐视网.jpg	"乐视视频是以正版,高清影视剧为主的视频门户,乐视旗下专业影视剧视频网站。"	d356a19f-d6c1-78b6-aad0-a662dc3ab8c2	OJ.VOa7OOQxqieq8w	309	310
+jd	navigational	http://www.jd.com/	京东	京东.jpg	专业的综合网上购物商城，销售超数万品牌、4020万种商品，囊括家电、手机、电脑、服装、图书、母婴、个护、食品、旅游等13大品类	cf78fc92-7e12-36d1-b9b1-e0abcaa490ae	OJ.Tv5rtgy9ku9wHQ	288	288
+soug	navigational	https://www.sogou.com/	搜狗搜索	搜狗搜索.jpg	"中国最领先的中文搜索引擎,支持微信公众号、文章搜索,通过独有的sogourank技术及人工智能算法为您提供最快、最准、最全的搜索服务。"	420c41d3-96b6-e4cf-13b2-cbd02a915368	OJ.5iM34OHGNH4aVQ	394	394
+1111	navigational	http://www.1111.com.tw/	1111人力银行 	1111人力银行.jpg	1111人力銀行是找工作、找人才最快速的人力銀行。	13c1efb9-84f7-582a-f02c-6ecb22a450f8	OJ.mI6RiZ3NLnMZ5A	195	195
+www.baidu.com	navigational	http://www.baidu.com	百度	百度.jpg	全球最大的中文搜索引擎、致力于让网民更便捷地获取信息，找到所求。	0510e381-5748-13a9-2c01-de2b9b37518c	OJ.ZTAyBIUBo2AHQg	360	360
+支付宝	navigational	https://www.alipay.com/	支付宝	支付宝.jpg	支付宝（中国）网络技术有限公司是国内领先的第三方支付平台，致力于提供“简单、安全、快速”的支付解决方案。	6bb62e33-b9b2-07e3-e81b-d0329e2b7699	OJ.jVYoK6RjR9ByrQ	192	193
+t'g'p	navigational	http://tgp.qq.com/	腾讯游戏平台	tgp.jpg	腾讯游戏平台的缩写，囊括了腾讯全平台的游戏，支持游戏管理，加速游戏，保护游戏，免密码一键登录以及下载更新游戏等功能。	dae885be-e1a4-a052-ed41-f878b2e31571	OJ.0zhfDO0Csb68VQ	180	180
+sublime	navigational	http://www.sublimetext.com/	sublime text	sublime text.jpg	sublime text 是一个代码编辑器（sublime text 2是收费软件，但可以无限期试用），也是html和散文先进的文本编辑器。	8471cf1d-003e-caa7-c4b5-4f528a8b1379	OJ.Ohx1gIRBuQcMhA	458	458
+bai'd	navigational	http://www.baidu.com	百度	百度.jpg	全球最大的中文搜索引擎、致力于让网民更便捷地获取信息，找到所求。	793a6812-188f-308b-0c61-b4f641352634	OJ.ZTAyBIUBo2AHQg	360	360
+23	navigational	http://www.23.cn/	爱商网	爱商网.jpg	"23.cn爱商网汇聚加盟投资好项目,函盖各行各业,项目种类齐全。"	803b2015-6e5e-c2d5-6933-c5e758d3a0b4	OJ.TKK6uTyn48xVQA	196	196
+dota2	navigational	http://www.dota2.com.cn/index.htm	dota2	dota2.jpg	"dota2是由dota之父icefrog主创打造的唯一正统续作,其完整继承了原作dota超过一百位的英雄。"	76970b4d-0b1a-e898-2226-6f612061ad0d	OJ.EsjmP30LAuISRA	168	168
+飞秋	navigational	http://www.feiq18.com/	飞秋	飞秋.jpg	飞秋(feiq)是一款局域网聊天传送文件的即时通讯软件。	471a559e-b109-ed06-3c74-e18ab5e888c1	OJ.IT4Ni7QjScMHmg	144	144
+taob	navigational	https://www.taobao.com/	淘宝网	淘宝网.jpg	淘宝网是亚太地区较大的网络零售、商圈，由阿里巴巴集团在2003年5月创立	03bc0146-90df-61c7-3b65-ae86aee6d760	OJ.VYpLyzjOGHaB4g	512	512
+工商	navigational	http://www.icbc.com.cn/icbc/	中国工商银行	中国工商银行.png	工商银行金融服务全面介绍，投资理财信息丰富全面，在线交易方便快捷，满足客户专业化、多元化、人性化的金融服务需求，打造集业务、信息、交易、购物	a5351f0c-329e-983b-812f-4febe35311dd	OJ.elbOOqk5ZCkUjg	400	400
+iqiyi	navigational	http://www.iqiyi.com/	爱奇艺	爱奇艺.jpg	国内首家专注于提供免费、高清网络视频服务的大型视频网站	1ee608ff-1b27-4a71-4f2d-7602af545830	OJ.NUhtxJ0TOQei9Q	200	200
+多玩	navigational	http://www.duowan.com/	多玩游戏	多玩游戏.png	"最专业的游戏新闻中心,最具特色yy语音社区,最强大的游戏论坛"	b9015e5f-304e-0286-0fb2-c8d86fe3c23a	OJ.Eh7dEC5aFFsx0A	400	400
+66	navigational	http://www.dygang.com/	电影港	电影港.png	"每天搜集最新的电影,高清电影,720p高清电影,1080p高清电影,的免费迅雷下载。"	39ac782d-8e3e-387c-a94c-0c22520a8a80	OJ.7t2j2QP7YJ4zgQ	240	240
+python	navigational	https://www.python.org/	python	python.jpg	一种面向对象、解释型计算机程序设计语言，由guido van rossum于1989年发明，第一个公开发行版发行于1991年。	8d372a35-56f1-8cdc-e619-06434099c6cf	OJ.hWIoV3xUjBwPVw	351	352
+matlab	navigational	http://www.mathworks.com/?requesteddomain=www.mathworks.com	matlab	matlab.jpg	matlab是美国mathworks公司出品的商业数学软件，用于算法开发、数据可视化、数据分析以及数值计算的高级技术计算语言和交互式环境，主要包括matlab和simulink两大部分。	bdb01550-e91b-c249-abb0-8dafe8c869bd	OJ.GWqCBWnAd2xW2w	168	168
+youtube	navigational	http://www.youtube.com/	youtube	youtube.png	youtube是世界上最大的视频网站，早期公司总部位于加利福尼亚州的圣布鲁诺。	0a582cd2-0140-c458-fe5b-1455698a13fe	OJ.zHmzSsN3UnA90g	225	225
+新浪	navigational	http://www.sina.com.cn/	新浪	新浪网.jpg	新浪网为全球用户24小时提供全面及时的中文资讯	be7c4479-b9d7-af5e-2069-6784ffda195d	OJ.Yxhx546XkokgZQ	472	472
+uto	navigational	http://www.uto.com.cn/login.aspx	悠途网	悠途网.png	"中原地区最专业的旅游线路和自助游在线服务商，依托旅游百事通强大的旅游资源，专业提供国内旅游,出境旅游,公司旅游和自助游服务。"	c8fbdce8-0b61-fefe-4ee3-fccdf2c53f8a	OJ.zK2NQc2wqDWH6A	185	185
+wechat	navigational	http://weixin.qq.com/	微信	微信.png	腾讯公司于2011年1月21日推出的一个为智能终端提供即时通讯服务的免费应用程序。	bce90b1c-feb8-5b47-87d4-2c03bc420920	OJ.eCn0sCKXCTC9Zg	1024	1024
+魔方	navigational	http://mofang.ruanmei.com/	软媒魔方	软媒魔方.jpg	软媒出品的全新一代优化大师，世界首批通过微软官方windows7徽标认证的系统软件。	3c7beefa-fa39-4570-6ee6-9dea44cfd870	OJ.4JxqS8ijfiMruQ	150	150
+yahoo	navigational	https://sg.yahoo.com/?p=us	雅虎	雅虎.jpg	美国著名的互联网门户网站，也是20世纪末互联网奇迹的创造者之一。	8e6823d3-99bd-5c52-da24-ff21aa470632	OJ.pE5dsVZcZwvUQQ	225	225
+ccleaner	navigational	https://www.ccleanercloud.com/	ccleaner	ccleaner.jpg	cleaner是一款免费的系统优化和隐私保护工具。ccleaner的主要用来清除windows系统不再使用的垃圾文件，以腾出更多硬盘空间。	4683b6f5-1e12-bdfc-4bdd-8a9b2ae8d68f	OJ.RIuR108YeqqMfg	204	204
+sohu	navigational	http://www.sohu.com/	搜狐网	搜狐网.jpg	"搜狐网为用户提供24小时不间断的最新资讯,及搜索、邮件等网络服务。"	b4229c0c-69d1-80fa-738b-9997df50a120	OJ.73aIHFQ6VVAUgw	292	292
+老毛桃	navigational	http://www.laomaotao.net/	老毛桃u盘启动盘制作工具	老毛桃.jpg	不需要任何技术基础，一键制作，自动完成制作，平时当u盘使用，需要的时候就是修复盘，完全不需要光驱和光盘，携带方便。	8ed9d290-8c5c-aeca-71d4-bae1088d29cf	OJ.M8W0UOixc0Y8nQ	414	414
+大白菜	navigational	http://www.dabaicai.com/	大白菜u盘启动盘制作工具	老毛桃.jpg	大白菜u盘启动盘制作工具是一款简单易学的一键制作万能u盘启动	870ebfba-731a-c4f5-0a68-5853fb41ed0b	OJ.M8W0UOixc0Y8nQ	414	414
+souhu	navigational	http://www.sohu.com/	搜狐网	搜狐网.jpg	"搜狐网为用户提供24小时不间断的最新资讯,及搜索、邮件等网络服务。"	307ee5e9-2d5a-0af3-8d33-463f90aeeab7	OJ.73aIHFQ6VVAUgw	292	292
+腾讯	navigational	http://www.qq.com/	腾讯	腾讯网.jpg	"腾讯网(www.qq.com)是中国浏览量最大的中文门户网站,是腾讯公司推出的集新闻信息、互动社区、娱乐产品和基础服务为一体的大型综合门户网站"	bb5075e5-e78b-7130-79bd-abbf2278b7e8	OJ.V06V6ksdZyayhQ	360	360
+hao123	navigational	https://www.hao123.com/	hao123	hao123.png	hao123是最具权威的中文上网导航，汇集最优秀的网站及资源。	13c34a26-296a-ee7c-88f9-d1dcaebbc545	OJ.w7tpXi0YSU2fpg	256	256
+msn	navigational	http://cn.msn.com/	msn中文网	msn.jpg	"msn中文网是中国首家针对白领用户的门户网站,定位于时尚、娱乐、生活、服务,24小时滚动报道,同时提供msn下载,msn保护盾等msn产品的官方下载及使用帮助。"	a163aa5f-a739-2fe7-2f52-2ecb28de2204	OJ.3HNsCKKgAKAPzA	225	225
+weibo	navigational	http://www.weibo.com/	新浪微博	微博.jpg	新浪微博是全中国最主流，最具人气，当前最火爆的微博产品。用一句话随意记录生活，用手机随时随地发微博。	b7aded48-85b3-707e-9612-04ba6d0356fd	OJ.AlUlEUcSRRyWKA	300	300
+yxlm	navigational	http://lol.qq.com/	英雄联盟	lol.jpg	美国riot games开发，中国大陆地区由腾讯游戏运营的网络游戏。	580f63bc-b64d-8c98-eb50-b8386adcd836	OJ.9ws1O0RqwAIHQw	228	205
+pp助手	navigational	http://pro.25pp.com/	pp助手	pp助手.jpg	pp助手是一款同时支持苹果及安卓设备的软件、游戏、壁纸、铃声资源的下载安装和管理工具。	f3d52639-e84e-8a97-96b2-42c72ba7015d	OJ.uNbK0LRNnQb2Eg	176	176
+91	navigational	http://zs.91.com/baidu91/pc1/	91助手	91助手.jpg	91助手全面支持安卓（android）及苹果（ios）两大主流智能平台，是跨终端、跨平台的智能手机资源下载中心。	819afad7-16b9-0521-31c8-3a2552bab914	OJ.c7h1NW7agkilyw	318	317
+罗技	navigational	http://www.logitech.com.cn/zh-cn	罗技(logitech)	罗技.png	罗技专注于设计与人们生活紧密相联的产品 — 打造全新的音乐、游戏、视频、智能家居和计算体验。	44cfb076-96a2-d797-8d0a-77838f5d8905	OJ.vv9EuSk435Z0oA	260	260
+56	navigational	http://www.56.com/	56视频	56视频.jpg	"56网是中国最大的原创视频网站,免费上传搞笑逗趣生活视频,观看优质丰富的特色节目,关注感兴趣的原创导演和美女解说,快速分享及评论互动。"	d98554b5-bb53-1b9e-4b09-1067ba224c7a	OJ.vSmMutiLKDpGTA	141	141
+huaban	navigational	http://huaban.com/favorite/beauty/	花瓣网	花瓣网.jpg	"国内最优质图片灵感库 已有数百万出众网友,用花瓣保存喜欢的图片。"	0066e327-3303-3a93-a791-b7e01a559727	OJ.MjghaCSZ0X0GMw	326	326
+stea	navigational	http://store.steampowered.com/	steam	steam.jpg	steam平台是一款目前全球最大的综合性数字发行平台。	061fc4e2-de30-1b16-2d72-09397304be74	OJ.BN0yIxIkd4rp6A	352	351
+xiaomi	navigational	http://www.mi.com/sg/	小米商城	小米.png	北京小米科技有限责任公司成立2010年4月，是一家专注于智能产品自主研发的移动互联网公司。	42019a4a-5e38-b91e-0b03-dc8e2b9f57b5	OJ.RHRpIYmWcEsgGA	190	190
+游侠	navigational	http://www.ali213.net/	游侠网	游侠网.jpg	游侠网为单机游戏玩家提供最新单机游戏业界动态、国内外单机游戏下载、单机游戏补丁、单机游戏攻略秘籍、单机游戏专题等内容。	39ba1468-1628-7fec-1314-ac6cca0a82c6	OJ.gi5NWeb0qr0WrQ	304	305
+7k7k	navigational	http://www.7k7k.com/	7k7k小游戏	7k7k小游戏.png	7k7k是国内最专业的休闲游戏网站之一，创建于2003年，致力于搜集互联网广泛的小游戏资源，开发和运营网页游戏，代表作品有飘渺仙缘、冒险王等，是国内老牌小游戏网站。	b1739fa6-2119-f4f5-0097-8f46d2ca4714	OJ.ecPqtBwheUAjDg	208	208
+建设	navigational	http://www.ccb.com/cn/home/indexv3.html	中国建设银行	中国建设银行.jpg	成立于1954年(甲午年)10月1日，是股份制商业银行， 是国有五大商业银行之一。	3572ac9d-1350-0255-7ab5-4f34a6410d9e	OJ.0lkdXNyALknAXQ	190	190
+439	navigational	http://www.4399.com/	4399小游戏	4399小游戏.jpg	"4399是中国领先的小游戏专业网站,免费为你提供小游戏大全。"	75f687a3-6446-2055-7ef2-27a2118b4ef7	OJ.zoVPCq3gEzjp9w	275	220
+g'g	navigational	https://www.google.com.hk/	谷歌	谷歌.jpg	谷歌是一家美国的跨国科技企业，致力于互联网搜索、云计算、广告技术等领域，开发并提供大量基于互联网的产品与服务	6df51b4b-f1ed-5323-0e6b-50aa9b9b583a	OJ.Gq9yt4YTcbtndw	596	595
+土豆	navigational	http://www.tudou.com/	土豆网	土豆网.jpg	"土豆是你会喜欢的个人视频网站,免费无限空间,上传你的视频,观看和搜索海量视频节目,收藏你喜欢的视频,订阅你关注的播客,简单方便地分享给你的朋友们。"	009c2678-a0ce-8f92-11ad-a394460674f1	OJ.1YycH2hL0XxqRQ	218	220
+qq邮箱	navigational	https://mail.qq.com/	qq邮箱	qq邮箱.jpg	"qq邮箱,为亿万用户提供高效稳定便捷的电子邮件服务。"	2ca03726-c21a-3dca-60e8-1705743adff7	OJ.isdlff7onfHUEg	549	548
+teng'xun	navigational	http://www.qq.com/	腾讯	腾讯网.jpg	"腾讯网(www.qq.com)是中国浏览量最大的中文门户网站,是腾讯公司推出的集新闻信息、互动社区、娱乐产品和基础服务为一体的大型综合门户网站"	4b6d7b1c-2c4b-6b0c-064f-baa5388e4cca	OJ.V06V6ksdZyayhQ	360	360
+苹果	navigational	http://www.apple.com/cn/	apple	apple.png	苹果是来自美国的全球最知名的数码电子产品品牌之一，成立于1976年。苹果在高科技企业中以创新而闻名世界，其最知名的产品包括apple ii、麦金塔电脑（mac）、ipod音乐播放器、itunes商店、iphone智能手机和ipad平板电脑等。	6cc5f35e-57a6-53d4-82b5-04a6beadf30b	OJ.1vjsOoCz0bdQgw	1024	1024
+ecli	navigational	https://eclipse.org/downloads/	eclipse	eclipse.png	eclipse 是一个开放源代码的、基于java的可扩展开发平台。	a6eebf28-3087-510a-df7e-7a3701b04fe5	OJ.KWqBX9nrplHNNw	516	517
+lu'da'shi	navigational	http://www.ludashi.com/	鲁大师	鲁大师.jpg	"国内最大的免费系统工具软件,免费提供硬件真伪辨别、电脑(手机)稳定保障、系统性能提升。"	8a61300f-173c-bce1-3725-777ee46ac6bb	OJ.Wu8FBJizhhMs0Q	294	294
+duowan	navigational	http://www.duowan.com/	多玩游戏	多玩游戏.png	"最专业的游戏新闻中心,最具特色yy语音社区,最强大的游戏论坛"	4c59f541-c233-cfec-bb23-9e8bb53add16	OJ.Eh7dEC5aFFsx0A	400	400
+one drive	navigational	https://onedrive.live.com/	onedrive	onedrive.png	微软正式宣布onedrive云存储服务上线，支持100多种语言，面向全球替代微软skydrive。	38ec2b69-9003-777c-518f-64befd46bcc0	OJ.oAHIujnFq8mFsg	311	311
+淘宝网	navigational	https://www.taobao.com/	淘宝网	淘宝网.jpg	淘宝网是亚太地区较大的网络零售、商圈，由阿里巴巴集团在2003年5月创立	27b3e8ee-19ad-bb0b-2ee6-8bd7ec801b1e	OJ.VYpLyzjOGHaB4g	512	512
+英伟达	navigational	http://www.nvidia.cn/page/home.html	英伟达	英伟达.png	创立于1993年1月，是一家以设计智核芯片组为主的无晶圆（fabless）ic半导体公司。	c00302ba-7a3f-d189-0c61-1301ec5071e5	OJ.tQUKLsMy9THhjw	363	327
+canon	navigational	http://www.canon.com.cn/	canon	canon.jpg	"佳能公司是以光学为核心的相机与办公设备制造商,始终以创造世界一流产品为目标,积极推动事业向多元化和全球化发展。"	608f159d-0583-c70d-1f6c-18b61e2697e8	OJ.nf8zq0V3Ol2pTw	184	185
+mysql	navigational	http://www.mysql.com/	mysql	mysql.png	mysql是一个关系型数据库管理系统，由瑞典mysql ab 公司开发，目前属于 oracle 旗下公司。	b79130d2-5017-b021-5cc4-e46cf5272f53	OJ.6g0U4xBuCX0dSQ	225	225
+lenovo	navigational	http://www.lenovo.com.cn/	lenovo	lenovo.jpg	联想从事开发、制造并销售可靠的、安全易用的技术产品及优质专业的服务，帮助全球客户和合作伙伴取得成功。	8c578b0e-237f-7f68-3af8-f67b23b7cebb	OJ.hEed0wLLe5pkGQ	225	224
+qq飞车	navigational	http://speed.qq.com/act/a20160501carnival/	qq飞车	qq飞车.jpg	由腾讯的琳琅天上游戏工作室开发，腾讯游戏发行的一款网络游戏，最高同时在线已超过300万。	5eb37d9a-c644-8bce-61de-d23a06f0b978	OJ.QuGADFKFO6Rvug	154	155
+youk	navigational	http://www.youku.com/	优酷	优酷.jpg	优酷是中国领先的视频分享网站	0505b549-3d21-3f7d-d31c-5500cad1ac1b	OJ.XC0sZn6HCncWxQ	331	331
+三星	navigational	http://www.samsung.com/cn/	三星	三星.png	三星集团是韩国最大的跨国企业集团，同时也是上市企业全球500强	8cef884f-1540-fca2-a4c8-c440418fa7da	OJ.F4Wogrg4tMtbsg	297	295
+3366	navigational	http://www.3366.com/	3366小游戏	3366小游戏.jpg	flash小游戏门户，属腾讯旗下。里面收集了国内外各种类型的flash小游戏。	3e5c19dc-62a4-085a-b6a8-c2a34cdfec37	OJ.0rrocEZqb67F4Q	189	190
+evernote	navigational	https://www.yinxiang.com/	印象笔记	印象笔记.jpg	evernote是一款多功能笔记类应用，于2008年正式发布。	81d52f0f-c772-d10f-12cf-11a7481a73ec	OJ.kUwLf0KihZQdsA	213	213
+jing'dong	navigational	http://www.jd.com/	京东	京东.jpg	专业的综合网上购物商城，销售超数万品牌、4020万种商品，囊括家电、手机、电脑、服装、图书、母婴、个护、食品、旅游等13大品类	c8c9605e-ad7f-4a72-a3b2-272200b18e47	OJ.Tv5rtgy9ku9wHQ	288	288
+r'r	navigational	http://www.renren.com/	人人网	人人网.png	"校内是一个真实的社交网络,联络你和你周围的朋友。"	902fc3f1-5efa-03ad-68f9-e8a4a67f4bf6	OJ.BeuctmoQgn7ujQ	512	512
+leshi	navigational	http://www.le.com/	乐视视频	乐视网.jpg	"乐视视频是以正版,高清影视剧为主的视频门户,乐视旗下专业影视剧视频网站。"	408a863e-f77b-d29e-e6b3-8db97e2f0ce0	OJ.VOa7OOQxqieq8w	309	310
+oracle	navigational	http://www.oracle.com/index.html	甲骨文	甲骨文.jpg	甲骨文公司，全称甲骨文股份有限公司(甲骨文软件系统有限公司)，是全球最大的企业级软件公司。	32434bb7-a2bb-f4e3-b3be-7c823ac5fee0	OJ.1p6I3WSAjcI0JA	192	192
+tengx	navigational	http://www.qq.com/	腾讯	腾讯网.jpg	"腾讯网(www.qq.com)是中国浏览量最大的中文门户网站,是腾讯公司推出的集新闻信息、互动社区、娱乐产品和基础服务为一体的大型综合门户网站"	0704de1e-aa44-f31e-42c9-dbca7dfd646e	OJ.V06V6ksdZyayhQ	360	360
+天猫	navigational	https://www.tmall.com/	天猫	天猫.jpg	天猫 - 中国线上购物的地标网站，亚洲超大的综合性购物平台，拥有10万多品牌商家。每日发布大量国内外商品！	441fb1ed-c590-f9c2-d145-c23a70de5014	OJ.1rwN0T9Cmtv0cg	222	222
+豌豆	navigational	https://www.wandoujia.com/	豌豆荚	豌豆荚.jpg	豌豆荚是中国 android用户中人气、活跃度很高的“移动内容搜索”，也是中国移动互联网领域的创新企业	8d4e31dd-d016-0e21-258b-accab0a7e621	OJ.ZcK0VYsfaycjXw	300	300
+c'f	navigational	http://cf.qq.com/	穿越火线	穿越火线.png	"穿越火线(简称cf)是一款腾讯代理的fps类游戏,穿越火线官网提供游戏视频及游戏攻略"	b62585aa-10b4-63c6-a629-8112c29123f0	OJ.ZBQEQTcC5gIiNA	228	228
+visual studio	navigational	https://www.visualstudio.com/	visual studio	visual studio.jpg	美国微软公司的开发工具包系列产品。vs是一个基本完整的开发工具集，它包括了整个软件生命周期中所需要的大部分工具	1d1614f6-9140-9c79-fa60-5053938af528	OJ.l60nREsb9tN7sw	325	324
+梦幻	navigational	http://xyq.163.com/	梦幻西游	梦幻西游.jpg	《梦幻西游》是一款由中国网易公司自行开发并营运的网络游戏。	a18dea13-2b6b-a2e8-c740-acda1636205f	OJ.OIHfC8AXBU6DAg	184	184
+facebook	navigational	https://www.facebook.com/	facebook	facebook.png	facebook是美国的一个社交网络服务网站 ，于2004年2月4日上线。主要创始人为美国人马克·扎克伯格。	e8d7cebe-d562-37b3-44c0-4ba20c0b024f	OJ.LX7wh4air9pTSg	225	225
+minecraft	navigational	https://minecraft.net/	minecraft	minecraft.jpg	由mojang ab和4j studios开发的高自由度的沙盒游戏，游戏最早于2009年5月13日上线首个版本。	144d20ba-a6ae-d8d1-ffd4-86fc7746a35b	OJ.uIhqYqrSVVKq0g	174	177
+硕鼠	navigational	http://www.flvcd.com/	硕鼠	硕鼠.jpg	"最稳定的flv视频下载平台,提供flv在线视频下载服务,持续更新。"	171066f5-ce36-c7a4-7556-37bb71c442cd	OJ.0i2TYYF5Z1ghjQ	266	241
+d'w	navigational	http://www.duowan.com/	多玩游戏	多玩游戏.png	"最专业的游戏新闻中心,最具特色yy语音社区,最强大的游戏论坛"	97e46430-c084-79e5-072b-22ed111d7103	OJ.Eh7dEC5aFFsx0A	400	400
+gmail	navigational	https://www.google.com/intl/en/mail/help/about.html	gmail	gmail.jpg	gmail 是 google 的免费网络邮件服务。它随付内置的 google 搜索技术并提供15g以上的存储空间。	b99f2d6b-684b-3f81-5824-cf2cae2b6542	OJ.o0Ab8oREZhmREg	324	324
+jingdong	navigational	http://www.jd.com/	京东	京东.jpg	专业的综合网上购物商城，销售超数万品牌、4020万种商品，囊括家电、手机、电脑、服装、图书、母婴、个护、食品、旅游等13大品类	7ac8ffcd-438a-b850-5430-a651fad164c9	OJ.Tv5rtgy9ku9wHQ	288	288
+顺丰	navigational	http://www.sf-express.com/cn/sc/	顺丰速运	顺丰速运.jpg	顺丰速运于1993年3月26日在广东顺德成立，是一家主要经营国际、国内快递业务的港资快递企业。	ab03f8a3-da13-83f1-49f6-f2c227cbc130	OJ.m6ec0mMt0aEaHA	506	506
+sogou	navigational	https://www.sogou.com/	搜狗搜索引擎	搜狗搜索.jpg	搜狗是搜狐公司的旗下子公司，于2004年8月3日推出，目的是增强搜狐网的搜索技能，主要经营搜狐公司的搜索业务	9cee8c9e-7dea-5de7-51db-4937f4ad1800	OJ.5iM34OHGNH4aVQ	394	394
+工商银行	navigational	http://www.icbc.com.cn/icbc/	中国工商银行	中国工商银行.png	工商银行金融服务全面介绍，投资理财信息丰富全面，在线交易方便快捷，满足客户专业化、多元化、人性化的金融服务需求，打造集业务、信息、交易、购物	f4c91749-5225-6010-fe94-53b5eefc0667	OJ.elbOOqk5ZCkUjg	400	400
+中信	navigational	http://bank.ecitic.com/	中信银行	中信银行.jpg	中信银行原称中信实业银行，创立于1987年，2005年底改为现名。中信银行是中国的全国性商业银行之一，总部位于北京，主要股东是中国中信股份有限公司。	3717d317-5dc2-4f9b-0959-4bf5164b8452	OJ.H7UEh60UJejbDw	380	380
+建设银行	navigational	http://www.ccb.com/cn/home/indexv3.html	中国建设银行	中国建设银行.jpg	成立于1954年(甲午年)10月1日，是股份制商业银行， 是国有五大商业银行之一。	07053209-a53a-bb60-7367-99ce02263105	OJ.0lkdXNyALknAXQ	190	190
+快盘	navigational	http://www.kuaipan.cn/	快盘	快盘.png	"快盘是金山软件推出的免费网盘。超大免费空间,上传下载速度快,传输文件不再需要u盘和数据线,手机、电脑随时随地查看文件,是一款免费、安全的同步网盘。"	6ecdb7cf-e9f7-68cf-effa-1fd843d9e326	OJ.ecuuzI762TFsbg	256	256
+sougo	navigational	https://www.sogou.com/	搜狗搜索引擎	搜狗搜索.jpg	搜狗是搜狐公司的旗下子公司，于2004年8月3日推出，目的是增强搜狐网的搜索技能，主要经营搜狐公司的搜索业务	c21b8628-d4e0-c23a-3638-acef13f6e0ba	OJ.5iM34OHGNH4aVQ	394	394
+unity	navigational	http://unity3d.com/	unity	unity.jpg	unity是由unity technologies开发的一个让玩家轻松创建诸如三维视频游戏、建筑可视化、实时三维动画等类型互动内容的多平台的综合型游戏开发工具	4c44ae92-4ad6-87e2-7e23-10fcd9c15f8a	OJ.RnqgT8J6PV04pw	308	309
+贴吧	navigational	http://tieba.baidu.com/	百度贴吧	百度贴吧.jpg	百度贴吧是以兴趣主题聚合志同道合者的互动平台，同好网友聚集在这里交流话题、展示自我、结交朋友。	d6c0cef2-80c5-fbd8-c603-69aa088ce7e5	OJ.n9A9F5StOEBr2g	197	197
+sou'g	navigational	https://www.sogou.com/	搜狗搜索引擎	搜狗搜索.jpg	搜狗是搜狐公司的旗下子公司，于2004年8月3日推出，目的是增强搜狐网的搜索技能，主要经营搜狐公司的搜索业务	bcaed2f4-654a-14f3-6eee-8130829ecc87	OJ.5iM34OHGNH4aVQ	394	394
+招	navigational	http://www.cmbchina.com/	招商银行	招商银行.jpg	招商银行成立于1987年(丁卯年)4月8日，是中国第一家完全由企业法人持股的股份制商业银行，总行设在深圳。	fd9a2781-a495-09d7-873c-58d984092adf	OJ.7pE0T388pGsDgw	202	170
+2k	navigational	https://www.2k.com/	2k games	2k.jpg	2k games一直是以策略和复合类型游戏为主的游戏制作公司，从大名鼎鼎的文明系列到最近掀起狂潮的生化奇兵，充分的让玩家们感受到了他们充沛的活力和无尽的创造力。	329b118e-db17-68a0-81bb-70f10b5dc310	OJ.fI0K3JUemqUwXw	280	292
+sou'hu	navigational	http://www.sohu.com/	搜狐网	搜狐网.jpg	"搜狐网为用户提供24小时不间断的最新资讯,及搜索、邮件等网络服务。"	b5ec4553-6711-eb38-eb1e-d77c00ca3843	OJ.73aIHFQ6VVAUgw	292	292
+智联	navigational	http://www.zhaopin.com/	智联招聘	智联招聘.jpg	"智联招聘是全国性权威人才网站,为求职者提供最新最全的招聘信息,为企业提供网络招聘,校园招聘,猎头,培训,测评和人事外包等一站式专业人力资源服务.好工作上智联招聘."	4d9ea176-366a-1ed2-7f83-d58818569ad1	OJ.69QGCBY10m10Cw	200	200
+7k	navigational	http://www.7k7k.com/	7k7k小游戏	7k7k小游戏.png	7k7k是国内最专业的休闲游戏网站之一，创建于2003年，致力于搜集互联网广泛的小游戏资源，开发和运营网页游戏，代表作品有飘渺仙缘、冒险王等，是国内老牌小游戏网站。	242a4a9a-5409-2ec9-6249-44c43520697b	OJ.ecPqtBwheUAjDg	208	208
+7z	navigational	http://www.7-zip.org/	7zip	7-zip.jpg	7-zip是一款免费开源的解压缩软件，7-zip能提供比使用 pkzip 及 winzip 高2~10%的压缩比率。	00ab463a-8e0d-ab21-b41d-2fa1ac934ec0	OJ.CE25D5PLLHOrag	168	168
+endnote	navigational	http://endnote.com/	endnote	endnote.png	endnote 是sci（thomson scientific 公司）的官方软件，支持国际期刊的参考文献格式有3776 种，写作模板几百种，涵盖各个领域的杂志。	c09267d6-4145-c4dc-5a59-729b33407263	OJ.8TsCDDFZMBKzNQ	397	398
+oppo	navigational	http://www.oppo.com/sg/index.html	oppo	oppo.png	oppo是广东欧珀移动通信有限公司旗下品牌，成立于2004年，是一家全球性的智能终端和移动互联网公司，致力于为客户提供最先进和最精致的智能手机、高端影音设备和移动互联网产品与服务	3f6a3403-8789-c403-2814-e8164826e562	OJ.S1o7S1sbkZxz9w	663	572
+知乎	navigational	http://www.zhihu.com/	知乎	知乎.jpg	"一个真实的网络问答社区,帮助你寻找答案,分享知识。"	f5dcc11b-b4d8-7576-a3bd-1b8c37cd17a4	OJ.YDL2tRx1dCms0g	416	416
+腾	navigational	http://www.qq.com/	腾讯	腾讯网.jpg	"腾讯网(www.qq.com)是中国浏览量最大的中文门户网站,是腾讯公司推出的集新闻信息、互动社区、娱乐产品和基础服务为一体的大型综合门户网站"	c2d8677b-775b-8bc9-eded-2b8f13a6f270	OJ.V06V6ksdZyayhQ	360	360
+雷蛇	navigational	http://cn.razerzone.com/	雷蛇（razer）	雷蛇.jpg	"雷蛇（razer）是全球顶级游戏外设品牌之一，1998年由ceo min-liang tan和robert ""razerguy"" krakoff创立于美国加州圣地亚哥。"	9e2caa7c-e2c8-bdbb-5af5-68fc0351ef21	OJ.ELy70ewUzkHnyQ	160	160
+ati	navigational	http://support.amd.com/zh-cn/download/	ati驱动	ati驱动.jpg	ati(array technology industry)是世界著名的显示芯片生产商，和nvidia齐名。	3a17e780-d4e6-c138-432b-a6ad8187d4eb	OJ.I9w75UhyxIo8Aw	299	199
+j'd	navigational	http://www.jd.com/	京东	京东.jpg	专业的综合网上购物商城，销售超数万品牌、4020万种商品，囊括家电、手机、电脑、服装、图书、母婴、个护、食品、旅游等13大品类	97e80486-85a7-2d99-6cad-4a4b73db8b90	OJ.Tv5rtgy9ku9wHQ	288	288
+baidu.com	navigational	http://www.baidu.com/	百度	百度.jpg	全球最大的中文搜索引擎、致力于让网民更便捷地获取信息，找到所求。	da31f14f-7e07-52f1-8767-b1b3ff441d7b	OJ.ZTAyBIUBo2AHQg	360	360
+razer	navigational	http://cn.razerzone.com/	雷蛇（razer）	雷蛇.jpg	"雷蛇（razer）是全球顶级游戏外设品牌之一，1998年由ceo min-liang tan和robert ""razerguy"" krakoff创立于美国加州圣地亚哥。"	30b52ba4-cf52-4e01-ca2e-69af218f4481	OJ.ELy70ewUzkHnyQ	160	160
+synaptics	navigational	http://www.synaptics.com/	synaptics	synaptics.jpg	一家全球领先的移动计算、通信和娱乐设备人机界面交互开发解决方案设计制造公司。	3eb505d9-7ac9-2e03-e81b-aa7df2b7527a	OJ.1L6GDqg6pFcKwg	225	225
+jingd	navigational	http://www.jd.com/	京东	京东.jpg	专业的综合网上购物商城，销售超数万品牌、4020万种商品，囊括家电、手机、电脑、服装、图书、母婴、个护、食品、旅游等13大品类	74c47d7f-2411-2422-adab-513cfe241f3a	OJ.Tv5rtgy9ku9wHQ	288	288
+zhaoshang	navigational	http://www.cmbchina.com/	招商银行	招商银行.jpg	招商银行成立于1987年(丁卯年)4月8日，是中国第一家完全由企业法人持股的股份制商业银行，总行设在深圳。	1ea974c1-bfc5-09d6-e2e1-e495cb54a766	OJ.7pE0T388pGsDgw	202	170
+华硕	navigational	http://www.asus.com.cn/	华硕	华硕.png	华硕是目前全球第一大主板生产商、全球第三大显卡生产商，同时也是全球领先的3c解决方案提供商之一，致力于为个人和企业用户提供最具创新价值的产品及应用方案。	b6fdaa3b-0a8d-61f2-f6a2-ff3c564e4d03	OJ.KSH9Ty0HbpjQmw	225	225
+京	navigational	http://www.jd.com/	京东	京东.jpg	专业的综合网上购物商城，销售超数万品牌、4020万种商品，囊括家电、手机、电脑、服装、图书、母婴、个护、食品、旅游等13大品类	62583ad4-ba51-b719-3848-86267920a6db	OJ.Tv5rtgy9ku9wHQ	288	288
+农	navigational	http://www.abchina.com/cn/	中国农业银行	中国农业银行.jpg	中国农业银行，作为一家面向“三农”、城乡联动、融入国际、综合经营的大型商业银行，秉承“大行德广 伴您成长”的服务理念，坚持审慎稳健经营、可持续发展	937c47d6-dc87-6dc7-c544-307802cf788f	OJ.EcVwE0maSN7cwg	1256	1210
+139	navigational	http://mail.10086.cn/	中国移动139邮箱	139邮箱.jpg	139邮箱是中国移动提供的电子邮件服务。	13c8041b-fecf-63cc-0d65-1419e27d4667	OJ.rf0PzUoVujzGJg	204	204
+7zip	navigational	http://www.7-zip.org/	7zip	7-zip.jpg	7-zip是一款免费开源的解压缩软件，7-zip能提供比使用 pkzip 及 winzip 高2~10%的压缩比率。	9ba63998-1b0d-eec7-97ff-669b67e25f19	OJ.CE25D5PLLHOrag	168	168
+sina	navigational	http://www.sina.com.cn/	新浪	新浪网.jpg	新浪网为全球用户24小时提供全面及时的中文资讯	ec2f36d8-d17c-89e8-f062-01f6bf1071c8	OJ.Yxhx546XkokgZQ	472	472
+tomcat	navigational	http://tomcat.apache.org/	apache tomcat	apache tomcat.jpg	tomcat是由apache软件基金会下属的jakarta项目开发的一个servlet容器，按照sun microsystems提供的技术规范，实现了对servlet和javaserver page（jsp）的支持，并提供了作为web服务器的一些特有功能。	41b9b1cd-d10d-b309-a598-e4c12e2f9ffb	OJ.7SZzUpM8VB0OCA	277	290
+中国银行	navigational	http://www.boc.cn/	中国银行	中国银行.png	"中国银行是中国国际化和多元化程度最高的银行,在中国内地、香港、澳门、台湾及37个国家为客户提供全面的金融服务。"	42a629fa-cea3-1dd4-c4c3-5abe1e07ead6	OJ.E3PxAG0EkwnT1g	224	225
+农行	navigational	http://www.abchina.com/cn/	中国农业银行	中国农业银行.jpg	中国农业银行，作为一家面向“三农”、城乡联动、融入国际、综合经营的大型商业银行，秉承“大行德广 伴您成长”的服务理念，坚持审慎稳健经营、可持续发展	03eabb62-74cc-dac5-4809-b98eddde1291	OJ.EcVwE0maSN7cwg	1256	1210
+box	navigational	https://www.box.com/	box	box.jpg	"简介""box.net是一个具有web2.0概念的网络硬盘服务网站。"	2ffdb646-409c-bc32-93b4-7316ed07f5a9	OJ.0ecnfMs1scCMvA	165	164
+teng'x	navigational	http://www.qq.com/	腾讯	腾讯网.jpg	"腾讯网(www.qq.com)是中国浏览量最大的中文门户网站,是腾讯公司推出的集新闻信息、互动社区、娱乐产品和基础服务为一体的大型综合门户网站"	4a13d50e-d5cc-8115-73c9-22888e34f396	OJ.V06V6ksdZyayhQ	360	360
+大脚	navigational	http://bigfoot.178.com/wow/	魔兽世界大脚（bigfoot）	魔兽世界大脚.jpg	大脚（bigfoot）是一款向魔兽世界玩家提供便利的插件，bigfoot完全使用暴雪官方提供的用户接口第三方开发。	e44263fd-cc5b-a0c9-13aa-0c6dd2e0e482	OJ.2SR9XYTG6x4QiQ	142	142
+工行	navigational	http://www.icbc.com.cn/icbc/	中国工商银行	中国工商银行.png	工商银行金融服务全面介绍，投资理财信息丰富全面，在线交易方便快捷，满足客户专业化、多元化、人性化的金融服务需求，打造集业务、信息、交易、购物	87709578-ced6-c31d-c8b8-ae6df2999a3b	OJ.elbOOqk5ZCkUjg	400	400
+平安	navigational	http://www.pingan.com/?wt.mc_id=sem-bdbz-pc0040&wt.srch=1	中国平安	中国平安.jpg	中国平安是一家以保险为核心的，融证券、信托、银行、资产管理、企业年金等多元金融业务为一体的，紧密、高效、多元的综合金融服务集团。	426ab941-74b1-40e7-ca65-975dd4fffe93	OJ.2WowdorZqb7y2A	400	394
+惠普	navigational	http://www8.hp.com/cn/zh/home.html	惠普	惠普.png	pc电脑十大品牌，笔记本电脑十大品牌，打印机十大品牌，美国资讯科技公司，全球500强企业，世界最大的it公司之一，世界上最大的科技企业之一，世界领先的计算机及办公设备制造商	da70366c-6357-4c29-6166-c6e2f14a217e	OJ.6ovaVWFNzBgHzg	225	225
+联想	navigational	http://www.lenovo.com.cn/	联想	联想.png	联想集团有限公司是一家总部设在中国北京市和美国北卡罗莱纳州罗利市的跨国科技公司，主要研发、生产和销售笔记本电脑、一体机、台式电脑、服务器、手机、平板电脑、打印机、投影机，以及其他移动互联、数码、电脑周边等类产品。	3d04abc0-4ec7-d2e5-91f9-c815d965d7c9	OJ.tURd9eNFk0L4NA	400	400
+豌	navigational	 https://www.wandoujia.com/	豌豆荚	豌豆荚.jpg	豌豆荚是中国 android用户中人气、活跃度很高的“移动内容搜索”，也是中国移动互联网领域的创新企业	be54624d-6d71-5da0-d0ad-70cc06f50873	OJ.ZcK0VYsfaycjXw	300	300
+迈克菲	navigational	http://www.mcafee.com/cn/index.html	迈克菲	迈克菲.jpg	迈克菲现在是 intel security 的一部分。intel security 所提供的具有前瞻性且经实践验证的安全解决方案和服务	2c965dce-0f27-1e31-3293-431abfbe6305	OJ.9YfikXGlf3gYTQ	522	522
+blizzard entertainment	navigational	http://sea.blizzard.com/en-sg/	blizzard entertainment	blizzard entertainment.png	blizzard entertainment是一家全球知名的电视和电脑游戏软件公司，总部设在加利福尼亚，其作品魔兽争霸、星际争霸、暗黑破坏神风靡全球，深受玩家好评，并被多个电子竞技赛事列为比赛项目。	8537f597-75de-8341-d729-d5acdb9455b4	OJ.2U3UC20HlyVgdQ	518	518
+cisco	navigational	http://www.cisco.com/c/zh_cn/index.html	思科cisco	cisco.jpg	思科cisco，交换机十大品牌，路由器十大品牌，美国上市公司，世界财富500强企业，全球领先的互联网解决方案供应商，《财富》全球最受尊敬企业之一，美国最成功的公司之一	7cf7eac2-70a5-7501-b372-d29ab46aa0d8	OJ.1sPaYJvGN5di6g	250	275
+dell	navigational	http://www.dell.com.cn/	dell 戴尔	dell 戴尔.png	戴尔是来自美国的全球知名电脑品牌，由迈克尔•戴尔于1984年创立。戴尔以生产、设计、销售家用以及办公室电脑而闻名，不过它同时也涉足高端电脑市场，生产与销售服务器、数据储存设备或网络设备等。	0a6777d0-b676-fe5c-f579-b1a494727192	OJ.JW05Z8XK5dj9SQ	2000	1994
+lu'da	navigational	http://www.ludashi.com/	鲁大师	鲁大师.jpg	"国内最大的免费系统工具软件,免费提供硬件真伪辨别、电脑(手机)稳定保障、系统性能提升。"	2f494706-8f0e-23cf-e7c7-4df5b3447868	OJ.Wu8FBJizhhMs0Q	294	294
+xinlang	navigational	http://www.sina.com.cn/	新浪	新浪网.jpg	新浪网为全球用户24小时提供全面及时的中文资讯	27a5fb63-22b3-a000-3248-2e7fb2afbaf5	OJ.Yxhx546XkokgZQ	472	472
+英特尔	navigational	http://www.intel.cn/content/www/cn/zh/homepage.html	英特尔 intel	英特尔 intel.jpg	英特尔公司，英特尔intel，世界两大cpu处理器品牌之一，世界著名品牌，创于1968年美国，全球it产业最具影响力品牌之一，全球最大的微处理器制造商，全球信息产业的领导公司之一	9405ed32-cb6d-d613-64d8-909c1814a34b	OJ.YIamPpGqHGtW0A	300	300
+adobe acrobat	navigational	http://www.adobe.com/	adobe acrobat	adobe acrobat.jpg	adobe acrobat 是由adobe公司开发的一款pdf（(portable document format，便携式文档格式）编辑软件，借助它，您可以以pdf格式制作和保存你的文档 	214c4bbb-ed77-5cd5-cb25-b5f87a32de43	OJ.58sAakvK3Fcv0Q	300	300
+eclip	navigational	http://www.eclipse.org/	eclipse	eclipse.png	eclipse papyrus is an open source model-based engineering tool. get a crash course on everything papyrus	91bfe6ed-eeab-8f09-9e47-4aae15ac1641	OJ.KWqBX9nrplHNNw	516	517
+fifa	navigational	http://www.fifa.com/	fifa	fifa.jpg	"the official site of the international governing body of football withnews, national associations, competitions, results, fixtures,development, organisation, world "	61b9a9fb-d42c-79fb-6213-1933f638c801	OJ.N1CVHSeP9jAPfA	220	220
+sony	navigational	http://www.sony.com.cn/	sony 索尼	sony 索尼.jpg	索尼（英语：sony corporation），是日本的一家全球知名的大型综合性跨国企业集团。索尼是世界视听、电子游戏、通讯产品和信息技术等领域的先导者，是世界最早便携式数码产品的开创者，是世界最大的电子产品制造商之一、世界电子游戏业三大巨头之一、美国好莱坞六大电影公司之一。	21a1d2fe-2d25-78a5-b595-2cad7e751800	OJ.xzuCRYd1lsvvxA	496	497
+豆瓣	navigational	https://www.douban.com/	豆瓣	豆瓣.jpg	豆瓣（douban）是一个社区网站。网站由杨勃（网名“阿北”）  创立于2005年3月6日。该网站以书影音起家，提供关于书籍、电影、音乐等作品的信息，无论描述还是评论都由用户提供（user-generated content，ugc），是web 2.0网站中具有特色的一个网站	e72a93d1-70fc-7480-81b8-4752cf89040b	OJ.UzXXZxgEqhS8qQ	300	300
+123	navigational	https://www.hao123.com/	hao123	hao123.png	hao123是最具权威的中文上网导航，汇集最优秀的网站及资源。	f56d495a-45fb-9445-d36f-5d8033e188f5	OJ.w7tpXi0YSU2fpg	256	256
+360wi	navigational	http://wifi.360.cn/	360wifi	360wifi.png	"360集团旗下wifi产品服务平台,延续360的安全基因,为用户提供手机免费上网的一站式服务"	d1229341-8033-9a13-f45c-b1d197ea3426	OJ.MiAdbdjcGVrdMw	162	163
+5173	navigational	http://www.5173.com/	5173游戏账号交易平台	5173.png	"5173是最权威的网络游戏帐号交易平台,各种网络游戏等级的游戏帐号在5173游戏帐号交易平台都有出售,安全有保障的帐号交易"	303c6e62-b67b-dc30-f78b-b8b228aec564	OJ.bT8au1IMCOBHSw	211	210
+ddw	navigational	http://www.ddw.org/	ddw	ddw.png	organization of practitioners focused on digestive diseases.	1e3c837f-0a64-ad55-1b36-0b82d14e7da3	OJ.AMjWW9Q4Sndn3w	228	227
+qq宠物	navigational	http://pet.qq.com/	qq宠物	qq宠物.jpg	全球最大的虚拟宠物养成社区 	9700d419-6e09-b574-e5ae-03e785b2a7ad	OJ.vbo9VmF0GTwrCQ	309	309
+tao'b	navigational	https://www.taobao.com/	淘宝网	淘宝网.jpg	淘宝网是亚太地区较大的网络零售、商圈，由阿里巴巴集团在2003年5月创立	ab30cdaa-8c29-b98e-c996-b5baae034479	OJ.VYpLyzjOGHaB4g	512	512
+唯品会	navigational	http://www.vip.com/?utm_source=bingzone	唯品会	唯品会.jpg	唯品会，一家专门做特卖的网站，每天 100 个品牌授权特卖、确保正品、确保特价、限量抢购。 区别于其他网购品牌，唯品会定位于“一家专门做特卖的网站”，每天上新品，以低至1折的深度折扣及充满乐趣的限时抢购模式，为消费者提供一站式优质购物体验	75ed9fec-33dc-5150-6043-5c2c5abe017e	OJ.y900P07L5MzmEA	272	273
+艺龙	navigational	http://www.elong.com/	艺龙	艺龙.jpg	艺龙旅行网 (nasdaq: long)是中国领先的在线旅行服务提供商之一，通过网站、24小时预订热线以及手机艺龙网三大平台，为消费者提供酒店、机票和度假等全方位的旅行产品预订服务	7161038d-ddd2-ea72-f21d-b89a2ebbaa13	OJ.jrVRY7K7xFB2Dg	222	222
+100	navigational	http://www.100.com/	100教育	100教育.png	100教育专注中学一对一网络家教，为广大初高中学生提供优质1对1辅导的教学服务，包括升学指南，在线辅导，学科提分，考点答疑等等	5c0074a9-72a2-1ff9-ca26-0d7ae730f677	OJ.dpdHIl4JQXNnLQ	138	137
+58同城	navigational	http://www.58.com/	58同城	58同城.jpg	58同城—美国纽交所上市公司，国内专业的“本地、免费、真实、高效”生活服务平台！	e64ccb6d-c7be-a1a3-8c91-bb29ded294aa	OJ.Oorw5rOhHS3J4w	324	323
+brother	navigational	http://www.brother.cn/	兄弟商业有限公司	兄弟商业有限公司.png	"兄弟,brother,传真机,打印机,一体机,标签打印机,普贴趣,p-touch,兄弟耗材,激光耗材,耗材,兄弟耗材积分,兄弟耗材购买,积分,耗材积分,耗材购买"	9cb229f2-7c5c-8e34-4ace-8bbc190f3242	OJ.dj873QEqUws9HQ	348	348
+mk	navigational	http://www.michaelkors.com/	michael kors	michael kors.png	michael kors是一个时装设计师本人创建的同名奢侈品品牌。michael kors迈克高仕公司于1981年正式成立，总部设在纽约市。	48b79676-d4bc-083f-1e95-7bff67188b35	OJ.c70U6U8l3sIsjg	195	195
+zhaohang	navigational	http://www.cmbchina.com/	招商银行	招商银行.jpg	招商银行成立于1987年(丁卯年)4月8日，是中国第一家完全由企业法人持股的股份制商业银行，总行设在深圳。	2899ac2b-eeec-9213-6c3d-b7fc1106549f	OJ.7pE0T388pGsDgw	202	170
+天涯	navigational	http://www.tianya.cn/	天涯论坛	天涯论坛.jpg	天涯社区提供论坛、部落、博客、问答、文学、相册、个人空间等服务。拥有天涯杂谈、娱乐八卦、情感天地等人气栏目，以及关天茶舍、煮酒论史等高端人文论坛	1d7c39c0-c08a-ca35-1d39-30e102474fb5	OJ.Yv86jOxYGm4Q9Q	240	240
+完美世界	navigational	http://www.wanmei.com/	完美世界	完美世界.jpg	《完美世界  》为起点文学网白金写手辰东辰东的第五部东方玄幻小说，也是辰东结婚后的第一部作品。为《遮天》前传。 一粒尘可填海，一根草斩尽日月星辰，弹指间天翻地覆。	6a90f060-3bd5-ed82-49e8-36e6ca4c7641	OJ.NuDeX03w140joA	200	200
+lpl	navigational	http://lol.tga.plu.cn/	英雄联盟职业联赛	英雄联盟职业联赛.jpg	英雄联盟职业联赛（lpl）由春季赛和夏季赛组成，每季分为常规赛与季后赛两部分。常规赛积分排名前八的战队将晋级季后赛，为赛季总冠军以及高额的赛事奖金继续展开争夺。另外，各队伍还将根据排名获得世界总决赛中国区选拔赛的资格积分。每赛季积分前3的战队将代表中国lpl赛区参加全球s系列冠军总决赛	b564fda7-7974-fa1d-a455-d54e518922a0	OJ.Rzr0YrcEgtjXqg	300	250
+qq空间	navigational	http://qzone.qq.com/	qq空间	qq空间.jpg	qq空间(qzone)是中国最大的社交网络，是qq用户的网上家园，是腾讯集团的核心平台之一。您可以玩游戏、玩装扮、上传照片、写说说、写日志	f62cce52-0521-a4fd-ba3a-5424d1982ebe	OJ.loffE72uHM0O6A	560	560
+taoba	navigational	https://www.taobao.com/	淘宝网	淘宝网.jpg	淘宝网是亚太地区较大的网络零售、商圈，由阿里巴巴集团在2003年5月创立	ac44d28c-8265-7d7d-4c1f-1cc88182f5c4	OJ.VYpLyzjOGHaB4g	512	512
+建	navigational	http://www.ccb.com/cn/home/indexv3.html	中国建设银行	中国建设银行.jpg	中国建设银行是一家股份制商业银行，为客户提供商业银行产品与服务。主要经营领域包括公司银行业务，个人银行业务和资金业务等。	87a8a1b0-32c6-515c-220e-667150b46101	OJ.0lkdXNyALknAXQ	190	190
+astrill	navigational	https://www.astrill.com/	astrill vpn	astrill vpn.jpg	 our company is the leader in vpn market providing personal vpn and business vpn services since 2009. 	d3d24b6c-7660-7533-7121-a5c70d7fd565	OJ.ySxtAbJOmwzoUA	370	370
+vbn	navigational	http://www.vbn.hk/	vbn	vbn.png	"国内备受关注的知名设计公司之一,获得多个国际性奖项,横跨品牌策划,vi形象设计,空间设计,推广策划等多个领域.全方位与您创造品牌新价值"	b387b161-910d-b9db-47be-10675d27bc40	OJ.LenNBpdHWI7Ccg	102	102
+zhao'shang	navigational	http://www.cmbchina.com/	招商银行	招商银行.jpg	招商银行成立于1987年(丁卯年)4月8日，是中国第一家完全由企业法人持股的股份制商业银行，总行设在深圳。	b7fd5a16-3346-854b-d780-91ab7619e478	OJ.7pE0T388pGsDgw	202	170
+交通	navigational	http://www.bankcomm.com/bankcommsite/default.shtml	交通银行	交通银行.jpg	交通银行官方网站，交通银行是一家股份制商业银行。设有个人业务、、公司业务、小企业业务、国际业务、电子银行、信用卡、子公司等栏目。	7bf407d8-dfe8-d5eb-71af-8a8a809ee326	OJ.ebCNS5gElAUrSA	400	399
+新浪微博	navigational	http://www.weibo.com/	新浪微博	微博.jpg	新浪微博是全中国最主流，最具人气，当前最火爆的微博产品。用一句话随意记录生活，用手机随时随地发微博。	4b345731-f740-0f4a-c5a3-b1c074fc4cce	OJ.AlUlEUcSRRyWKA	300	300
+炉石传说	navigational	http://hs.blizzard.cn/landing	炉石传说	炉石传说.jpg	暴雪首款免费卡牌游戏大作《炉石传说》最新冒险模式——探险者协会，现已正式上线	de20482c-26fc-a6ba-5fab-4adf0f0fd3a6	OJ.HW5ozsJZenduPg	222	222
+问问	navigational	http://wenwen.sogou.com/	搜狗问问	搜狗问问.jpg	搜狗旗下的互动问答社区，用户可以提出问题、解决问题、或者搜索其他用户沉淀的精彩内容；在这里可以感受到最热烈的互助气氛，浏览到最精彩的问答内容。	37651af8-f24b-11ab-d2d1-ecb68a1cc027	OJ.EUSJVZ0YTx0Euw	200	200
+233	navigational	http://www.233.com/	233网校	233网校.jpg	试大品牌正式更名为233网校提供公务员，外语类，财会类，建筑类，职业资格，学历考试，医药类，外贸类，计算机类等考试的报名时间、考试时间、考试大纲 	3fdaf85d-e63f-597c-5a1a-db09e2856d5c	OJ.PViHo1qCbl8PqQ	105	100
+autodesk	navigational	http://www.autodesk.com.cn/	autodesk	autodesk.jpg	autodesk 是全球最大的 2d、3d 设计软件公司。autodesk 官网为制造业、建筑工程业、基础设施业及传媒娱乐业提供 autocad	bfb2d234-6af5-f1df-9c63-2f08b623cb75	OJ.uWHuIfKFo68Z5A	300	300
+avast	navigational	https://www.avast.com/zh-cn/index	avast	avast.png	使用市场上最好的免费杀毒软件为您的设备保驾护航。下载 avast 免费杀毒软件和反间谍软件，以对您的 pc、 mac 和 android 提供保护	ccc592f1-d0e8-a938-97a7-93077346ee65	OJ.JR0pex000hpIwA	200	200
+hotmail	navigational	http://www.hotmail.com/	hotmail	hotmail.png	hotmail是互联网免费电子邮件电子邮件提供商之一，世界上的任何人可以通过网页浏览器对其进行读取，收发电子邮件。	68904457-9803-4da4-261b-b6800e121a6d	OJ.W5ppawwI9Nxq0g	1024	1024
+qq安全	navigational	https://aq.qq.com/cn2/index	qq安全中心	qq安全中心.jpg	qq安全中心为您的腾讯在线生活提供安全护航。在这里，您可以管理您的帐号密码、密保，为q币、游戏装备、qq开启保护，还可以获得最新的安全资讯。	cbdb3f59-3436-b22a-f7ed-ba3addd70b86	OJ.cToPqcgXUlzeQg	300	300
+you'k	navigational	http://www.youku.com/	优酷	优酷.jpg	优酷是中国领先的视频分享网站	8564c7db-40d4-dc10-fe9b-b06910d90dc2	OJ.XC0sZn6HCncWxQ	331	331
+zhilian	navigational	http://www.zhaopin.com/	智联招聘	智联招聘.jpg	"智联招聘是全国性权威人才网站,为求职者提供最新最全的招聘信息,为企业提供网络招聘,校园招聘,猎头,培训,测评和人事外包等一站式专业人力资源服务.好工作上智联招聘."	9fdec2ed-4b8e-a04f-0cae-9bef671b1fc4	OJ.69QGCBY10m10Cw	200	200
+华为	navigational	http://www.huawei.com/cn/	华为	华为.jpg	华为是全球领先的信息与通信解决方案供应商。我们围绕客户的需求持续创新，与合作伙伴开放合作，在电信网络、终端和云计算等领域构筑了端到端的解决方案优势。	551c920e-f9d8-49f3-4ea1-455f8296fc5d	OJ.dhYc0dwIX0WY6Q	1500	1500
+aza	navigational	https://www.aza.org/	association of zoos and aquariums	association of zoos and aquariums.png	aza safe a new future for endangered species. 	9757ee11-fbc0-e1d6-e19e-ce103bc505cb	OJ.uUBsj2B70PEeeA	209	208
+e路	navigational	http://www.16yes.com/	e路手机卖场	e路手机卖场.png	e路手机卖场成立于2002年，是成都地区第一家开辟网络手机卖场的商家，旗下16yes.com是专业的手机报价网站	ed3edfd1-d82f-c051-f404-5aa2aac720c3	OJ.Baw2pNRRmFCERQ	270	269
+office 365	navigational	https://login.microsoftonline.com/	office 365	office 365.png	office 365是微软带给所有企业最佳生产力和高效协同的高端云服务，是微软公司基于云平台的应用套件，例如exchange邮件服务器、sharepoint门户、lync即时通讯工具及yammer	08a28a59-7aba-dd1a-f750-b1e1e9b8a61d	OJ.xP0FyXNT58JLJg	300	300
+www.hao123.com	navigational	https://www.hao123.com/	hao123	hao123.png	hao123是最具权威的中文上网导航，汇集最优秀的网站及资源。	fd30ca39-9c23-af2f-c037-3d381d97f27b	OJ.w7tpXi0YSU2fpg	256	256
+盒子	navigational	http://lol.duowan.com/hezi/	多玩lol盒子	lol盒子.png	多玩英雄联盟盒子（lol盒子丨lol助手丨多玩盒子）是由多玩出品的lol英雄联盟游戏辅助工具软件	a0c88bff-d6ee-b087-c7e9-c0aeff538476	OJ.xZek30918lBMew	167	166
+美团	navigational	https://www.meituan.com/	美团网	美团网.jpg	美团网是中国大陆地区第一个 精品团购形式的类groupon 电子商务网站	5eeee0fb-814f-b1ae-631e-22a3f358ec0f	OJ.hitve0RUioN46w	188	183
+10086	navigational	http://www.10086.cn/index_5074.htm	中国移动官网	中国移动官网.png	中国移动通信集团公司，是中国规模最大的移动通信运营商，主要经营移动话音、数据、ip电话和多媒体业务	b74699c9-33f4-c019-6fac-efc827b4a802	OJ.XiEfU0atW7eKYQ	191	192
+acfun	navigational	http://www.acfun.tv/	acfun弹幕视频网	acfun弹幕视频网.png	acfun弹幕视频网，简称“a站”，成立于2007年6月，取意于anime comic fun，是中国大陆第一家弹幕视频网站，中国二次元文化的开创者、引领者。	c9bc3150-3da4-fe62-f31b-d11ed46ea5a0	OJ.nLgaapuOedWR0A	233	233
+ai'qi'y	navigational	http://www.iqiyi.com/	爱奇艺	爱奇艺.jpg	国内首家专注于提供免费、高清网络视频服务的大型视频网站	64aeb754-6e2a-0f82-76c3-519f44b18b1b	OJ.NUhtxJ0TOQei9Q	200	200
+ku'g	navigational	http://www.kugou.com/	酷狗音乐	酷狗音乐.png	"酷狗音乐旗下最新最全的在线正版音乐网站,本站为您免费提供最全的在线音乐试听下载,以及全球海量电台和mv播放服务、最新音乐播放器下载。"	c58d33a5-1c3f-0843-696c-e5d40c253a63	OJ.ve9ZynZ6L403Hw	1024	1024
+wacom	navigational	http://www.wacom.com.cn/	和冠 wacom	和冠 wacom.jpg	手写板十大品牌，始创于1983年日本，全球顶尖的用户界面产品生产商，全球数位板市场占有率领先品牌，世界领先的数位板系统、笔感应式数位屏系统和数字界面解决方案的提供商	891267fb-ff13-650f-445a-8ca672d9b916	OJ.Pf5Fp6RI1bW7Hw	150	150
+东方财富	navigational	http://www.eastmoney.com/	东方财富网	东方财富网.jpg	东方财富网，中国访问量最大影响力最大的互联网财经媒体，提供7*24小时财经资讯及全球金融市场报价，汇聚全方位的综合财经新闻和金融市场资讯	04a79d76-6f71-2c2d-6a8b-65cbf8615446	OJ.e4aXyoTTVHjHqw	268	267
+中通	navigational	http://www.zto.com/	中通快递	中通快递.jpg	中通快递股份有限公司创建于2002年5月8日，是一家集快递、物流、电商、印务于一体，国内物流快递企业。注册商标“中通”、“zto”。现任董事长为赖梅松。	0bb242e9-68bb-c5e8-bf25-fb76adb48113	OJ.mFwop6Tg6gDgmg	1024	1024
+亚马逊	navigational	http://www.amazon.cn/	亚马逊	亚马逊.jpg	亚马逊中国（z.cn）坚持“以客户为中心”的理念，秉承“天天低价，正品行货”信念，销售图书、电脑、数码家电、母婴百货、服饰箱包等上千万种产品。	8ebaea68-3f7e-078f-d02d-211f1874b0ba	OJ.T6GkBSEhMJNulQ	300	276
+人人	navigational	http://www.renren.com/	人人	人人网.png	"校内是一个真实的社交网络,联络你和你周围的朋友。"	ec5b34ea-7e09-351a-294d-2e7b7a95540c	OJ.BeuctmoQgn7ujQ	512	512
+剑灵	navigational	http://bns.qq.com/	剑灵	剑灵.jpg	剑灵》官方网站。剑灵凭借完美的视觉表现力，电影版的剧情体验，深厚的东方文化底蕴，自由灵活的战斗体验，成为突破传统、引领潮流的最受期待网游	81fdb9e6-0f1d-74b1-7888-1a76e149c10b	OJ.oaAzR70rLWPNaw	353	354
+同步推	navigational	http://tui.tongbu.com/	同步推	同步推.jpg	同步推是一款全面支持苹果及安卓设备的游戏、软件、壁纸资源下载平台。海量资源超高速下载、流畅体验、无限游戏礼包，随时随地，想玩就玩。	0c7d7436-802b-5eea-e0bf-c19dfba68edc	OJ.YOL0Z3x1cGERCw	268	268
+当当	navigational	http://www.dangdang.com/	当当	当当.jpg	【当当】美国纽交所上市公司，知名综合性网购商城，提供货到付款和各类线上支付手段，涵盖图书、服装、童书、百货、电子书等品类，百万种商品，全场一折起！全国600个城市当日达，1200个区县次日达，无理由上门退换货！100%正品保证，敢做敢当当！	d484041e-27f4-d69e-0ea3-380d9c945ba0	OJ.YcVPjUqaLbS5Mw	300	271
+赶集	navigational	http://www.ganji.com/index.htm	赶集网	赶集网.jpg	"赶集网是更专业的分类信息网!提供免费发布信息,查阅信息服务.寻找最新最全的房屋出租、二手房、二手车、二手物品交易、求职招聘等生活信息,请到赶集网ganji.com"	8c95c72f-0727-f2db-4b89-fbbbe8b636d5	OJ.SR8SaVdEoScZFg	500	500
+263	navigational	http://www.263.net/	263云通信	263云通信.png	263网络通信是国内最早开始推广专业电子邮箱服务的电信级电子邮箱服务商。263企业邮箱具有全新的理念和突破性的功能。采用263网络通信自主开发的。	f6867193-888f-8c94-f45b-38c1ad32628c	OJ.GVbRumv908a2TQ	206	207
+abc	navigational	http://www.abchina.com/cn/	中国农业银行	中国农业银行.jpg	中国农业银行，作为一家面向“三农”、城乡联动、融入国际、综合经营的大型商业银行，秉承“大行德广 伴您成长”的服务理念，坚持审慎稳健经营、可持续发展	4e2fb266-f0fd-9a82-fe04-4a302df6b08e	OJ.EcVwE0maSN7cwg	1256	1210
+amazon	navigational	http://www.amazon.cn/	亚马逊	亚马逊.jpg	亚马逊中国（z.cn）坚持“以客户为中心”的理念，秉承“天天低价，正品行货”信念，销售图书、电脑、数码家电、母婴百货、服饰箱包等上千万种产品。	d9184306-587e-c514-f6f4-987ab5aab4a1	OJ.T6GkBSEhMJNulQ	300	276
+htc	navigational	http://www.htc.com/cn/	htc	htc.jpg	htc是来自中国台湾的一个智能手机与平板电脑品牌，成立于1997年5月15日。2011年，htc迅速发展，并名列best global brands全球品牌价值排行榜第98名，以超过15%之全球市占率称霸android操作系统市场。	c88f5277-8dbf-3468-78ef-580201509ead	OJ.fiRHIb02k0XFcA	730	730
+m's'n	navigational	http://cn.msn.com/	msn中文网	msn.jpg	"msn中文网是中国首家针对白领用户的门户网站,定位于时尚、娱乐、生活、服务,24小时滚动报道,同时提供msn下载,msn保护盾等msn产品的官方下载及使用帮助。"	9aa500c6-9d03-a330-1926-fbb909477fbc	OJ.3HNsCKKgAKAPzA	225	225
+si'na	navigational	http://www.sina.com.cn/	新浪	新浪网.jpg	新浪网为全球用户24小时提供全面及时的中文资讯	134826c9-d009-904f-6e81-fbcef4674f1c	OJ.Yxhx546XkokgZQ	472	472
+ssjj	navigational	http://ssjj.4399.com/	4399生死狙击	4399生死狙击.jpg	4399生死狙击游戏是业内领先的无插件真3d第一人称射击网页游戏，打开网页在线玩，即可感受枪林弹雨的枪战乐趣。	68a6c0c2-215f-944c-7d75-44394ff05260	OJ.qKhs4yk4XCkgRA	272	272
+央视	navigational	http://tv.cctv.com/	央视网	央视网.jpg	cctv节目官网是中央电视台电视节目官方呈现平台，提供央视24个频道的直播、点播、节目预告等服务，集纳央视所有栏目、电影、电视剧、纪录片、动画片、体育赛事	080a91a0-89ea-d2eb-ba3b-faf6c6a562df	OJ.SF0gCc8PAn5sJA	611	610
+建行	navigational	http://www.ccb.com/cn/home/indexv3.html	中国建设银行	中国建设银行.jpg	中国建设银行是一家股份制商业银行，为客户提供商业银行产品与服务。主要经营领域包括公司银行业务，个人银行业务和资金业务等。	a79f7755-122a-2631-be1f-ff7048d4bfc6	OJ.0lkdXNyALknAXQ	190	190
+微软	navigational	https://www.microsoft.com/zh-cn	微软 microsoft	微软.jpg	美国微软公司，微软microsoft，世界十大最具价值品牌，鼠标/键盘十大品牌，创始于1975年，全球最大的电脑软件提供商，电脑操作系统与应用软件行业领导品牌，全球计算机软件开发先驱者，全球500强企业	9a612002-c4b8-9bf7-66cc-f5b3f819f783	OJ.DF7ntG7siA6T9Q	849	849
+携程	navigational	http://www.ctrip.com/	携程网	携程网.jpg	携程酒店预订、机票查询、买火车票、旅游度假、订汽车票、办签证、租车、买门票一站式服务	a1720aaa-585e-0f6b-3a7c-b75abaa5b8a5	OJ.SskVKHFymKyGxQ	200	200
+民生	navigational	http://www.cmbc.com.cn/	中国民生银行	中国民生银行.jpg	中国民生银行于1996年1月12日在北京成立，是我国首家主要由非公有制企业入股的股份制商业银行。中国民生银行成立以来，业务不断地拓展，规模不断地扩大	7a8219d9-6509-8076-3a4a-66855e7fa1e4	OJ.Sx7GeRFCk0qIFw	200	200
+聚划算	navigational	https://ju.taobao.com/	聚划算	聚划算.jpg	中国最大的团购网站，淘宝海量丰富团购商品，每日精选优良团购商品，全国团购成交量第一，品质生活保证	a22c8527-add7-3424-0706-50829d034276	OJ.YEi6EqBw4yvLqg	220	220
+3dm	navigational	http://www.3dmgame.com/	3dm	3dm.jpg	3dm是一个游戏破解补丁发布网站。	38228b57-2f2a-02eb-2e4c-6845e65a5621	OJ.0Np7Gggr2nKJhw	267	267
+adob	navigational	http://www.adobe.com/cn/	adobe	adobe.jpg	adobe 创建于1982年，是世界领先数字媒体和在线营销方案的供应商。	46fbbd0c-4b1a-94b4-1d27-ecc6645141f8	OJ.iEqOQK039AUpPw	300	300
+ai'q	navigational	http://www.iqiyi.com/	爱奇艺	爱奇艺.jpg	国内首家专注于提供免费、高清网络视频服务的大型视频网站	fef26ec2-13d5-ce33-24bc-001875198ab4	OJ.NUhtxJ0TOQei9Q	200	200
+alibaba	navigational	https://www.1688.com/	阿里巴巴	阿里巴巴.jpg	"全球企业间(b2b)电子商务的著名品牌,为数千万网商提供海量商机信息和便捷安全的在线交易市场,也是商人们以商会友、真实互动的社区平台。"	61c26695-9f58-5914-b89a-45a3da27ce0d	OJ.YO70FYvilLJquw	555	555
+express	navigational	http://www.express.com/	express	express.png	express是北美洲知名的服装和配饰零售品牌，目标客户是年龄在20岁至30岁之间的年轻男女。成立30余年来，该品牌已经在美国、加拿大和波多黎各开了超过600家门店，这些门店大部分都位于交通要道和大型商场、购物中心内，客流量极大。	345f27f4-babc-f59f-f1e9-74b4787bdd0f	OJ.sanShwQ5sJyyMQ	985	985
+github	navigational	https://github.com/	github	github.png	"online project hosting using git. includes source-code browser, in-line editing, wikis, and ticketing."	da55369b-bb49-ff6f-63b3-104f5bfd8def	OJ.uu1LdGSOcN9vnw	1024	1024
+qq炫舞	navigational	http://x5.qq.com/	qq炫舞	qq炫舞.jpg	最时尚浪漫的舞蹈游戏，260万人同时在线陪你一起舞动青春	7f648fd5-19af-23c2-70f8-bac5d30e72a5	OJ.ftMCZCJxhX8RFA	300	300
+tianmao	navigational	https://www.tmall.com/?from=tianmao.com	天猫	天猫.jpg	“天猫”（英文：tmall，亦称淘宝商城、天猫商城）原名淘宝商城，是一个综合性购物网站	6cac2ccb-fe5f-6bc3-dd24-4db086c00918	OJ.1rwN0T9Cmtv0cg	222	222
+vmw	navigational	http://finance.yahoo.com/q?s=vmw	vmware	vmware.jpg	"mware威睿, 虚拟机软件，是全球桌面到数据中心虚拟化解决方案的领导厂商"	9396fd91-0012-90c1-8ddb-51860a6417da	OJ.NpYZL0EPudi0rg	1037	1038
+yangshi	navigational	http://tv.cctv.com/	央视网	央视网.jpg	cctv节目官网是中央电视台电视节目官方呈现平台，提供央视24个频道的直播、点播、节目预告等服务，集纳央视所有栏目、电影、电视剧、纪录片、动画片、体育赛事	93bf38a1-f42a-3cdb-c9d9-f5b8f4fdd684	OJ.SF0gCc8PAn5sJA	611	610
+一起	navigational	http://ucenter.17zuoye.com/login.vpage?returnurl=%2fsso%2fticket.vpage%3fdata%3d%257b%2522sign%2522%253a%252294595f20d9d582b975088b6bf3b7b777%2522%252c%2522appkey%2522%253a%252217platform%2522%252c%2522timestamp%2522%253a%25221461742485394%2522%252c%2522target%2522%253a%2522http%253a%252f%252fwww.17zuoye.com%252fssojump.vpage%253freturnurl%253dhttp%25253a%25252f%25252fwww.17zuoye.com%2522%257d	一起作业	一起作业.jpg	一起作业网是一个学生、老师和家长三方互动的作业平台，老师轻松布置作业，学生快乐做作业，家长可以定期查看孩子的学习进度及报告，情景交融的学习模式	efb925f7-2a7c-4fec-45ac-55f0735d0715	OJ.rabWyoP3XpOFcg	180	180
+瑞星	navigational	http://www.rising.com.cn/	瑞星网	瑞星.png	北京瑞星信息技术有限公司官方网站，提供永久免费个人杀毒软件，防火墙，安全助手，手机杀毒，专杀工具，最新安全资讯以及企业整体解决方案	3afbfe93-ccb3-7d3c-f1fe-d6ba75daf8e2	OJ.tZ0lVf0iVNRGGA	305	304
+风行	navigational	http://www.fun.tv/	风行网	风行.png	smg旗下风行网是一个提供高清电影及电视剧的免费在线点播，支持网络电视、在线电影点播、免费电影下载、在线网络电视、边下边看的网络视频站	d8289c81-37b4-fe76-17ac-662df2a98d7f	OJ.1h3RijAzXuyyKg	252	252
+魅族	navigational	http://www.meizu.com/index.html	魅族	魅族.jpg	魅族(meizu)是中国智能手机厂商，致力于制造设计优雅、简单易用的智能手机	b471735a-0c13-feb2-4249-b8bb5d73f722	OJ.03PQjXhukBLPLg	800	800
+51	navigational	http://cn.51job.com/	前程无忧	前程无忧.jpg	"前程无忧人才网面向全国,提供2016最新最全最准确的招聘网站信息,为企业和求职者提供人才招聘、求职、找工作、培训等在内的全方位的人力资源服务,更多求职找工作信息 "	fd9cf7f8-fb09-627c-5c23-ef04149770ed	OJ.b35gjA8KyScr9A	400	399
+a'q	navigational	http://www.iqiyi.com/	爱奇艺	爱奇艺.jpg	国内首家专注于提供免费、高清网络视频服务的大型视频网站	f4cc889e-a560-ce79-ca50-45d384314531	OJ.NUhtxJ0TOQei9Q	200	200
+a'q'y	navigational	http://www.iqiyi.com/	爱奇艺	爱奇艺.jpg	国内首家专注于提供免费、高清网络视频服务的大型视频网站	1b4a4e12-4696-6226-84cb-260c14235798	OJ.NUhtxJ0TOQei9Q	200	200
+bip	navigational	http://bipasiaforum.com/en/index.htm	business of ip asia forum	business of ip asia forum.jpg	"jointly organised by the hksar government, hong kong trade development council and hong kong design centre, bip asia forum brings ip professionals and business leaders from all over the world to discuss the latest developments in the ip world, and to explore business collaboration opportunities. the fifth edition of the forum was held on 3-4 december 2015 with great success, featuring over 80 prominent speakers sharing their insights and attracted more than 2,400 ip professionals and industry players to attend. the next edition will return on 1-2 december 2016. mark your diary now"	4a9dba51-cc24-dd7d-1662-8796259a3af1	OJ.mgHTkpkauwxZ0g	300	300
+c'n't'v	navigational	http://tv.cctv.com/	央视网	央视网.jpg	cctv节目官网是中央电视台电视节目官方呈现平台，提供央视24个频道的直播、点播、节目预告等服务，集纳央视所有栏目、电影、电视剧、纪录片、动画片、体育赛事	08e7bea1-f199-cd05-276d-a31fe9ff4995	OJ.SF0gCc8PAn5sJA	611	610
+hua'ban	navigational	http://huaban.com/favorite/beauty/	花瓣网	花瓣网.jpg	"国内最优质图片灵感库 已有数百万出众网友,用花瓣保存喜欢的图片。"	770e5882-538e-2248-af01-e5be06567387	OJ.MjghaCSZ0X0GMw	326	326
+sogo	navigational	https://www.sogou.com/	搜狗搜索引擎	搜狗搜索.jpg	"中国最领先的中文搜索引擎,支持微信公众号、文章搜索,通过独有的sogourank技术及人工智能算法为您提供最快、最准、最全的搜索服务。"	e3f9dd9b-c5f8-dc9b-af4a-3f5e0e7d9261	OJ.5iM34OHGNH4aVQ	394	394
+tengxu	navigational	http://www.qq.com/	腾讯	腾讯网.jpg	"腾讯网(www.qq.com)是中国浏览量最大的中文门户网站,是腾讯公司推出的集新闻信息、互动社区、娱乐产品和基础服务为一体的大型综合门户网站"	b63a71ef-0a8c-4e1f-123d-5b42026aff53	OJ.V06V6ksdZyayhQ	360	360
+xampp	navigational	http://www.xampp.cc/	xampp	xamarin.jpg	xampp（apache+mysql+php+perl）是一个功能强大的建xampp 软件站集成软件包	4c51325b-00c7-605a-8bd4-922f17202f4b	OJ.ySVclhXTUR03OQ	302	302
+xinl	navigational	http://www.sina.com.cn/	新浪	新浪网.jpg	新浪网为全球用户24小时提供全面及时的中文资讯	c2c845af-a79a-7aac-d488-1c385c7bf3c3	OJ.Yxhx546XkokgZQ	472	472
+佳能	navigational	http://www.canon.com.cn/	canon	canon.jpg	"佳能公司是以光学为核心的相机与办公设备制造商,始终以创造世界一流产品为目标,积极推动事业向多元化和全球化发展。"	719d1270-7b74-907e-946e-1228c7297aa5	OJ.nf8zq0V3Ol2pTw	184	185
+农业银行	navigational	http://www.abchina.com/cn/	中国农业银行	中国农业银行.jpg	中国农业银行，作为一家面向“三农”、城乡联动、融入国际、综合经营的大型商业银行，秉承“大行德广 伴您成长”的服务理念，坚持审慎稳健经营、可持续发展	e5e8473e-e45b-0593-4dc6-ae7fcf174bab	OJ.EcVwE0maSN7cwg	1256	1210
+凤凰网	navigational	http://www.ifeng.com/	凤凰网	凤凰网.jpg	凤凰网是中国领先的综合门户网站，提供含文图音视频的全方位综合新闻资讯、深度访谈、观点评论、财经产品、互动应用、分享社区等服务	b7a6d392-b2b2-43de-4bc2-e290ea38530e	OJ.z6SwF3HhrM1XZw	835	835
+招行	navigational	http://www.cmbchina.com/	招商银行	招商银行.jpg	招商银行成立于1987年(丁卯年)4月8日，是中国第一家完全由企业法人持股的股份制商业银行，总行设在深圳。	4919c4fe-ec15-b6c3-76f8-29d0ad3d07e5	OJ.7pE0T388pGsDgw	202	170
+游民	navigational	http://www.gamersky.com/	游民星空	游民星空.png	"游民星空是国内单机游戏门户网站,提供最具特色的游戏资讯,最新最全的游戏下载,大量游戏攻略,经验,评测文章,以及最新热门游戏资料专题"	63059c7e-3dd2-44d4-463b-d6292deaed7f	OJ.x4NmYXhoueRJog	187	187
+eclips	navigational	https://eclipse.org/downloads/	eclipse	eclipse.png	eclipse 是一个开放源代码的、基于java的可扩展开发平台。	882984db-037d-df4c-bfbe-c7f14ed36258	OJ.KWqBX9nrplHNNw	516	517
+icbc	navigational	http://www.icbc.com.cn/icbc/	中国工商银行	中国工商银行.png	工商银行金融服务全面介绍，投资理财信息丰富全面，在线交易方便快捷，满足客户专业化、多元化、人性化的金融服务需求，打造集业务、信息、交易、购物	c35c2f13-a48f-6dfb-f30a-3ccb1321cde5	OJ.elbOOqk5ZCkUjg	400	400
+open	navigational	http://www.open.com.cn/	奥鹏教育	奥鹏教育.jpg	奥鹏教育获得了首个国家级现代远程教育公共服务体系建设、运行和管理资质，基于互联网平台，以灵活、方便、个性化的技术手段，为不同年龄、不同职业的用户提供教育服务	d5015d4c-6fd4-0aeb-73d1-4db99037809b	OJ.2DAgXn9OaFF6Bw	690	690
+youmin	navigational	http://www.gamersky.com/	游民星空	游民星空.png	"游民星空是国内单机游戏门户网站,提供最具特色的游戏资讯,最新最全的游戏下载,大量游戏攻略,经验,评测文章,以及最新热门游戏资料专题"	e40674d4-b15e-fe40-e0de-40d2447ff1b5	OJ.x4NmYXhoueRJog	187	187
+zaker	navigational	http://www.myzaker.com/index.html	zaker	zaker.jpg	zaker，是国内最受欢迎的互动分享和个性化定制阅读软件，也是覆盖平台最全的一款阅读应用。zaker将资讯、报纸、杂志、图片、微博、微信等众多内容，按照用户意愿聚合到一起，实现深度个性化定制。	a774fe6b-6b2c-0466-9498-34b62c938e3f	OJ.FOCW6Q1T2EhjTQ	268	268
+圆通	navigational	http://www.yto.net.cn/	圆通速递	圆通速递.jpg	上海圆通速递有限公司余个类运输车辆余辆，员工3万余名，服务覆盖全国500多个城市。成立于2000年5月28日。经过十五年的精心打造，现已成为集速递、物流、电子商务为一体的大型民营企业。	53dbfe0e-9389-e0b7-2243-003decedcf4e	OJ.O4nvEy3W7Y0KcA	185	185
+好123	navigational	https://www.hao123.com/	hao123	hao123.png	hao123是最具权威的中文上网导航，汇集最优秀的网站及资源。	e0ad876a-6122-fd7f-0230-82954fd44032	OJ.w7tpXi0YSU2fpg	256	256
+戴尔	navigational	http://www.dell.com.cn/	dell 戴尔	dell 戴尔.png	戴尔是来自美国的全球知名电脑品牌，由迈克尔•戴尔于1984年创立。戴尔以生产、设计、销售家用以及办公室电脑而闻名，不过它同时也涉足高端电脑市场，生产与销售服务器、数据储存设备或网络设备等。	b8b5d94c-5158-f107-083e-33a70f42af1a	OJ.JW05Z8XK5dj9SQ	2000	1994
+毕业论文	navigational	http://bylw.yjbys.com/	毕业论文网	毕业论文.png	"应届毕业生毕业论文网免费为写毕业论文的毕业生提供毕业论文开题报告、毕业论文提纲、毕业论文范文等,是应届生们写毕业论文时的好帮手"	439cd8ec-513b-fd15-e823-ae818d942036	OJ.xXr11pDjXjTaxg	352	351
+电驴	navigational	http://www.emule.org.cn/	电驴	电驴.jpg	电驴是被称为“点对点”（p2p）的客户端软件-一个用来在因特网上交换数据的工具。 一个用户可以从其他用户那里得到文件，也可以把文件散发给其他的用户	ed16d3e3-acfe-a1bc-59b0-13a026feb7e4	OJ.vQvjhaC0xf5x7Q	300	300
+知	navigational	http://www.cnki.net/	中国知网	中国知网.jpg	中国知网，是国家知识基础设施（national knowledge infrastructure，nki）的概念，由世界银行于1998年提出。cnki工程是以实现全社会知识资源传播共享与增值利用为目标的信息化建设项目，由清华大学、清华同方发起，始建于1999年6月。	8df07504-0a7f-8d56-b4ce-662f1102899b	OJ.BW50OZ6Zza0qYQ	206	206
+52	navigational	http://www.52pojie.cn/	吾爱破解论坛	吾爱破解论坛.jpg	吾爱破解论坛致力于软件安全与病毒分析的前沿，丰富的技术版块交相辉映，由无数热衷于软件加密解密及反病毒爱好者共同维护	ae9ffbb9-0e54-50a5-dcec-faf0a4b503a5	OJ.vsqA7I0l3zWuwA	323	322
+apache	navigational	http://www.apache.org/	apache software foundation	apache software foundation.png	"supports the development of a number of open-source software projects, including the apache web server. includes license information, latest news, and project sites."	75e218cf-94b5-1150-73a1-cf02ba49d4ae	OJ.8LqH32BSp57BFg	178	178
+d'y't't	navigational	http://www.dytt8.net/	电影天堂	电影天堂.png	电影天堂是国内较大的电影在线观看和下载平台。主要有迅雷下载和快车下载和电驴以及手机视频格式下载。	ec257187-8b5c-e09a-107f-972101209448	OJ.Kh0oqAf00hX7Ag	207	207
+ganji	navigational	http://www.ganji.com/index.htm	赶集网	赶集网.jpg	"赶集网是更专业的分类信息网!提供免费发布信息,查阅信息服务.寻找最新最全的房屋出租、二手房、二手车、二手物品交易、求职招聘等生活信息,请到赶集网ganji.com"	45a06289-2154-0078-b60e-c3c62dd781c4	OJ.SR8SaVdEoScZFg	500	500
+jianhang	navigational	http://www.ccb.com/cn/home/indexv3.html	中国建设银行	中国建设银行.jpg	中国建设银行是一家股份制商业银行，为客户提供商业银行产品与服务。主要经营领域包括公司银行业务，个人银行业务和资金业务等。	2403cbe9-4cef-5b29-6360-0a8d235edcc5	OJ.0lkdXNyALknAXQ	190	190
+jianshe	navigational	http://www.ccb.com/cn/home/indexv3.html	中国建设银行	中国建设银行.jpg	中国建设银行是一家股份制商业银行，为客户提供商业银行产品与服务。主要经营领域包括公司银行业务，个人银行业务和资金业务等。	ebf5c8e4-6edd-ded1-7bcf-6d74896b13c7	OJ.0lkdXNyALknAXQ	190	190
+jing'd	navigational	http://www.jd.com/	京东	京东.jpg	专业的综合网上购物商城，销售超数万品牌、4020万种商品，囊括家电、手机、电脑、服装、图书、母婴、个护、食品、旅游等13大品类	ffa225bc-26b3-fb50-24ed-7eca0553268d	OJ.Tv5rtgy9ku9wHQ	288	288
+letv	navigational	http://www.le.com/	乐视视频	乐视网.jpg	"乐视视频是以正版,高清影视剧为主的视频门户,乐视旗下专业影视剧视频网站。"	8ec37559-9f64-d726-25be-e29602c991f5	OJ.VOa7OOQxqieq8w	309	310
+mongodb	navigational	https://www.mongodb.org/	mongodb	mongodb.png	"mongodb professional with cloud manager. run smoothly with expert support and a comprehensive management platform that includes monitoring, automation, and cloud backup"	b7a39e50-3bfd-da93-d49a-0367519ff6db	OJ.dFJAEbRIdVLq6Q	572	500
+picasa	navigational	http://picasa.google.com/	picasa	picasa.jpg	picasa是google推出的免费图片管理工具，可以帮助您在计算机上立即找到、修改和共享所有图片，picasa突出的优点是搜索硬盘中的相片图片的速度很快	4415c466-aeac-e5c3-f3cf-9b91757f57fa	OJ.Ce6UJg9KesE8pg	480	480
+wb	navigational	http://www.weibo.com/	新浪微博	微博.jpg	新浪微博是全中国最主流，最具人气，当前最火爆的微博产品。用一句话随意记录生活，用手机随时随地发微博。	058d1cee-fce8-a284-4531-16b02342b218	OJ.AlUlEUcSRRyWKA	300	300
+weib	navigational	http://www.weibo.com/	新浪微博	微博.jpg	新浪微博是全中国最主流，最具人气，当前最火爆的微博产品。用一句话随意记录生活，用手机随时随地发微博。	92d687e7-36c2-ff1d-5fbc-d66b7705b58c	OJ.AlUlEUcSRRyWKA	300	300
+zhi'lian	navigational	http://www.zhaopin.com/	智联招聘	智联招聘.jpg	"智联招聘是全国性权威人才网站,为求职者提供最新最全的招聘信息,为企业提供网络招聘,校园招聘,猎头,培训,测评和人事外包等一站式专业人力资源服务.好工作上智联招聘."	c80dd528-6229-160f-b750-f3bd34d163b8	OJ.69QGCBY10m10Cw	200	200
+三国杀	navigational	http://web.sanguosha.com/	三国杀	三国杀.png	《三国杀》是一款角色扮演类的卡牌游戏，交织着扮演、推理、典故的游戏；三国杀中充满着智慧的搏杀，人性的对决；个性鲜明的武将角色，让玩家在身份转换、角色扮演的同时，每一局都是一个全新的对决，被很多人誉为聪明人玩的游戏	66a95f49-747a-d660-54c7-0f8ff1d96a2d	OJ.iMU9agA0Pl3qTQ	335	334
+光大	navigational	http://www.cebbank.com/	中国光大银行	中国光大银行.jpg	中国光大银行成立于1992年8月，总部设在北京，是国务院批复并经人民银行批准设立的金融企业，为客户提供全面的商业银行产品与服务	3d134c42-8695-9b97-3eff-2ba5fe5ee349	OJ.o0Z0WyTXQbjeBA	268	249
+广发	navigational	http://www.cgbchina.com.cn/	广发银行	广发银行.jpg	发银行（china guangfa bank），全称广发银行股份有限公司，简称广发（英文简称cgb），是中华人民共和国的一家股份制银行。	1227fb8a-cd07-a936-f50f-e9d9cbc2c28f	OJ.XIKxaRJa6nkgug	300	300
+支付	navigational	https://www.alipay.com/	支付宝	支付宝.jpg	支付宝（中国）网络技术有限公司是国内领先的第三方支付平台，致力于提供“简单、安全、快速”的支付解决方案。	d438da58-91c8-9822-c7c4-052275cded5c	OJ.jVYoK6RjR9ByrQ	192	193
+电脑店	navigational	http://www.diannaodiangw.com/	电脑店	电脑店.png	电脑店官网提供电脑店u盘启动盘下载，电脑店u盘启动盘操作简单，一键制成，兼容多种机型，支持原本系统安装，极大的满足了用户的需求。	70f87ba8-036d-57ec-4127-6a995bff3093	OJ.a41WPmqy7mMs0g	159	160
+网易邮箱	navigational	http://mail.126.com/	126网易免费邮箱	126邮箱.jpg	网易公司于2001年11月推出的免费的电子邮箱，是网易公司倾力打造的专业电子邮箱。	7acc21ef-a325-25f5-b3ec-17406e76e50b	OJ.8Ik0a5bw0jCRLg	268	268
+苏宁	navigational	http://www.suning.com/	苏宁易购	苏宁易购.jpg	苏宁易购，是苏宁云商集团股份有限公司旗下新一代b2c网上购物平台，现已覆盖传统家电、3c电器、日用百货等品类。	5d23a4af-3afc-b1f5-2b74-1bd7e0f5c16e	OJ.cJ8R11t2wD4AOQ	380	380
+锐捷	navigational	http://www.ruijie.com.cn/fw/rj/	锐捷网络	锐捷网络.jpg	锐捷网络为您提供软件下载功能，交换机软件下载，路由器软件下载等多条产品线的文档下载	57d36037-1503-9005-a7d1-13804a3eded0	OJ.XFP0c8XGZ0jcWA	268	268
+韵达	navigational	http://www.yundaex.com/cn/index.php	韵达快递	韵达快递.jpg	“韵达快递”品牌创立于1999年8月，总部位于中国上海，现已成为集快递、物流、电子商务配送和仓储服务为一体的全国网络型品牌快递企业，服务范围覆盖国内31个省（区、市）及港澳台地区	f0dd3d05-da2a-6f7c-f211-c2a546ffd3b1	OJ.tbxtNWLQSB0rJA	300	300
+189	navigational	http://webmail30.189.cn/w2/	189邮箱	189邮箱.jpg	189邮箱是针对电信、移动和联通手机用户的新一代云邮箱、免费邮箱和手机邮箱。支持手机、平板、电脑等多终端收发，无限邮箱容量，超大附件云存储	d06f908f-b215-36dd-0d1b-90c688e6572e	OJ.BLPKBzVPoFQzIg	300	300
+cygwin	navigational	http://cygwin.com/	cygwin	cygwin.png	cygwin是一个在windows平台上运行的类unix模拟环境，是cygnus solutions公司开发的自由软件（该公司开发的著名工具还有ecos，不过现已被redhat收购）。它对于学习unix/linux操作环境，或者从unix到windows的应用程序移植，或者进行某些特殊的开发工作，尤其是使用gnu工具集在windows上进行嵌入式系统开发，非常有用。随着嵌入式系统开发在国内日渐流行，越来越多的开发者对cygwin产生了兴趣	59b117aa-f530-1580-76f3-1d08a2bcae82	OJ.YNiF1Y4ObtEhmQ	512	512
+huawei	navigational	http://www.huawei.com/cn/	华为	华为.jpg	华为是全球领先的信息与通信解决方案供应商。我们围绕客户的需求持续创新，与合作伙伴开放合作，在电信网络、终端和云计算等领域构筑了端到端的解决方案优势。	c8b3202d-5ff6-dc9a-095f-3637e8b9570f	OJ.dhYc0dwIX0WY6Q	1500	1500
+i4	navigational	http://www.i4.cn/	爱思助手	爱思助手.jpg	爱思助手官网-爱思助手是一款专业的苹果刷机助手、苹果越狱助手，专为苹果用户提供百万iphone、ipad软件、游戏、铃声、壁纸资源安全快速免费下载。	5515476b-08a2-af0c-119a-1d1961cf21d7	OJ.Y0jYzNzMIxTy7g	300	300
+k'j	navigational	https://www.kjmagnetics.com/	k&j magnetics	k&j magnetics.jpg	k&j magnetics - incredibly strong neodymium magnets ataffordable prices. large variety of stock rare earth magnetsavailable	7ff05061-647d-88ef-ee3c-5fd780c368c7	OJ.04rHKOv9zTxUFw	200	200
+lu'da's	navigational	http://www.ludashi.com/	鲁大师	鲁大师.jpg	"国内最大的免费系统工具软件,免费提供硬件真伪辨别、电脑(手机)稳定保障、系统性能提升。"	96255673-f157-1e4c-9efb-d19b0b9f4e46	OJ.Wu8FBJizhhMs0Q	294	294
+mei't	navigational	https://www.meituan.com/	美团网	美团网.jpg	美团网是中国大陆地区第一个 精品团购形式的类groupon 电子商务网站	c60a9a7b-bfd4-e349-a38d-171464aef45b	OJ.hitve0RUioN46w	188	183
+pcmaster	navigational	http://www.pcmaster.gr/	pc master	pc master.png	"το pc master είναι, για περισσότερο από 20 χρόνια, το αδιαμφισβήτητα κυρίαρχο περιοδικό στο home computing και ειδικότερα στο pc gaming"	2f1eaf44-1036-e3bc-7290-e0b03f667fbe	OJ.6Y0vOgwLB20ziA	267	268
+pycharm	navigational	https://www.jetbrains.com/pycharm/	pycharm	pycharm.png	pycharm是一种python ide，带有一整套可以帮助用户在使用python语言开发时提高其效率的工具，比如调试、语法高亮、project管理、代码跳转、智能提示	5b1d6aa0-da14-881f-676c-76f8d26cef16	OJ.5F7lVGWXFkkgwQ	430	430
+q'q'y	navigational	https://mail.qq.com/	qq邮箱	qq邮箱.jpg	"qq邮箱,为亿万用户提供高效稳定便捷的电子邮件服务。"	d23abbd2-ed07-2a74-574b-65550690b982	OJ.isdlff7onfHUEg	549	548
+realt	navigational	http://www.realtek.com.tw/	瑞昱官网	realtek.png	瑞昱已成功开发出多种领域的应用集成电路，产品线横跨通讯网路、电脑周边、多媒体、超宽频等技术，与世界先进产业主流并驾齐驱。	78f44bc2-c88c-020e-61b2-bdb810827b8e	OJ.cEstd1BRHABgMQ	348	348
+song	navigational	http://www.songtaste.com/	songtaste	songtaste.jpg	songtaste是一个音乐分享的互联网产品。作为一个典型的web 2.0 式的音乐分享网站，用户在这里可以试听歌曲，并互相交流、推荐歌曲。song taste 意为音乐盛宴	f5027cbb-d255-9508-bb8a-1b557ea53cbc	OJ.cYHjcwXgHW1k9A	175	175
+tudou	navigational	http://www.tudou.com/	土豆	土豆.jpg	土豆网是中国最早和最具影响力的网络视频平台，是中国网络视频行业的领军品牌。于2005年4月15日正式上线，是全球最早上线的视频网站之一。2014年1月，“土豆网”正式更名为“土豆”，标志着土豆网进入品牌发展的新阶段。	cb183bf6-1e32-d56a-ee7f-7e3dfccccdde	OJ.09ZIW7j505oMsg	333	334
+vmwa	navigational	http://www.vmware.com/sg	vmware	vmware.jpg	vmware（中文名威睿”，纽约证券交易所“代码：vmw） 虚拟机软件，是全球桌面到数据中心虚拟化解决方案的领导厂商。	905e365f-562c-9766-94c6-4ed7ffe0bb87	OJ.NpYZL0EPudi0rg	1037	1038
+www.qq.com	navigational	http://www.qq.com/	腾讯	腾讯网.jpg	"腾讯网(www.qq.com)是中国浏览量最大的中文门户网站,是腾讯公司推出的集新闻信息、互动社区、娱乐产品和基础服务为一体的大型综合门户网站"	40e54908-d512-5422-e152-471fa75ffb6a	OJ.V06V6ksdZyayhQ	360	360
+中国农业	navigational	http://www.abchina.com/cn/	中国农业银行	中国农业银行.jpg	中国农业银行，作为一家面向“三农”、城乡联动、融入国际、综合经营的大型商业银行，秉承“大行德广 伴您成长”的服务理念，坚持审慎稳健经营、可持续发展	20c51501-fe79-080e-e296-50ac3e3d93b9	OJ.EcVwE0maSN7cwg	1256	1210
+中国邮政	navigational	http://www.chinapost.com.cn/	中国邮政	中国邮政.jpg	"2016年3月20日是中国邮政开办120周年纪念日。1896年3月20日,清代国家邮政成立,宣告了全民性邮政服务在中国的诞生"	bb0783ac-6a12-5e3e-59fe-3e69427db909	OJ.kEnvArX3FFzkCQ	266	266
+天翼	navigational	http://www.tykd.com/	天翼快递	天翼快递.jpg	"天翼快递-国际电子商务物流解决方案平台,提供国外购物代收地址、转运、海外仓储、国际快递、物流外包、配送等一站式物流服务"	1f1ffd04-c991-76bb-4d96-5a072432135c	OJ.XFb7uvRHwCDkxg	300	301
+好23	navigational	https://www.hao123.com/	hao123	hao123.png	hao123是最具权威的中文上网导航，汇集最优秀的网站及资源。	21b802d8-68ed-994e-9024-1e077f3e0d45	OJ.w7tpXi0YSU2fpg	256	256
+搜狐视频	navigational	http://tv.sohu.com/	搜狐视频	搜狐视频.png	搜狐视频是搜狐旗下专业的综合视频网站，提供正版高清电影、电视剧、综艺、纪录片、动漫等。网罗最新最热新闻、娱乐咨询，同时提供免费视频空间和视频 	90850e3e-5beb-4630-2f18-85f2f88d0f68	OJ.hXronFmPhqqUJQ	1024	1024
+新东方	navigational	http://www.xdf.cn/	新东方	新东方.jpg	新东方网（www.xdf.cn）是新东方教育科技集团推出的一站式学习互动交流平台，新东方网的内容涵盖了英语学习规划、成长导航、新东方搜课、新东方老师答问、在线咨询	aca6618d-7780-3df4-9922-8cddac1a790f	OJ.0Sh44d0WCJJ5Qg	370	371
+狸窝	navigational	http://www.leawo.cn/	狸窝flv视频转换器	狸窝flv视频转换器.png	"狸窝软件为广大网友提供各种全能视频格式视频转换器,以及手机万能3gp视频转换器,mp4,avi,mkv,flv,dvd格式转换器"	261676f1-6fa5-0278-41f7-a1e545995f1a	OJ.OTIGWRi5V8ePUA	171	170
+财付通	navigational	https://www.tenpay.com/v3/	财付通	财付通.jpg	财付通（tenpay）是腾讯公司于2005年9月正式推出专业在线支付平台，其核心业务是帮助在互联网上进行交易的双方完成支付和收款。致力于为互联网用户和企业提供安全、便捷、专业的在线支付服务。 个人用户注册财付通后，即可在拍拍网及20多万家购物网站轻松进行购物。	804ecfb4-96ba-45ca-a63a-cc0f4bde59a6	OJ.On9KuY10JOZ4UQ	306	306
+160	navigational	http://www.160.com/	驱动人生	驱动人生.png	驱动人生是一家专注于电脑驱动管理工具、免费wifi共享软件、个性桌面壁纸软件、手机日历软件及亲子教育软件相关的互联网pc/手机软件研发公司。	68d6dc8c-860f-d83d-7a4e-454c160b9835	OJ.41DqDmr0I0BKoQ	185	185
+360wif	navigational	http://wifi.360.cn/	360wifi	360wifi.png	"360集团旗下wifi产品服务平台,延续360的安全基因,为用户提供手机免费上网的一站式服务"	d5d2890d-36d7-d87c-8338-55482dfa4c70	OJ.MiAdbdjcGVrdMw	162	163
+85	navigational	http://www.85cafe.com/	85度c	85度c.jpg	85度c，是一家台湾时尚餐饮公司，主要经营咖啡和甜点。取名来自“咖啡在摄氏85°c时喝起来最好喝的意思”，以五星级的主厨与宴会指定的顶级咖啡豆而成立的新形态创意店，以高雅明亮的店装搭配简介的品牌形象，让消费者在明亮的开放式空间里享受甜食所带来的美感与诱惑，感动您视觉、味觉、嗅觉	246666c7-4f19-7e81-4a4c-4a26bc458112	OJ.blr80O0KxyFMXw	945	930
+bbc	navigational	http://www.bbc.com/	英国广播公司	英国广播公司.jpg	英国广播公司（英语：british broadcasting corporation，缩写：bbc；又常译名为英国国家广播公司以强调其公营地位），是英国的一家资金主要来自英国国民缴纳的电视牌照费且独立运作的公共媒体，也是世界最大的公共广播公司，长久以来一直被认为是全球最受尊敬的媒体。	31bc118c-f806-2787-95c3-70ebefab091b	OJ.CeoioAQCotECxA	650	650
+bnn	navigational	http://www.bnn.ca/	business news network	business news network.jpg	bnn，边界网络节点简称“边界节点”，是一个ibm sna 技术，是指一个分区节点为临近的外围设备节点提供边界函数支持。这个支持包括序列、步态和地址转换	c95d3534-c555-e777-ece7-f51252b93d9f	OJ.OUi2lP2t6uZhEg	316	315
+cannon	navigational	http://www.canon.com.cn/	canon	canon.jpg	"佳能公司是以光学为核心的相机与办公设备制造商,始终以创造世界一流产品为目标,积极推动事业向多元化和全球化发展。"	eb62c9b4-41bc-4961-8c58-bd512fa50b65	OJ.nf8zq0V3Ol2pTw	184	185
+jian'she	navigational	http://www.ccb.com/cn/home/indexv3.html	中国建设银行	中国建设银行.jpg	中国建设银行是一家股份制商业银行，为客户提供商业银行产品与服务。主要经营领域包括公司银行业务，个人银行业务和资金业务等。	25377644-19cc-be5d-ef32-881ac948897e	OJ.0lkdXNyALknAXQ	190	190
+moyu	navigational	http://my.99.com/	魔域	魔域.png	魔域是以幻兽、pk、群殴为核心的终身免费网络游戏，开创了网络游戏的全新篇章！在游戏中你不但可以享受到一人带多宠的全新游戏乐趣，享受群殴的极限快感	b05d16af-36df-b457-73df-c27139f08fbd	OJ.qtP0UHKbgm8Naw	207	206
+tian'ya	navigational	http://www.tianya.cn/	天涯论坛	天涯论坛.jpg	天涯社区提供论坛、部落、博客、问答、文学、相册、个人空间等服务。拥有天涯杂谈、娱乐八卦、情感天地等人气栏目，以及关天茶舍、煮酒论史等高端人文论坛	176f674a-e646-6948-bc37-3375b129eb42	OJ.Yv86jOxYGm4Q9Q	240	240
+tianya	navigational	http://www.tianya.cn/	天涯论坛	天涯论坛.jpg	天涯社区提供论坛、部落、博客、问答、文学、相册、个人空间等服务。拥有天涯杂谈、娱乐八卦、情感天地等人气栏目，以及关天茶舍、煮酒论史等高端人文论坛	03da9308-43bb-7d6f-bc0a-d5f48cf106d9	OJ.Yv86jOxYGm4Q9Q	240	240
+xiao'mi	navigational	http://www.mi.com/sg/	小米商城	小米.png	小米商城 - 小米手机官方网站，直营小米公司旗下所有产品。	5f0622d9-fc05-898c-4361-140d3591c9d7	OJ.RHRpIYmWcEsgGA	190	190
+xiaom	navigational	http://www.mi.com/sg/	小米商城	小米.png	小米商城 - 小米手机官方网站，直营小米公司旗下所有产品。	92fc85a4-cd00-15bb-279d-ab8084e1d06e	OJ.RHRpIYmWcEsgGA	190	190
+zhifubao	navigational	https://www.alipay.com/	支付宝	支付宝.jpg	支付宝（中国）网络技术有限公司是国内领先的第三方支付平台，致力于提供“简单、安全、快速”的支付解决方案。	4979aea2-9fa3-9118-d0fb-e75bc1609ca8	OJ.jVYoK6RjR9ByrQ	192	193
+心悦	navigational	http://xinyue.qq.com/	心悦俱乐部	心悦俱乐部.png	心悦俱乐部是腾讯游戏高端服务平台，覆盖腾讯所有精品游戏，为心悦会员提供高品质的游戏特权，服务特权，生活特权——以心悦心，心悦诚服	d52dbdd3-76d4-f6cf-1f50-18f5246f7214	OJ.Eb4IRxKhhtEpbQ	230	231
+汉王	navigational	http://www.hw99.com/	汉王科技	汉王科技.jpg	汉王科技专注于文字识别、人脸识别、轨迹输入、数字阅读等几大方向，大力开展技术授权、行业应用、云服务等 b2b 业务	84c0fc11-29d9-d980-3049-4588d8aa246d	OJ.7CYo0FI4o1UnOQ	300	296
+虾	navigational	http://www.xiami.com/	虾米音乐	虾米音乐.jpg	虾米网是一家在2008年上线内测，以点对点传输技术以及社区互动文化为核心的音乐分享平台	55d189cb-b398-5333-1c14-a662e661f96b	OJ.Aw0AUZc5aiVKkg	180	180
+265	navigational	http://www.265.com/	265上网导航	265上网导航.png	二六五网络是中国成功的互联网上网导航服务拥有者及运营机构。二六五网络技术（北京）有限公司成立于2004年，公司总部设在北京，并在厦门设有分支机构。主要投资者包括著名风险投资机构idg等	930c8501-c26a-ca55-5537-f22638e620a6	OJ.S0BqgAkSbRNhhw	185	184
+a'm'd	navigational	http://www.amd.org/	amd	amd.jpg	"learn symptoms, treatments, and clinical trial information on bothwet and dry age related macular degeneration through the amdpartnership"	fb0d6d1e-9349-d3cc-6f89-cb2aaf2a0fae	OJ.UsVleso5Vtixew	320	320
+qqyx	navigational	https://mail.qq.com/	qq邮箱	qq邮箱.jpg	"qq邮箱,为亿万用户提供高效稳定便捷的电子邮件服务。"	2ffcc330-6fe2-599c-845a-308bfdf5142f	OJ.isdlff7onfHUEg	549	548
+synap	navigational	http://www.synap.co.nz/	synap	synap.png	"synap has been developed by synergia ltd, and auckland-based research and strategy company."	1dad9bd4-8586-d513-587f-30b8e3beb83f	OJ.1cF8SQ0me0BCoQ	195	195
+wang'y	navigational	http://www.163.com/	网易	网易.jpg	"网易是中国领先的互联网技术公司,为用户提供免费邮箱、游戏、搜索引擎服务,开设新闻、娱乐、体育等30多个内容频道,及博客、视频、论坛等互动交流,网聚人的力量。"	12042ec5-126c-c755-c8d1-eb183ef30aeb	OJ.g0COqnNaUhe4kQ	175	175
+yahoo.com	navigational	https://sg.yahoo.com/?p=us	雅虎	雅虎.jpg	美国著名的互联网门户网站，也是20世纪末互联网奇迹的创造者之一。	dbe8b2f1-7214-fa95-6193-2d52d12fcc9e	OJ.pE5dsVZcZwvUQQ	225	225
+华	navigational	http://www.huawei.com/cn/	华为	华为.jpg	华为是全球领先的信息与通信解决方案供应商。我们围绕客户的需求持续创新，与合作伙伴开放合作，在电信网络、终端和云计算等领域构筑了端到端的解决方案优势。	bd676609-86e6-28de-bf82-acde71656f5d	OJ.dhYc0dwIX0WY6Q	1500	1500
+新视觉	navigational	http://www.yy6080.org/	新视觉影院	新视觉影院.png	新视觉影院向用户提供包括电影、电视剧、动漫、综艺、等各类节目、高清晰下载等一体的多媒体视频点播平台。	5ca1db79-d5fa-6a2d-839f-24c607451e52	OJ.5smgJuYA8W6akA	204	204
+游聚	navigational	http://www.gotvg.com/	游聚网	游聚网.png	游聚网，因游戏而欢聚。	59fdc010-e92e-409f-bc2d-4463dc7415d4	OJ.Lr9zwPxwI0s2Zg	120	120
+皮皮	navigational	http://www.pipi.cn/	皮皮电影	皮皮电影.jpg	皮皮电影:提供在线最新热门电影、电视剧、游戏、动漫、娱乐、综艺、收看高清热播电影、高速电影播放器、网友看电影的天堂、完全免费下载观看电影!	ebdc7d16-d40a-f288-79c2-5d678f325836	OJ.H0BG17eoOafGOA	140	140
+知网	navigational	http://www.cnki.net/	中国知网	中国知网.jpg	中国知网，是国家知识基础设施（national knowledge infrastructure，nki）的概念，由世界银行于1998年提出。cnki工程是以实现全社会知识资源传播共享与增值利用为目标的信息化建设项目，由清华大学、清华同方发起，始建于1999年6月。	1903c1bd-a58e-a940-a567-60e0502e39ed	OJ.BW50OZ6Zza0qYQ	206	206
+英魂	navigational	http://cos.qq.com/	英魂之刃	英魂之刃.jpg	"一款类dota的多人竞技网游,拥有无需下载,即点即玩,10秒开局,qq登录,精美画面,爽快体验等游戏特色和优势。"	5ec24c2a-4bb6-9fb6-ad8f-8f9ee9e68f25	OJ.km21WIgJU0Thog	281	280
+迅雷会员	navigational	http://vip.xunlei.com/	迅雷会员	迅雷会员.jpg	迅雷会员，因快而乐。	9c555418-363a-95d7-d12e-b44ff3344522	OJ.mr8HarQjL4v2MA	144	144
+鲁大	navigational	http://www.ludashi.com/	鲁大师	鲁大师.jpg	"国内最大的免费系统工具软件,免费提供硬件真伪辨别、电脑(手机)稳定保障、系统性能提升。"	036e99fa-3421-0bfd-21b2-a0d5af3d6047	OJ.Wu8FBJizhhMs0Q	294	294
+369	navigational	http://www.369.com/	369网址大全	369网址大全.jpg	"369网址大全,网址,搜索,音乐,娱乐,图片,小游戏,短信,社区,日记,相册,k歌,通讯簿,blog,天气预报,实用工具.最方便,最快捷"	f44da592-4048-e158-afad-ae38aadacda0	OJ.4AAoNrEIykyfxA	163	163
+7k'k	navigational	http://www.7k7k.com/	7k7k小游戏	7k7k小游戏.png	7k7k是国内最专业的休闲游戏网站之一，创建于2003年，致力于搜集互联网广泛的小游戏资源，开发和运营网页游戏，代表作品有飘渺仙缘、冒险王等，是国内老牌小游戏网站。	004fe750-701b-65a6-7b86-9df1a9264b85	OJ.ecPqtBwheUAjDg	208	208
+aws	navigational	https://aws.amazon.com/cn/	aws 云服务	aws 云服务.jpg	aws - 亚马逊公司旗下云计算服务平台，为全世界各个国家和地区的客户提供一整套基础设施和云解决方案。aws面向用户提供包括弹性计算、存储、数据库、应用程序在内的一整套云计算服务，能够帮助企业降低it投入成本和维护成本。	db3aeced-15f0-e169-9142-9d1dc24b27cd	OJ.zkV00ukgXWvZPA	253	250
+gree	navigational	http://gree.jp/	gree	gree.jpg	gree是日本著名的社交网站，在日本16-30岁的年轻人中享有很高人气，gree拥有庞大的手机用户群体，是一家几乎完全基于移动互联网的社交网站。	85d30124-5fd4-78d0-c6df-771561c4853d	OJ.lW0alIrSMt9bnA	228	227
+ping'an	navigational	http://www.pingan.com/	中国平安	中国平安.jpg	中国平安是中国一家以保险为核心的，融证券、信托、银行、资产管理、企业年金等多元金融业务为一体的，紧密、高效、多元的综合金融服务集团。	1ac1f3b2-56c7-9775-1aa9-ecebc7462579	OJ.2WowdorZqb7y2A	400	394
+q'q'yin	navigational	http://y.qq.com/#type=index	qq音乐	qq音乐.jpg	"腾讯公司推出的一款免费音乐服务,海量音乐在线试听。"	ff1f6bb9-f878-4e64-7881-59d049cd5a49	OJ.09TDkxOGmIRD0g	274	274
+tu'dou	navigational	http://www.tudou.com/	土豆	土豆.jpg	土豆网是中国最早和最具影响力的网络视频平台，是中国网络视频行业的领军品牌。于2005年4月15日正式上线，是全球最早上线的视频网站之一。2014年1月，“土豆网”正式更名为“土豆”，标志着土豆网进入品牌发展的新阶段。	aaae749e-bf6e-9ace-ff9b-e3a445482be7	OJ.09ZIW7j505oMsg	333	334
+ubuntu	navigational	http://www.ubuntu.org.cn/index_kylin	ubuntu	ubuntu.png	ubuntu（乌班图）是一个以桌面应用为主的linux操作系统，其名称来自非洲南部祖鲁语或豪萨语的“ubuntu”一词，意思是“人性”、“我的存在是因为大家的存在”，是非洲传统的一种价值观，类似华人社会的“仁爱”思想。	2fcf4e4c-d9df-7aef-6daa-2c84601b5614	OJ.RYW8tAb6uF5m5g	370	357
+y'k	navigational	http://www.youku.com/	优酷	优酷.jpg	优酷是中国领先的视频分享网站	f41bbe2f-fd49-99f1-0b14-b5489b4c71a8	OJ.XC0sZn6HCncWxQ	331	331
+yt	navigational	http://www.yto.net.cn/	圆通速递	圆通速递.jpg	上海圆通速递有限公司余个类运输车辆余辆，员工3万余名，服务覆盖全国500多个城市。成立于2000年5月28日。经过十五年的精心打造，现已成为集速递、物流、电子商务为一体的大型民营企业。	02dcd639-bcfe-a3b8-5705-8fbe3024f939	OJ.O4nvEy3W7Y0KcA	185	185
+微信公众	navigational	https://mp.weixin.qq.com/	微信公众平台	微信公众平台.png	"微信公众平台,给个人、企业和组织提供业务服务与用户管理能力的全新服务平台。"	c1b69e00-9a6a-812f-7a8c-250488e53829	OJ.oEgwXMOpWyURjg	319	319
+微信网页	navigational	https://wx.qq.com/	微信网页版	微信网页版.png	2014年2月20日，腾讯宣布推出qq浏览器微信版，由qq浏览器与微信两个产品线团队合作，联合开发了qq浏览器微信版，即微信浏览器。	e70a7504-8843-8c12-b48f-5e18c84e5f6e	OJ.M4eLxqQCF00YNQ	1024	1024
+简单	navigational	http://www.jdbbx.com/	简单百宝箱	简单百宝箱.jpg	简单百宝箱是一个玩家随身工具箱，收录网游玩家最需要的游戏工具软件，提供一键式的工具软件下载、管理服务，是一款免费、绿色的网游工具平台软件，其提供了几十个网游需要用到的上百款免费软件，是一款网络游戏的辅助软件。	7c7238f2-5f49-488b-801a-5f017535884c	OJ.gQ8a7I5uVXKuRg	237	236
+金蝶	navigational	http://www.kingdee.com/	金蝶	金蝶.jpg	金蝶是香港联交所主板上市公司（股票代码：0268），中国软件产业领导厂商，亚太地区管理软件龙头企业，全球领先的中间件软件、在线管理及全程电子商务服务商。金蝶帮助顾客成功，让中国管理模式在全球崛起为使命，为世界范围内超过400万家企业和政府组织成功提供了管理咨询和信息化服务。	3b76b194-cd39-18eb-7353-c9371aedb570	OJ.oP5bPufxIlpFWA	190	190
+17173	navigational	http://www.17173.com/	17173.com	17173.com.png	17173是一家服务于游戏玩家和游戏企业的在线媒体及增值资讯服务提供商，是玩家获得游戏资讯、交流沟通的首选网站，也是游戏供应商的宣传平台。	5bb644d6-f951-c882-2f0c-5299a9458468	OJ.0B6mwo9k6ZEpUQ	513	510
+360游戏	navigational	http://wan.360.cn/	360游戏中心	360游戏中心.jpg	360游戏中心是附属奇虎360公司旗下的精品网络游戏运营平台主要为广大网民提供安全、健康的免费游戏娱乐产品。目前已上线近百款最新最热的免费网页游戏，位居国内排名前三位，拥有数千万用户。	0c4112a4-a0fb-3d9a-424a-4f1bee882c07	OJ.mkWhlldw7qFV2Q	279	279
+99su	navigational	http://cet.99sushe.com/	99宿舍	99宿舍.jpg	一家国内领先的大学生综合互动平台服务商。每年为中国大学生提供权威独家免费英语四六级考试查分服务。	49eff093-00e2-3048-b0ca-3701c983b89a	OJ.7sOW2T7e9b1Sxw	190	181
+99sushe	navigational	http://cet.99sushe.com/	99宿舍	99宿舍.jpg	一家国内领先的大学生综合互动平台服务商。每年为中国大学生提供权威独家免费英语四六级考试查分服务。	744ec3aa-444c-0f16-2071-36207598516e	OJ.7sOW2T7e9b1Sxw	190	181
+b'd'y	navigational	https://pan.baidu.com/	百度云 	百度云.png	"百度云是百度公司推出的一款云服务产品。通过百度云,您可以将照片、文档、音乐、通讯录数据在各类设备中使用,在众多朋友圈里分享与交流"	d67154af-a742-0b68-bc4e-2d6350d52db2	OJ.xm0WH7Dhh8wnuA	1024	1024
+bbn	navigational	http://www.bbn.com.cn/	北京宽带网bbn	北京宽带网bbn.png	北京宽带网成立于2001年，是一个为北京地区广大宽带用户提供视频、游戏、教育、安全等多种增值信息服务的综合性宽带门户网站。北京宽带网于2004、2005年度，连续两届获得《互联网周刊》评选的“中国商业网站100强”荣誉称号。	d20efd22-fba2-c6bd-7f26-59d9d885fd8e	OJ.i9yiK5jhcFhzDA	137	136
+ccb	navigational	http://www.ccb.com/cn/home/indexv3.html	中国建设银行	中国建设银行.jpg	中国建设银行（china construction bank）是一家以中长期信贷业务为特色的国有商业银行，总部设在北京，在中国境内及各主要国际金融中心开展业务。	4c64de4e-7093-038e-155e-d9d5eaafcc04	OJ.0lkdXNyALknAXQ	190	190
+cnki	navigational	http://www.cnki.net/	中国知网	中国知网.jpg	中国知网，是国家知识基础设施（national knowledge infrastructure，nki）的概念，由世界银行于1998年提出。cnki工程是以实现全社会知识资源传播共享与增值利用为目标的信息化建设项目，由清华大学、清华同方发起，始建于1999年6月。	1476c2fe-ddf0-3fb3-3043-5eaeba365036	OJ.BW50OZ6Zza0qYQ	206	206
+lg	navigational	http://www.lg.com	lg	lg.jpg	韩国lg集团于1947年成立于韩国首尔，位于首尔市永登浦区汝矣岛洞20号。是领导世界产业发展的国际性企业集团。lg集团目前在171个国家与地区建立了300多家海外办事机构。事业领域覆盖化学能源、电子电器、通讯与服务等领域。	6b44af78-dd5d-9a5d-d4a8-edada49b272e	OJ.jBgHxFvhMK0hzg	392	392
+rufus	navigational	https://rufus.akeo.ie/	rufus	rufus.png	rufus 是一个开源免费的快速制作 u 盘系统启动盘和格式化 usb 的实用小工具，它可以快速把 iso 格式的系统镜像文件快速制作成可引导的 usb 启动安装盘，支持 windows 或 linux 启动。	718406e2-fa69-220f-44e0-6ac4b696c93b	OJ.O0pxGS0wNi4rCw	300	300
+s'f	navigational	http://www.sf-express.com/cn/sc/	顺丰速运	顺丰速运.jpg	顺丰速运于1993年3月26日在广东顺德成立，是一家主要经营国际、国内快递业务的港资快递企业。	ab4c0427-e577-c6f0-88fe-8b9995bd19f9	OJ.m6ec0mMt0aEaHA	506	506
+sourcetree	navigational	https://www.sourcetreeapp.com/	sourcetree	sourcetree.png	sourcetree 是 windows 和mac os x 下免费的 git 和 hg 客户端，同时也是mercurial和subversion版本控制系统工具。支持创建、克隆、提交、push、pull 和合并等操作。	9a754e58-297e-da79-8262-d7f32569bced	OJ.4mTmvB0LA73qMA	300	300
+su'ning	navigational	http://www.suning.com/	苏宁易购	苏宁易购.jpg	苏宁易购，是苏宁云商集团股份有限公司旗下新一代b2c网上购物平台，现已覆盖传统家电、3c电器、日用百货等品类。	9fd2cc07-e1a2-6acd-6e37-021b96c23475	OJ.cJ8R11t2wD4AOQ	380	380
+tm	navigational	https://www.tmall.com/	天猫	天猫.jpg	天猫 - 中国线上购物的地标网站，亚洲超大的综合性购物平台，拥有10万多品牌商家。每日发布大量国内外商品！	9c9ce102-da1b-fd63-a029-5358113b29ba	OJ.1rwN0T9Cmtv0cg	222	222
+un	navigational	http://www.un.org/	联合国	联合国.jpg	联合国是第二次世界大战后成立的国际组织，是一个由主权国家组成的国际组织。1945年10月24日，在美国旧金山签订生效的《联合国宪章》，标志着联合国正式成立。	9588bf6d-5edf-2b13-50d0-24ebffb6b3e1	OJ.T3lQQrcH6bVHsg	415	417
+wecha	navigational	http://weixin.qq.com/	微信	微信.png	腾讯公司于2011年1月21日推出的一个为智能终端提供即时通讯服务的免费应用程序。	5d9a9045-7089-e0cc-e2bf-323197e29b30	OJ.eCn0sCKXCTC9Zg	1024	1024
+xin'lang	navigational	http://www.sina.com.cn/	新浪网	新浪网.jpg	新浪网为全球用户24小时提供全面及时的中文资讯	1f3dd9cf-9447-df98-9ee5-3a970f8d275d	OJ.Yxhx546XkokgZQ	472	472
+xin'lang'bo'ke	navigational	http://blog.sina.com.cn/	新浪博客	新浪博客.png	新浪博客，中国门户网站之一新浪网的网络日志频道。新浪网博客频道是全国最主流，人气颇高的博客频道之一。	5c7f42fb-d387-652c-916a-ea642d9823d6	OJ.45J7esJ3IO0v2Q	186	186
+zhong'xin	navigational	http://bank.ecitic.com/	中信银行	中信银行.jpg	中信银行原称中信实业银行，创立于1987年，2005年底改为现名。中信银行是中国的全国性商业银行之一，总部位于北京，主要股东是中国中信股份有限公司。	b6beb37a-736d-d3db-bf16-42f410265a7e	OJ.H7UEh60UJejbDw	380	380
+交通银行	navigational	http://www.bankcomm.com	交通银行	交通银行.jpg	交通银行（全称：交通银行股份有限公司）始建于1908年，是中国近代以来延续历史最悠久、最古老的银行，也是近代中国的发钞行之一。现为中国五大国有银行之一。	a570fc47-717b-3b65-c6b5-5abfd2e631eb	OJ.ebCNS5gElAUrSA	400	399
+兴业	navigational	http://www.cib.com.cn/	兴业银行	兴业银行.jpg	兴业银行股份有限公司成立于1988年8月，是经中华人民共和国国务院、中国人民银行批准成立的大陆首批股份制商业银行之一，总行设在福建省福州市，2007年2月5日在上海证券交易所挂牌上市（股票代码：601166），注册资本190.52亿元。	beb51c7a-4769-8233-24ab-bd22de2cb08b	OJ.0OMK4YZNhg8evA	400	400
+前程无忧	navigational	http://www.51job.com/	前程无忧	前程无忧.jpg	“前程无忧”(nasdaq: jobs)是国内第一个集多种媒介资源优势的专业人力资源服务机构。覆盖全国104个地区，有效注册用户超过1亿，日招聘职位超过320万。	56905073-7e9a-0690-3bf3-6ca01782149f	OJ.b35gjA8KyScr9A	400	399
+百度一下	navigational	http://www.baidu.com/	百度	百度.jpg	全球最大的中文搜索引擎、致力于让网民更便捷地获取信息，找到所求。	55e3c84b-36cf-719d-205a-865d9183e653	OJ.ZTAyBIUBo2AHQg	360	360
+赶集网	navigational	http://www.ganji.com/index.htm	赶集网	赶集网.jpg	"赶集网是更专业的分类信息网!提供免费发布信息,查阅信息服务.寻找最新最全的房屋出租、二手房、二手车、二手物品交易、求职招聘等生活信息,请到赶集网ganji.com"	e53667d9-48c8-1158-4848-061b3a68eaa3	OJ.SR8SaVdEoScZFg	500	500
+驱动大师	navigational	http://www.360.cn/qudongdashi/	360驱动大师	360驱动大师.png	360驱动大师是一款专业解决驱动安装更新软件，百万级的驱动库支持，驱动安装一键化，无需手动操作，首创的驱动体检技术，让你更直观了解您电脑的状态，强大的云安全中心让保证您所下载的驱动不带病毒，快一点，再快一点，体验一键化安装和升级的乐趣，驱动大师陪你一路行。	5a2d6619-2aeb-ad74-97ca-ef0da9e15281	OJ.2fsSawXAfo3X7A	250	250
+10000	navigational	http://www.189.cn/	中国电信	中国电信.jpg	"中国电信集团公司是我国特大型国有通信企业、上海世博会全球合作伙伴，连续多年入选""世界500强企业""，主要经营固定电话、移动通信、卫星通信、互联网接入及应用等综合信息服务。"	41a7c8bd-e538-12bd-f540-b3c39245782e	OJ.GHxmA03zwnDd8g	400	400
+1x	navigational	https://1x.com/	1x	1x.png	1x.com全球最大的在线精选照片画廊。	a917ef49-9182-9ba9-b647-2bf9a1f7558c	OJ.lnRcFFuErWcxtw	180	162
+da'bai'cai	navigational	http://www.dabaicai.com/	大白菜u盘启动盘制作工具	大白菜.jpg	大白菜u盘启动盘制作工具是一款简单易学的一键制作万能u盘启动	54c1febe-643c-0bd3-e291-531ff792c76c	OJ.0Ox3V90FDMFMcw	276	276
+diskg	navigational	http://www.diskgenius.cn/	diskgenius	diskgenius.jpg	"diskgenius,专家级数据恢复软件,集数据恢复、硬盘分区、系统备份还原等多种功能于一身的超级工具软件."	b249b4f6-2a2f-e17b-57f4-b3b57dd5544e	OJ.rC0fUtJCwJXXyQ	339	339
+douban	navigational	https://www.douban.com/	豆瓣	豆瓣.jpg	豆瓣（douban）是一个社区网站。网站由杨勃（网名“阿北”）  创立于2005年3月6日。该网站以书影音起家，提供关于书籍、电影、音乐等作品的信息，无论描述还是评论都由用户提供（user-generated content，ugc），是web 2.0网站中具有特色的一个网站	094d1e7a-0cde-3a77-d57b-3a9c929fd967	OJ.UzXXZxgEqhS8qQ	300	300
+geforce	navigational	http://www.geforce.cn/drivers	geforce	geforce.jpg	geforce（中文一般称为精视™）是一个英文产品的商标。geforce是nvidia的产品之一，与amd（原ati）的radeon系列显卡竞争。	7da74c0b-4cda-d88a-e63a-444c738cf165	OJ.L4Wa3kwEJxCC0A	442	440
+gmx	navigational	https://www.gmx.net/	gmx	gmx.jpg	gmx- (global mail exchange)是全球著名免费邮箱网站。	58e37427-a608-c227-9b6c-bebc0375aaeb	OJ.Fa5jE8m0LlCTyA	200	200
+hotmail.com	navigational	http://www.hotmail.com/	hotmail	hotmail.png	hotmail是互联网免费电子邮件电子邮件提供商之一，世界上的任何人可以通过网页浏览器对其进行读取，收发电子邮件。	e356f159-37ee-5bbe-4b50-a685047cda2f	OJ.W5ppawwI9Nxq0g	1024	1024
+hua'shuo	navigational	http://www.asus.com.cn/	华硕	华硕.jpg	华硕是目前全球第一大主板生产商、全球第三大显卡生产商，同时也是全球领先的3c解决方案提供商之一，致力于为个人和企业用户提供最具创新价值的产品及应用方案。	9303352a-df5f-d197-0411-43bb88e2c3a3	OJ.Fay4Nb5ZbiA3dA	400	399
+iqiy	navigational	http://www.iqiyi.com/	爱奇艺	爱奇艺.jpg	国内首家专注于提供免费、高清网络视频服务的大型视频网站	aa826df4-8e1b-5160-32f5-2cd3ce502298	OJ.NUhtxJ0TOQei9Q	200	200
+kingsoft	navigational	http://www.kingsoft.com/	金山在线	金山在线.jpg	致力于为全球用户提供快捷、简单、安全的互联网及移动上网体验。	92d95abb-c62d-d4cd-5296-b8b630ddae87	OJ.Am3y8gZJ4a76uw	218	218
+mongo	navigational	https://www.mongodb.org/	mongodb	mongodb.jpg	mongodb是一个基于分布式文件存储的数据库。由c++语言编写。旨在为web应用提供可扩展的高性能数据存储解决方案。	23a9b33f-f239-ca63-7dc9-de369a6c4fd7	OJ.SN8FaycWdeoNBg	350	350
+nodejs	navigational	http://nodejs.cn/	node.js	node.js.jpg	node.js是一个javascript运行环境(runtime)。实际上它是对google v8引擎进行了封装。	88793b90-f602-d855-11e7-0267f105494a	OJ.wjbsYKhDCfNRQg	400	399
+s's'j'j	navigational	http://ssjj.4399.com/	4399生死阻击	4399生死阻击.jpg	"4399生死狙击游戏是业内领先的无插件真3d第一人称射击网页游戏,打开网页在线玩,即可感受枪林弹雨的枪战乐趣。"	f4f41948-dbfa-39a0-444f-2d3971b1a427	OJ.xycQKF7DF7REWA	327	312
+spotify	navigational	https://www.spotify.com/int/why-not-available/	spotify	spotify.png	spotify是全球最大的正版流媒体音乐服务平台，2008年10月在瑞典首都斯德哥尔摩正式上线。	1319a5bd-ae90-bb29-21df-ecc690df0903	OJ.kTirSehckdvvLg	300	300
+tianzheng	navigational	http://www.tangent.com.cn/	天正软件	天正软件.jpg	天正为天正集团，中国民营企业20强之一.	61975252-467b-03fb-ebac-1717e16b7737	OJ.tiQImfREWCxo1Q	202	202
+twitter	navigational	https://twitter.com/	twitter	twitter.png	twitter（非官方汉语通称推特）是一家美国社交网络及微博客服务的网站，是全球互联网上访问量最大的十个网站之一。	5e58b689-cdaa-efeb-63ed-1bc877b66a86	OJ.EqskTX2fPj49zw	400	400
+yah	navigational	https://www.yahoo.com/	雅虎	雅虎.jpg	美国著名的互联网门户网站，也是20世纪末互联网奇迹的创造者之一。	655187dd-96de-a75c-73e0-a4c8e45ea1b2	OJ.pE5dsVZcZwvUQQ	225	225
+yout	navigational	https://www.youtube.com/	youtube	youtube.png	youtube是世界上最大的视频网站，早期公司总部位于加利福尼亚州的圣布鲁诺。	fd679ed5-4b53-9a15-7fdf-a6acf8aa9c2d	OJ.zHmzSsN3UnA90g	225	225
+z'f'b	navigational	https://www.alipay.com/	支付宝	支付宝.jpg	支付宝（中国）网络技术有限公司是国内领先的第三方支付平台，致力于提供“简单、安全、快速”的支付解决方案。	bb436371-a896-11f5-a44b-046e2c748e79	OJ.jVYoK6RjR9ByrQ	192	193
+zhifub	navigational	https://www.alipay.com/	支付宝	支付宝.jpg	支付宝（中国）网络技术有限公司是国内领先的第三方支付平台，致力于提供“简单、安全、快速”的支付解决方案。	08961a8e-5f09-e452-e7de-84c86e15d989	OJ.jVYoK6RjR9ByrQ	192	193
+zhihu	navigational	http://www.zhihu.com/	知乎	知乎.jpg	知乎是一个真实的网络问答社区，社区氛围友好与理性，连接各行各业的精英。用户分享着彼此的专业知识、经验和见解，为中文互联网源源不断地提供高质量的信息。	3b70257d-0cc4-6c18-8ee8-5b4f0840414c	OJ.YDL2tRx1dCms0g	416	416
+万达	navigational	http://www.wanda.cn/	万达集团	万达集团.jpg	万达集团创立于1988年，形成商业、文化、金融三大集团。	b6c05844-4ede-9915-9a94-31069c8944b7	OJ.oCHuXVioWNwRRg	400	399
+前程	navigational	http://www.51job.com/	前程无忧	前程无忧.jpg	“前程无忧”(nasdaq: jobs)是国内第一个集多种媒介资源优势的专业人力资源服务机构。覆盖全国104个地区，有效注册用户超过1亿，日招聘职位超过320万。	ccb467b4-8b82-80e5-47a4-cb42c3cee7c7	OJ.b35gjA8KyScr9A	400	399
+剑网三	navigational	http://jx3.xoyo.com/	《剑网3》	《剑网3》.png	《剑侠情缘网络版叁》（简称《剑网3》）是由金山软件西山居开发，金山运营的3d武侠角色扮演电脑客户端游戏。	40645bb4-82d9-a267-5afc-b418b21002d1	OJ.rO2mJkJXgnyFnw	409	409
+广联达	navigational	http://www.fwxgx.com/gim_o_help_index.exml	广联达	广联达.jpg	广联达软件股份有限公司是一家上市软件公司，立足建设工程领域，围绕工程项目的全生命周期，提供以建设工程领域专业应用为核心基础支撑，以产业大数据、产业征信、产业金融等为增值服务。	19f7300c-e458-0016-9a3e-bd6bcfb01a7f	OJ.PS40iXdCh0Lz5g	266	266
+智联招聘	navigational	http://www.zhaopin.com/	智联招聘	智联招聘.jpg	"智联招聘是全国性权威人才网站,为求职者提供最新最全的招聘信息,为企业提供网络招聘,校园招聘,猎头,培训,测评和人事外包等一站式专业人力资源服务.好工作上智联招聘."	5bbaae5b-5523-2609-a0f4-b1f7f651a1f6	OJ.69QGCBY10m10Cw	200	200
+浦发	navigational	http://www.spdb.com.cn/chpage/c1/	浦发银行	浦发银行.jpg	上海浦东发展银行股份有限公司（以下简称：浦发银行）是1992年8月28日经中国人民银行批准设立、1993年1月9日开业、1999年在上海证券交易所挂牌上市（股票交易代码：600000）的国有控股全国性股份制商业银行，总行设在上海。	30f0ce2b-dbb9-7bd0-c2cd-ba9ebc715c68	OJ.X8vxO0RmZU4ZWQ	400	400
+爱奇	navigational	http://www.iqiyi.com/	爱奇艺	爱奇艺.jpg	国内首家专注于提供免费、高清网络视频服务的大型视频网站	4304cef8-c040-1ee4-77a9-76c6e7d28c96	OJ.NUhtxJ0TOQei9Q	200	200
+百度网	navigational	http://www.baidu.com/	百度	百度.jpg	全球最大的中文搜索引擎、致力于让网民更便捷地获取信息，找到所求。	d79fd886-7322-bcb4-44a6-97e0f11a3f48	OJ.ZTAyBIUBo2AHQg	360	360
+联通	navigational	http://www.chinaunicom.com.cn/	中国联通	中国联通.jpg	中国联合网络通信集团有限公司（简称“中国联通”）于2009年1月6日在原中国网通和原中国联通的基础上合并组建而成，在国内31个省（自治区、直辖市）和境外多个国家和地区设有分支机构，是中国唯一一家在纽约、香港、上海三地同时上市的电信运营企业，连续多年入选“世界500强企业”。	92a542f8-4ad2-092e-0e6e-a2a2588a38c8	OJ.yVNez0tPL8EnoA	400	400
+聚美	navigational	http://www.jumei.com/	聚美优品	聚美优品.jpg	聚美优品是一家化妆品限时特卖商城，其前身为团美网，由陈欧、戴雨森等创立于2010年3月。	8650b8ce-3ea1-ebaf-8de2-457833eab792	OJ.WOr2Q6W4STYrFg	367	366
+词霸	navigational	http://www.iciba.com/	爱词霸	爱词霸.jpg	"爱词霸英语为广大网友提供在线翻译、在线词典、英语口语、英语学习资料、汉语词典,金山词霸下载等服务,致力于为您提供优质权威的在线英语服务。"	efffd079-7053-e8ac-3e5e-5039d0ca16e7	OJ.91JVmTDNbv1Nbw	136	136
+126.com	navigational	http://mail.126.com/	126网易免费邮	126邮箱.jpg	网易公司于2001年11月推出的免费的电子邮箱，是网易公司倾力打造的专业电子邮箱。	f73a0c85-6ddb-3836-b503-10268b31a904	OJ.8Ik0a5bw0jCRLg	268	268
+a'd'safe	navigational	http://www.ad-safe.com/	adsafe净网大师	adsafe净网大师.png	adsafe净网大师是国内首款免费专业净网软件，集恶意、用户隐私保护、不良网站屏蔽、视频骚扰过滤等功能为一体。	f42bc996-ea24-8086-a980-bb21c7df7674	OJ.98daXyz90Wybow	246	247
+acer	navigational	http://www.acer.com.cn/ac/zh/cn/content/home	宏基	宏基.jpg	宏碁成立于1976年，是一个国际化的自有品牌公司，主要从事于智慧型手机、平板电脑、个人电脑、显示产品与服务器的研发、设计、行销、销售及服务，也结合物联网积极发展云端技术与解决方案，是一个整合软件、硬件与服务的企业。	cb917fbd-348f-345e-ff2a-f991d0c0ea59	OJ.wdUwZM9rViKKxQ	400	400
+alibab	navigational	https://www.1688.com/	阿里巴巴	阿里巴巴.jpg	"全球企业间(b2b)电子商务的著名品牌,为数千万网商提供海量商机信息和便捷安全的在线交易市场,也是商人们以商会友、真实互动的社区平台。"	017d1029-2ddd-f8d1-b8a2-49d44bd52bcf	OJ.YO70FYvilLJquw	555	555
+csol	navigational	http://csol.tiancity.com/homepage/v5/	反恐精英online	反恐精英online.jpg	《反恐精英online》是以美国valve公司的游戏《反恐精英cs1.6》为基础，由nexon创作开发的fps网游。该游戏在中国大陆地区由世纪天成代理。	cb0241f3-4b29-15f2-f014-c1a8b8e2cd09	OJ.z1fgfEfsL2fxoQ	331	321
+duo'wan	navigational	http://www.duowan.com/	多玩游戏	多玩游戏.png	"最专业的游戏新闻中心,最具特色yy语音社区,最强大的游戏论坛"	7e891ae2-ad40-0c41-68e2-b7657b403263	OJ.Eh7dEC5aFFsx0A	400	400
+ems	navigational	http://www.ems.com.cn/	ems	ems.jpg	ems（即“express mail service”），邮政特快专递服务。它是由万国邮联管理下的国际邮件快递服务，是中国邮政提供的一种快递服务。	60f3e473-b3c3-0104-7171-789c4b585fcc	OJ.xKoALm0RvicoUw	350	350
+gan'ji	navigational	http://www.ganji.com/index.htm	赶集网	赶集网.jpg	"赶集网是更专业的分类信息网!提供免费发布信息,查阅信息服务.寻找最新最全的房屋出租、二手房、二手车、二手物品交易、求职招聘等生活信息,请到赶集网ganji.com"	d7be8a99-6690-df41-c956-bd07db953e8f	OJ.SR8SaVdEoScZFg	500	500
+geforce experience	navigational	http://www.geforce.cn/drivers	geforce	geforce.jpg	geforce（中文一般称为精视™）是一个英文产品的商标。geforce是nvidia的产品之一，与amd（原ati）的radeon系列显卡竞争。	756c7938-b345-4223-d72f-7d49ac1c53a2	OJ.L4Wa3kwEJxCC0A	442	440
+gmai	navigational	https://www.google.com/intl/zh-cn/mail/help/about.html	gmail	gmail.jpg	gmail 是 google 的免费网络邮件服务。它随付内置的 google 搜索技术并提供15g以上的存储空间。	1890cd1e-acd2-2332-1545-110fb6d87831	OJ.o0Ab8oREZhmREg	324	324
+gong'shang	navigational	http://www.icbc.com.cn/icbc/	中国工商银行	中国工商银行.png	中国工商银行（全称：中国工商银行股份有限公司，industrial and commercial bank of china）简称icbc ，成立于1984年1月1日。	716eb3cc-af81-a766-56d9-279539be56df	OJ.elbOOqk5ZCkUjg	400	400
+guoxin	navigational	http://www.guosen.com.cn/gxzq/index.jsp	国信证券	国信证券.jpg	国信证券股份有限公司是全国性大型综合类证券公司，aa级证券公司，注册资本70亿元，在全国38个城市拥有54家营业网点，法定代表人为何如，现有员工9443人，其中公司本部员工1167人，本科以上学历人员占90%以上。	24731792-270c-b60e-d677-93fea168ce32	OJ.AlCj7LN50WEpaA	387	387
+huipu	navigational	http://www8.hp.com/cn/zh/home.html	惠普	惠普.png	pc电脑十大品牌，笔记本电脑十大品牌，打印机十大品牌，美国资讯科技公司，全球500强企业，世界最大的it公司之一，世界上最大的科技企业之一，世界领先的计算机及办公设备制造商	93e6db79-c6ed-aefa-6780-21653e456365	OJ.6ovaVWFNzBgHzg	225	225
+intel	navigational	http://www.intel.cn/content/www/cn/zh/homepage.html	英特尔 intel	英特尔 intel.jpg	英特尔公司，英特尔intel，世界两大cpu处理器品牌之一，世界著名品牌，创于1968年美国，全球it产业最具影响力品牌之一，全球最大的微处理器制造商，全球信息产业的领导公司之一	40e3c8ce-f1ee-b157-f4bb-702e97e2ff97	OJ.YIamPpGqHGtW0A	300	300
+lianxiang	navigational	http://www.lenovo.com.cn/	联想	联想.png	联想集团有限公司是一家总部设在中国北京市和美国北卡罗莱纳州罗利市的跨国科技公司，主要研发、生产和销售笔记本电脑、一体机、台式电脑、服务器、手机、平板电脑、打印机、投影机，以及其他移动互联、数码、电脑周边等类产品。	89f50165-4d47-f6e9-8a13-67fa3b323399	OJ.tURd9eNFk0L4NA	400	400
+samsung	navigational	http://www.samsung.com/	三星集团	三星集团.jpg	三星集团是韩国最大的企业集团，包括85个下属公司及若干其他法人机构，在近70个国家和地区建立了近300个法人及办事处，员工总数20余万人，业务涉及电子、金融、机械、化学等众多领域。	faa40950-b358-a7d6-fdd4-97f802a924bd	OJ.juQ3520Uk7ebjA	400	400
+startisback	navigational	http://www.startisback.com/	startisback+	startisback+.jpg	这是一款专门为win8而生的开始菜单增强工具，如今windows8.1发布，startisback正式发布plus版即startisback+，startisback+仅支持win8.1，功能方面是startisback是相同的。	f74d682c-33c3-74bf-d83f-f70365960ad3	OJ.2qv56Jh9UkRZtg	350	315
+www.163	navigational	http://www.163.com/	网易	网易.jpg	"网易是中国领先的互联网技术公司,为用户提供免费邮箱、游戏、搜索引擎服务,开设新闻、娱乐、体育等30多个内容频道,及博客、视频、论坛等互动交流,网聚人的力量。"	b0ef2dbf-7157-9aa9-7e32-20b2cbfeca14	OJ.g0COqnNaUhe4kQ	175	175
+xamarin	navigational	https://www.xamarin.com/	xamarin	xamarin.jpg	xamarin始创于2011年，旨在使移动开发变得难以置信地迅捷和简单。xamarin的产品简化了针对多种平台的应用开发，包括ios、android、windows phone和mac app。	66148b1f-d6c2-d505-9020-a554194b0463	OJ.ySVclhXTUR03OQ	302	302
+xiao'm	navigational	http://www.mi.com/sg/	小米商城	小米.png	小米商城 - 小米手机官方网站，直营小米公司旗下所有产品。	b3403cd3-8351-f5fc-dcd6-db579a002429	OJ.RHRpIYmWcEsgGA	190	190

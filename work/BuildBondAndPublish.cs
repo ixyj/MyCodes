@@ -1,16 +1,26 @@
 ﻿/// <summary>
-/// How to Reference bond class:
-///  1. Add bond files
-///  2. Update .csproj file:
-///   a. Add import at top:
-///        &lt Import Project="D:\Branches\Suggestions\private\packages\Bond.Library\bond.csharp.props" Condition="Exists('D:\Branches\Suggestions\private\packages\Bond.Library\bond.csharp.props')" /&gt
-///   b. Add import at bottom:
-///        &lt Import Project="D:\Branches\Suggestions\private\packages\Bond.Library\bond.csharp.targets" /&gt
-///   c. Update bond to BONDFILE: 
-///        &lt BondFile Include="Bond\MsnJVDataService.GeneralKey.bond" /&gt
-///  3. Add required bond dll and open from CoreXT
+/// <![CDATA[
+///  How to Reference bond class:
+///  Edit .csproj file to:
+///     a. Add bond files to project:
+///       <ItemGroup>
+///         <BondFile Include = "Bonds\Halsey.AE.C3BToC3A.AnswerSelectionConfig_2.bond">
+///           <CompileTypes>true</CompileTypes>
+///        </BondFile>
+///        ......
+///       </ItemGroup> 
+///     b. Import props at top:
+///         <Import Project="$(PackagesRoot)\Bond.Library\bond.csharp.props" />
+///     c. Import targets at bottom:
+///         <Import Project="$(PackagesRoot)\Bond.Library\bond.csharp.targets" />
+///     d. Add required bond dlls:
+///      $(PackagesRoot)\ApplicationHost.Product\ApplicationHost\Microsoft.Bond.dll;
+///      $(PackagesRoot)\ApplicationHost.Product\ApplicationHost\Microsoft.Bond.Interfaces.dll.
+/// 
+/// Want a sample? Try "$(PackagesRoot)\Bond.Library\examples\managed\core\serialization-msbuild\serialization-msbuild.csproj"!!
+/// ]]>
 /// </summary>
-                   
+
 namespace BondBuilder
 {
     using Halsey.AE.C3BToC3A;
@@ -20,14 +30,14 @@ namespace BondBuilder
     using System;
     using System.Collections.Generic;
     using System.Linq;
-       
+
     public class Builder
     {
         public static int Main(string[] args)
         {
             try
             {
-                var key = new GeneralKey {Key = "zhcn_c3btoc3a"};
+                var key = new GeneralKey { Key = "zhcn_c3btoc3a" };
                 var value = HackBondConfig();
                 var data = new Dictionary<GeneralKey, BondedGeneralResponse> { { key, value } };
 

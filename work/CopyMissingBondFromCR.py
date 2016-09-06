@@ -13,7 +13,7 @@ from os import listdir
 from os.path import isdir, join
 
 if __name__ == "__main__":
-    missBonds = set([x.replace("\n", "").lower() for x in open("C:/Users/yajxu/Desktop/missing.bond").readlines()])
+    missBonds = set([x.replace("\n", "").replace(" ", "").lower() for x in open("C:/Users/yajxu/Desktop/missing.bond").readlines()])
     crCached = "D:/ProgramData/CRGlobalCache/"
     outDir =  "C:/Users/yajxu/Desktop/bond/"
 

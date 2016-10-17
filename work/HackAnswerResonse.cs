@@ -59,6 +59,10 @@ namespace AutoSuggest.Plugins
             PluginOutput<QuerySuggestionList> outputSuggestionList,
             PluginOutput<LegacyQueryResponseData> outputAqr)
         {
+			.......
+				AnswersData answerData = null;
+				answerResponses = new List<LegacyQueryResponseData> {Hack(pluginServices, out answerData)};
+			.......
         }
 
         /// <summary>

@@ -8,7 +8,8 @@
 
     // Avoid to use "async Void";
     // Could not catch exception from "async Void";
-    // Always use "async", since it may lead to deadlock (root cause: await context), though nor repro in Console app
+    // Always use "async", since it may lead to deadlock (root cause: await context), though not repro in Console app. Solution: task.ConfigureAwait(false)
+    // async is just a tag, meaning it is a asynchronous method, and must contain "await". The "await" method will run in a independent thread.
     public class AsyncHelper
     {
         public static int Main(string[] args)

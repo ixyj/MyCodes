@@ -1,0 +1,23 @@
+let logData =
+customMetrics
+| project name, value, timestamp, instanceId=tostring(customDimensions['instanceId']), timeId=bin(timestamp,20min)
+| where timestamp >= ago(3d) 
+  and (name == 'connect' or name == 'stop');
+let allData =
+logData
+| join kind=inner
+(logData
+)
+ on timeId
+|project timeId=substring(tostring(timeId+totimespan('20min')+totimespan('8h')), 0, 16), instanceId, value, timestamp;
+let connection = 
+allData
+| summarize value=argmax(value, timestamp)
+  by timeId, instanceId;
+let curConn =
+connection
+| summarize value=sum(value)
+by timeId;
+curConn
+| order by timeId asc
+| render timechart

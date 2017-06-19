@@ -25,13 +25,18 @@
                     {
                         CacheItem item;
                         cache.TryGetData(ipConnectionStringPrefix + ip, out item);
-                        count += int.Parse(item?.Data?.ToString() ?? "0");
+                        var data = item?.Data?.ToString();
+                        if (string.IsNullOrEmpty(data))
+                        {
+                            throw new Exception($"Fail to fetch connect count for: {ipConnectionStringPrefix + ip}");
+                        }
+
+                        count += int.Parse(data);
                     }
 
                     var telemetry = new TelemetryClient();
                     telemetry.InstrumentationKey = InstrumentationKey;
                     telemetry.TrackMetric("curAllConn", count);
-                    Console.WriteLine($"Current all connectons are: {count}");
                 }
                 catch (Exception e)
                 {

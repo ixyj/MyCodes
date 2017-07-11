@@ -6,8 +6,10 @@ import re
 import clr
 clr.AddReference(r'System.Core')
 clr.AddReference(r'mscorlib')
+clr.AddReference(r'Newtonsoft.Json')
 import System
 from System.Reflection import BindingFlags
+from Newtonsoft.Json import JsonConvert
 
 # node=z/a[1]/d ==>jsonData['z']['a'][1]['d']
 def getJsonNode(jsonData, node):
@@ -23,8 +25,11 @@ def getJsonNode(jsonData, node):
 
     return js
 
+mids = None
 def JsonDumps(obj):
-    return json.dumps(obj, default=lambda o: ToDict(o), ensure_ascii=False, separators=(',',':')) 
+    mids = {}
+    # return JsonConvert.SerializeObject(o)
+    return json.dumps(obj, default=lambda o: Utility.ToDict(o), ensure_ascii=False, separators=(',', ':'))
 
 def ToDict(obj):
     if hasattr(obj, '__dict__'):
@@ -32,8 +37,12 @@ def ToDict(obj):
     maps = {}
     for p in obj.GetType().GetProperties(BindingFlags.Public | BindingFlags.Instance):
         m = p.GetGetMethod()
-        if m != None and m.IsPublic:
-            maps[p.Name] = m.Invoke(obj, None)
+        if m != None and m.IsPublic and m.GetParameters().Count == 0:
+            o = m.Invoke(obj, None)
+            mid = id(o)
+            if mid not in mids:
+                mids[mid] = o
+                maps[p.Name] = o
     return maps
 
 if __name__ == "__main__":

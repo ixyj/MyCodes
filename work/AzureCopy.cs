@@ -144,7 +144,18 @@
                 Directory.EnumerateFiles(dir)
                 .Where(x => Regex.IsMatch(Path.GetFileName(x), pattern, RegexOptions.IgnoreCase))
                 .ToList()
-                .ForEach(x => UploadStream(x, blobContainer.GetBlockBlobReference($"{destDir}{Path.GetFileName(x)}"), _isOverwrite, 3));
+                .ForEach(x =>
+                {
+                    try
+                    {
+                        UploadStream(x, blobContainer.GetBlockBlobReference($"{destDir}{Path.GetFileName(x)}"), _isOverwrite, 3);
+                    }
+                    catch (Exception e)
+                    {
+                        Console.WriteLine($"Fail to upload stream {x}");
+                        Console.WriteLine(e);
+                    }
+                });
             }
             else
             {
@@ -163,7 +174,18 @@
                 EnumerateFiles(dir)
                     .Where(x => Regex.IsMatch(Path.GetFileName(x.Uri.LocalPath), pattern))
                     .ToList()
-                    .ForEach(x => DownloadStream(destDir + Path.GetFileName(x.Uri.LocalPath), _blobClient.GetBlobReferenceFromServer(x.Uri), _isOverwrite, 3));
+                    .ForEach(x =>
+                    {
+                        try
+                        {
+                            DownloadStream(destDir + Path.GetFileName(x.Uri.LocalPath), _blobClient.GetBlobReferenceFromServer(x.Uri), _isOverwrite, 3);
+                        }
+                        catch (Exception e)
+                        {
+                            Console.WriteLine($"Fail to download stream {x.Uri.AbsolutePath}");
+                            Console.WriteLine(e);
+                        }
+                    });
             }
             else
             {

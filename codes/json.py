@@ -26,10 +26,10 @@ def getJsonNode(jsonData, node):
     return js
 
 mids = None
-def JsonDumps(obj):
-    mids = {}
-    # return JsonConvert.SerializeObject(o)
-    return json.dumps(obj, default=lambda o: Utility.ToDict(o), ensure_ascii=False, separators=(',', ':'))
+#def JsonDumps(obj):
+#    mids = {}
+#    # return JsonConvert.SerializeObject(o)
+#    return json.dumps(obj, default=lambda o: Utility.ToDict(o), ensure_ascii=False, separators=(',', ':'))
 
 def ToDict(obj):
     if hasattr(obj, '__dict__'):
@@ -45,7 +45,28 @@ def ToDict(obj):
                 maps[p.Name] = o
     return maps
 
+def Obj2Dict(obj):
+    if isinstance(obj, MyClass):
+        clone = dict(obj.__dict__)
+        clone['__class__'] = obj.__class__.__name__
+        clone['__module__'] = obj.__class__.__module__
+        return clone
+    else:
+        return json.dumps(obj)
+
+def Dict2Obj(dictObj):
+    if '__class__' in dictObj:
+        className = dictObj.pop('__class__')  
+        moduleName = dictObj.pop('__module__')  
+        module = __import__(moduleName)  
+        cls = getattr(module, className)
+        return cls(**dictObj)
+    else:  
+        return dictObj
+
 if __name__ == "__main__":
+    #json.dumps(obj, default=Obj2Dict)
+    #json.loads(js, object_hook=Dict2Obj)
     print(getJsonNode('{"z":{"b":1,"a":[{"c":2},{"d":[6,7]}]}}', 'z'))
     print(getJsonNode('{"z":{"b":1,"a":[{"c":2},{"d":[6,7]}]}}', 'z/b'))
     print(getJsonNode('{"z":{"b":1,"a":[{"c":2},{"d":[6,7]}]}}', 'z/a[0]/'))

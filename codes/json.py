@@ -55,7 +55,7 @@ def Obj2Dict(obj):
         return json.dumps(obj)
 
 def Dict2Obj(dictObj):
-    if '__class__' in dictObj:
+    if isinstance(dictObj, dict) and '__class__' in dictObj:
         className = dictObj.pop('__class__')  
         moduleName = dictObj.pop('__module__')  
         module = __import__(moduleName)  

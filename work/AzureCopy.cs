@@ -7,6 +7,7 @@
     using System.IO;
     using System.Linq;
     using System.Text.RegularExpressions;
+    using System.Threading.Tasks;
 
     public class Program
     {
@@ -20,7 +21,7 @@
             catch (Exception ex)
             {
                 Console.WriteLine(ex.ToString());
-                Console.WriteLine("this.exe -r/regex -o/overwrite -u/upload/d/download [-k/key sharedAcessSignature] src dest {partial match}");
+                Console.WriteLine("this.exe -r/regex -o/overwrite -u/upload/d/download [-k/key sharedAcessSignature] [-p parallelTaskCount] src dest {partial match}");
                 Console.WriteLine(@"Regex must not exist in folder path (absolute path), and start with '@@' (not included) if containing char '\'");
             }
         }
@@ -33,6 +34,8 @@
         private bool? _isUpload = null;
         private string _source = null;
         private string _destination = null;
+        private int _parallelTaskCount = 1;
+        private object _lock = new object();
         private CloudBlobClient _blobClient = null;
 
         public AzureCopy(string[] args)
@@ -61,6 +64,9 @@
                     case "-k":
                     case "-key":
                         key = args[++i];
+                        break;
+                    case "-p":
+                        _parallelTaskCount = int.Parse(args[++i]);
                         break;
                     default:
                         if (string.IsNullOrWhiteSpace(_source))
@@ -141,25 +147,37 @@
                 string dir, pattern;
                 ExtractRegex(_source, out dir, out pattern, @"\");
                 var destDir = localPath.EndsWith("/") ? localPath : localPath + "/";
-                Directory.EnumerateFiles(dir)
-                .Where(x => Regex.IsMatch(Path.GetFileName(x), pattern, RegexOptions.IgnoreCase))
-                .ToList()
-                .ForEach(x =>
+                var files = Directory.EnumerateFiles(dir).Where(x => Regex.IsMatch(Path.GetFileName(x), pattern, RegexOptions.IgnoreCase)).ToList();
+                Task.WhenAll(new int[Math.Min(files.Count(), _parallelTaskCount)].Select(async _ =>
                 {
-                    try
+                    string file = null;
+                    while (files.Any())
                     {
-                        UploadStream(x, blobContainer.GetBlockBlobReference($"{destDir}{Path.GetFileName(x)}"), _isOverwrite, 3);
+                        try
+                        {
+                            lock (_lock)
+                            {
+                                file = files.LastOrDefault();
+                                if (string.IsNullOrEmpty(file))
+                                {
+                                    break;
+                                }
+                                files.RemoveAt(files.Count() - 1);
+                            }
+
+                            await UploadStreamAsync(file, blobContainer.GetBlockBlobReference($"{destDir}{Path.GetFileName(file)}"), _isOverwrite, 3).ConfigureAwait(false);
+                        }
+                        catch (Exception e)
+                        {
+                            Console.WriteLine($"Fail to upload stream {file}");
+                            Console.WriteLine(e);
+                        }
                     }
-                    catch (Exception e)
-                    {
-                        Console.WriteLine($"Fail to upload stream {x}");
-                        Console.WriteLine(e);
-                    }
-                });
+                })).Wait();
             }
             else
             {
-                UploadStream(_source, blobContainer.GetBlockBlobReference(localPath), _isOverwrite, 3);
+                UploadStreamAsync(_source, blobContainer.GetBlockBlobReference(localPath), _isOverwrite, 3).Wait();
             }
         }
 
@@ -170,30 +188,40 @@
                 string dir, pattern;
                 ExtractRegex(_source, out dir, out pattern, @"/");
                 var destDir = _destination.EndsWith(@"\") ? _destination : _destination + @"\";
-
-                EnumerateFiles(dir)
-                    .Where(x => Regex.IsMatch(Path.GetFileName(x.Uri.LocalPath), pattern))
-                    .ToList()
-                    .ForEach(x =>
+                var files = EnumerateFiles(dir).Where(x => Regex.IsMatch(Path.GetFileName(x.Uri.LocalPath), pattern)).ToList();
+                Task.WhenAll(new int[Math.Min(files.Count(), _parallelTaskCount)].Select(async _ =>
+                {
+                    IListBlobItem file = null;
+                    while (files.Any())
                     {
                         try
                         {
-                            DownloadStream(destDir + Path.GetFileName(x.Uri.LocalPath), _blobClient.GetBlobReferenceFromServer(x.Uri), _isOverwrite, 3);
+                            lock (_lock)
+                            {
+                                file = files.LastOrDefault();
+                                if (file == null)
+                                {
+                                    break;
+                                }
+                                files.RemoveAt(files.Count() - 1);
+                            }
+                            await DownloadStreamAsync(destDir + Path.GetFileName(file.Uri.LocalPath), _blobClient.GetBlobReferenceFromServer(file.Uri), _isOverwrite, 3).ConfigureAwait(false);
                         }
                         catch (Exception e)
                         {
-                            Console.WriteLine($"Fail to download stream {x.Uri.AbsolutePath}");
+                            Console.WriteLine($"Fail to upload stream {file}");
                             Console.WriteLine(e);
                         }
-                    });
+                    }
+                })).Wait();
             }
             else
             {
-                DownloadStream(_destination, _blobClient.GetBlobReferenceFromServer(new Uri(_source)), _isOverwrite, 3);
+                DownloadStreamAsync(_destination, _blobClient.GetBlobReferenceFromServer(new Uri(_source)), _isOverwrite, 3).Wait();
             }
         }
 
-        private void UploadStream(string file, ICloudBlob stream, bool isOverrite, int retry)
+        private async Task UploadStreamAsync(string file, ICloudBlob stream, bool isOverrite, int retry)
         {
             if (stream.Exists() && !isOverrite)
             {
@@ -201,12 +229,12 @@
                 return;
             }
 
-            stream.DeleteIfExists();
             for (var i = 0; i < retry; i++)
             {
                 try
                 {
-                    stream.UploadFromFile(file);
+                    await stream.DeleteIfExistsAsync().ConfigureAwait(false);
+                    await stream.UploadFromFileAsync(file).ConfigureAwait(false);
                     break;
                 }
                 catch
@@ -222,7 +250,7 @@
             }
         }
 
-        private void DownloadStream(string file, ICloudBlob stream, bool isOverWrite, int retry)
+        private async Task DownloadStreamAsync(string file, ICloudBlob stream, bool isOverWrite, int retry)
         {
             if (new FileInfo(file).Exists && !isOverWrite)
             {
@@ -241,7 +269,7 @@
             {
                 try
                 {
-                    stream.DownloadToFile(tempFile, FileMode.Create);
+                    await stream.DownloadToFileAsync(tempFile, FileMode.Create).ConfigureAwait(false);
                     break;
                 }
                 catch (Exception ex)

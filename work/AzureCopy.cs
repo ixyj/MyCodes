@@ -241,6 +241,7 @@
                 {
                     if (i != retry - 1)
                     {
+                        await Task.Delay(5000);
                         continue;
                     }
 
@@ -264,7 +265,7 @@
                 Directory.CreateDirectory(directoryName);
             }
 
-            var tempFile = Path.GetRandomFileName();
+            var tempFile = $"{Path.GetRandomFileName()}.{DateTime.Now.Ticks}";
             for (var i = 0; i < retry; i++)
             {
                 try
@@ -276,6 +277,7 @@
                 {
                     if (i != retry - 1)
                     {
+                        await Task.Delay(5000);
                         continue;
                     }
 
@@ -293,19 +295,29 @@
             File.Move(tempFile, file);
         }
 
-        private IEnumerable<IListBlobItem> EnumerateFiles(string stream)
+        private IEnumerable<IListBlobItem> EnumerateFiles(string stream, int retry = 3)
         {
-            try
+            for (var i = 0; i < retry; ++i)
             {
-                var container = GetContainer(stream);
-                var blobContainer = _blobClient.GetContainerReference(container);  // ListContainers, ListBlobs ...
-                return blobContainer.ListBlobs(stream.Substring(stream.IndexOf(container) + container.Length + 1));
+                try
+                {
+                    var container = GetContainer(stream);
+                    var blobContainer = _blobClient.GetContainerReference(container);  // ListContainers, ListBlobs ...
+                    return blobContainer.ListBlobs(stream.Substring(stream.IndexOf(container) + container.Length + 1));
+                }
+                catch
+                {
+                    Console.WriteLine("Fail to get dir info in: " + stream);
+                    if (i == retry - 1)
+                    {
+                        throw;
+                    }
+
+                    System.Threading.Thread.Sleep(3000);
+                }
             }
-            catch
-            {
-                Console.WriteLine("Fail to get dir info in: " + stream);
-                throw;
-            }
+
+            throw new Exception("Exception for EnumerateFiles for Blob");
         }
 
         private string GetContainer(string stream)

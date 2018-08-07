@@ -20,9 +20,8 @@
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.ToString());
-                Console.WriteLine("this.exe -r/regex -o/overwrite -u/upload/d/download [-k/key sharedAcessSignature] [-p parallelTaskCount] src dest {partial match}");
-                Console.WriteLine(@"Regex must not exist in folder path (absolute path), and start with '@@' (not included) if containing char '\'");
+                Console.WriteLine(ex);
+                Console.WriteLine(ex.StackTrace);
             }
         }
     }

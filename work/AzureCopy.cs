@@ -36,6 +36,7 @@
         private int _parallelTaskCount = 1;
         private object _lock = new object();
         private CloudBlobClient _blobClient = null;
+        private CloudTableClient _tableClient = null;
 
         public AzureCopy(string[] args)
         {
@@ -101,7 +102,9 @@
                 throw new Exception("No sharedAcessSignature found!");
             }
 
-            _blobClient = CloudStorageAccount.Parse(key).CreateCloudBlobClient();
+            var cloudStorageAccount  = CloudStorageAccount.Parse(key);
+            _blobClient = cloudStorageAccount.CreateCloudBlobClient();
+            _tableClient = cloudStorageAccount.CreateCloudTableClient();
         }
 
         public void Excute()
@@ -119,6 +122,21 @@
             {
                 Download();
             }
+        }
+
+        /***
+         *  Delete:     table.ExecuteAsync(TableOperation.Delete(new TableEntity(partitionKey, rowKey) { ETag = "*" }))
+         *  DeleteAll:  table.DeleteAsync(entity.PartitionKey, entity.RowKey).ConfigureAwait(false);   
+         *  Get:        table.ExecuteAsync(TableOperation.Retrieve<ITableEntity>(partitionKey, rowKey))
+         *  GetAll:     table.CreateQuery<ITableEntity>().Where(m => m.PartitionKey == partitionKey))
+         *  InsertOrReplaceBatch: batchOperation = new TableBatchOperation();  batchOperation.Add(TableOperation.InsertOrReplace(ITableEntity); <=100
+         *  table.ExecuteBatchAsync(batchOperation)
+         * **/
+        public async Task InsertOrReplaceTable(string tableName, string partitionKey, string rowKey, object data)
+        {
+            var table = _tableClient.GetTableReference(tableName);
+            await table.CreateIfNotExistsAsync().ConfigureAwait(false);
+            await table.ExecuteAsync(TableOperation.InsertOrReplace(new CustomTableEntity(partitionKey, rowKey, data))).ConfigureAwait(false); 
         }
 
         private void ExtractRegex(string path, out string dir, out string pattern, string separator)
@@ -140,12 +158,17 @@
         {
             var container = GetContainer(_destination);
             var blobContainer = _blobClient.GetContainerReference(container);
+            blobContainer.CreateIfNotExists();
             var localPath = _destination.Substring(_destination.IndexOf(container) + container.Length + 1);
             if (_isRegex)
             {
                 string dir, pattern;
                 ExtractRegex(_source, out dir, out pattern, @"\");
                 var destDir = localPath.EndsWith("/") ? localPath : localPath + "/";
+                if (destDir == "/")
+                {
+                    destDir = string.Empty;
+                }
                 var files = Directory.EnumerateFiles(dir).Where(x => Regex.IsMatch(Path.GetFileName(x), pattern, RegexOptions.IgnoreCase)).ToList();
                 Task.WhenAll(new int[Math.Min(files.Count(), _parallelTaskCount)].Select(async _ =>
                 {

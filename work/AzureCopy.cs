@@ -2,6 +2,8 @@
 {
     using Microsoft.WindowsAzure.Storage;
     using Microsoft.WindowsAzure.Storage.Blob;
+    using Microsoft.WindowsAzure.Storage.Table;
+    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.IO;
@@ -102,7 +104,7 @@
                 throw new Exception("No sharedAcessSignature found!");
             }
 
-            var cloudStorageAccount  = CloudStorageAccount.Parse(key);
+            var cloudStorageAccount = CloudStorageAccount.Parse(key);
             _blobClient = cloudStorageAccount.CreateCloudBlobClient();
             _tableClient = cloudStorageAccount.CreateCloudTableClient();
         }
@@ -136,7 +138,7 @@
         {
             var table = _tableClient.GetTableReference(tableName);
             await table.CreateIfNotExistsAsync().ConfigureAwait(false);
-            await table.ExecuteAsync(TableOperation.InsertOrReplace(new CustomTableEntity(partitionKey, rowKey, data))).ConfigureAwait(false); 
+            await table.ExecuteAsync(TableOperation.InsertOrReplace(new CustomTableEntity(partitionKey, rowKey, data))).ConfigureAwait(false);
         }
 
         private void ExtractRegex(string path, out string dir, out string pattern, string separator)
@@ -354,5 +356,16 @@
 
             return stream.Substring(start + 1, end - start - 1);
         }
+    }
+
+    public class CustomTableEntity : TableEntity
+    {
+        public CustomTableEntity(string partitionKey, string rowKey, object data)
+            : base(partitionKey, rowKey)
+        {
+            Data = JsonConvert.SerializeObject(data);
+        }
+
+        public string Data { get; set; }
     }
 }

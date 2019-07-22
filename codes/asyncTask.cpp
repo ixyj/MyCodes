@@ -5,7 +5,7 @@
 /**
 async (launch policy, Fn&& fn, Args&&... args);
 std::launch::async; // 立即启动异步线程
-std::launch::deferred; // 线程延迟启动，当调用future.get或者future.wait时，才会创建异步线程并启动
+std::launch::deferred; // 线程延迟启动，当调用future.get或者future.wait时，才（可能会创建异步线程）启动
 std::launch::async | std::launch::deferred  // 缺省值。是否启动线程由系统负载/实现方式决定。如果系统负载过重，则可能不启动异步线程。
 
 future_status wait_until (const chrono::time_point<Clock,Duration>& abs_time) const;    //Waits for the shared state to be ready, at most until abs_time.

@@ -319,6 +319,18 @@
             File.Move(tempFile, file);
         }
 
+        public BlobProperties FetchProperties(IListBlobItem blob)
+        {
+            return (blob as CloudBlob)?.Properties;
+        }
+
+        // Enumerate all blobs in given stream recursively
+        public IEnumerable<IListBlobItem> EnumerateAllFiles(IListBlobItem root)
+        {
+            return root is CloudBlobDirectory dir ? dir.ListBlobs(true) : new[] { root };
+        }
+
+        // Only enumerate blobs in given stream, not recursively
         private IEnumerable<IListBlobItem> EnumerateFiles(string stream, int retry = 3)
         {
             for (var i = 0; i < retry; ++i)

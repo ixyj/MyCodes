@@ -16,7 +16,7 @@ namespace Ipy2ImplementCs
     public class CsClass : ICsInterface
     {
         protected int _length;
-        public CsClass(string text)
+        public CsClass(string text, params object[] moreParams)
         {
             _length = string.IsNullOrEmpty(text) ? 0 : text.Length;
         }
@@ -47,7 +47,7 @@ namespace Ipy2ImplementCs
             Test(csInterface);
 
             var pyClass2 = scope.GetVariable("PyClass2");
-            var pyInstance2 = pyClass2("py");
+            var pyInstance2 = pyClass2("py", 12);
             CsClass csClass2 = pyInstance2;
             Console.WriteLine(csClass2.GetLength("Test GetLength"));
             Console.WriteLine(csClass2.Length);
@@ -65,6 +65,7 @@ namespace Ipy2ImplementCs
 }
 
 /**** pyClass.py Content ****
+from System import Exception
 import Ipy2ImplementCs
 
 class PyClass(Ipy2ImplementCs.ICsInterface):
@@ -83,12 +84,17 @@ class PyClass(Ipy2ImplementCs.ICsInterface):
         self.length = value
 
 class PyClass2(Ipy2ImplementCs.CsClass):
-    def __init__(self, text):
+    def __init__(self, text, num):
+        print('__init__ %r' % num)
         Ipy2ImplementCs.CsClass.__init__(text)
 
     def GetLength(self, text):
         print('PyClass2: ' + text)
-        print('csClass2.GetLength: %r' % Ipy2ImplementCs.CsClass.GetLength(self, text))
+        try:
+            print('csClass2.GetLength: %r' % Ipy2ImplementCs.CsClass.GetLength(self, text))
+        except Exception as e:
+            print(e)
+
         return -1
 
     @property

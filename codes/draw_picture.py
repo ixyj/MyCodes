@@ -1,6 +1,8 @@
 # coding=utf-8
 
 import matplotlib.pyplot as plt
+import matplotlib.ticker as ticker
+import matplotlib.dates as mdates 
 import numpy as np
 
 list1=[1,2,3,4,5,6,2,3,4,6,7,5,7]
@@ -19,6 +21,10 @@ plt.plot(x,list2,label='list2')#添加label设置图例名称
 plt.plot(x,list3,label='list3')#添加label设置图例名称
 plt.legend()
 plt.grid()#添加网格
+
+plt.gca().xaxis.set_major_locator(ticker.MultipleLocator(5)#x轴每隔5显示一个刻度
+plt.gca().xaxis.set_major_formatter(mdates.DateFormatter('%Y-%m-%d'))#x轴显示时间
+plt.gcf().autofmt_xdate()#x轴旋转显示时间
 
 plt.savefig('foo.png')  # must be called before plt.show(), or else generate a blank picture
 
